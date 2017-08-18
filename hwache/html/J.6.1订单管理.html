@@ -1,0 +1,1341 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.6.1订单管理 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">常用管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">报价管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a href="#" class="cur-select-step">执行中(17)</a>
+                                        <a href="#">已结束(1)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-tool" data-toggle="collapse" data-parent="#accordion1" href="#collapse_6"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_6" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">便捷工具</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content custom-index-wrapper">
+                    <form action="">
+                        <div class="search-panel-main mt10">
+                            <span class="fl mt5">订单号：</span>
+                            <input placeholder="" type="text" value="" name="" class="form-control custom-control ml5 fl">
+                            <span class="fl mt5 ml10">客户姓名：</span>
+                            <input placeholder="" type="text" value="" name="" class="txt-small form-control custom-control ml5 fl">
+                            <span class="fl mt5 ml10">客户手机号：</span>
+                            <input placeholder="" type="text" value="" name="" class="form-control custom-control ml5 fl">
+                            <span class="ml10 fl">&nbsp;</span>
+                            <a href="javascript:;" class="btn btn-danger fs16 fl btn-small nomargin">查找</a>
+                            <div class="clear"></div> 
+                        </div>
+                        <div class="search-panel-opt mt20">
+                            <table>
+                                <tr>
+                                    <td valign="top" width="45"><b class="blue">筛选：</b></td>
+                                    <td>
+                                        <div class="opt-wrapper">
+                                            <div class="btn-group btn-jquery-event fl">
+                                                  <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle dropdown-company">
+                                                      <span class="dropdown-label"><span>订单状态不限</span></span>
+                                                      <span class="caret"></span>
+                                                  </button>
+                                                  <ul class="dropdown-menu dropdown-company">
+                                                      <input type="hidden" name="">
+                                                      <li class="active"><a><span>全部</span></a></li>
+                                                      <li><a><span>反馈订单-等待反馈</span></a></li>
+                                                      <li><a><span>反馈订单-反馈完成</span></a></li>
+                                                      <li><a><span>响应订单-等待响应</span></a></li>
+                                                      <li><a><span>响应订单-响应完成</span></a></li>
+                                                      <li><a><span>预约交车-发出通知</span></a></li>
+                                                      <li><a><span>预约交车-确认反馈</span></a></li>
+                                                      <li><a><span>预约交车-预约完毕</span></a></li>
+                                                      <li><a><span>交车执行-正在交车</span></a></li>
+                                                      <li><a><span>交车执行-核实信息</span></a></li>
+                                                      <li><a><span>交车后记-核对金额</span></a></li>
+                                                      <li><a><span>交车后记-办理手续</span></a></li>
+                                                      <li><a><span>交车争议中</span></a></li>
+                                                  </ul>
+                                            </div>
+                                            <div class="btn-group btn-jquery-event ml20 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle  dropdown-company">
+                                                    <span class="dropdown-label"><span>时限提示不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select  dropdown-company">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>全部</span></a></li>
+                                                    <li><a><span>紧急（1个小时以内）</span></a></li>
+                                                    <li><a><span>一般（超过1个小时）</span></a></li>
+                                                    <li><a><span>超时</span></a></li>
+                                                    <li><a><span>已到交车日</span></a></li>
+                                                    <li><a><span>无</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="btn-group btn-jquery-event ml20 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle  dropdown-company">
+                                                    <span class="dropdown-label"><span>操作不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select  dropdown-company">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>操作不限</span></a></li>
+                                                    <li><a><span>查看</span></a></li>
+                                                    <li><a><span>待操作</span></a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group btn-jquery-event mt20 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle">
+                                                    <span class="dropdown-label"><span>品牌不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>品牌不限</span></a></li>
+                                                    <li><a><span>品牌不限1</span></a></li>
+                                                    <li><a><span>品牌不限2</span></a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group btn-jquery-event mt20 ml20 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle">
+                                                    <span class="dropdown-label"><span>车系不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>车系不限</span></a></li>
+                                                    <li><a><span>车系不限1</span></a></li>
+                                                    <li><a><span>车系不限2</span></a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group btn-jquery-event mt20 ml20 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-long btn-default btn-380">
+                                                    <span class="dropdown-label"><span>车型规格不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select dropdown-380">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>车型规格不限</span></a></li>
+                                                    <li><a><span>车型规格不限1</span></a></li>
+                                                    <li><a><span>车型规格不限2</span></a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group btn-jquery-event mt20 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-long btn-default btn-380">
+                                                    <span class="dropdown-label"><span>经销商不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select dropdown-380">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>经销商不限</span></a></li>
+                                                    <li><a><span>经销商不限1</span></a></li>
+                                                    <li><a><span>经销商不限2</span></a></li>
+                                                </ul>
+                                            </div>
+
+                                            <span class="ml20 tac span-guided mt20">厂商指导价：1,25,0000.00</span>
+                                            <a href="javascript:;" class="btn btn-danger fs16 btn-small sure nomargintop ml10">重置</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <h4 class="title"><span>订单信息</span></h4>
+                        <table class="tbl custom-info-tbl">
+                             <tbody>
+                               <tr>
+                                   <th class="tac">订单号/时间/<br>经销商</th>
+                                   <th class="tac">品牌/车系/车型规格</th>
+                                   <th class="tac">裸车开票价格/客<br>户姓名/上牌地区</th>
+                                   <th class="tac">订单状态</th>
+                                   <th class="tac">时限提示</th>
+                                   <th class="last">操作</th>
+                               </tr> 
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>反馈订单-等待反馈</p>
+                                    <p class="gray">收到客户诚意金，</p>
+                                    <p class="gray">等待反馈</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>等待反馈时间剩余</p>
+                                    <p><span class="blue countdown" start="2016-9-8 13:24:15" end="2016-9-8 13:29:25"><span>23</span>分<span>45</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="A.1.1A收到诚意金等待反馈页面.html" class="btn btn-danger  btn-auto sure nomargintop ">我要反馈</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>反馈订单-等待反馈</p>
+                                    <p class="gray">收到客户诚意金，</p>
+                                    <p class="gray">等待反馈</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>已超时</p>
+                                    <p><span class="red countdown"  start="2016-9-8 13:31:15" end="2016-9-8 13:29:25"><span>13</span>分<span>45</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="A.1.1A收到诚意金等待反馈页面.html" class="btn btn-danger  btn-auto sure nomargintop ">我要反馈</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>反馈订单-反馈完成</p>
+                                    <p class="gray">已反馈，等待客户买车担保金</p>
+                                    <p class="gray">进入加信宝</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="A.2.1A反馈OK页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>反馈订单-反馈完成</p>
+                                    <p class="gray">提议修改订单，等待客户确认</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="A.2.1B不OK等待客户选择页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>反馈订单-反馈完成</p>
+                                    <p class="gray">已反馈特需要求并提议修改订单，</p>  
+                                    <p class="gray">等待客户确认</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="A.2.1B不OK等待客户选择页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>反馈订单-反馈完成</p>
+                                    <p class="gray">已反馈特需要求，等待客户确认</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="A.2.1C反馈特需无修改页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>响应订单-等待响应</p>
+                                    <p class="gray">已反馈无修改，等待客户买车担保</p>  
+                                    <p class="gray">金进入加信宝</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="B.1.1-1A等待买车担保金到位页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>响应订单-等待响应</p>
+                                    <p class="gray">客户接受特殊文件安排，等待客户买车</p>  
+                                    <p class="gray">担保金进入加信宝</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="B.1.1-1A等待买车担保金到位页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>响应订单-等待响应</p>
+                                    <p class="gray">客户接受订单修改，等待客户买车</p>  
+                                    <p class="gray">担保金进入加信宝</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="B.1.1-1B订单修改等待担保金页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>响应订单-等待响应</p>
+                                    <p class="gray">收到客户买车担保金，等待响应</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>等待响应时间剩余</p>
+                                    <p><span class="blue countdown" start="2016-9-8 13:25:15" end="2016-9-8 13:29:25"><span>6</span>分<span>54</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="B.1.1A收到买车担保金等待响应页面.html" class="btn btn-danger  btn-auto sure nomargintop ">去响应</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>响应订单-响应完成</p>
+                                    <p class="gray">已响应订单，等待预约交车</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>发出交车通知时间剩余</p>
+                                    <p><span class="blue countdown" start="2016-9-4 11:25:15" end="2016-9-8 13:29:25"><span>6</span>天<span>6</span>小时<span>6</span>分<span>54</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="B.2.1A响应完成等待交车页面.html" class="btn btn-danger  btn-auto sure nomargintop ">去发邀请</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>预约交车-发出通知</p>
+                                    <p class="gray">提议修改订单，等待客户确认</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="C.1.2B条件修改等待客户选择页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>响应订单-响应完成</p>
+                                    <p class="gray">已发出交车通知，等待客户反馈</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>离交车时限</p>
+                                    <p><span class="blue countdown" start="2016-9-4 11:25:15" end="2016-9-8 13:29:25"><span>6</span>天<span>6</span>小时<span>6</span>分<span>54</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="C.1.3A已发交车通知页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>预约交车-发出通知</p>
+                                    <p class="gray">订单已修改，待发预约通知</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>发出交车通知时间剩余</p>
+                                    <p><span class="blue countdown" start="2016-9-4 11:25:15" end="2016-9-8 13:29:25"><span>6</span>天<span>6</span>小时<span>6</span>分<span>54</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="C.1.3B-B赔偿但执行修改订单页面.html" class="btn btn-danger  btn-auto sure nomargintop ">去发邀请</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>预约交车-确认反馈</p>
+                                    <p class="gray">客户已确认交车通知，等待补充</p>  
+                                    <p class="gray">预约信息</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>补充预约信息剩余</p>
+                                    <p><span class="blue countdown" start="2016-9-4 11:25:15" end="2016-9-8 13:29:25"><span>6</span>天<span>6</span>小时<span>6</span>分<span>54</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="C.2.1A反馈OK页面.html" class="btn btn-danger  btn-auto sure nomargintop ">补充信息</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>预约交车-确认反馈</p>
+                                    <p class="gray">客户已反馈交车通知，等待再确认</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>再次确认剩余时间</p>
+                                    <p><span class="blue countdown" start="2016-9-4 11:25:15" end="2016-9-8 13:29:25"><span>6</span>天<span>6</span>小时<span>6</span>分<span>54</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="C.2.1B不OK再确认页面.html" class="btn btn-danger  btn-auto sure nomargintop ">去确认</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>预约交车-确认反馈</p>
+                                    <p class="gray">等待客户确认最后交车事宜</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="C.2.2B再确认等待页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>预约交车-确认反馈</p>
+                                    <p class="gray">客户已再次确认交车通知，</p>  
+                                    <p class="gray">等待补充预约信息</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>补充预约信息剩余</p>
+                                    <p><span class="blue countdown" start="2016-9-8 11:25:15" end="2016-9-8 13:29:25"><span>6</span>小时<span>6</span>分<span>54</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="C.2.3B-A反馈OK补充信息页面.html" class="btn btn-danger  btn-auto sure nomargintop ">补充信息</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>预约交车-预约完毕</p>
+                                    <p class="gray">预约完毕，等待交车</p>  
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>离交车时限</p>
+                                    <p><span class="blue countdown" start="2016-9-4 11:25:15" end="2016-9-8 13:29:25"><span>6</span>天<span>6</span>小时<span>6</span>分<span>54</span>秒</span></p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="C.3.1预约完毕页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>交车执行-正在交车</p> 
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p> 
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="D.2.1A交车信息提交页面.html" class="btn btn-danger  btn-auto sure nomargintop ">交车</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>交车争议中</p> 
+                                    <p class="gray">客户提出交车问题，正在处理</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p> 
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="D.2.3B争议申辩与调解页面.html" class="btn btn-danger  btn-auto sure nomargintop ">去提交</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>交车争议中</p> 
+                                    <p class="gray">售方提出交车问题，正在处理</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p> 
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="D.2.3C调查调解页面.html" class="btn btn-danger  btn-auto sure nomargintop ">去提交</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>交车争议中</p> 
+                                    <p class="gray">交车有争议，协商未成平台判定</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p> 
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="D.2.4C协商未成平台判定页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>交车执行-核实信息</p> 
+                                    <p class="gray">（售方上牌）正在核实交车信息</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p> 
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="D.3.1A交车完成页面-经销商上牌.html" class="btn btn-danger  btn-auto sure nomargintop ">去提交</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>交车执行-核实信息</p> 
+                                    <p class="gray">（客户上牌）正在核实交车信息</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p> 
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="D.3.1A交车完成页面-客户上牌.html" class="btn btn-danger  btn-auto sure nomargintop ">去提交</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>交车后记-核对金额</p> 
+                                    <p class="gray">交车信息已核实，等待核对收支金额</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p> 
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="E.1.1核对收入金额页面.html" class="btn btn-danger  btn-auto sure nomargintop ">去核实</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                    <p>王戚薇小姐</p>
+                                    <p>江苏省苏州市</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>交车后记-办理手续</p> 
+                                    <p class="gray">结算金额已确认，正在办理</p>
+                                    <p class="gray">结算手续</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p>&nbsp;</p> 
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="E.2.1办理财务手续页面.html" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+     
+                             </tbody>
+                       </table>
+
+                       <div class="pageinfo ml150">
+                            <a href="#">上一页</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <span class="empty">...</span>
+                            <a href="#">下一页</a>
+                            <label>共100页，到第</label>
+                            <input type="text" class="num" value="1">
+                            <label>页</label>
+                            <input type="button" class="go" value="Go">
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin","module/custom/custom.admin.common.jquery","module/custom/custom.admin.order.jquery", "module/common/common", "bt"],function(a,b,c){
+          
+        });
+    </script>
+ 
+
+</body>
+</html>
+
+

@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>W.H.17我的华车我的提现 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="userheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="user">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a href="#">我的余额</a>
+                                        <a class="menu-select" href="#">我的提现</a>
+                                        <a href="#">我的发票</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的文件</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content">
+                    <div class="yue-content psr">
+                        <p>可用余额：￥100.00</p>
+                        <p class="gray">账户余额是您在华车平台上可用于支付诚意金/买车担保金的金额。</p>
+                        <div class="control-yue">
+                            <a href="#" class="btn btn-s-md btn-danger sure bt">申请提现</a> 
+                        </div>
+                        <hr class="dashed">
+                        <h2 class="title blue">提现退款记录</h2>
+                        <div class="m-t-10"></div>
+                        <div class="search-area">
+
+                            <span>退款提现发起时间：</span>
+                            <div class="form-group psr">
+                                <input style="" type="text" placeholder="2015年10月10号" class="form-control " onfocus="WdatePicker({minDate:'2015-12-2 00:00:00',startDate:'2015-12-19 00:00:00' });">
+                                <i class="rili"></i>
+                            </div>
+                            <span class="ml10">~</span>
+                            <div class="ml10 form-group psr">
+                                <input style="" type="text" placeholder="2015年10月10号" class="form-control " onfocus="WdatePicker({minDate:'2015-12-2 00:00:00',startDate:'2015-12-19 00:00:00' });">
+                                <i class="rili"></i>
+                            </div>
+                            <div class="clear"></div>
+                            <span  class="ml10">退款方式：</span>
+                            <div class="btn-group ">
+                                <button data-toggle="dropdown" class="btn btn-select-method btn-default dropdown-toggle">
+                                    <span class="dropdown-label"><span>全部</span></span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-method">
+                                    <input type="hidden" name="hfmethod" />
+                                    <li ms-on-click="selectEvent" class=""><a><span>全部</span></a></li>
+                                    <li ms-on-click="selectEvent"><a><span>线上原路退回</span></a></li>
+                                    <li ms-on-click="selectEvent"><a><span>银行转账退回</span></a></li>
+                                </ul>
+                            </div> 
+                             
+                             
+                            <span  class="ml50">退款状态：</span>
+                            <div class="btn-group ">
+                                <button data-toggle="dropdown" class="btn btn-select-method btn-default dropdown-toggle">
+                                    <span class="dropdown-label"><span>全部</span></span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-method">
+                                    <input type="hidden" name="hfmoney" />
+                                    <li ms-on-click="selectEvent" ><a><span>全部</span></a></li>
+                                    <li ms-on-click="selectEvent"><a><span>正在办理</span></a></li>
+                                    <li ms-on-click="selectEvent"><a><span>已完成</span></a></li>
+                                    <li ms-on-click="selectEvent"><a><span>未成功</span></a></li>
+                                    
+                                </ul>
+                            </div> 
+                            <a href="#" class="ml20 btn btn-s-md btn-danger detial bt">重置</a>
+
+                            <div class="clear"></div>
+
+                        </div>
+                    </div> 
+                    <div class="content-wapper">
+                        <table class="tbl">
+                            <tr>
+                                <th width="100">退款提现<br>发起时间</th>
+                                <th width="70">提现金额</th>
+                                <th width="100">申请退款金额</th>
+                                <th width="180">退款方式</th>
+                                <th width="80">退款状态</th>
+                                <th width="90">实退金额</th>
+                                <th width="90">实际退款<br>确认时间</th>
+                                <th width="70">操作</th>
+                            </tr>
+                            <tr>
+                                <td colspan="8">
+                                    <div class="m-t-10"></div>
+                                    <p>您暂时还未有满足条件的退款提现操作~</p>
+                                    <div class="m-t-10"></div>
+                                </td>
+                            </tr>
+                        </table>
+                        <br><br>
+
+                        <table class="tbl">
+                            <tr>
+                                <th width="100">退款提现<br>发起时间</th>
+                                <th width="70">提现金额</th>
+                                <th width="100">申请退款金额</th>
+                                <th width="180">退款方式</th>
+                                <th width="80">退款状态</th>
+                                <th width="90">实退金额</th>
+                                <th width="90">实际退款<br>确认时间</th>
+                                <th width="70">操作</th>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">
+                                    <p class="p fs14">2016-12-1</p>
+                                    <p class="p fs14">10：23：12</p>
+                                </td>
+                                <td rowspan="3">
+                                    <p class="p fs14">￥400.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥388.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">线上原路退回（支付宝）</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">正在办理</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥110.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">/</p>
+                                </td>
+                                <td rowspan="3">
+                                    <a href="#"  class="btn btn-s-md btn-danger sure tbl-control sbt">查看</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">￥388.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">线上原路退回（财付通）</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">未成功</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">正在办理</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥110.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">￥388.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">线上原路退回（通联支付）</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">已完成</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">正在办理</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥110.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-12-1</p>
+                                    <p class="p fs14">10：23：12</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥400.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥388.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">线上原路退回</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">正在办理</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥110.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">/</p>
+                                </td>
+                                <td>
+                                    <a href="#"  class="btn btn-s-md btn-danger sure tbl-control sbt">查看</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-12-1</p>
+                                    <p class="p fs14">10：23：12</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥400.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥388.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">线上原路退回</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">正在办理</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥110.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">2015-10-15</p>
+                                </td>
+                                <td>
+                                    <a href="#"  class="btn btn-s-md btn-danger sure tbl-control sbt">查看</a>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                        
+
+                    </div> 
+
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/user/user", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+
+

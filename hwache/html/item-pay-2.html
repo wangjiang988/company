@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>付担保金 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li class="step-cur">付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="item">
+        <div class="wapper">  
+            <p>尊敬的客户：</p>
+            <p>我们高兴地通知您：经销商已完成车源的再次确认。您的心仪座驾即将揭开神秘的面纱，早点把Ta迎回家吧！</p>
+            <p><b>买车担保金余款：</b><input type="text" name="counts" class="baoxianinput shot juhuang"><b>元</b>。您须在24小时内完成支付，否则按规则订单将失效，您的诚意金将赔偿给经销商。</p>
+            <div class="time">
+                <div class="jishi jishi-long">
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="fuhao">:</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="fuhao">:</span>
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+            </div>
+            <a href="javascript:;" class="btn btn-s-md btn-danger">去支付</a>
+            <div class="split">
+                <a href="#myorder">查看我的订单</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-pay-2", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+

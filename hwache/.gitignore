@@ -1,0 +1,36 @@
+.buildpath
+.idea
+*.bak
+data/log
+data/session
+data/cache
+data/upload/shop/store
+data/upload
+data/config/config.ini.php
+/html/workspace.sln
+/html/.settings
+/html/.vs
+/html/car-html-template
+/html/设计稿
+/html/原测试页面
+/html/package.json
+/html/Web.config
+/html/avalon2
+/html/test
+/html/首页静态页面/images - 副本
+/html/vivo_x5l_root.zip
+/html/converse
+/html-修复ie后的覆盖前的备份
+/www-修复ie后的
+/laravel-修复ie后的
+/core/framework/function/seller.php
+/laravel/resources/views/dealer/ucenter/baojia_add_step5.blade vue设置的杂费添加 不过添加后会刷新页面.php
+/laravel/resources/views/dealer/ucenter/baojia_add_step5.blade 原版.php
+/laravel/resources/views/dealer/ucenter/baojia_edit_step5.blade 原版.php
+/laravel/resources/views/dealer/ucenter/baojia_edit_step5.blade vue设置的杂费添加 不过添加后会刷新页面.php
+/laravel/resources/views/dealer/ucenter/baojia_add_step5.tpl.blade.php
+/admin/templates/.template*
+/admin/controller/.template*
+*.sql
+.vscode/
+data/resource/bindings/tcpdf/qrcode.php

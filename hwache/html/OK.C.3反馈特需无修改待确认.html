@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OK.C.3反馈特需无修改待确认 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="step-cur">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content">
+                    <small>选择产品</small>
+                    <i></i>
+                    <small>付诚意金</small>
+                    <i></i>
+                    <small class="juhuang" class="">售方确认</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="item">
+        <div class="wapper has-min-step">
+            <p>尊敬的客户：</p>
+            <p>华车平台<a href="#" class="juhuang tdu"><img class="ml5" src="themes/images/item/jxb.gif"></a><span>&nbsp;</span>于2015年9月24日14:03:28收到您支付的诚意金人民币499.00元，您同时提交的本人上牌所需特别文件要求为：XX证明、YY证书 ... ...</p>
+            <table class="nobordertbl" width="100%">
+                <tr>
+                    <td width="50%" class="fs14 weight">订单号：</td>
+                    <td width="50%" class="fs14">
+                        <span class="weight">订单时间：</span>2015年10月28日
+                    </td>
+                </tr>
+            </table>
+            <div class="clear m-t-10"></div>
+            <ul class="pdi-order-ul border ">
+               <p class="fs14 ml10">
+	               <span>路虎</span>
+	               <span class="ml5">></span>
+	               <span class="ml5">新一代揽胜</span>
+	               <span class="ml5">></span> 
+	               <span class="ml5">2015款SDV6 Hybrid Vogue SE 混合动力创世加长版</span>
+	               <span class="ml30">月光石白色（个性金属漆）</span> 
+               </p>
+            </ul>
+            <p class="tac m-t-10"><a href="#" class="juhuang tdu ">查看订单总详情</a></p>
+
+            <hr class="dashed"> 
+            <div class="wait-order-status" ms-controller="orderStatus">
+                <p class="fs14"><b>您所关心的特别文件办理事项，经销商在2015年9月24日16:17:29作了如下回复，请选择您要办理的内容：</b></p>
+                <div class="zm-select-wrapper">
+                    <div class="checkbox-wrapper psr fs14 inline-block fs14">
+                        <label class="mt"><input checked=""  type="checkbox" name="scope-1" id=""></label>
+                    </div>
+                    <span class="fs14 ml5">XX证明： 可以办理，办理费用：人民币1,000.00元，办理将延后交车时限5个自然日</span>
+                </div>
+                <div class="zm-select-wrapper">
+                    <div class="checkbox-wrapper psr fs14 inline-block fs14">
+                        <label class="mt" id="icon-disabled"><input disabled="" type="checkbox" name="scope-1" id=""></label>
+                        <span class="icon-disabled "></span>
+                    </div>
+                    <span class="fs14 ml5">YY证明： 恕无法办理</span>
+                </div> 
+                <p class="fs14">
+                    <span>温馨提示：请在24小时内确认，超过时间未确认将默认为终止订单、退诚意金（无歉意金补偿）操作。</span>
+                    <p class="tac red hide" id="showhide">请选择是否继续订单！</p>
+                    <br><br> 
+                    <div class="time">
+                        <div class="jishi jishi-long countdown">
+                            <span>0</span>
+                            <span>0</span>
+                            <span class="fuhao">:</span>
+                            <span>0</span>
+                            <span>0</span>
+                            <span class="fuhao">:</span>
+                            <span>0</span>
+                            <span>0</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </p>
+                <br>
+                <p class="center psr">
+                    <a ms-on-click="send" href="javascript:;" class="btn btn-danger fs16 btn-auto">就办这些，继续订单</a>
+                    <a ms-on-click="stopOrder" href="javascript:;" class="btn btn-danger fs16 btn-auto btn-white btn-float">不买了，退诚意金</a>
+
+                </p>
+
+                <div id="stopWin" class="popupbox">
+                    <div class="popup-title">温馨提示</div>
+                    <div class="popup-wrapper">
+                        <div class="popup-content">
+                            <div class="m-t-10"></div>
+                            <p class="fs14 pd tac succeed error constraint">
+                               <span class="tip-tag bp0"></span>
+                               <span class="tip-text mt-10">确定放弃订单吗？</span>
+                               <div class="clear"></div>
+                               <br>
+                            </p>
+                            <div class="m-t-10"></div>
+                        </div> 
+                        <div class="popup-control">
+                            <a href="javascript:;" ms-on-click="doStopOrder" class="btn btn-s-md btn-danger fs14 do w100 ">确认</a>
+                            <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20 inline-block ">返回</a>
+                            <div class="clear"></div>
+                        </div> 
+                    </div>
+                </div>
+
+                <div id="sendWin" class="popupbox">
+                    <div class="popup-title">温馨提示</div>
+                    <div class="popup-wrapper">
+                        <div class="popup-content">
+                            <div class="m-t-10"></div>
+                            <p class="fs14 pd tac">
+                               <br> 
+                               <span class="tip-text fs14 text-left inline-block">确定要按您的已选内容办理并继续订单吗？</span>
+                               <div class="clear"></div>
+                               <br>
+                            </p>
+                            <div class="m-t-10"></div>
+                        </div> 
+                        <div class="popup-control">
+                            <a href="javascript:;" ms-on-click="doSend" class="btn btn-s-md btn-danger fs14 do w100 ">确认</a>
+                            <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20 inline-block ">返回</a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+  
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+        </div>
+    </div>
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-wait","module/item/item-step-c3", "module/common/common", "bt"],function(a,b,c){
+        	a.init('2016-3-13 16:14:35','2016-3-14 5:15:25',function(){
+        		//设置回调
+        	})
+        })
+    </script>
+
+</body>
+</html>
+

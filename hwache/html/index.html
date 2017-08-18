@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/theme.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+    
+    <div class="box" ms-include-src="header"></div>
+
+    <div class="container m-t-86 pos-rlt" ms-controller="box">
+        <div class="banner">
+            
+        </div>
+        <div class="i-search pos-abt text-center-xs">
+            <div class="tip">
+                <ul>
+                    <li>有29,586人正在这里买车</li>
+                    <li>有29,586人正在这里注册</li>
+                </ul>
+            </div>
+            <form name="indexSearchForm" action="" data-txt="请选择">
+                <ul class="i-s-panel">
+                    <li class="brand">
+                        <div class="wapper">
+                            <label>品牌:</label>
+                            <input type="text" onfocus="this.blur() " />
+                            <i ms-click="showhide"></i>
+                            <dl>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-bmw.gif" /></em><a href="javascript:;">宝马</a></dt>
+                                <dt ms-click="selectBrand(2)"><em><img src="../themes/images/brand/b-aodi.gif" /></em><a href="javascript:;">奥迪</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-and.gif" /></em><a href="javascript:;">宝马</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-benc.gif" /></em><a href="javascript:;">奥迪</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-c.gif" /></em><a href="javascript:;">宝马</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-ns.gif" /></em><a href="javascript:;">奥迪</a></dt>
+                                <dt ms-click="selectBrand(2)"><em><img src="../themes/images/brand/b-r.gif" /></em><a href="javascript:;">宝马</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-xd.gif" /></em><a href="javascript:;">奥迪</a></dt>
+                                <dt ms-click="selectBrand(2)"><em><img src="../themes/images/brand/b-bmw.gif" /></em><a href="javascript:;">宝马</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-aodi.gif" /></em><a href="javascript:;">奥迪</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-and.gif" /></em><a href="javascript:;">宝马</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-benc.gif" /></em><a href="javascript:;">奥迪</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-c.gif" /></em><a href="javascript:;">宝马</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-ns.gif" /></em><a href="javascript:;">奥迪</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-r.gif" /></em><a href="javascript:;">宝马</a></dt>
+                                <dt ms-click="selectBrand(1)"><em><img src="../themes/images/brand/b-xd.gif" /></em><a href="javascript:;">奥迪</a></dt>
+                            </dl>
+                        </div>
+                    </li>
+
+                    <li class="cars">
+                        <div class="wapper">
+                            <label>车系:</label>
+                            <input type="text" onfocus="this.blur() " />
+                            <i ms-click="showhide"></i>
+                            <dl>
+                                <dd ms-repeat-chexi="chexi" ms-click="selectCar(chexi.chexiid)"><a href="javascript:;"><!--chexi.chexiname--></a></dd>
+                            </dl>
+                        </div>
+                    </li>
+
+                    <li class="models">
+                        <div class="wapper">
+                            <label>车型:</label>
+                            <input type="text" onfocus="this.blur() " />
+                            <i ms-click="showhide"></i>
+                            <dl>
+                                <dd ms-repeat-chexing="chexing" ms-click="selectModel(chexing.chexingid)"><a href="javascript:;"><!--chexing.chexingname--></a></dd>
+                            </dl>
+                            
+                        </div>
+                    </li>
+
+                    <li class="i-s-b">
+                        <div class="wapper">
+                            <button type="button" ms-click="search" title="点击搜索"></button>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <div class="floor">
+            <div class="hight">
+                <ul>
+                    <li class="hight-1"></li>
+                    <li class="hight-2"></li>
+                    <li class="hight-4"></li>
+                    <li class="hight-3"></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="floor">
+            <div class="loading"><img src="themes/images/index/info-1.gif" /></div>
+            <div class="info info-1">
+                <h2>全新透明比价模式</h2>
+                <p>
+                    在我们这里，采用透明比价模式，报价以一口价呈现在您面前，
+                    无须费力讨价还价即可找到满意价格。我们在行业中开创了新
+                    车车价透明化比价模式的先河，结合“汽车信用宝”双向担保
+                    体系，建立一站式新车预订平台，节约了大量的中间交易成本。
+                </p>
+                <a href="#" class="more">了解更多 &gt;&gt;</a>
+            </div>
+        </div>
+
+        <div class="floor">
+            <div class="loading"><img src="themes/images/index/info-2.gif" /></div>
+            <div class="info info-2">
+                <h2>一站式新车预定平台</h2>
+                <p>
+                    我们平台发布销售信息的车辆，均是来自正规渠道、手续合法齐全的新车，车源
+                    有保障。而且将给您的权益更多惊喜保障，助您牢牢把握购车主动权。我们更为
+                    您配备专属客服，以细心细致的专业服务，为您购车全程保驾护航。
+                </p>
+                <a href="#" class="more">了解更多 &gt;&gt;</a>
+            </div>
+        </div>
+
+        <div class="floor">
+            <div class="loading"><img src="themes/images/index/info-3.gif" /></div>
+            <div class="info info-3">
+                <h2>异地购车</h2>
+                <p>
+                    异地购车，是指消费者在本地以外区域购买汽车
+                    产品，回到本地上牌和使用的一种现象。只要所
+                    购车辆来源合法、手续齐全，购车人符合所在地
+                    上牌政策资格，就能顺利办理上牌。按照我国汽
+                    车三包条例和各汽车厂家公布的质保政策，只要
+                    通过正规渠道购买手续齐全的中规车就能享受相
+                    应的质保和维修服务。
+                </p>
+                <a href="#" class="more">了解更多 &gt;&gt;</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" ms-include-src="footer"></div>
+ 
+    <script src="./js/sea.js" ></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/index/index", "module/common/common","bt"]);
+    </script>
+
+</body>
+</html>

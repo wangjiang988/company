@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>F.C.2诚意金支付余额不足充值成功 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="step-cur">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content">
+                    <small>选择产品</small>
+                    <i></i>
+                    <small class="juhuang">付诚意金</small>
+                    <i></i>
+                    <small>售方确认</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="pay">
+        <div class="wapper has-min-step">
+              <div class="m-t-10"></div>
+              <div class="m-t-10"></div>
+              <h2 class="tac pay-s">恭喜您充值成功！</h2>
+
+              <p class="fs14 tac m-t-10">
+                <span>本次充值金额：￥499.00</span>
+                <span class="ml50">充值时间：2016-1-25    15:31:23</span>
+              </p>
+              <p class="fs14 tac" style="margin-left: -225px;">可用金额：￥499.00 <a href="#" class="juhuang tdu">（查看）</a></p>
+              <div class="m-t-10 tac">
+                <p><small><span id="time-end">9</span>秒后，页面自动跳转</small></p>
+                <p class="tac"><a href="#" class="btn btn-s-md btn-danger fs16 btn-s">立即支付诚意金</a></p>
+              </div>
+              <div class="m-t-10"></div>
+              <div class="m-t-10"></div>
+              <div class="m-t-10"></div>
+              <div class="m-t-10"></div>
+              <!--//这个程序判断后输出的value-->
+              <input type="hidden" name="redicturl" value="F.C.1余额不足充值页面.html">
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/pay/zhifu", "module/common/common", "bt"],function(){
+        var countdownandredirect = function(){
+          var _time = $("#time-end")
+          var _timelength = 9
+          var _timer = setInterval(function(){
+            if (_timelength == 0) {
+               clearInterval(_timer)
+               window.location.href = $("input[name='redicturl']").val()
+            }else{
+              _timelength--
+              _time.text(_timelength)
+            }
+          },1000)
+        }
+        countdownandredirect()
+        })
+    </script>
+
+</body>
+</html>
+

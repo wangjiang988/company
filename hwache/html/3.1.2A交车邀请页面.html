@@ -1,0 +1,1857 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>3.1.2A交车邀请页面 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li class="step-cur">预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content pdi">
+                    <small class="juhuang">开始预约</small>
+                    <i></i>
+                    <small>反馈确认</small>
+                    <i></i>
+                    <small class="">预约完毕</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi" ms-controller="item">
+
+        <div class="wapper has-min-step">
+            <h1>尊敬的客户：</h1>
+            <h1 class="ti">我们怀着无比激动的心情第一时间告诉您，您的未来座驾已准备完毕，即将接受您的检阅！<a href="#" class="juhuang tdu">选装精品</a>最后优惠，错过可能很遗憾！</h1>
+            <!--//2.离交车时限小于等于3天，显示如下-->
+            <h1 class="ti">售方已向您发出交车邀请多日，请您立即回复。如超过交车时限未回复，根据平台规则您违约将<span class="juhuang">赔偿所有买车担保金</span>。</h1>
+
+            <div class="fs14 tac ml260"  >
+                  <span class="fs14 fl mt10">剩余时间：</span>
+                  <div class="time fl mt15">
+                      <div class="jishi jishi2 wp100" id="countdown">
+                          <span>0</span>
+                          <span>0</span>
+                          <span class="fuhao">:</span>
+                          <span>0</span>
+                          <span>0</span>
+                          <span class="fuhao">:</span>
+                          <span>0</span>
+                          <span>0</span>
+                      </div>
+                  </div>
+                  <div class="clear"></div>
+            </div>
+
+
+            <!--//3.倒计时为0后，如平台客服进行过程保留订单操作，则显示如下-->
+            <div class=""  >
+            
+                <span class="fl mt10 ti">您未答复交车邀请，已超过交车时限，请立即答复！已超时：</span>
+                <div class="time fl mt15">
+                      <div class="jishi jishi2 jishi-error wp100" id="timeout">
+                          <span>0</span>
+                          <span>0</span>
+                          <span class="fuhao">:</span>
+                          <span>0</span>
+                          <span>0</span>
+                          <span class="fuhao">:</span>
+                          <span>0</span>
+                          <span>0</span>
+                      </div>
+                  </div>
+                  <div class="clear"></div>
+            </div>
+
+
+
+
+
+            <table class="nobordertbl" width="100%">
+                <tr>
+                    <td width="50%" class=" fs14">订单号：</td>
+                    <td width="50%">
+                        <div class="psr fs14">
+                          订单时间：2015年10月28日
+                          <span class="sj"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                             <b>更多</b>
+                          </span>
+                          <p class="tm tm-long" style="display: none;">
+                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                          </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+           
+            <table class="tbl c-tbl">
+                <tr>
+                    <td class="" width="50%">品牌：<span class="fn"></span></td>
+                    <td width="50%">车系：<span class="fn"></span></td>
+                </tr>
+                <tr>
+                    <td class="">车型规格:<label></label></td>
+                    <td>类别:<span class="fn">全新中规车整车（已加装精品）</span></td>
+                </tr>
+                <tr>
+                    <td class="">数量：<span class="fn"></span></td>
+                    <td>生产国别：<span class="fn"></span></td>
+                </tr>
+                <tr>
+                    <td class="">座位数：<span class="fn"></span></td>
+                    <td class="">排放标准：<span class="fn"></span></td>
+                    
+                </tr>
+                <tr>
+                    <td class="">车身颜色：<span class="fn"></span></td>
+                    <td>
+                        内饰颜色：<span class="fn"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="">行驶里程：<span class="fn"></span></td>
+                    <td>出厂年月：<span class="fn"></span></td>
+                </tr>
+                <tr>
+                    <td>车辆用途：<span class="fn"></span></td>
+                    <td>上牌地区：<span class="fn"></span></td>
+                </tr>
+                <tr>
+                    <td class="" >基本配置：<span class="fn"></span></td>
+                    <td>裸车开票价格：<span class="fn"></span></td>
+                </tr>
+               
+            </table>
+            
+            <p class="tac"><a href="#" class="tdu juhuang">查看订单总详情</a></p>
+            
+
+            <!--交车-->
+            <div class="box">
+                <div class="title">
+                    <label ms-click="toggleContent">一、交车</label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner  box-inner-def">
+                    <table width="100%">
+                        <tr>
+                            <td valign="top"> 
+                                <p><b>经销商名称： </b></p>
+                                <p><b>交车地点：</b></p>
+                                <p><b>您前往提车的方式：</b></p>
+                                <table>
+                                    <tr>
+                                        <td align="left">
+                                            <input type="hidden" name="tiCheMethod" id="tiCheMethod">
+                                            <ol>
+                                                <li ms-click="tiCheMethod" class="select-prev"><span>自己安排直接到店</span><i ></i></li>
+                                                <li ms-click="tiCheMethod" class="cur-select last-child"><span>经销商安排接机</span><i></i></li>
+                                            </ol>
+                                            
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p><b>您座驾的回程方式：</b></p>
+                                <table>
+                                    <tr>
+                                        <td align="left">
+                                            <input type="hidden" name="huichengCheMethod" id="huichengCheMethod">
+                                            <ol>
+                                                <li ms-click="tiCheMethod" class="cur-select"><span>自己开回</span><i></i></li>
+                                                <li ms-click="tiCheMethod" class="select-next last-child"><span>了解送车服务报价<i></i></span></li>
+                                            </ol>
+                                            <input type="text" class="form-control address ml200 hide" placeholder="填写送车大致地址">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td align="center" width="270">
+                                <p class="tal"><b class="tal">交车地点图示</b></p>
+                                <img  width="270" src="themes/images/item/map.gif" />
+                            </td>
+                        </tr>
+                    </table>
+                      
+                    <div class="split"></div>
+
+                    <p class="ifl fs14"><i class="yuan"></i></p>
+                    <div class="ifl">
+                        <p class="fs14 "><b class="fl">交车时限：  </b>  
+                        2016年4月15日24：00：00</p>
+                    </div>
+                    <div class="clear"></div>
+
+                    <p class="ifl fs14"><i class="yuan"></i></p>
+                    
+                    <p><b>经销商邀请您在下列可提车日期中挑选尊驾的提车吉日：</b></p>
+                    <div class="clear"></div>
+                    <table>
+                        <tr>
+                            <td align="left">
+                                <ol class="time">
+                                    <input type="hidden" value="" name="SolicitationTime" id="SolicitationTime">       
+                                    <li ms-click="SolicitationTime" class="cur-select"><i></i><span>9-30</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime" class="select-next"><i></i><span>10-1</span><span>上午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-2</span><span>下午</span></li>
+                                    <li ms-click="SolicitationTime" class="disable"><i></i><span>10-3</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-4</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-5</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime" class="disable"><i></i><span>10-6</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-7</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-8</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-9</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-10</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-11</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-12</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime"><i></i><span>10-13</span><span>上午/下午</span></li>
+                                    <li ms-click="SolicitationTime" class="last-child"><i></i><span>10-6</span><span>上午/下午</span></li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>温馨提示：交车和上牌过程中，可能遇到特殊情况当日无法完成所有手续，请您对其后的日程一并考虑。</p>
+
+                    <p class="ifl fs14"><i class="yuan"></i></p>    
+                    <div class="ifl">
+                        <p class="fs14 "><b class="fl">如以上时间都不便安排，请告知您可安排的最接近时间：  </b>
+                        <table>
+                            <tr>
+                                <td align="left" style="width:500px;padding-top: 10px;">
+                                    <div class="btn-group m-r fl"  style="width:160px;">
+                                        <div class="form-group psr">
+                                          <input style="" type="text" placeholder="2015年10月10日" 
+                                          class="form-control"  
+                                          onfocus ="WdatePicker({minDate:'2015-12-2 00:00:00',startDate:'2015-12-19 00:00:00' });" 
+                                          ms-on-click="initDP('2015-12-2 00:00:00','2015-12-19 00:00:00','2015-12-26 00:00:00')"
+                                          >
+                                          <i class="rili" ms-click=rili></i>
+                                        </div>
+                                    </div>
+                                    <div class="btn-group m-r fl bts">
+                                        <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                            <span class="dropdown-label"><span>上午/下午</span></span>
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-select">
+                                            <input type="hidden" name="d-s-r" />
+                                            <li ms-on-click="selectTime" class="active"><a><span>上午/下午</span></a></li>
+                                            <li ms-on-click="selectTime"><a><span>上午</span></a></li>
+                                            <li ms-on-click="selectTime"><a><span>下午</span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="clear"></div>
+
+                    <p><span class="xing">*</span>温馨提示：因超期提车将增加经销商额外成本，须由您作相应补偿，补偿金额由经销商和您在下一步反馈中协商确定。</p>
+                    <p><b>在尊重规则基础上，我们也倡导互谅互让，建议您向经销商说明提车延后的原因：</b></p>
+                    <p><input type="text" class="form-control w100p" placeholder="选填"></p>
+                    <p>温馨提示：交车和上牌过程中，可能遇到特殊情况当日无法完成所有手续，请您对其后的日程一并考虑。</p>
+
+                    <p class="ifl fs14"><i class="yuan"></i></p>
+                    <div class="ifl">
+                        <p class="fs14 "><b class="fl">您座驾计划上牌（注册登记）的车主名称：    </b><div class="clear"></div></p>
+                        <p class="fs14"><input type="text" class="form-control address " placeholder=""></p>
+                        <p class="fs14">温馨提示：该名称将用于进一步核对订单信息，填写以后请不要再更改以免造成误会。</p>
+                    </div>
+                    <div class="clear"></div>
+
+                    <p class="ifl fs14"><i class="yuan"></i></p>
+                    <div class="ifl" >
+                        <p class="fs14 tbl fl" style="margin-top:0;+text-align: left;width: 100%">
+                            <b class="fl">您计划委托的提款人是否与上牌名称一致：</b>
+                            <span class="cell fl">
+                                <input type="checkbox" class="radio">
+                                <label class="fn">是</label>
+                            </span>
+                            <span class="cell fl ml20">
+                                <input type="checkbox" class="radio">
+                                <label class="fn">否</label>
+                            </span>
+                            <div class="clear"></div>
+                        </p>
+                        <p class="fs14">
+                            <b class="fl">姓名：  </b><input style="margin-top:-5px" type="text" class="form-control address fl" placeholder="">
+                            <b class="fl" style="margin-left: 35px">电话：  </b><input style="margin-top:-5px" type="text" class="form-control address fl" placeholder="">
+                            <div class="clear"></div>
+
+                        </p>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+          
+            <!--车辆首年商业保险-->
+            <div class="box">
+                <div class="title">
+                    <label ms-on-click="toggleContent">二、车辆首年商业保险</label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    
+
+                    <p><b>投保约定：</b>指定投保（您已同意车辆首年商业保险在经销商处办理，现在您可以选择需要投保的险种预约投保。）</p>
+                    <p><b>为您提供保险服务的保险公司：</b>平安财产保险股份有限公司</p>
+                    <p>各险种的报价基准、推荐投保组合的参考保费明细，详见下方说明，您可在“我的投保”栏内根据需要选择：</p>
+
+                    <p><b>投保约定：</b>自由投保</p>
+                    <p><b>请选择您的投保安排：</b></p>
+                    <div class="radio i-checks">
+                        <label>
+                            <input type="radio" name="a" value="option2" checked="">
+                            在当地自主投保
+                        </label>
+                    </div>
+                    <div class="radio i-checks">
+                        <label>
+                            <input type="radio" name="a" value="option2" checked="">
+                            在经销商处投保
+                        </label>
+                    </div>
+                    
+                    <p><b>经销商推荐的保险公司为：</b>平安财产保险股份有限公司</p>
+                    <p>推荐保险公司首年商业车险各险种的报价基准、推荐投保组合的参考保费明细，详见下方说明，您可在“我的投保”栏内根据需要选择：</p>
+                    
+                    <p><b>投保约定：</b>自由投保</p>
+                    <p>您可联系当地保险公司直接投保。</p> 
+                    <table ms-controller="baoxian" class="tbl baoxian bx-self">
+                        <tr>
+                            <td class="cell" colspan="2">
+                                <b>
+                                    报价方式：
+                                </b>
+                                <input disabled ms-attr-checked="iszixuan" name="baoxian"   class="radio" type="radio"
+                                />
+                                <span>
+                                    自选保险
+                                </span>
+                                <input disabled ms-attr-checked="!iszixuan" name="baoxian" class="radio" type="radio"
+                                />
+                                <span>
+                                    推荐组合
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50" valign="top" style="padding:0">
+                                <table width="100%" height="100%" style="">
+                                    <tr>
+                                        <td style="border:0;height: 40px;border-bottom: 1px solid #dcdddd;padding: 0;margin:0;text-align: center;">
+                                            <b>
+                                                类别
+                                            </b>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:0;">
+                                            <p class="fs14">
+                                                <b>
+                                                    &nbsp;
+                                                </b>
+                                            </p>
+                                            <p class="fs14">
+                                                <b>
+                                                    &nbsp;
+                                                </b>
+                                            </p>
+                                            <p class="fs14">
+                                                <b>
+                                                    &nbsp;
+                                                </b>
+                                            </p>
+                                            <p class="fs14">
+                                                <b>
+                                                    &nbsp;
+                                                </b>
+                                            </p>
+                                            <p class="fs14">
+                                                <b>
+                                                    &nbsp;
+                                                </b>
+                                            </p>
+                                            <p class="fs14 tac">
+                                                <b>
+                                                    主
+                                                </b>
+                                            </p>
+                                            <p class="fs14">
+                                                <b>
+                                                    &nbsp;
+                                                </b>
+                                            </p>
+                                            <p class="fs14">
+                                                <b>
+                                                    &nbsp;
+                                                </b>
+                                            </p>
+                                            <p class="fs14">
+                                                <b>
+                                                    &nbsp;
+                                                </b>
+                                            </p>
+                                            <p class="fs14 tac">
+                                                <b>
+                                                    险
+                                                </b>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td class="nopadding">
+                                <table width="100%">
+                                    <tr>
+                                        <th width="160" class="">
+                                            险种
+                                        </th>
+                                        <th class="" width="400">
+                                            赔付选项
+                                        </th>
+                                        <th class="" width="140">
+                                            报价基准
+                                        </th>
+                                        <th class="norightborder">
+                                            我的投保
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell">
+                                            <input 
+                                                ms-on-click-1="changeStatus(0)" 
+                                                ms-attr-checked="baoxian.jdc_ssx.select"
+                                                type="checkbox" class="radio jdcssx"
+                                                name="baoxian[chesun]" 
+                                                value="3169.92" id="cs1" 
+                                            />
+                                            <label class="fn">
+                                                机动车损失险
+                                            </label>
+                                        </td>
+                                        <td class="">
+                                            按保险公司规定执行
+                                        </td>
+                                        <td class="">
+                                            {&baoxian.jdc_ssx.baseprice&}元
+                                            <input type="hidden" name="baoxian[chesun][pirce]" value="3522.13">
+                                            <input type="hidden" name="baoxian[chesun][discount_price]" value="3169.92">
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.jdc_ssx.select">
+                                                {&baoxian.jdc_ssx.myprice&} 
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell">
+                                            <input 
+                                                ms-on-click-1="changeStatus(1)" 
+                                                ms-attr-checked="baoxian.jdc_dqx.select"
+                                                type="checkbox"
+                                                name="baoxian[daoqiang]" 
+                                                value="3890.7" 
+                                                id="dq1" 
+                                                class="radio dqx" 
+                                            />
+                                            <label class="fn">
+                                                机动车盗抢险
+                                            </label>
+                                        </td>
+                                        <td class="">
+                                            按保险公司规定执行
+                                        </td>
+                                        <td class="">
+                                            {&baoxian.jdc_dqx.baseprice&}元
+                                            <input type="hidden" name="baoxian[daoqiang][pirce]" value="4323">
+                                            <input type="hidden" name="baoxian[daoqiang][discount_price]" value="3890.7">
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.jdc_dqx.select">
+                                                {&baoxian.jdc_dqx.myprice&} 
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell">
+                                            <input 
+                                                ms-on-click-1="changeStatus(2)" 
+                                                ms-attr-checked="baoxian.dszzrbx.select"
+                                                type="checkbox" 
+                                                class="radio zrx" 
+                                                name="baoxian[sanzhe]" 
+                                                id="sz1" 
+                                                value="1" 
+                                            />
+                                            <label class="fn">
+                                                第三者责任保险
+                                            </label>
+                                        </td>
+                                        <td class="cell" width="320">
+                                            <p>
+                                                赔付额度：
+                                            </p>
+                                            <div class="hide hfdiv">
+                                                <input type="hidden" name="" ms-attr-value="baoxian.dszzrbx.selectprice">
+                                                <!--//
+                                                    赔付额度 
+                                                    attr-checked 之defSelect 方法解析
+                                                    1.第一个参数 险种的顺序 下标从0开始 第三者责任保险 排在第三 所以下标是2
+                                                    2.第二个参数 默认值(默认额度)
+                                                    3.第三个参数 当前循环输出的值(当前额度)
+                                                    selectRadio 方法解析
+                                                    1.同defSelect第一个参数
+                                                    2.报价基准
+                                                    3.我的投保
+                                                -->
+                                            </div>
+                                            
+                                            <input 
+                                                name="baoxian[sanzhe][compensate]" 
+                                                ms-on-click-1="selectRadio(2,10,5.40)" 
+                                                ms-on-click-2="setMianpei(2,10,5.40)" 
+                                                ms-attr-checked = "defSelect(2,10,5)"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="5" 
+                                                id="szd5" 
+                                            />
+                                            <span> 
+                                                5万
+                                            </span>
+                                            <input 
+                                                name="baoxian[sanzhe][compensate]" 
+                                                ms-on-click-1="selectRadio(2,6,5)" 
+                                                ms-on-click-2="setMianpei(2,6,5.40)" 
+                                                ms-attr-checked = "defSelect(2,10,10)"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="10" 
+                                                id="szd10" 
+                                            />
+                                            <span>
+                                                10万
+                                            </span>
+                                            <input 
+                                                name="baoxian[sanzhe][compensate]" 
+                                                ms-on-click-1="selectRadio(2,13,12.40)" 
+                                                ms-on-click-2="setMianpei(2,13,12.40)" 
+                                                ms-attr-checked = "defSelect(2,10,15)"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="15" 
+                                                id="szd15" 
+                                            />
+                                            <span>
+                                                15万
+                                            </span>
+                                            <input 
+                                                name="baoxian[sanzhe][compensate]" 
+                                                ms-on-click-1="selectRadio(2,18,17)" 
+                                                ms-on-click-2="setMianpei(2,18,12.40)" 
+                                                ms-attr-checked = "defSelect(2,10,20)"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="20" 
+                                                id="szd20" 
+                                            />
+                                            <span>
+                                                20万
+                                            </span>
+                                            <input 
+                                                name="baoxian[sanzhe][compensate]" 
+                                                ms-on-click-1="selectRadio(2,22,25)" 
+                                                ms-on-click-2="setMianpei(2,20,15.40)" 
+                                                ms-attr-checked = "defSelect(2,10,30)"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="30" 
+                                                id="szd30" 
+                                            />
+                                            <span>
+                                                30万
+                                            </span>
+                                            <input 
+                                                name="baoxian[sanzhe][compensate]" 
+                                                ms-on-click-1="selectRadio(2,45,40)" 
+                                                ms-on-click-2="setMianpei(2,45,35.40)" 
+                                                ms-attr-checked = "defSelect(2,10,50)"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="50" 
+                                                id="szd50" 
+                                            />
+                                            <span>
+                                                50万
+                                            </span>
+                                            <input 
+                                                name="baoxian[sanzhe][compensate]" 
+                                                ms-on-click-1="selectRadio(2,98,86)" 
+                                                ms-on-click-2="setMianpei(2,89,65.40)" 
+                                                ms-attr-checked = "defSelect(2,10,100)"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="100" 
+                                                id="szd100" 
+                                            />
+                                            <span>
+                                                100万
+                                            </span>
+                                        </td>
+                                        <td class="">
+                                            <p ms-if="!baoxian.dszzrbx.select">
+                                                选择左侧赔付额度
+                                            </p>
+                                            <span ms-if="baoxian.dszzrbx.select">
+                                                {&baoxian.dszzrbx.baseprice&}
+                                            </span>
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.dszzrbx.select">
+                                                {&baoxian.dszzrbx.myprice&} 
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell nobottomborder">
+                                            <input 
+                                                ms-on-click-1="changeStatusMuli(3)" 
+                                                ms-attr-checked="baoxian.csryzrx.select"
+                                                type="checkbox" 
+                                                class="radio cszrx" 
+                                                name="baoxian[renyuan]"
+                                                value="1"  
+                                                id="ry1" 
+                                            />
+                                            <label class="fn">
+                                                车上人员责任险
+                                            </label>
+                                        </td>
+                                        <td class="cell nopadding nobottomborder" width="320">
+                                            <div>
+                                                <p class="first-p">
+                                                    驾驶人每次事故责任限额：
+                                                </p>
+                                                <div class="r-box">
+                                                    <div class="hide hfdiv">
+                                                        <input type="hidden" name=""  ms-attr-value="baoxian.csryzrx.listselect.item[0].selectprice">
+                                                        <!--//
+                                                        驾驶人每次事故责任限额 selectRadioMuli 参数详解
+                                                        1.险种index
+                                                        2.事故责任限额index
+                                                        3.[]中依次是 select,报价基准,我的投保,事故责任限额默认值,当前循环的事故责任限额
+                                                        -->
+                                                    </div>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,0,[true,270.00,270.00,2,1])"
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,1)"
+                                                        name="baoxian[renyuan][sj][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="270.00" 
+                                                        id="rysj1" 
+                                                    />
+                                                    <span>
+                                                        1万
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,0,[true,720.00,720.00,2,2])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,2)"
+                                                        name="baoxian[renyuan][sj][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="720.00" 
+                                                        id="rysj2" 
+                                                    />
+                                                    <span>
+                                                        2万
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,0,[true,1350.00,1350.00,2,3])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,3)"
+                                                        name="baoxian[renyuan][sj][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="1350.00" 
+                                                        id="rysj3" 
+                                                    />
+                                                    <span>
+                                                        3万
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,0,[true,2160.00,2160.00,2,4])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,4)"
+                                                        name="baoxian[renyuan][sj][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="2160.00" 
+                                                        id="rysj4" 
+                                                    />
+                                                    <span>
+                                                        4万
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,0,[true,3150.00,3150.00,2,5])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,5)"
+                                                        name="baoxian[renyuan][sj][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="3150.00" 
+                                                        id="rysj5" 
+                                                    />
+                                                    <span>
+                                                        5万
+                                                    </span>
+                                                </div>
+                                                <h5 class="fenge">
+                                                    乘客每次事故每人责任限额：
+                                                </h5>
+                                                <div class="r-box">
+                                                    <div class="hide hfdiv">
+                                                        <input type="hidden" name="" ms-attr-value="baoxian.csryzrx.listselect.item[1].selectprice">
+                                                    </div>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,1,[true,720.00,720.00,2,1])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,1)"
+                                                        name="baoxian[renyuan][ck][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="720.00" 
+                                                        id="ryck1" 
+                                                    />
+                                                    <span>
+                                                        1万
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,1,[true,1620.00,1620.00,2,2])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,2)"
+                                                        name="baoxian[renyuan][ck][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="1620.00" 
+                                                        id="ryck2" 
+                                                    />
+                                                    <span>
+                                                        2万
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,1,[true,270.00,270.00,2,3])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,3)"
+                                                        name="baoxian[renyuan][ck][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="270.00" 
+                                                        id="ryck3" 
+                                                    />
+                                                    <span>
+                                                        3万
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,1,[true,720.00,720.00,2,4])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,4)"
+                                                        name="baoxian[renyuan][ck][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="720.00" 
+                                                        id="ryck4" 
+                                                    />
+                                                    <span>
+                                                        4万
+                                                    </span>
+                                                    <input  
+                                                        ms-on-click-1="selectRadioMuli(3,1,[true,1350.00,1350.00,2,5])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,5)"
+                                                        name="baoxian[renyuan][ck][compensate]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="1350.00" 
+                                                        id="ryck5" 
+                                                    />
+                                                    <span>
+                                                        5万
+                                                    </span>
+                                                </div>
+                                                <h5 class="fenge" style="border-top:0">
+                                                    乘客座位数：
+                                                </h5>
+                                                <div class="r-box">
+                                                    <div class="hide hfdiv">
+                                                        <input type="hidden" name="" ms-attr-value="baoxian.csryzrx.listselect.item[2].selectprice">
+                                                    </div>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,2,[true,1.00,1.00,2,1])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,1)"
+                                                        data-bind="1" 
+                                                        name="baoxian[renyuan][seat]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="1" 
+                                                        id="seat1" 
+                                                    />
+                                                    <span>
+                                                        1座
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,2,[true,2.00,2.00,2,2])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,2)"
+                                                        name="baoxian[renyuan][seat]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="2" 
+                                                        id="seat2" 
+                                                    />
+                                                    <span>
+                                                        2座
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,2,[true,3.00,3.00,2,3])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,3)"
+                                                        name="baoxian[renyuan][seat]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="3" 
+                                                        id="seat3" 
+                                                    />
+                                                    <span>
+                                                        3座
+                                                    </span>
+                                                    <input 
+                                                        ms-on-click-1="selectRadioMuli(3,2,[true,4.00,4.00,2,4])" 
+                                                        ms-on-click-2="sumCSRYmianpei"
+                                                        ms-attr-checked = "defSelect(3,2,4)"
+                                                        name="baoxian[renyuan][seat]"
+                                                        class="radio" 
+                                                        type="radio" 
+                                                        value="4" 
+                                                        id="seat4"
+                                                     />
+                                                    <span>
+                                                        4座
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="nobottomborder nopadding" width="130" align="center">
+                                            <table class="tbl2 " width="100%" style="height: 181px;">
+                                                <tr style="height: 62px;">
+                                                    <td class="norightborder">
+                                                        <p ms-if="!baoxian.csryzrx.select">
+                                                            选择左侧赔付额度
+                                                        </p>
+                                                        <span ms-if="baoxian.csryzrx.select">
+                                                            {&baoxian.csryzrx.listselect.item[0].baseprice&}
+                                                        </span> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="norightborder nobottomborder">
+                                                        <p ms-if="!baoxian.csryzrx.select">
+                                                            选择左侧赔付额度
+                                                        </p>
+                                                        <span ms-if="baoxian.csryzrx.select">
+                                                            {&baoxian.csryzrx.listselect.item[1].baseprice&}
+                                                        </span> 
+                                                        <span ms-if="baoxian.csryzrx.select">
+                                                        /
+                                                        </span>
+                                                        <span ms-if="baoxian.csryzrx.select">
+                                                            {&baoxian.csryzrx.listselect.item[2].baseprice&}
+                                                        </span> 
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="norightborder nopadding nobottomborder">
+                                            <table class="tbl2 " width="100%" style="height: 181px;">
+                                                <tr style="height: 62px;">
+                                                    <td class="norightborder cts tongji">
+                                                        <span ms-if="baoxian.csryzrx.select">
+                                                            {&baoxian.csryzrx.listselect.item[0].myprice&}
+                                                        </span> 
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="norightborder nobottomborder cts tongji">
+                                                        <span ms-if="baoxian.csryzrx.select">
+                                                            {&baoxian.csryzrx.listselect.item[1].baseprice*baoxian.csryzrx.listselect.item[2].baseprice&}
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" class="" align="center">
+                                <p class="fs14">
+                                    <b>
+                                        附
+                                    </b>
+                                </p>
+                                <p class="fs14">
+                                    <b>
+                                        加
+                                    </b>
+                                </p>
+                                <p class="fs14">
+                                    <b>
+                                        险
+                                    </b>
+                                </p>
+                            </td>
+                            <td class="nopadding ">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="cell " width="160">
+                                            <input 
+                                                ms-on-click-1="changeStatus(4)" 
+                                                ms-attr-checked="baoxian.blddpxx.select"
+                                                type="checkbox" 
+                                                class="radio"  
+                                                name="baoxian[boli]" 
+                                                value="1" 
+                                                id="bl1" 
+                                            />
+                                            <label class="fn">
+                                                玻璃单独破碎险
+                                            </label>
+                                        </td>
+                                        <td class="cell" width="400">
+                                            <div class="hide hfdiv">
+                                                <input type="hidden" name="" ms-attr-value="baoxian.blddpxx.selectprice">
+                                            </div>
+                                            <input 
+                                                value="进口玻璃" 
+                                                ms-on-click-1="selectRadio(4,4320,3888)" 
+                                                ms-attr-checked = "defSelect(4,'进口玻璃','进口玻璃')"
+                                                class="radio" 
+                                                type="radio"
+                                                name="baoxian[boli][$value['state']]" 
+                                                id="bldjk" 
+                                            
+                                            />
+                                            <span>
+                                                进口玻璃
+                                            </span>
+                                            <input 
+                                                value="国产玻璃" 
+                                                ms-on-click-1="selectRadio(4,4860.00,4860.00)" 
+                                                ms-attr-checked = "defSelect(4,'进口玻璃','国产玻璃')"
+                                                class="radio" 
+                                                type="radio"
+                                                name="baoxian[boli][$value['state']]" 
+                                                id="bldgc" 
+                                            />
+                                            <span>
+                                                国产玻璃
+                                            </span>
+                                        </td>
+                                        <td class="" width="140">
+                                            <p ms-if="!baoxian.blddpxx.select">
+                                                选择左侧赔付额度
+                                            </p>
+                                            <span ms-if="baoxian.blddpxx.select">
+                                                {&baoxian.blddpxx.baseprice&}
+                                            </span>
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.blddpxx.select">
+                                                {&baoxian.blddpxx.myprice&} 
+                                            </span>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell">
+                                            <input 
+                                                ms-on-click-1="changeStatus(5)" 
+                                                ms-attr-checked="baoxian.qchhssx.select"
+                                                type="checkbox" 
+                                                class="radio chx" 
+                                                name="baoxian[huahen]" 
+                                                id="hh1" 
+                                                value="1" 
+                                            />
+                                            <label class="fn">
+                                                车身划痕损失险
+                                            </label>
+                                        </td>
+                                        <td class="cell" width="320">
+                                            <div class="hide hfdiv">
+                                                <input type="hidden" name="" ms-attr-value="baoxian.qchhssx.selectprice">
+                                            </div>
+                                            <p>
+                                                赔付额度：
+                                            </p>
+                                            <input 
+                                                ms-on-click-1="selectRadio(5,60,55)" 
+                                                ms-on-click-2="setMianpei(5,35,12)" 
+                                                ms-attr-checked = "defSelect(5,10000,2000)" 
+                                                name="baoxian[huahen][compensate]"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="2000" 
+                                                id="hhd2000" 
+                                            />
+                                            <span>
+                                                2000
+                                            </span>
+                                            <input 
+                                                ms-on-click-1="selectRadio(5,80,72)" 
+                                                ms-on-click-2="setMianpei(5,74,68)" 
+                                                ms-attr-checked = "defSelect(5,10000,5000)" 
+                                                name="baoxian[huahen][compensate]"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="5000" 
+                                                id="hhd5000" 
+                                            />
+                                            <span>
+                                                5000
+                                            </span>
+                                            <input 
+                                                ms-on-click-1="selectRadio(5,150,120)" 
+                                                ms-on-click-2="setMianpei(5,99,88)" 
+                                                ms-attr-checked = "defSelect(5,10000,10000)" 
+                                                name="baoxian[huahen][compensate]"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="10000" 
+                                                id="hhd10000" 
+                                            />
+                                            <span>
+                                                10000
+                                            </span>
+                                            <input 
+                                                ms-on-click-1="selectRadio(5,200,185)" 
+                                                ms-on-click-2="setMianpei(5,189,168)" 
+                                                ms-attr-checked = "defSelect(5,10000,20000)" 
+                                                name="baoxian[huahen][compensate]"
+                                                class="radio" 
+                                                type="radio" 
+                                                value="20000" 
+                                                id="hhd20000" 
+                                            />
+                                            <span>
+                                                20000
+                                            </span>
+                                        </td>
+                                        <td class="">
+                                            <p ms-if="!baoxian.qchhssx.select">
+                                                选择左侧赔付额度
+                                            </p>
+                                            <span ms-if="baoxian.qchhssx.select">
+                                                {&baoxian.qchhssx.baseprice&}
+                                            </span>
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.qchhssx.select">
+                                                {&baoxian.qchhssx.myprice&} 
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell">
+                                            <div class="psr">
+                                                <input for="jdcssx" 
+                                                    ms-on-click="mianpeiSelect(0,[105.67,95.99])"  
+                                                    ms-attr-checked="baoxian.jdc_ssx.select" 
+                                                    ms-attr-disabled="!baoxian.jdc_ssx.select" 
+                                                    type="checkbox" 
+                                                    class="radio fjx"
+                                                    name="baoxian[bjm_chesun]" 
+                                                    value="95.09" id="bjmcs" 
+                                                />
+                                                <label class="fn ">
+                                                    <span>
+                                                        不计免赔特约险
+                                                    </span>
+                                                    <span class="pdi-tip" ms-if="!baoxian.jdc_ssx.select">
+                                                        <span class="psr">
+                                                            请先选择机动车损失险赔付额度
+                                                            <i>
+                                                            </i>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="cell" width="320">
+                                            <span>
+                                                机动车损失险，按保险公司规定执行。
+                                            </span>
+                                        </td>
+                                        <td class="">
+                                            {&baoxian.bjm_jdcssx.baseprice&}元
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.bjm_jdcssx.select && baoxian.jdc_ssx.select">
+                                                {&baoxian.bjm_jdcssx.myprice&}
+                                            </span>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell">
+                                            <div class="psr">
+                                                <input for="dqx" 
+                                                    ms-on-click="mianpeiSelect(1,[86.46,77.81])"  
+                                                    ms-attr-checked="baoxian.jdc_dqx.select" 
+                                                    ms-attr-disabled="!baoxian.jdc_dqx.select"
+                                                    type="checkbox" 
+                                                    class="radio fjx"
+                                                    name="baoxian[bjm_daoqiang]" 
+                                                    value="77.81" 
+                                                    id="bjmdq" 
+                                                />
+                                                <label class="fn ">
+                                                    <span>
+                                                        不计免赔特约险
+                                                    </span>
+                                                    <span class="pdi-tip" ms-if="!baoxian.jdc_dqx.select">
+                                                        <span class="psr">
+                                                            请先选择机动车盗抢险赔付额度
+                                                            <i>
+                                                            </i>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="cell" width="320">
+                                            <span>
+                                                机动车盗抢险，按保险公司规定执行。
+                                            </span>
+                                        </td>
+                                        <td class="">
+                                            {&baoxian.bjm_jdcdqx.baseprice&}元
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.bjm_jdcdqx.select && baoxian.jdc_dqx.select">
+                                                {&baoxian.bjm_jdcdqx.myprice&}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell">
+                                            <div class="psr">
+                                                <input for="zrx" 
+                                                    ms-on-click="mianpeiSelect(2,[12.56,9.98])"  
+                                                    ms-attr-checked="baoxian.dszzrbx.select" 
+                                                    ms-attr-disabled="!baoxian.dszzrbx.select" 
+                                                    type="checkbox" 
+                                                    class="radio fjx"
+                                                    name="baoxian[bjm_sanzhe]" 
+                                                    value="" id="bjmsz" 
+                                                />
+                                                <label class="fn ">
+                                                    <span>
+                                                        不计免赔特约险
+                                                    </span>
+                                                    <span class="pdi-tip"  ms-if="!baoxian.dszzrbx.select">
+                                                        <span class="psr">
+                                                            请先选择第三者责任险赔付额度
+                                                            <i>
+                                                            </i>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="cell" width="320">
+                                            <span>
+                                                第三者责任险，按保险公司规定执行。
+                                            </span>
+                                        </td>
+                                        <td class="">
+                                            {&baoxian.bjm_dszzrx.baseprice&}元
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.bjm_dszzrx.select && baoxian.dszzrbx.select">
+                                                {&baoxian.bjm_dszzrx.myprice&}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell">
+                                            <div class="psr">
+                                                <input for="cszrx" 
+                                                    ms-on-click="mianpeiSelect(3,[123.56,98.98])"  
+                                                    ms-attr-checked="baoxian.csryzrx.select" 
+                                                    ms-attr-disabled="!baoxian.csryzrx.select" 
+                                                    type="checkbox" 
+                                                    class="radio fjx"
+                                                    name="baoxian[bjm_renyuan]" 
+                                                    value="" 
+                                                    id="bjmry" 
+                                                />
+                                                <label class="fn ">
+                                                    <span>
+                                                        不计免赔特约险
+                                                    </span>
+                                                    <span class="pdi-tip pdi-cszrx"  ms-if="!baoxian.csryzrx.select">
+                                                        <span class="psr">
+                                                            请先选择车上人员责任险责任限额和座位数
+                                                            <i>
+                                                            </i>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="cell" width="320">
+                                            <span>
+                                                车上人员责任险，按保险公司规定执行。
+                                            </span>
+                                        </td>
+                                        <td class="">
+                                            {&baoxian.bjm_csrxzrx.baseprice&}元
+                                        </td>
+                                        <td class="norightborder tongji">
+                                            <span ms-if="baoxian.bjm_csrxzrx.select && baoxian.csryzrx.select">
+                                                {&baoxian.bjm_csrxzrx.myprice&}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell nobottomborder">
+                                            <div class="psr">
+                                                <input for="chx" 
+                                                    ms-on-click="mianpeiSelect(4,[0.78,0.65])" 
+                                                    ms-attr-checked="baoxian.qchhssx.select" 
+                                                    ms-attr-disabled="!baoxian.qchhssx.select" 
+                                                    type="checkbox" 
+                                                    class="radio fjx"
+                                                    name="baoxian[bjm_huahen]" 
+                                                    value="" 
+                                                    id="bjmhh" 
+                                                />
+                                                <label class="fn ">
+                                                    <span>
+                                                        不计免赔特约险
+                                                    </span>
+                                                    <span class="pdi-tip pdi-chx" ms-if="!baoxian.qchhssx.select">
+                                                        <span class="psr">
+                                                            请先选择车身划痕损失险赔付额度
+                                                            <i>
+                                                            </i>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td class="cell nobottomborder" width="320">
+                                            <span>
+                                                车身划痕损失险，按保险公司规定执行。
+                                            </span>
+                                        </td>
+                                        <td class=" nobottomborder">
+                                            {&baoxian.bjm_cshhssx.baseprice&}元
+                                        </td>
+                                        <td class="norightborder nobottomborder tongji">
+                                            <span ms-if="baoxian.bjm_cshhssx.select && baoxian.qchhssx.select">
+                                                {&baoxian.bjm_cshhssx.myprice&}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tfoot>
+                            <tr>
+                                <td class="" colspan="2" align="center" valign="middle">
+                                    <h4>
+                                        已选投保组合总价：人民币
+                                        <span class="juhuang">
+                                            {&totalprice&}
+                                        </span>
+                                        元
+                                    </h4>
+                                    <p>
+                                        <a href="javascript:;" data-grounp="照推荐组合投保" class="btn btn-s-md btn-danger">
+                                            确定
+                                        </a>
+                                        <a href="javascript:;" data-grounp="照推荐组合投保" class="btn btn-s-md btn-danger">
+                                            撤销
+                                        </a>
+                                        <a href="javascript:;" data-grounp="照推荐组合投保" class="btn btn-s-md btn-danger sure">
+                                            已确定
+                                        </a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                     
+                   
+                    <p><b>支付方式:</b>在经销商处支付</p>
+                    <p><b>您需要配合提供的文件资料::</b></p>
+                </div>
+            </div>
+
+            <!--上牌-->
+            <div class="box">
+                <div class="title">
+                    <label ms-on-click="toggleContent">三、上牌</label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <p>
+                        说明：指经销商为购车方代办机动车注册登记手续的服务，仅按车管所相关规则办理，不对牌号结果负责，也不含在某些限牌地区通过摇号、
+                    </p>
+                    <p><b>上牌人身份类别：</b>国内其他限牌城市户籍居民（北京）</p>
+                    <p><b>限牌城市（XX）客户取得牌照指标的安排：</b></p>
+                    <table class="tbl">
+                        <tr>
+                            <td width="50%"><p class="fs14"><b>上牌服务约定：</b>指定上牌（接受安排)</p></td>
+                            <td width="50%"><p class="fs14"><b>是否由经销商代办上牌：</b>是</p></td>
+                        </tr>
+                        <tr>
+                            <td width="50%"><p class="fs14"><b>上牌服务费约定：</b>（不高于）人民币2,000.00元</p></td>
+                            <td width="50%"><p class="fs14"><b>上牌服务费金额：</b>人民币1,900.00元</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>支付方式：</b>在经销商处支付</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>您需要配合提供的文件资料：</b></p></td>
+                        </tr>
+                    </table>
+
+                    <table class="tbl">
+                        <tr>
+                            <td width="50%"><p class="fs14"><b>上牌服务约定：</b>本人上牌（接受安排）</p></td>
+                            <td width="50%"><p class="fs14"><b>是否由经销商代办上牌：</b>否</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>客户本人上牌违约金约定：</b></p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>支付方式：</b>根据本车注册登记信息核实，如您违约将从买车担保金中扣除此金额。</p></td>
+                        </tr>
+                    </table>
+                    <p><small>再次温馨提示：因各地政策差异，请务必咨询当地车辆管理部门上牌所需的资料。在下方有经销商交车时将移交给您的详细文件资料，请仔细核对，如有不明请提出，避免出现提车后无法上牌的困境。</small></p>
+                    
+                    <p><b>上牌服务约定：</b>自选上牌</p>
+                    <p><b>请选择是否由经销商代办上牌：</b></p>
+                    <p>
+                        <label class="fn"><input checked="" ms-on-click="shangpai" type="radio" name="shangpai" /><span class="fn">否，本人亲自办理</span></label>
+                        <label class="fn"><input ms-on-click="shangpai" type="radio" name="shangpai" class="ml20" /><span class="fn">是，委托经销商代办</span></label>
+                    </p>
+                    <table class="tbl sp"> 
+                        <tr>
+                            <td><p class="fs14"><b>客户本人上牌违约金约定：</b></p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="fs14"><b>支付方式：</b>根据本车注册登记信息核实，如您违约将从买车担保金中扣除此金额。</p></td>
+                        </tr>
+                    </table>
+
+                    <table class="tbl sp" style="display: none;">
+                        <tr>
+                            <td width="50%"><p class="fs14"><b>上牌服务费约定：</b>（不高于）人民币2,000.00元</p></td>
+                            <td width="50%"><p class="fs14"><b>上牌服务费金额：</b>人民币1,900.00元</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>支付方式：</b>在经销商处支付</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>您需要配合提供的文件资料：</b></p></td>
+                        </tr>
+                    </table>
+
+                   
+                </div>
+            </div>
+
+            <!--上临时牌照-->
+            <div class="box">
+                <div class="title">
+                    <label ms-on-click="toggleContent">四、上临时牌照</label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <p class="fs14">说明：仅指办理车辆临时移动牌照，而非机动车注册登记。根据《中华人民共和国交通安全法》，在没有取得正式牌照之前，必须按规定申领车辆临时移动牌照方能上路行驶。为避免上路风险，建议依法办理。</p>
+                    <table class="tbl sp" >
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>上临时牌照约定：</b>指定服务（由您本人亲自上牌的，则须先委托经销商代办临时移动牌照）</p></td>
+                        </tr>
+                        <tr>
+                            <td width="50%"><p class="fs14"><b>上临时牌照（每次）服务费约定：</b>（不高于）人民币1,000.00元</p></td>
+                            <td width="50%"><p class="fs14"><b>上临时牌照（每次）服务费金额：</b>人民币1,900.00元</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>支付方式：</b>在经销商处支付</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>您需要配合提供的文件资料：</b></p></td>
+                        </tr>
+                    </table>
+
+
+                    <p><b>上临时牌照约定：</b>指定服务（上牌服务由经销商代办，您可选择再办理一张临时移动牌照以避免上路风险）</p> 
+                    <p><b>请选择是否由经销商代办车辆临时牌照：</b></p>
+                    <p>
+                        <label class="fn"><input checked=""  type="radio" name="shanglspai" /><span class="fn">否，本人亲自办理临时牌照，上路风险本人承担</span></label>
+                        <label class="fn"><input  type="radio" name="shanglspai" class="ml20" /><span class="fn">是，委托经销商代办</span></label>
+                    </p>
+                    <table class="tbl sp" >
+                        <tr>
+                            <td width="50%"><p class="fs14"><b>上临时牌照（每次）服务费约定：</b>（不高于）人民币2,000.00元</p></td>
+                            <td width="50%"><p class="fs14"><b>上临时牌照（每次）服务费金额：</b>人民币1,900.00元</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>支付方式：</b>在经销商处支付</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>您需要配合提供的文件资料：</b></p></td>
+                        </tr>
+                    </table>
+
+                    <p><b>上临时牌照约定：</b>自选服务</p>
+                    <p><b>请选择是否由经销商代办车辆临时牌照：</b></p>
+                    <p>
+                        <label class="fn"><input checked=""  type="radio" name="shanglspai2" /><span class="fn">否，本人亲自办理临时牌照，上路风险本人承担</span></label>
+                        <label class="fn"><input  type="radio" name="shanglspai2" class="ml20" /><span class="fn">是，委托经销商代办</span></label>
+                    </p>
+                    <table class="tbl sp" >
+                        <tr>
+                            <td width="50%"><p class="fs14"><b>上临时牌照（每次）服务费约定：</b>（不高于）人民币2,000.00元</p></td>
+                            <td width="50%"><p class="fs14"><b>上临时牌照（每次）服务费金额：</b>人民币1,900.00元</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>支付方式：</b>在经销商处支付</p></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><p class="fs14"><b>您需要配合提供的文件资料：</b></p></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+           
+            <!--补贴-->
+            <div class="box">
+                <div class="title">
+                    <label ms-on-click="toggleContent">五、补贴</label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <td class="prev-title " style="width: 190px;" ><p class="fs14">补贴名称</p></td>
+                                <td><p class="fs14"><b>国家节能补贴</b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">补贴说明</p></td>
+                                <td>
+                                    <p class="fs14">在政策有效期内，国家对符合“节能产品惠民工程”节能汽车标准条件车型给予的一次性定额补贴。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">金额</p> </td>
+                                <td>
+                                    <p class="fs14"> </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">您需要配合提供的文件资料</p> </td>
+                                <td>
+                                    <p class="fs14">消费者身份证复印件 车辆行驶证复印件 机动车统一销售发票复印件 填写《节能汽车财政补助确认书》其它  </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">该经销商办理国家</p><p class="fs14">节能补贴流程与时限</p></td>
+                                <td>
+                                    <p class="fs14">1.交车时当场兑现，由经销商垫付，消费者上牌后补充所缺资料给经销商。</p>
+                                    <p class="fs14">2.上牌资料齐全后，由经销商立即垫付给消费者<input type="text" name="counts" class="baoxianinput shot juhuang">个工作日内。</p>
+                                    <p class="fs14">3.交车后，经销商将所有资料交给汽车厂商，厂商直接付给消费者，或者厂商付经销商再由经销商付消费者<input type="text" name="counts" class="baoxianinput shot juhuang">个月内	</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="tar">
+                        <p>
+                            <input type="checkbox" name="" id=""><label class="fn" for="">我同意按此流程办理</label>
+                            <input type="checkbox" name="" id="" class="ml20" style="margin-left:20px!important"><label class="fn" for="">不办了</label>
+                        </p>
+                    </div>
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">补贴名称</p></td>
+                                <td><p class="fs14"><b>地方政府置换补贴  </b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">补贴说明</p></td>
+                                <td>
+                                    <p class="fs14">该上牌地区的政府对旧车置换新车提供的补贴。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">经销商是否提供协助</p></td>
+                                <td>
+                                    <p class="fs14">是</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>温馨提示：经销商并不负责办理该补贴，仅对您向有关部门申请该补贴提供力所能及的协助。如经销商属异地，所提供的协助可能存在不被上牌</p>
+                    <p>地区当地政府所认可的风险，具体申请政策和手续请向当地政府相关部门咨询。</p>
+                    <div class="tar">
+                        <p>
+                            <input type="checkbox" name="" id=""><label class="fn" for="">我需要协助</label>
+                            <input type="checkbox" name="" id="" class="ml20" style="margin-left:20px!important"><label class="fn" for="">不办了</label>
+                        </p>
+                    </div>
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">补贴名称</p></td>
+                                <td><p class="fs14"><b>厂家或经销商置换补贴    </b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title"><p class="fs14">补贴说明</p></td>
+                                <td>
+                                    <p class="fs14">该品牌的厂家或经销商为消费者旧车置换新车提供的补贴。。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>温馨提示：由于可能涉及旧车估价等不确定因素，您需要在提车之前与经销商另行商定补贴金额。此处仅提供有无补贴的信息，并不具有合同强</p>
+                    <p>制效力。</p>
+                    <div class="tar">
+                        <p>
+                            <input type="checkbox" name="" id=""><label class="fn" for="">我知道了</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+      
+
+            <!--您的特别要求-->
+            <div class="box"  ms-controller="baoxian">
+                <div class="title">
+                    <label ms-on-click="toggleContent">六、您的特别要求</label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def tbl" style="line-height: 30px;+line-height: normal;">
+
+                    <p class="ifl fs14"><i class="yuan"></i></p>
+                    <div class="ifl wp90" >
+                        <p class="fs14 tbl fl ">
+                            <b>给您和尊驾更全面的保护，以下车辆商业保险附加项目可向经销商询价（可多选）</b>
+                        </p>
+                        <div class="clear"></div>
+
+                        <ul class="bxlist">
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.jdc_ssx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>1.自燃损失险（是否加不计免赔：</dt>
+                                    <dd>
+                                        <label><input ms-attr-disabled="!baoxian.jdc_ssx.select" type="radio" name="isziran" ><span>是</span></label>
+                                        <label><input ms-attr-disabled="!baoxian.jdc_ssx.select" type="radio" name="isziran" ><span>否</span></label>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dt>)</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.jdc_ssx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>2.新增加设备损失险</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+                            
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.jdc_ssx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>3.发动机涉水损失险（是否加不计免赔：</dt>
+                                    <dd>
+                                        <label><input ms-attr-disabled="!baoxian.jdc_ssx.select"  type="radio" name="sheshui" ><span>是</span></label>
+                                        <label><input ms-attr-disabled="!baoxian.jdc_ssx.select"  type="radio" name="sheshui" ><span>否</span></label>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dt>)</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.jdc_ssx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>4.修理期间费用补偿险（是否加不计免赔：</dt>
+                                    <dd>
+                                        <label><input ms-attr-disabled="!baoxian.jdc_ssx.select"  type="radio" name="buchang" ><span>是</span></label>
+                                        <label><input ms-attr-disabled="!baoxian.jdc_ssx.select"  type="radio" name="buchang" ><span>否</span></label>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dt>)</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.jdc_ssx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>5.车上货物责任险（是否加不计免赔：</dt>
+                                    <dd>
+                                        <label><input ms-attr-disabled="!baoxian.jdc_ssx.select"  type="radio" name="cheshangxian" ><span>是</span></label>
+                                        <label><input ms-attr-disabled="!baoxian.jdc_ssx.select"  type="radio" name="cheshangxian" ><span>否</span></label>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dt>)</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.jdc_ssx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>6.机动车损失险无法找到第三方特约险</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.jdc_ssx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>7.指定修理厂险</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.dszzrbx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>8.精神损害抚慰金责任险（是否加不计免赔：</dt>
+                                    <dd>
+                                        <label><input ms-attr-disabled="!baoxian.dszzrbx.select"  type="radio" name="jingsheng" ><span>是</span></label>
+                                        <label><input ms-attr-disabled="!baoxian.dszzrbx.select"  type="radio" name="jingsheng" ><span>否</span></label>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dt>)</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.dszzrbx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>9.增加第三者责任险保额</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <p>
+                                    <input 
+                                        ms-attr-disabled="!baoxian.dszzrbx.select" 
+                                        type="checkbox" 
+                                        class="radio" 
+                                    />
+                                </p>
+                                <dl>
+                                    <dt>10.增加车上人员责任险保额</dt>
+                                    <div class="clear"></div>
+                                </dl>
+                                <div class="clear"></div>
+                            </li>
+
+
+                            <div class="clear"></div>
+                        </ul> 
+                        
+                    </div>
+                    <div class="clear"></div>
+                    <p class="ml20">说明：附加险1、2、3、4、5、6、7的投保前提为已投机动车损失险；8、9、10的投保前提是已投第三者责任险或车上人员责任险。</p>
+                    <p class="ifl fs14"><i class="yuan"></i></p>
+                    <div class="ifl wp90" >
+                        <p><b>您的其他要求</b>（可输入不超过100个字）</p>
+                    </div>
+                    <div class="clear"></div>
+                    <input type="text" class="form-control w100p yaoqiu ml20" placeholder="选填" />
+                    <p class="ml20">温馨提示：经销商将在预约交车反馈中详细回答，尽量满足您的要求。您须同意 : <b>经销商的反馈结果不对本订单其他约定内容的执行产生影响</b>。</p>
+                    <p class="center btn-fl btn-save">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">保存</a>
+                        <a href="javascript:;" data-grounp="照推荐组合投保" class="btn btn-s-md btn-danger btn-tj">提交</a>
+                    </p>
+                    <p class="cell center m-t-10"><input type="checkbox" class="radio"><label class="fn">我已阅读并同意上述通知内容</label></p>
+                 
+                </div>
+            </div> 
+
+        
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config-1.5.5.js"></script>
+    
+    <script type="text/javascript">
+        
+        var zuhe=['cs1','dq1','sz1','szd50','ry1','rysj1','bl1','hh1','bjmcs','bjmdq','bjmsz','bjmry','bjmhh','bldjk','hhd20000','ryck1','seat4'];
+        var zuhe2=['cs1','dq1','sz1','szd50','ry1','rysj1','bl1','hh1','bjmcs','bjmdq','bjmsz','bjmry','bjmhh','bldjk','hhd20000','ryck1','seat4'];
+        seajs.use(["module/item/item-pdi-fix", "module/item/item-baoxian", "module/common/common", "bt"],function(a,b,c,d){
+            $("#countdown").CountDown({
+              startTime:'2016-3-14 16:14:35',
+              endTime :'2016-3-17 13:29:25',
+              timekeeping:'countdown'
+            })
+            $("#timeout").CountDown({
+                startTime:'2016-3-14 16:14:35',
+                endTime :'2016-3-12 16:29:25',
+                timekeeping:'timeout'
+            })
+            b.init()
+            //机动车损失险、机动车盗抢险 参数
+            //index,select,报价基准,我的投保
+            b.baoxian(0,[true,3522.13,3169.92])
+            b.baoxian(1,[true,4323,3890.70])
+            //第三者责任保险 参数
+            //index,select,报价基准,我的投保,默认额度
+            b.baoxian(2,[true,10,8,10])
+            //车上人员责任险 驾驶人每次事故责任限额 参数
+            //index,radio列index,select,报价基准,我的投保,默认限额或乘客座位数
+            b.baoxian(3,[0,true,720.00,720.00,2])
+            b.baoxian(3,[1,true,1620.00,0.00,2])
+            b.baoxian(3,[2,true,2.00,2,2]) //最后两个参数数据同步(都显示默认值)
+            b.baoxian(4,[true,4320,3888,'进口玻璃'])
+            b.baoxian(5,[true,150,120,10000])
+            //不计免赔特约险
+            //index,报价基准,我的投保,默认额度
+            b.baoxian(6,[105.66,95.09,95.09])
+            b.baoxian(7,[86.46,77.81,77.81])
+            b.baoxian(8,[33.03,13.96,13.96])
+            b.baoxian(9,[315,285.66,285.66])
+            b.baoxian(10,[0.75,0.68,0.68])
+
+        });
+    </script>
+
+</body>
+</html>

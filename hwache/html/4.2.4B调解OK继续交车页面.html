@@ -1,0 +1,863 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>4.2.4B调解OK继续交车页面 - 付款提车 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt" >
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li class="step-cur">付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content payment">
+                    <small class="juhuang">正在交车</small>
+                    <i></i>
+                    <small>核实信息</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi"  ms-controller="item">
+
+        <div class="wapper has-min-step">
+            <h1>尊敬的客户：</h1>
+            <h1 class="ti">非常高兴您与经销商就交车中的波折达成谅解，祝您此后一切顺利！</h1>
+            <h1 class="ti">请您将后续情况及时告诉我们。如遇到新的交车问题也可<a href="#" class="juhuang tdu">点此</a>，让我们为您排忧解难。</h1>
+            <br>
+            <ul class="pdi-order-ul">
+                <li class="pdi-sn">
+                    <p class="fs14"><b>订单号：</b></p>
+                </li>
+                <li class="pdi-time"><p class="fs14"><b>订单时间：</b></p></li>
+                <li class="pdi-more">
+                    <div class="psr fs14">
+                      <span class="sj"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                         <b>更多</b>
+                      </span>
+                      <p class="tm tm-long" style="display: none;">
+                        <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                        <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                        <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                        <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                        <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                        <span>反馈交车通知时间： 2015-10-28  10：45：04</span>
+                        <span>经销商再确认回复时间： 2015-10-28  10：45：04</span>
+                        <span>交车预约达成时间  2015-10-22    17：55：59</span>
+                        <span>经销商提交开始交车时间：  2015-10-22    17：55：59</span>
+                        <span>客户提交交车信息时间：2015-10-22    17：55：59</span>
+                      </p>
+                    </div>
+
+
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+            <ul class="pdi-order-ul border">
+                <li class="pdi-name">
+                    <p class="fs14">路虎</p>
+                </li>
+                <li class="pdi-type"><p class="fs14">新一代揽胜</p></li>
+                <li class="pdi-title"><p class="fs14">2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版</p></li>
+                <li class="pdi-color"><p class="fs14">月光石白色（个性金属漆）</p></li>
+                <div class="clear"></div>
+            </ul>     
+
+            <p class="fs14 tac">
+                <a href="#" class="juhuang tdu">下载交车确认书</a>
+                <a href="#" class="juhuang tdu pl20">查看订单总详情</a>
+                <a href="#" class="juhuang tdu pl20">下载交车宝典</a>
+            </p>
+            <hr class="dashed">
+
+
+            <div class="box">
+               
+                <div class="box-inner  box-inner-def">
+                  
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th><label class="fs14">项目</label></th>
+                                <th><label class="fs14">约定</label></th>
+                                <th><label class="fs14">实际</label></th>
+                                <th><label class="fs14">备注</label></th>
+                            </tr>
+                            <tr>
+                                <td><p class="tac fs14">生产国别</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="guobie" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="guobie" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">基本配置</p></td>
+                                <td><p class="tac fs14"><a href="#" class="juhuang tdu">见附件一</a></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="peizhi" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="peizhi" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">经销商名称</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="jxs" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="jxs" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">交车地点</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="address" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="address" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">交车时间</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="jiaoche" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="jiaoche" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">裸车开票价格</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="price" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="price" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger oksure">已确认</a>
+                        <a href="javascript:;" data-grounp="" class="juhuang tdu fs16">修改</a>
+                    </p>
+                    <hr class="dashed">
+
+
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th><label class="fs14">项目</label></th>
+                                <th><label class="fs14">约定</label></th>
+                                <th><label class="fs14">实际</label></th>
+                                <th><label class="fs14">备注</label></th>
+                            </tr>
+                            <tr>
+                                <td><p class="tac fs14">排放标准</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="biaozhun" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="biaozhun" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">车身颜色</p></td>
+                                <td><p class="tac fs14"><a href="#" class="juhuang tdu">见附件一</a></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="csys" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="csys" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">内饰颜色</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="nsys" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="nsys" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">行驶里程</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="licheng" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="licheng" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">出厂年月</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">已装原厂选装精品</p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">精品01</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">精品02</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td class="cell" style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">
+                                                        <input name="jingp" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="jingp" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14">
+                                                        <input name="jingp2" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="jingp2" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td width="400" <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">免费礼品和服务</p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">礼品01</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">礼品02</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">服务01</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">服务02</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td class="cell" style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">
+                                                        <input name="liping" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="liping" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">
+                                                        <input name="liping2" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="liping2" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">
+                                                        <input name="fuwu" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="fuwu" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14">
+                                                        <input name="fuwu2" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="fuwu2" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td width="400" <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger sure">已确认</a>
+                        <a href="javascript:;" data-grounp="" class="juhuang tdu fs16">修改</a>
+                    </p>
+                    <hr class="dashed">
+
+
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th><label class="fs14">项目</label></th>
+                                <th><label class="fs14">约定</label></th>
+                                <th><label class="fs14">实际</label></th>
+                                <th><label class="fs14">备注</label></th>
+                            </tr>
+                            <tr>
+                                <td><p class="tac fs14">选装精品</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="biaozhun" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="biaozhun" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">车辆商业保险</p></td>
+                                <td><p class="tac fs14"><a href="#" class="juhuang tdu">见附件一</a></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="csys" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="csys" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">上牌服务</p></td>
+                                <td><p class="tac fs14"><a href="#" class="juhuang tdu">见附件一</a></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="nsys" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="nsys" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">上临时牌照</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="licheng" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="licheng" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">其他杂费收取</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">收到的文件资料</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">收到的随车工具</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">车辆回程方式</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">补贴</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            
+                        </tbody>
+                    </table>
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger sure">已确认</a>
+                        <a href="javascript:;" data-grounp="" class="juhuang tdu fs16">修改</a>
+                    </p>
+                    <hr class="dashed">
+
+                    <div style="width: 70%;margin:0 auto">
+                         <table class="tbl2">
+                            <tbody>
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">车辆识别代号（VIN码）：</label></td>
+                                    <td width="400" class="p10">
+                                        <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input style="" type="text" placeholder="" class="form-control pdi-control">
+                                            <span class="edit"></span>
+                                          </div>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">发动机号：</label></td>
+                                    <td width="400" class="p10">
+                                        <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input style="" type="text" placeholder="" class="form-control pdi-control">
+                                            <span class="edit"></span>
+                                          </div>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                  <th class="tar p10"><label class="fs14">上牌地区：</label></th>
+                                  <th class="p10">
+                                      <div class="btn-group m-r fl bts fn pdi-drop pdi-drop-warp">
+                                        <button class="btn btn-sm btn-default dropdown-toggle area-drop-btn">
+                                            <span class="dropdown-label"><span>江苏省苏州市</span></span>
+                                            <span class="caret"></span>
+                                        </button>
+                                        <div class="dropdown-menu dropdown-select area-tab-div">
+                                            <input type="hidden" name="" />
+                                            <input type="hidden" name="" />
+                                            <p class="area-tab"><span class="cur-tab">省份</span><span>城市</span></p>
+                                            <dl class="dl">
+                                                <dd ms-on-click="selectProvince(20)">江苏省</dd>
+                                                <dd ms-on-click="selectProvince(25)">上海市</dd>
+                                                <dd ms-on-click="selectProvince(26)">北京市</dd>
+                                                <dd ms-on-click="selectProvince(21)">广东省</dd>
+                                                <dd ms-on-click="selectProvince(24)">江苏省</dd>
+                                                <dd ms-on-click="selectProvince(28)">上海市</dd>
+                                                <dd ms-on-click="selectProvince(22)">北京市</dd>
+                                                <dd ms-on-click="selectProvince(29)">广东省</dd>
+                                              <div class="clear"></div>
+                                            </dl>
+                                            <dl class="dl" style="display: none;">
+                                              <dd ms-repeat-city="citylist" ms-on-click="selectCity"><!--city.name--></dd>
+                                              <div class="clear"></div>
+                                            </dl>
+                                        </div>
+                                      </div>
+                                  </th>
+                              </tr>
+
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">车辆用途：</label></td>
+                                    <td width="400" class="p10">
+                                        <div class="btn-group m-r fl bts fn pdi-drop">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                              <span class="dropdown-label"><span>非营业个人客车</span></span>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu dropdown-select">
+                                              <input type="hidden" name="" />
+                                              <li ms-on-click="selectTime" class="active"><a><span>非营业个人客车</span></a></li>
+                                              <li ms-on-click="selectTime"><a><span>非营业个人客车</span></a></li>
+                                              <li ms-on-click="selectTime"><a><span>非营业个人客车</span></a></li>
+                                          </ul>
+                                        </div>
+                                    </td>
+                                </tr>  
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">上牌（注册登记）车主名称：</label></td>
+                                    <td width="400" class="p10">
+                                        <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input style="" type="text" placeholder="" class="form-control pdi-control">
+                                            <span class="edit"></span>
+                                          </div>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">牌照号码：</label></td>
+                                    <td width="400" class="p10">
+                                        <!--苏-->
+                                        <div class="btn-group m-r fl bts fn">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                              <span class="dropdown-label"><span>苏</span></span>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu dropdown-select chepai">
+                                              <input type="hidden" name="" />
+                                              <li  ms-repeat-item="areaSn" ms-on-click="selectTime"  ms-class="<!--item == '苏' ? 'active' : ''-->"><a><span><!--item--></span></a></li>
+                                          </ul>
+                                        </div>
+                                        <!--E-->
+                                        <div class="btn-group m-r fl bts fn">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                              <span class="dropdown-label"><span>E</span></span>
+                                              <span class="caret"></span>
+                                          </button> 
+                                          <ul class="dropdown-menu dropdown-select chepai">
+                                              <input type="hidden" name="" />
+                                              <li ms-repeat-item="en" ms-on-click="selectTime" ms-class="<!--item == 'E' ? 'active' : ''-->"><a><span><!--item--></span></a></li>
+                                          </ul> 
+                                        </div>
+                                        
+                                        <div class="btn-group m-r fl bts fn">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle ">
+                                              <span class="dropdown-label"><span>6</span></span>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu dropdown-select chepai">
+                                              <input type="hidden" name="" />
+                                              <li ms-repeat-item="fill" ms-on-click="selectTime" ms-class="<!--$index == 6 ? 'active' : ''-->"><a><span><!--item--></span></a></li>
+                                          </ul>
+                                        </div>
+
+                                        <div class="btn-group m-r fl bts fn">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle ">
+                                              <span class="dropdown-label"><span>3</span></span>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu dropdown-select chepai">
+                                              <input type="hidden" name="" />
+                                              <li ms-repeat-item="fill" ms-on-click="selectTime" ms-class="<!--$index == 3 ? 'active' : ''-->"><a><span><!--item--></span></a></li>
+                                          </ul>
+                                        </div>
+
+                                        <div class="btn-group m-r fl bts fn">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle ">
+                                              <span class="dropdown-label"><span>4</span></span>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu dropdown-select chepai">
+                                              <input type="hidden" name="" />
+                                              <li ms-repeat-item="fill" ms-on-click="selectTime" ms-class="<!--$index == 4 ? 'active' : ''-->"><a><span><!--item--></span></a></li>
+                                          </ul>
+                                        </div>
+
+                                        <div class="btn-group m-r fl bts fn">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle ">
+                                              <span class="dropdown-label"><span>2</span></span>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu dropdown-select chepai">
+                                              <input type="hidden" name="" />
+                                              <li ms-repeat-item="fill" ms-on-click="selectTime" ms-class="<!--$index == 2 ? 'active' : ''-->"><a><span><!--item--></span></a></li>
+                                          </ul>
+                                        </div>
+
+                                        <div class="btn-group m-r fl bts fn">
+                                          <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle ">
+                                              <span class="dropdown-label"><span>5</span></span>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu dropdown-select chepai">
+                                              <input type="hidden" name="" />
+                                              <li ms-repeat-item="fill" ms-on-click="selectTime" ms-class="<!--$index == 5 ? 'active' : ''-->"><a><span><!--item--></span></a></li>
+                                          </ul>
+                                        </div>
+
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">国家节能补贴发放约定时间：</label></td>
+                                    <td width="300" class="p10">
+                                        <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input style="" type="text" placeholder="2015年10月10号" class="form-control " onfocus="WdatePicker({minDate:'2015-12-2 00:00:00',startDate:'2015-12-19 00:00:00' });">
+                                            <i class="rili"></i>
+                                          </div>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" data-grounp="" class="juhuang tdu fs16">修改</a>
+                    </p>
+
+                    <br>    <br>    
+
+                    <div style="width: 70%;margin:0 auto">
+                         <table class="tbl2">
+                            <tbody>
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">车辆识别代号（VIN码）：</label></td>
+                                    <td width="400" class="p10">
+                                        <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input style="" type="text" placeholder="" class="form-control pdi-control">
+                                            <span class="edit"></span>
+                                          </div>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">发动机号：</label></td>
+                                    <td width="400" class="p10">
+                                        <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input style="" type="text" placeholder="" class="form-control pdi-control">
+                                            <span class="edit"></span>
+                                          </div>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="p10 tar"><label class="fs14">预计上牌(注册登记)最晚日期：</label></td>
+                                    <td width="300" class="p10">
+                                        <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input style="" type="text" placeholder="2015年10月10号" class="form-control " onfocus="WdatePicker({minDate:'2015-12-2 00:00:00',startDate:'2015-12-19 00:00:00' });">
+                                            <i class="rili"></i>
+                                          </div>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="m-t-10"><small>温馨提示：如您本人上牌时间过长，可能因为国家补贴政策、厂商内部政策调整而导致原国家节能补贴发放条件发生变化。对交车（收到任一方交车信息日）后15个自
+然日内提交正确上牌信息，且符合国家政策规定的客户，华车平台提供国家节能补贴发放担保。除此以外的客户，请自行与经销商协商约定发放和领取该补贴事宜。</small></p>
+                    <p class="center">
+                        <a href="javascript:;" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" class="juhuang tdu fs16">修改</a>
+                    </p>
+                    <hr class="dashed">
+                    <p>
+                       <a href="javascript:;" class="btn btn-s-md btn-danger fl">提交</a>
+                       <a href="javascript:;" class="btn btn-s-md btn-danger fl oksure ml20">已提交</a>
+                    </p>
+                    <p class="fs14 clear m-t-10">
+                        <input type="checkbox"><span class="fn">我已接受上述实际状况的车辆、附加品、文件、服务。</span>
+                    </p>
+                </div>
+               
+            </div>
+        
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/item/item-payment-while", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>

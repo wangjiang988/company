@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.5.11C经销商报价查看车况说明（失效报价） - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                 <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a style="background: url(themes/images/custom/custom-dealer-brand.png) 25px 50%  no-repeat" data-toggle="collapse" data-parent="#collapse_2" href="#collapse_x1" class="psr">冀东物贸<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x1" class="panel-collapse in">
+                                            <a href="#">基本信息</a>
+                                            <a href="#">常用车型</a>
+                                            <a href="#">保险设定</a>
+                                            <a href="#">客户文件</a>
+                                            <a href="#" class="cur-select-step">工作时段</a>
+                                            <a href="#" class="">增加经销商</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a  data-toggle="collapse" data-parent="#collapse_3" href="#collapse_x2" class="psr">新建报价(15)<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x2" class="panel-collapse in">
+                                            <a href="#">开始新建</a>
+                                            <a href="#">新建未完(6)</a>
+                                            <a href="#">等待生效(9)</a>
+                                            <a href="#">正在报价(6)</a>
+                                            <a href="#">暂时下架(6)</a>
+                                            <a href="#" class="cur-select-step">失效报价(6)</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-tool" data-toggle="collapse" data-parent="#accordion1" href="#collapse_6"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_6" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">便捷工具</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content psr">
+
+                  <h2 class="title weighttitle">暂时下架</h2>
+                  <div class="content-wapper lh30">
+                    <div class="row">
+                      <div class="col-sm-6 col-xs-6"><span>报价编号：Hc8715678785</span></div>
+                      <div class="col-sm-6 col-xs-6">
+                        <span>操作：</span>   
+                        <a href="javascript:;" class="juhuang tdu">复制</a> 
+                      </div>
+                      <div class="col-sm-6 col-xs-6"><span>报价时间：2016-03-20 16：35：48 </span></div>
+                      <div class="col-sm-6 col-xs-6"><span>失效时间：2016-04-01  09：00：16</span></div>
+                      <div class="col-sm-6 col-xs-6"><span>报价人：用户001</span></div>
+                      <div class="col-sm-6 col-xs-6"><span>失效原因：已被订购</span><a href="#" class="juhuang tdu">（6234562829）</a></div>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+ 
+
+                    <div class="custom-offer-step-tab">
+                        <ul>
+                          <li class="first"><a href="#">车型价格</a></li>
+                          <li class="cur"><a href="#">车况说明</a></li>
+                          <li><a href="#">选装精品</a></li>
+                          <li><a href="#">首年保险</a></li>
+                          <li><a href="#">收费标准</a></li>
+                          <li class="last"><a href="#">其他事项</a></li>
+                          <div class="clear"></div>
+                        </ul>
+                    </div> 
+                    
+                    
+                    <form action="newOfferings">
+                       <div class="content-wapper border">
+                           
+                            <table class=" custom-info-tbl noborder">
+                             <tbody>
+                               <tr>
+                                   <td class="tar">
+                                      <label>车身颜色：</label>
+                                   </td>
+                                   <td class="tal">
+                                      <span class="disabled-span disabled-span-big">月光石白色（个性金属漆）</span>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tar">
+                                      <label>内饰颜色：</label>
+                                   </td>
+                                   <td class="tal">
+                                      <span class="disabled-span disabled-span-large">雪茄棕色Cohiba（个性版细线纹全Merino真皮）</span>
+                                   </td>
+                               </tr>
+                               
+                               <tr>
+                                   <td class="tar">
+                                      <label>出厂年月：</label>
+                                   </td>
+                                   <td class="tal">
+                                     <span class="disabled-span disabled-span-small">2015 年 </span>
+                                     <span class="disabled-span disabled-span-min">10月 </span>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tar">
+                                      <label>行驶里程：</label>
+                                   </td>
+                                   <td class="tal">
+                                      <span class="disabled-span disabled-span-min">16</span>
+                                      <span>公里</span>
+                                   </td>
+                               </tr>
+                             </tbody>
+                            </table> 
+                            <p><b>已装原厂选装精品：</b></p>
+                            <table class="tbl tbl-blue wp100">
+                              <tbody>
+                                <tr class="title-tag">
+                                  <th class="tac none select"><span>选择</span></th>
+                                  <th class="tac"><span>名称</span></th>
+                                  <th class="tac"><span>型号/说明</span></th>
+                                  <th class="tac"><span>厂商编号</span></th>
+                                  <th class="tac"><span>厂商指导价</span></th>
+                                  <th class="tac"><span>数量</span></th>
+                                  <th class="tac"><span>附加价值</span></th>
+                                </tr>
+                                <tr>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                </tr>
+                                <tr>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                  <td class="tac"><span></span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                            <div class="m-t-10"></div>
+                            <p class="tac none goods-control">
+                              <a href="javascript:;" class="btn btn-danger bt fs18 goods-save-link">保存</a>
+                              <a href="javascript:;" class="btn btn-danger bt sure fs18 ml20  goods-back-link">返回</a>
+                            </p> 
+
+                            <div class="m-t-10"></div>
+                            <p><b>免费礼品和服务：</b></p>
+                            <table class="tbl tbl-blue " style="width: 60%">
+                              <tbody>
+                                <tr>
+                                  <th class="tac"><span>名称</span></th>
+                                  <th class="tac"><span>数量</span></th>
+                                  <th class="tac"><span>状态</span></th>
+                                </tr>
+                                <tr>
+                                  <td class="tac"><span>全车脚垫</span></td>
+                                  <td class="tac"><span>1</span></td>
+                                  <td class="tac"><span>已安装</span></td>
+                                </tr>
+                                <tr>
+                                  <td class="tac"><span>导航仪</span></td>
+                                  <td class="tac"><span>3</span></td>
+                                  <td class="tac"><span>/</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+ 
+                            <div class="m-t-10"></div>
+                            <div class="m-t-10"></div>
+                          
+                            
+                            
+                            <hr class="dashed">
+
+                            <table class=" custom-info-tbl noborder">
+                             <tbody>
+                               <tr>
+                                   <td class="tar">
+                                      <label>车身颜色：</label>
+                                   </td>
+                                   <td class="tal">
+                                      <span class="disabled-span disabled-span-big">月光石白色（个性金属漆）</span>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tar">
+                                      <label>内饰颜色：</label>
+                                   </td>
+                                   <td class="tal">
+                                      <span class="disabled-span disabled-span-large">雪茄棕色Cohiba（个性版细线纹全Merino真皮）</span>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tar">
+                                      <label>交车周期：</label>
+                                   </td>
+                                   <td class="tal">
+                                      <div class="btn-group btn-jquery-event">
+                                          <span class="disabled-span disabled-span-small">1个月</span>
+                                      </div>
+                                      
+                                   </td>
+                               </tr>
+                               
+                             </tbody>
+                            </table> 
+                            
+                            <p class="tac none goods-control">
+                              <a href="javascript:;" class="btn btn-danger bt fs18 goods-save-link">保存</a>
+                              <a href="javascript:;" class="btn btn-danger bt sure fs18 ml20  goods-back-link">返回</a>
+                            </p> 
+
+                            <div class="m-t-10"></div>
+                            <p><b>免费礼品和服务：</b></p>
+                            <table class="tbl tbl-blue " style="width: 40%">
+                              <tbody>
+                                <tr>
+                                  <th class="tac"><span>名称</span></th>
+                                  <th class="tac"><span>数量</span></th>
+                                </tr>
+                                <tr>
+                                  <td class="tac"><span>全车脚垫</span></td>
+                                  <td class="tac"><span>1</span></td>
+                                </tr>
+                                <tr>
+                                  <td class="tac"><span>导航仪</span></td>
+                                  <td class="tac"><span>3</span></td>
+                                </tr>
+                              </tbody>
+                            </table>
+ 
+                            <div class="m-t-10"></div>
+                            <div class="m-t-10"></div>
+                            
+                        </div>
+                        
+                    </form> 
+                    <div class="m-t-200"></div>
+                 
+ 
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin","module/custom/custom.admin.common.jquery","module/custom/custom.admin.shape.jquery", "module/common/common", "bt"],function(a,b,c){
+         
+        });
+    </script>
+
+
+
+
+
+</body>
+</html>
+
+

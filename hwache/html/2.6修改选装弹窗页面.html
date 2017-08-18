@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>2.6修改选装弹窗页面 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container  m-t-86 pos-rlt ">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li class="step-cur">预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content pdi">
+                    <small class="juhuang">开始预约</small>
+                    <i></i>
+                    <small>反馈确认</small>
+                    <i></i>
+                    <small class="">预约完毕</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="item">
+        <div class="wapper has-min-step">  
+ 
+            <p><b class="blue">打造更个性的座驾</b></p>
+            <p class="fs14">原厂选装精品折扣率：</p>
+            <p class="fs14">原厂选装精品，欢迎选购：</p>
+
+            <table class="tbl bgtbl">
+                <tr>
+                    <th width="50">选择</th>
+                    <th>名称</th>
+                    <th>型号/说明</th>
+                    <th>厂商指导价</th>
+                    <th>安装费</th>
+                    <th>含安装费折后总单价</th>
+                    <th width="108">选择购买件数</th>
+                    <th>金额</th>
+                </tr>
+                <tr data-id="3">
+                    <td class="tac"><input style="width:auto;" type="checkbox" name="" id=""></td>
+                    <td><span class="xing">*</span>仪表台装饰板</td>
+                    <td></td>
+                    <td></td>
+                    <td class="tac"></td>
+                    <td class="tac">300</td>
+                    <td>
+                        <div class="xuan">
+                            <div class="x-w"> 
+                                <a ms-click="prev" class="prev">-</a>
+                                <input type="text" disabled="disabled" value="0" class="input">
+                                <a ms-click="next(0)" class="next">+</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="tac"></td>
+                </tr>
+                <tr data-id="4">
+                    <td class="tac"><input style="width:auto;" type="checkbox" name="" id=""></td>
+                    <td>&nbsp;</td>
+                    <td></td>
+                    <td></td>
+                    <td class="tac"></td>
+                    <td class="tac">400</td>
+                    <td>
+                        <div class="xuan">
+                            <div class="x-w"> 
+                                <a ms-click="prev" class="prev">-</a>
+                                <input disabled="disabled" type="text" value="0" class="input">
+                                <a ms-click="next(2)" class="next">+</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="tac"></td>
+                </tr>
+            </table>
+            <div>
+                <small class="fl">温馨提示：加<span class="pl5 xing">*</span>的选装精品需在24小时内订购。</small>
+                <div class="time fl m-t-10">
+                    <div class="jishi jishi2 " id="countdown">
+                          <span>0</span>
+                          <span>0</span>
+                          <span class="fuhao">:</span>
+                          <span>0</span>
+                          <span>0</span>
+                          <span class="fuhao">:</span>
+                          <span>0</span>
+                          <span>0</span>
+                      </div>
+
+                </div>
+
+                <small class="wp45 fr tar di"><span>合计金额：<label></label></span></small>
+                <div class="clear"></div>
+
+                <input type="hidden" name="price">
+            </div>
+
+            <p class="fs14 clear m-t-10">非原厂选装精品，欢迎选购：</p>
+            <table class="tbl bgtbl">
+                <tr>
+                    <th width="50">选择</th>
+                    <th>品牌</th>
+                    <th>名称</th>
+                    <th>型号/说明</th>
+                    <th>含安装费折后总单价</th>
+                    <th width="108">选择购买件数</th>
+                    <th>金额</th>
+                </tr>
+                <tr data-id="1">
+                    <td class="tac"><input style="width:auto;" type="checkbox" name="" id=""></td>
+                    <td></td>
+                    <td><span class="xing">*</span>仪表台装饰板</td>
+                    <td></td>
+                    <td class="tac">300</td>
+                    <td>
+                        <div class="xuan">
+                            <div class="x-w"> 
+                                <a ms-click="prev" class="prev">-</a>
+                                <input type="text" disabled="disabled" value="0" class="input">
+                                <a ms-click="next(2)" class="next">+</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="tac"></td>
+                </tr>
+                <tr data-id="2">
+                    <td class="tac"><input style="width:auto;" type="checkbox" name="" id=""></td>
+                    <td></td>
+                    <td>&nbsp;</td>
+                    <td></td>
+                    <td class="tac">400</td>
+                    <td>
+                        <div class="xuan">
+                            <div class="x-w"> 
+                                <a ms-click="prev" class="prev">-</a>
+                                <input disabled="disabled" type="text" value="0" class="input">
+                                <a ms-click="next(2)" class="next">+</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="tac"></td>
+                </tr>
+            </table>
+            <p>
+                <small class="wp45 fl di">&nbsp;</small>
+                <small class="wp45 fr tar di"><span>合计金额：<label></label></span></small>
+                <input type="hidden" name="price">
+            </p>
+            <div class="clear"></div>
+            <p class="tac">
+                <a ms-on-click="dinggou" href="javascript:;" class="btn btn-s-md btn-danger fs16">订购</a>
+                <a href="javascript:;" class="hide btn btn-s-md btn-danger btn-danger-hover fs16">已订购</a>
+                <a ms-on-click="modifyDinggou"  href="javascript:;" class="hide btn  end  fs16 btn-empty">修改订购</a>
+            </p>
+
+            <div class="times times2 tac">
+                    <center>      
+                        <a href="javascript:;" class=" btn btn-s-md btn-danger btn-danger-hover fs18">正在确认</a>
+                    </center>
+                    倒计时：
+                    <p class="tac fs18 mt10" style="display:inline-block;">
+                        <span class="juhuang countdown"><span>X</span>天<span>X</span>小时<span>X</span>分<span>X</span>秒</span>
+                    </p>
+
+                
+            </div>
+
+            <p class="fs14">因售方已完成备货，很遗憾一下修改提议将无法满足，敬请谅解，如有疑问请联系售方（陈先生 T:13814449821）</p>
+            <table class="tbl bgtbl">
+                <tr>
+                    <th>品牌</th>
+                    <th>名称</th>
+                    <th>型号/说明</th>
+                    <th>原订购数量</th>
+                    <th>提议修改数量</th>
+                </tr>
+                <tr>
+                    <td class="tac">原厂</td>
+                    <td class="tac"></td>
+                    <td class="tac"></td>
+                    <td class="tac">2</td>
+                    <td class="tac juhuang">1</td>
+                </tr>
+                <tr>
+                    <td class="tac">3M</td>
+                    <td class="tac"></td>
+                    <td class="tac"></td>
+                    <td class="tac">2</td>
+                    <td class="tac">3</td>
+                </tr>
+              
+            </table>
+
+
+            <div id="dinggou-tip" class="popupbox">
+                <div class="popup-title">提示</div>
+                <div class="popup-wrapper">
+                    <div class="popup-content">
+                        <p class="fs14 pd ti">       
+                        若您”确定订购“后再次提出减少订购数量的要求，
+                        由于售方可能已进行实质备货，需要取得其同意方可完成
+                        数量修改，故存在无法再减少数量的风险，请慎重决定是
+                        否订购！
+                        </p>
+                    </div>
+                    <div class="popup-control">
+                        <a ms-on-click="xzorder" href="javascript:;" class="btn btn-s-md btn-danger fs14 w100">确定订购</a>
+                        <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dinggou-modify" for="xuanfu-modify" class="popupbox">
+                <div class="popup-title">修改选装精品</div>
+                <div class="popup-wrapper">
+                    <div class="popup-content">
+                        <div class="">  
+ 
+                            <p class="fs14">原厂选装精品折扣率：</p>
+                            <p class="fs14">原厂选装精品，欢迎选购：</p>
+
+                            <table class="tbl bgtbl">
+                                <tr>
+                                    <th width="50">选择</th>
+                                    <th>名称</th>
+                                    <th>型号/说明</th>
+                                    <th>厂商指导价</th>
+                                    <th>安装费</th>
+                                    <th>含安装费折后总单价</th>
+                                    <th width="108">选择购买件数</th>
+                                    <th>金额</th>
+                                </tr>
+                                <tr data-id="3">
+                                    <td class="tac"><input style="width:auto;" type="checkbox" name="" id=""></td>
+                                    <td><span class="xing">*</span>仪表台装饰板</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="tac"></td>
+                                    <td class="tac">300</td>
+                                    <td>
+                                        <div class="xuan">
+                                            <div class="x-w"> 
+                                                <a ms-click-1="prev" ms-click-2="prevFix" class="prev">-</a>
+                                                <input type="text"  data-def-value='1' disabled="disabled" value="0" class="input">
+                                                <a ms-click-1="next(2)"  ms-click-2="nextFix" class="next">+</a>
+                                            </div>
+                                            <div class="xztip psr">
+                                                <div class="xztip-wrapper psa">
+                                                    <p>
+                                                        ！售方可能已实质备货，修改请求需取得其同意方可生效
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="tac"></td>
+                                </tr>
+                                <tr data-id="4">
+                                    <td class="tac"><input style="width:auto;" type="checkbox" name="" id=""></td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="tac"></td>
+                                    <td class="tac">400</td>
+                                    <td>
+                                        <div class="xuan">
+                                            <div class="x-w"> 
+                                                <a ms-click-1="prev" ms-click-2="prevFix" class="prev">-</a>
+                                                <input data-def-value='0' disabled="disabled" type="text" value="0" class="input">
+                                                <a ms-click-1="next(2)"  ms-click-2="nextFix" class="next">+</a>
+                                            </div>
+                                            <div class="xztip psr">
+                                                <div class="xztip-wrapper psa">
+                                                    <p>
+                                                        ！售方可能已实质备货，修改请求需取得其同意方可生效
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="tac"></td>
+                                </tr>
+                            </table>
+                            <div>
+                                <small class="fl">温馨提示：加<span class="pl5 xing">*</span>的选装精品需在24小时内订购。</small>
+                                <div class="time fl m-t-10">
+                                    <div class="jishi jishi2 " id="countdown2">
+                                          <span>0</span>
+                                          <span>0</span>
+                                          <span class="fuhao">:</span>
+                                          <span>0</span>
+                                          <span>0</span>
+                                          <span class="fuhao">:</span>
+                                          <span>0</span>
+                                          <span>0</span>
+                                      </div>
+
+                                </div>
+
+                                <small class="wp45 fr tar di"><span>合计金额：<label></label></span></small>
+                                <div class="clear"></div>
+
+                                <input type="hidden" name="price">
+                            </div>
+
+                            <p class="fs14 clear m-t-10">非原厂选装精品，欢迎选购：</p>
+                            <table class="tbl bgtbl">
+                                <tr>
+                                    <th width="50">选择</th>
+                                    <th>品牌</th>
+                                    <th>名称</th>
+                                    <th>型号/说明</th>
+                                    <th>含安装费折后总单价</th>
+                                    <th width="108">选择购买件数</th>
+                                    <th>金额</th>
+                                </tr>
+                                <tr data-id="1">
+                                    <td class="tac"><input style="width:auto;" type="checkbox" name="" id=""></td>
+                                    <td></td>
+                                    <td><span class="xing">*</span>仪表台装饰板</td>
+                                    <td></td>
+                                    <td class="tac">300</td>
+                                    <td>
+                                        <div class="xuan">
+                                            <div class="x-w"> 
+                                                <a ms-click-1="prev" ms-click-2="prevFix" class="prev">-</a>
+                                                <input type="text"  data-def-value='0' disabled="disabled" value="0" class="input">
+                                                <a ms-click-1="next(2)"  ms-click-2="nextFix" class="next">+</a>
+                                            </div>
+                                            <div class="xztip psr">
+                                                <div class="xztip-wrapper psa">
+                                                    <p>
+                                                        ！售方可能已实质备货，修改请求需取得其同意方可生效
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="tac"></td>
+                                </tr>
+                                <tr data-id="2">
+                                    <td class="tac"><input style="width:auto;" type="checkbox" name="" id=""></td>
+                                    <td></td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td class="tac">400</td>
+                                    <td>
+                                        <div class="xuan">
+                                            <div class="x-w"> 
+                                                <a ms-click-1="prev" ms-click-2="prevFix" class="prev">-</a>
+                                                <input data-def-value='0' disabled="disabled" type="text" value="0" class="input">
+                                                <a ms-click-1="next(2)"  ms-click-2="nextFix" class="next">+</a>
+                                            </div>
+                                            <div class="xztip psr">
+                                                <div class="xztip-wrapper psa">
+                                                    <p>
+                                                        ！售方可能已实质备货，修改请求需取得其同意方可生效
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="tac"></td>
+                                </tr>
+                            </table>
+                            <p>
+                                <small class="wp45 fl di">&nbsp;</small>
+                                <small class="wp45 fr tar di"><span>合计金额：<label></label></span></small>
+                                <input type="hidden" name="price">
+                            </p>
+                            <div class="clear"></div>
+                        </div> 
+
+                    </div>
+                    <div class="popup-control">
+                        <a ms-on-click="initorder" href="javascript:;" class="btn btn-s-md btn-danger fs14 w100">提交</a>
+                        <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dinggou-order" for="xuanfu-sure" class="popupbox">
+                <div class="popup-title">确认修改选装</div>
+                <div class="popup-wrapper">
+                    <div class="popup-content">
+                        <p class="fs14">请核对您的选装精品修改提议：</p>
+                        <table class="tbl bgtbl">
+                            <tr>
+                                <th>品牌</th>
+                                <th>名称</th>
+                                <th>型号/说明</th>
+                                <th>原订购数量</th>
+                                <th>提议修改数量</th>
+                            </tr>
+                            <tr ms-repeat-yc="ycjingping" ms-data-id="yc.id">
+                                <td class="tac">原厂</td>
+                                <td class="tac"><!--yc.name--></td>
+                                <td class="tac"><!--yc.xinghao--></td>
+                                <td class="tac"><!--yc.oldtotal--></td>
+                                <td class="tac" ms-attr-class="yc.shuliang < yc.oldtotal ? 'tac juhuang':'tac'"><!--yc.shuliang--></td>
+                            </tr>
+                            <tr ms-repeat-fyc="fycjingping" ms-data-id="fyc.id">
+                                <td class="tac"><!--fyc.pingpai--></td>
+                                <td class="tac"><!--fyc.name--></td>
+                                <td class="tac"><!--fyc.xinghao--></td>
+                                <td class="tac"><!--fyc.oldtotal--></td>
+                                <td class="tac" ms-attr-class="fyc.shuliang < fyc.oldtotal ? 'tac juhuang':'tac'"><!--fyc.shuliang--></td>
+                            </tr>
+                          
+                        </table>
+                    </div>
+                    <div class="popup-control">
+                        <a ms-on-click="sureorder" href="javascript:;" class="btn btn-s-md btn-danger fs14 w100">确定</a>
+                        <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dinggou-fix xuanfu-modify">
+                <span>修改选装精品</span>
+                <a href="javascript:;" class="btn btn-danger fs14 btn-recover">恢复</a>
+            </div>
+            <div class="dinggou-fix xuanfu-sure">
+                <span>确认修改选装精品</span>
+                <a href="javascript:;" class="btn btn-danger fs14 btn-recover">恢复</a>
+            </div>
+
+            
+
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-pay-2-sucess", "module/common/common","module/common/hc.popup.jquery", "bt"],function(a,b,c,d){
+            a.init()
+            $("#countdown,#countdown2").CountDown({
+              startTime:'2016-3-16 16:14:35',
+              endTime :'2016-3-17 13:29:25',
+              timekeeping:'countdown'
+            })
+
+            $(".countdown").CountDown({
+              startTime:'2016-3-14 16:14:35',
+              endTime :'2016-3-17 13:29:25',
+              timekeeping:'countdown'
+            })
+
+        })
+    </script>
+
+</body>
+</html>
+

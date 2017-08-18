@@ -1,0 +1,651 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>即将交车 - 付款提车 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt" >
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li class="step-cur">付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content payment">
+                    <small>即将交车</small>
+                    <i></i>
+                    <small class="juhuang">正在交车</small>
+                    <i></i>
+                    <small>交车完毕</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi"  ms-controller="item">
+
+        <div class="wapper has-min-step">
+            <h1>尊敬的客户：</h1>
+            <h1 class="ti">和梦想的座驾终于相逢啦！此刻的激动和喜悦，与我们一起分享吧！ </h1>
+            <h1 class="ti">如果您感觉交车轻松顺利，简要填写下方内容就能告诉我们了。  而万一您遇到困扰，请点此，让我们为您排忧解难。</h1>
+            <br>
+            <p class="fs14"><b>订单号： </b></p>               
+            <div class="box">
+               
+                <div class="box-inner  box-inner-def">
+                    <table>
+                        <tr>
+                            <td width="100"><b>品牌：</b></td>
+                            <td width="200"><b>车系：</b></td>
+                            <td width="300"><b>车型规格：</b></td>
+                            <td width="100"><b>座位数：</b></td>
+                        </tr>
+                    </table>
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th><label class="fs14">项目</label></th>
+                                <th><label class="fs14">约定</label></th>
+                                <th><label class="fs14">实际</label></th>
+                                <th><label class="fs14">备注</label></th>
+                            </tr>
+                            <tr>
+                                <td><p class="tac fs14">生产国别</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="guobie" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="guobie" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">基本配置</p></td>
+                                <td><p class="tac fs14"><a href="#" class="juhuang tdu">见附件一</a></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="peizhi" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="peizhi" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">经销商名称</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="jxs" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="jxs" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">交车地点</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="address" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="address" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">交车时间</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="jiaoche" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="jiaoche" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">裸车开票价格</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="price" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="price" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger sure">已确认</a>
+                        <a href="javascript:;" data-grounp="" class="juhuang tdu fs16">修改</a>
+                    </p>
+                    <hr class="dashed">
+
+
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th><label class="fs14">项目</label></th>
+                                <th><label class="fs14">约定</label></th>
+                                <th><label class="fs14">实际</label></th>
+                                <th><label class="fs14">备注</label></th>
+                            </tr>
+                            <tr>
+                                <td><p class="tac fs14">排放标准</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="biaozhun" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="biaozhun" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">车身颜色</p></td>
+                                <td><p class="tac fs14"><a href="#" class="juhuang tdu">见附件一</a></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="csys" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="csys" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">内饰颜色</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="nsys" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="nsys" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">行驶里程</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="licheng" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="licheng" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">出厂年月</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">已装原厂选装精品</p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">精品01</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">精品02</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td class="cell" style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">
+                                                        <input name="jingp" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="jingp" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14">
+                                                        <input name="jingp2" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="jingp2" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td width="400" <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">免费礼品和服务</p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">礼品01</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">礼品02</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">服务01</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">服务02</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td class="cell" style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">
+                                                        <input name="liping" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="liping" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">
+                                                        <input name="liping2" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="liping2" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">
+                                                        <input name="fuwu" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="fuwu" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14">
+                                                        <input name="fuwu2" checked="" class="radio" type="radio"><span>相符</span>
+                                                        <input name="fuwu2" class="radio" type="radio"><span>不相符</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td width="400" <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                                    <span class="edit" ms-on-click="edit"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger sure">已确认</a>
+                        <a href="javascript:;" data-grounp="" class="juhuang tdu fs16">修改</a>
+                    </p>
+                    <hr class="dashed">
+
+
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th><label class="fs14">项目</label></th>
+                                <th><label class="fs14">约定</label></th>
+                                <th><label class="fs14">实际</label></th>
+                                <th><label class="fs14">备注</label></th>
+                            </tr>
+                            <tr>
+                                <td><p class="tac fs14">选装精品</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="biaozhun" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="biaozhun" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">车辆商业保险</p></td>
+                                <td><p class="tac fs14"><a href="#" class="juhuang tdu">见附件一</a></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="csys" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="csys" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">上牌服务</p></td>
+                                <td><p class="tac fs14"><a href="#" class="juhuang tdu">见附件一</a></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="nsys" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="nsys" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">上临时牌照</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="licheng" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="licheng" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">其他杂费收取</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">收到的文件资料</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">收到的随车工具</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">车辆回程方式</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td><p class="tac fs14">补贴</p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="year" checked="" class="radio" type="radio"><span>相符</span>
+                                        <input name="year" class="radio" type="radio"><span>不相符</span>
+                                    </p>
+                                </td>
+                                <td width="400">
+                                    <textarea name="" id="" cols="30" rows="1"></textarea>
+                                    <span class="edit" ms-on-click="edit"></span>
+                                </td>
+                            </tr> 
+                            
+                        </tbody>
+                    </table>
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger sure">已确认</a>
+                        <a href="javascript:;" data-grounp="" class="juhuang tdu fs16">修改</a>
+                    </p>
+                    <hr class="dashed">
+
+                    <div style="width: 55%;margin:0 auto">
+                         <table class="tbl">
+                            <tbody>
+                                <tr>
+                                    <th><label class="fs14">上牌地区</label></th>
+                                    <th><p class="tal fs14 "><span class="nomarl">江苏省苏州市</span></p></th>
+                                </tr>
+                                <tr>
+                                    <td><p class="tal fs14 weight">车辆用途</p></td>
+                                    <td width="300">
+                                        <span>非营业个人客车</span>
+                                        <textarea  style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                        <span class="edit show" ms-on-click="edit2"></span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">车辆识别代号（VIN码）</p></td>
+                                    <td width="300">
+                                        <span>LDC1234567890UYTR</span>
+                                        <textarea style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                        <span class="edit show" ms-on-click="edit2"></span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">发动机号</p></td>
+                                    <td width="300">
+                                        <span>8605787</span>
+                                        <textarea  style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                        <span class="edit show" ms-on-click="edit2"></span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">注册登记名称</p></td>
+                                    <td width="300">
+                                        <span></span>
+                                        <textarea style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                        <span class="edit show" ms-on-click="edit2"></span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">牌照号码</p></td>
+                                    <td width="300">
+                                        <span>苏E78648</span>
+                                        <textarea style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                        <span class="edit show" ms-on-click="edit2"></span>
+                                    </td>
+                                </tr> 
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">确认</a>
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger sure">已确认</a>
+                        <a href="javascript:;" data-grounp="" class="juhuang tdu fs16">修改</a>
+                    </p>
+                    <hr class="dashed">
+
+                    <p>
+                         <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger fl">提交</a>
+                         <span class="fl mt15">约定内容如发现不符，请向我们<a href="#" class="juhuang">报错</a></span>
+                    </p>
+
+                    <p class="fs14 clear pt15">
+                        <input type="checkbox"><span>我已接受上述实际状况的车辆、附加品、文件、服务，正在等待国家节能补贴发放。</span>
+                    </p>
+                    <p class="fs14">
+                        <input type="checkbox"><span>我已接受上述实际状况的车辆、附加品、文件、服务。</span>
+                    </p>
+
+                </div>
+               
+            </div>
+        
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/item/item-payment-while", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>

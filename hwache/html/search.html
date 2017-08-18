@@ -1,0 +1,585 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>搜索页面 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/search.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+    
+    <div class="box" ms-include-src="searchheader"></div>
+    <form class="SearchPageForm" ms-controller="search" name="SearchPageForm">
+        <div class="search-panel-box">
+            <div class="container m-t-86 pos-rlt" >
+
+                <div class="search-def-option">
+                    <ul>
+                        <li>
+                            <label>新车上牌地区</label>
+                            <dl>
+                                <dt class="s-area">
+                                    <i ms-on-click="dropdown"></i>
+                                    <p>苏州<span>(限牌)</span></p>
+                                </dt>
+                                <dd>
+                                    <ol>
+                                        <li ms-on-click="SelectCardArea(1)">苏州</li>
+                                        <li ms-on-click="SelectCardArea(2)">常熟</li>
+                                        <li ms-on-click="SelectCardArea(3)">太仓(限牌)</li>
+                                        <li ms-on-click="SelectCardArea(4)">无锡</li>
+                                    </ol>
+                                    <input type="hidden" data-duplex-changed="textchange" name="area" ms-duplex-string="area"  value=""/>
+                                </dd>
+                            </dl>
+                        </li>
+
+                        <li>
+                            <label>品牌</label>
+                            <dl>
+                                <dt class="s-area">
+                                    <i ms-on-click="dropdown"></i>
+                                    <p>宝马</p>
+                                </dt>
+                                <dd>
+                                    <ol>
+                                        <li ms-on-click="SelectBrand(1)">宝马</li>
+                                        <li ms-on-click="SelectBrand(2)">奔驰</li>
+                                        <li ms-on-click="SelectBrand(3)">劳斯莱斯</li>
+                                        <li ms-on-click="SelectBrand(4)">法拉利</li>
+                                        
+                                    </ol>
+                                    <input type="hidden" data-duplex-changed="textchange" name="carbrand" value="" />
+                                </dd>
+                            </dl>
+                        </li>
+
+                        <li>
+                            <label>车系</label>
+                            <dl>
+                                <dt class="s-area">
+                                    <i ms-on-click="dropdown"></i>
+                                    <p>X6</p>
+                                </dt>
+                                <dd>
+                                    <ol>
+                                     <li  ms-repeat-chexi="chexi" ms-click="SelectChexi(chexi.chexiid)"><!--chexi.chexiname--></li>
+
+                                        
+                                    </ol>
+                                    <input type="hidden" data-duplex-changed="textchange" name="chexi" value="" />
+                                </dd>
+                            </dl>
+                        </li>
+
+                        <li>
+                            <label>车型规格</label>
+                            <dl>
+                                <dt class="s-chexing">
+                                    <i ms-on-click="dropdown"></i>
+                                    <p>2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版</p>
+                                </dt>
+                                <dd>
+                                    <ol>
+                                        <li ms-repeat-chexing="chexing" ms-click="SelectChexing(chexing.chexingid)"><!--chexing.chexingname | truncate(14,'***')--></li>
+                                    </ol>
+                                    <input type="hidden" data-duplex-changed="textchange" name="car" ms-duplex-string="car" value="" />
+                                </dd>
+                            </dl>
+                        </li>
+
+                        <li>
+                            <label>厂商指导价</label>
+                            <dl>
+                                <dt class="s-chexing">
+                                    <p>￥47900</p>
+                                </dt>
+                                <dd>
+                                    <input type="hidden" data-duplex-changed="textchange" name="price" value="" />
+                                </dd>
+                            </dl>
+                        </li>
+                        <li class="clear"></li> 
+                        <li>
+                            <label>座位数</label>
+                            <dl>
+                                <dt class="s-chexing">
+                                    <p>5座</p>
+                                </dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <label>生产国别</label>
+                            <dl>
+                                <dt class="s-chexing">
+                                    <p>美国</p>
+                                </dt>
+                            </dl>
+                        </li>
+                        <li>
+                            <label>基本配置</label>
+                            <dl>
+                                <dt class="s-chexing">
+                                    <p>权威参数来自官网 <a href="#"><span>查看</span></a></p>
+                                </dt>
+                            </dl>
+                        </li>
+                        <li class="clear"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container  pos-rlt search-select-option" >
+           <dl>
+               <dt>
+                   <label>车源距离：</label>
+                   <label class="checkbox-inline i-checks-me" >
+                       <i class=" checks-me"></i>
+                       <em>全部</em>
+                       <input name="juli" type="hidden" data-duplex-changed="textchange" ms-duplex-string="juli" value="" class="">
+                   </label> 
+               </dt>
+               <dd> 
+                   <ul>
+                       <li><em>本地</em></li>
+                       <li><em>中心城市</em></li>
+                       <li><em>特价地区</em></li>
+                   </ul>
+               </dd>
+               <div class="clear"></div>
+           </dl>
+            <dl>
+                <dt>
+                    <label>车身颜色：</label>
+                    <label class="checkbox-inline i-checks-me">
+                        <i class=" checks-me"></i>
+                        <em>全部</em>
+                        <input name="body_color" ms-duplex-string="body_color" type="hidden" data-duplex-changed="textchange" value="" class="">
+                    </label>
+                   
+                    <div class="select-control">
+                        <span ms-on-click="showCheckbox" class="start">多选</span>
+                        <span ms-on-click="filterOption" class="sure">确定</span>
+                        <span ms-on-click="hideCheckbox" class="chance">取消</span>
+                    </div>
+                    
+                </dt>
+                <dd>
+                    <ul>
+                        <li>
+                            <label class="checkbox-inline i-checks-me hide">
+                                <i class="checks-me"></i> 
+                            </label>
+                            <em class="selected">星光棕</em>
+                        </li>
+                        <li>
+                            <label class="checkbox-inline i-checks-me hide">
+                                <i class="checks-me"></i>
+                            </label>
+                            <em class="selected">雪山白</em>
+                        </li>
+                        <li>
+                            <label class="checkbox-inline i-checks-me hide">
+                                <i class="checks-me"></i>
+                            </label>
+                            <em class="selected">宝石青</em>
+                        </li>
+                    </ul>
+                </dd>
+                <div class="clear"></div>
+            </dl>
+            <dl>
+                <dt>
+                    <label>内饰颜色：</label>
+                    <label class="checkbox-inline i-checks-me">
+                        <i class="checks-me"></i>
+                        <em>全部</em>
+                        <input name="interior_color" ms-duplex-string="interior_color" type="hidden" data-duplex-changed="textchange" value="" class="">
+                    </label>
+                  
+                    <div class="select-control">
+                        <span ms-on-click="showCheckbox" class="start">多选</span>
+                        <span ms-on-click="filterOption" class="sure">确定</span>
+                        <span ms-on-click="hideCheckbox" class="chance">取消</span>
+                    </div>
+                </dt>
+                <dd>
+                    <ul>
+                        <li>
+                            <label class="checkbox-inline i-checks-me hide">
+                                <i class="checks-me"></i>
+                            </label>
+                            <em class="selected">米色</em>
+                        </li>
+                        <li>
+                            <label class="checkbox-inline i-checks-me hide">
+                                <i class="checks-me"></i>
+                            </label>
+                            <em class="selected">黑色</em>
+                        </li>
+                        <li>
+                            <label class="checkbox-inline i-checks-me hide">
+                                <i class="checks-me"></i>
+                            </label>
+                            <em class="selected">棕色</em>
+                        </li>
+                    </ul>
+                </dd>
+                <div class="clear"></div>
+            </dl>
+            <dl>
+                <dt>
+                    <label>行驶里程：</label>
+                    <label class="checkbox-inline i-checks-me">
+                        <i class="checks-me"></i>
+                        <em>全部</em>
+                        <input name="licheng" type="hidden" data-duplex-changed="textchange"  ms-duplex="licheng" value=""  />
+                    </label>
+                </dt>
+                <dd>
+                    <ul>
+                        <li><em>20公里以内</em></li>
+                        <li><em>50公里以内</em></li>
+                        <li><em>100公里以内</em></li>
+                    </ul>
+                </dd>
+                <div class="clear"></div>
+            </dl>
+            <dl>
+                <dt>
+                    <label>出厂年月：</label>
+                    <label class="checkbox-inline i-checks-me">
+                        <i class="checks-me"></i>
+                        <em>全部</em>
+                        <input name="chuchang" type="hidden" data-duplex-changed="textchange" ms-duplex-string="chuchang" value="" class="">
+                    </label>
+                </dt>
+                <dd>
+                    <ul>
+                        <li><em>半年内</em></li>
+                        <li><em>一年内</em></li>
+                        <li><em>远期定制</em></li>
+                    </ul>
+                </dd>
+                <div class="clear"></div>
+            </dl>
+            <dl>
+                <dt>
+                    <label>排放标准：</label>
+                    <label class="checkbox-inline i-checks-me">
+                        <i class="checks-me"></i>
+                        <em>全部</em>
+                        <input name="biaozhun" ms-duplex-string="biaozhun" type="hidden" data-duplex-changed="textchange" value="" class="">
+                    </label>
+                </dt>
+                <dd>
+                    <ul>
+                        <li><em>国四</em></li>
+                        <li><em>国五</em></li>
+                    </ul>
+                </dd>
+                <div class="clear"></div>
+            </dl>
+            <dl>
+                <dt>
+                    <label>付款方式：</label>
+                    <label class="checkbox-inline i-checks-me">
+                        <i class=""></i>
+                        <em>全部</em>
+                        <input name="fukuan" ms-duplex-string="fukuan" type="hidden" data-duplex-changed="textchange" value="fukuan" class="">
+                    </label>
+                </dt>
+                <dd>
+                    <ul>
+                        <li><em class="selected">全款</em></li>
+                    </ul>
+                    <a data-slide-data="1" data-s="收起筛选" data-more="更多选项" ms-on-click="slideOption" class="toggle-slide hover">收起筛选<i></i></a>
+                </dd>
+                <div class="clear"></div>
+            </dl>
+            <dl class="nobd">
+                <dt>
+                    <label>上牌用途：</label>
+                    <label class="checkbox-inline i-checks-me">
+                        <i class=""></i>
+                        <em>全部</em>
+                        <input name="buyType" ms-duplex-string="buyType" type="hidden" data-duplex-changed="textchange" value="" class="">
+                    </label>
+                </dt>
+                <dd>
+                    <ul>
+                        <li><em class="selected">非营业个人汽车</em></li>
+                        <li><em>非营业企业汽车</em></li>
+                    </ul>
+                </dd>
+                <div class="clear"></div>
+            </dl>
+        </div> 
+        <div class="container  pos-rlt car-list">
+            <table cellpadding="0" cellspacing="0" width="100%">
+                <!--表格头-->
+                <tr>
+                    <td>
+                        <label class="label bg-primary m-l-xs">对比</label>
+                    </td>
+                    <td class="th">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <th width="50">
+                                    <table cellpadding="0" cellspacing="0" width="100%" height="100%">
+                                        <tr>
+                                            <td style="border:0" class="">
+                                                <label data-toggle="tooltip" data-placement="right" title="交车将在该范围内该品牌厂商授权经销商的合法、正规营业场所内进行，具体地点在后续交车通知中另行告知。">
+                                                    <p class="m0">可售</p>
+                                                    <p class="m0">车源</p>
+                                                    <p class="m0">位置</p>
+                                                </label>
+                                            </td>
+                                            <td style="border:0">
+                                                <i class="cyi cyi-fix">i</i>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </th>
+                                <th width="103">
+                                    <table cellpadding="0" cellspacing="0" width="100%" height="100%">
+                                        <tr>
+                                            <td style="border:0;text-align:right;padding-right:10px;">
+                                                <label data-toggle="tooltip" data-placement="top" title="此车价为包含经销商裸车开票金额和华车网平台强力保障购车服务费金额的一口价，在交车通知中将告知您两项分别的具体金额。">
+                                                    车价
+                                                </label>
+                                            </td>
+                                            <td style="border:0">
+                                                <span class="psr">
+                                                    <i class="cyi psa cji">i</i>
+                                                </span>
+                                                <span class="th-sort">
+                                                    <i class="" ms-on-click="sort"></i>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="border:0" >(含服务费)</td>
+                                          
+                                        </tr>
+                                    </table>
+                                 
+                                    
+                                </th>
+                                <th width="123">
+                                    <h6>车身颜色</h6>
+                                    <h5>
+                                        <label data-toggle="tooltip" data-placement="right" title="指首年商业保险是否必须在经销商处购买，若是则显示“指定购买”，如不是显示“自由购买“。">
+                                           <b> 商业保险限定</b>
+
+                                        </label>
+                                        <br />
+                                        <label data-toggle="tooltip" data-placement="bottom" title="为便于比较，首年商业保险参考保费报价， 统一按照投保下列项目计算：机动车损失保险； 机动车盗抢险；第三者责任保险：赔付额度 50万元；车上人员责任险（驾驶人1万元限额 + 乘客座位每座各1万元限额  ） ； 玻璃单独破碎险（进口车为进口玻璃、国产车为国产玻璃  ）、自燃损失险、车身划痕损失险赔付额度2万元、不计免赔特约险（包含机动车损失保险、机动车盗抢险、第三者责任保险、车上人员责任险、车身划痕损失险）。您在收到交车通知后，可再正式确认投保项目，我们承诺项目不变则价格不变；如您到时需要更改投保项目，我们亦承诺原报价的定价标准不变。">
+                                            <b> 和参考保费</b>
+                                        </label>
+                                        <span class="psr">
+                                            <i class="cyi psa xdi">i</i>
+                                            <i class="cyi psa xdi cbi">i</i>
+                                        </span>
+                                    </h5>
+                                    
+                                </th>
+                                <th width="123">
+                                    <h6>内饰颜色</h6> 
+                                    <h5>
+                                        <label data-toggle="tooltip" data-placement="right" title="上牌服务：指经销商为购车方代办机动车注册登记手续的服务，仅按车管所相关规则办理，不对牌号结果负责，也不含在某些限牌地区通过摇号、拍卖、转让等方式取得牌照资源指标的服务和费用。购车方上牌服务必须委托经销商办理，则显示“指定上牌”；如显示“自助上牌”，下方的报价为您可选择该经销商代办上牌的参考价格，当然，您也可选择不代办而亲自去办理；如显示“接受安排”，指华车网平台来安排上牌手续由经销商代办或者您亲自办理，您须完全接受我们所作的安排，如交车通知中告知经销商代办的，其服务费用按下方标准收取。">
+                                            <b> 上牌服务限定</b>
+                                        </label>
+                                    <br />和参考保费
+                                    <span class="psr">
+                                        <i class="cyi psa xdi">i</i>
+                                    </span>
+
+                                    </h5>
+
+                                </th>
+                                <th width="123">
+                                    <h6>行驶里程</h6>
+                                    <h5>
+                                        <label data-toggle="tooltip" data-placement="bottom" title="上临时牌：指办理车辆临时移动牌照。必须由经销商统一办理的，显示“指定上牌”；如非必须，则显示“自助上牌”，下方有报价的为您可选择该经销商代办上牌的参考价格。">
+                                            <b>上临时牌限定</b>
+                                        </label>
+                                    <br />和参考保费
+                                    <span class="psr">
+                                        <i class="cyi psa xdi">i</i>
+                                    </span>
+                                    </h5>
+                                </th>
+                                <th width="148">
+                                    <h6>出厂年月或交车周期</h6>
+                                    <h5>其他收费项目<br />和金额</h5>
+                                </th>
+                                 
+                                <th width="83">
+                                    <h6>排放标准</h6>
+                                    <h5>补贴种类<br />和金额</h5>
+                                </th>
+                                <th width="123">
+                                    <h6>已装原厂选装精品</h6>
+                                    <h5>可选原厂选装<br />参考折扣</h5>
+                                </th>
+                                <th width="106">
+                                    <h6>免费礼品或服务</h6>
+                                    <h5>买车担保金</h5>
+                                </th>
+                                <th width="70">
+                                    <h6>诚意金<br />￥499</h6>
+                                </th>
+                            </tr>
+                        </table>
+                    </td>
+                </tr> 
+                
+                <tr ms-repeat-car="searchlist">
+                    <td >
+                        <label ms-data-id="car.bj_id" class="checkbox-inline i-checks-me"  ms-on-click="duibicheck">
+                            <i class=""></i>
+                        </label>
+                    </td>
+                    <td class="td ">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tr>
+                                <td width="53" style="border-right:0">
+                                    <h6><!--car.show_distance--></h6>
+                                </td>
+                                <td  class="nobd" >
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td width="111" class="first">
+                                                <h6>￥<!--car.bj_lckp_price--></h6>
+                                                
+                                            </td>
+                                            <td width="132">
+                                                <h6><!--car.body_color--></h6>
+                                                <h5> 
+                                                    <label ms-if="car.bj_baoxian == 1">指定购买</label>
+                                                    <label ms-if="car.bj_baoxian == 0">自由购买</label>
+                                                      <br />
+                                                    <label class="hastopborder"><span class="gray">≤</span>￥<!--car.bxprice.count--></label>
+                                                   
+                                                </h5>
+                                                
+                                            </td>
+                                            <td width="132">
+                                                <h6><!--car.interior_color--></h6>
+                                                <h5>
+                                                    <label ms-if="car.bj_shangpai == 1">指定上牌</label>
+                                                    <label ms-if="car.bj_shangpai == 0">自由上牌</label>
+                                                    <br />
+                                                    <label class="hastopborder"><span class="gray">≤</span>￥<!--car.bj_shangpai_price--></label>
+                                                </h5>
+                                                
+                                            </td>
+                                            <td width="133">
+                                                <h6><span class="gray">≤</span><!--car.bj_licheng--></h6>
+                                                <h5>
+                                                    <label ms-if="car.bj_linpai == 1">指定上牌</label>
+                                                    <label ms-if="car.bj_linpai == 0">自由上牌</label>
+                                                    <br />
+                                                    <label class="hastopborder"><span class="gray">≤</span>￥<!--car.bj_linpai_price--></label>
+                                                </h5>
+                                            </td>
+                                            <td width="160">
+                                                <h6><span class="gray">不早于</span><!--car.timerange--></h6>
+                                                <h5>
+                                                    <table class="inner-c" cellpadding="0" cellspacing="0" width="100%" height="100%">
+                                                        <tr>
+                                                            <td><!--car.bj_other_price--></td>
+                                                        </tr>
+                                                    </table>
+                                                </h5>
+                                            </td>
+                                            <td width="88">
+                                                <h6><!--car.paifang--></h6>
+                                                <h5 ms-on-click="showDetail" ms-data-title="car.bj_butie">
+                                                    <label>国家补贴</label>
+                                                    <br />
+                                                    <label class="hastopborder">-￥<!--car.bj_butie--></label>
+                                                </h5>
+                                                
+                                            </td>
+                                            <td width="133"> 
+                                                <h6 ms-on-click="showDetail" data-title="car.xzj"><!--car.xzj-->&nbsp;</h6>
+                                                <h5 ms-on-click="showDetail" ms-data-title="car.bj_other_price">
+                                                    <table class="inner-c" cellpadding="0" cellspacing="0" width="100%" height="100%">
+                                                        <tr>
+                                                            <td><!--car.bj_xzj_zhekou | truncate(10,'***')--></td>
+                                                        </tr>
+                                                    </table>
+                                                </h5>
+                                            </td>
+                                            <td width="116">
+                                                <h6   ms-on-click="showDetail" ms-data-title="car.zengpin"><!--car.zengpin-->&nbsp;</h6>
+                                                <h5  ms-on-click="showDetail" ms-data-title="car.bj_earnest_price">
+                                                    <table class="inner-c" cellpadding="0" cellspacing="0" width="100%" height="100%">
+                                                        <tr>
+                                                            <td><!--car.bj_earnest_price--></td>
+                                                        </tr>
+                                                    </table>
+                                                </h5>
+                                            </td>
+                                          
+                                            <td class="last">
+                                                <h6><a ms-href="/item.html?id=<!--car.bj_id-->" class="btn btn-s-md btn-danger  qg">抢订</a></h6>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="10" class="info-c" >
+                                                 
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                   
+                </tr>
+
+                
+            </table>
+            <div class="toolbar" style="" >
+            
+                <ul class="pagination">
+                    <li><a href="#">上一页</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li class="last-w"><a class="next" href="#">下一页</a></li>
+                    <li><span class="p-info">共100页,到第
+                        <input type="text" style="width:40px;display:inline-block;" class="form-control">
+                        页</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+</form>
+
+    <div class="box" ms-include-src="footer"></div>
+ 
+    <script src="./js/sea.js" ></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/search/search", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>

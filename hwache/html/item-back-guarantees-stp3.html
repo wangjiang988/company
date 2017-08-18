@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>退款完毕 - 退担保金 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt" >
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li class="step-cur">退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content back">
+                    <small>核实信息</small>
+                    <i></i>
+                    <small>办理退款</small>
+                    <i></i>
+                    <small class="juhuang">退款完毕</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi"  ms-controller="item">
+
+        <div class="wapper has-min-step">
+                              
+            <h1>尊敬的客户：</h1>
+            <h1 class="ti">很高兴通知您：您的退款手续已办理完成。    </h1>
+            <br>
+                        
+            <div class="box">
+               
+                <div class="box-inner  box-inner-def">
+                    <p><b>您的收款账户： </b></p>
+                    <p><b>您的退款金额：人民币</b><input type="text" class="baoxianinput juhuang shot" name="money" value=""><b>元</b></p>
+                    <p class="ifl"><i class="yuan"></i></p>
+                    <div class="ifl">
+                        <p><b>第三方支付平台</b></p>
+                        <p><b>平台名称： </b>支付宝</p>
+                        <p><b> 账户名称：</b>XXXXXX</p>
+                    </div>
+                    <div class="clear"></div>
+                    
+                    <p class="ifl"><i class="yuan"></i></p>
+                    <div class="ifl">
+                        <p><b>银行</b></p>
+                        <p><b>开户行： </b></p>
+                        <p><b>账号：</b></p>
+                        <p><b>户名：</b></p>
+                        
+                    </div>
+                    <div class="clear"></div>
+                  
+                    <p>
+                        <b>转账办理完成时间：</b>
+                        <input type="text" class="baoxianinput juhuang shot" name="money" value="">
+                        年
+                        <input type="text" class="baoxianinput juhuang shot" name="money" value="">
+                        月
+                        <input type="text" class="baoxianinput juhuang shot" name="money" value="">
+                        日
+                    </p>
+                    <p>请您查收！谢谢！</p>
+                    <p>
+                        <a href="#" class="juhuang tdu">查看转账凭证</a>
+                        <a href="#" class="juhuang tdu ml150">申请开具发票</a>
+                        <a href="#" class="juhuang tdu ml150">收款遇到问题</a>
+                    </p>
+                    <p><b>您的感受是我们成长的动力， </b><a href="#" class="juhuang tdu ">敬请点评</a></p>
+                </div>
+               
+            </div>
+        
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/item/item-back-guarantees", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.5.8F经销商报价查看收费标准（等待生效） - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a style="background: url(themes/images/custom/custom-dealer-brand.png) 25px 50%  no-repeat" data-toggle="collapse" data-parent="#collapse_2" href="#collapse_x1" class="psr">冀东物贸<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x1" class="panel-collapse in">
+                                            <a href="#">基本信息</a>
+                                            <a href="#">常用车型</a>
+                                            <a href="#">保险设定</a>
+                                            <a href="#">客户文件</a>
+                                            <a href="#" class="cur-select-step">工作时段</a>
+                                            <a href="#" class="">增加经销商</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a  data-toggle="collapse" data-parent="#collapse_3" href="#collapse_x2" class="psr">新建报价(15)<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x2" class="panel-collapse in">
+                                            <a href="#">开始新建</a>
+                                            <a href="#">新建未完(6)</a>
+                                            <a href="#" class="cur-select-step">等待生效(9)</a>
+                                            <a href="#">正在报价(6)</a>
+                                            <a href="#">暂时下架(6)</a>
+                                            <a href="#">失效报价(6)</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-tool" data-toggle="collapse" data-parent="#accordion1" href="#collapse_6"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_6" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">便捷工具</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content psr">
+
+                	<h2 class="title weighttitle">等待生效</h2>
+                	<div class="content-wapper lh30 ">
+	                	<div class="row">
+	                		<div class="col-sm-6 col-xs-6"><span>报价编号：Hc8715678785</span></div>
+	                		<div class="col-sm-6 col-xs-6">
+		                		<span>操作：</span>   
+		                		<a href="javascript:;" class="juhuang tdu">复制</a> 
+                        <a href="javascript:;" class="juhuang tdu ml10">暂停</a> 
+                        <a href="javascript:;" class="juhuang tdu ml10">终止</a> 
+	                		</div>
+	                		<div class="col-sm-6 col-xs-6"><span>报价时间：2016-03-20 16：35：48 </span></div>
+	                		<div class="col-sm-6 col-xs-6"><span>设置生效时间：2016-04-01  09：00</span></div>
+	                		<div class="col-sm-6 col-xs-6"><span>报价人：用户001</span></div>
+	                		<div class="col-sm-6 col-xs-6"><span>生效倒计时：20天 15小时07分08秒</span></div>
+	                		<div class="clear"></div>
+	                	</div>
+                	</div>
+ 
+
+                    <div class="custom-offer-step-tab">
+                        <ul>
+                          <li class="first"><a href="#">车型价格</a></li>
+                          <li><a href="#">车况说明</a></li>
+                          <li><a href="#">选装精品</a></li>
+                          <li><a href="#">首年保险</a></li>
+                          <li class="cur"><a href="#">收费标准</a></li>
+                          <li class="last"><a href="#">其他事项</a></li>
+                          <div class="clear"></div>
+                        </ul>
+                    </div> 
+                    
+                    
+                    <form action="newOfferings">
+
+                       <div class="content-wapper border">
+                           
+                           <div class="tbl-list-tool-panle valite-1">
+                              <p><span class="blue weight">一、上牌（车辆注册登记）：</span></p>
+                              <p class="ml26">
+                                  <span>本地客户上牌手续必须由经销商代办</span>
+                              </p>
+                              <p class="ml26">
+                                <b>代办上牌服务费金额</b>  ￥ 100.00
+                              </p>
+                           </div>
+
+                           <div class="tbl-list-tool-panle  valite-1">
+                              
+                              <p class="ml26"><b>客户本人上牌违约赔偿</b></p>
+                              <p class="ml26">
+                                <span>有此要求</span>
+                                <span class="ml10"><b>客户本人上牌违约赔偿金额：</b>￥ 1000.00</span> 
+                              </p>
+                             
+                              
+                           </div>
+
+                          <div class="tbl-list-tool-panle  valite-1">
+                              <p class="blue"><b>二、上临时牌照（临时移动牌照）</b></p>
+                              <p class="ml26">
+                                  <span>车辆临时移动牌照手续必须由经销商代办（适用条件：a.经销商代办上牌，且客户选择上临牌  b.客户本人上牌）</span>
+                              </p>
+                              
+                              <p class="ml26">
+                                <b>代办车辆临时牌照（每次）服务费金额：</b>  ￥ 100.00
+                              </p>
+                          </div>
+
+                          <p class="blue"><b>三、其他收费（常规）</b></p>
+                          <table style="width:60%" class="tbl custom-info-tbl tbl-blue">
+                             <tbody>
+                               <tr>
+                                   <th class="tac" width="50%">费用名称</th>
+                                   <th class="tac" width="50%">金额</th> 
+                               </tr> 
+                               <tr class="def-temp">
+                                 <td class="tac" width="260" valign="middle">
+                                     <span>出库费</span>
+                                 </td>
+                                 <td class="tac" width="200" valign="middle">
+                                     <span>￥1,000.00</span>
+                                 </td>
+                                 
+                               </tr>
+                               <tr>
+                                  <td colspan="2">
+                                      <div class="mt10"></div>
+                                      <div class="tac">暂无其他收费项目~</div>
+                                      <div class="mt10"></div>
+                                  </td>
+                                </tr>
+                
+                            </tbody>
+                          </table>
+
+                          <div class="m-t-10"></div>
+
+                          <p class="blue"><b>四、刷卡标准：</b></p>
+                          <div class="tbl-list-tool-panle">
+                              <p><b>单车付款刷信用卡免费次数：</b><span class="ml10">10</span><span class="ml10">次;超出次数收费：</span></p>
+                              <div class="ml260">
+                                  <p><span>刷卡金额的</span><span class="ml10">1.0</span><span class="ml10">%（百分之）</span></p>
+                                  <p><span>每次</span><span class="ml10">1000</span><span class="ml10">元（封顶）</span></p>
+                              </div>
+                               
+                          </div>
+
+                          <div class="tbl-list-tool-panle">
+                              <p><b>单车付款刷借记卡免费次数：</b><span class="ml10">不限</span></p>
+                          </div>
+ 
+
+                           <div class="m-t-10"></div>
+                           <div class="m-t-10"></div>
+                            
+                       </div>
+             
+                    </form>
+                    <div class="m-t-200"></div>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin","module/custom/custom.admin.common.jquery","module/custom/custom.admin.charge.jquery", "module/common/common", "bt"],function(a,b,c){
+         
+        });
+    </script>
+
+
+
+</body>
+</html>
+
+

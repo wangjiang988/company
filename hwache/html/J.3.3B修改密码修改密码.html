@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.3.3B修改密码修改密码 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse in">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#" class="menu-select">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">常用管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">报价管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="user-content custom-content">
+                    
+                  
+                    <h4 class="title"><span>修改密码</span></h4>
+
+                    <div class="content-wapper ">
+                        <div class="hd">
+                           <ul>
+                                <li><span>1</span><label>验证身份</label></li>
+                                <li class="cur"><span>2</span><label>修改登录密码</label></li>
+                                <li><span>3</span><label>完成</label></li>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>
+                        <div class="form form-pwd pos-rlt">
+                            <div class="mt60"></div>
+                            <div class="input-group">
+                                <span class="">&nbsp;&nbsp;&nbsp;新密码：</span>
+                                <input ms-on-keydown="pwdStrong" name="pwd" type="password" class="pwdtxt" placeholder="6-20个字符，建议字母、数字和符号两种以上组合" >
+                                <p class="hide inputerror mt10 ml68">请输入6~20个字符，建议字母、数字和符号两种以上组合</p>
+                            </div>
+                            <div class="pwd-strong pwd-modify-wapper">
+                                <label>安全程度：</label>
+                                <span class="p-s-less">弱</span>
+                                <span class="p-s-normal">中</span>
+                                <span class="p-s-max">强</span>
+                            </div>
+                            <div class="input-group pos-rlt">
+                                <span class="">确认密码：</span>
+                                <input name="pwd2" type="password" class="pwdtxt" placeholder="确认密码" >
+                                <p class="hide inputerror mt10 ml68">*两次密码输入不一致</p>
+                            </div>
+                            <p class="tac">
+                                <button ms-on-click="SetPwd" type="submit" class="w150 btn btn-s-md btn-danger">下一步</button>
+                            </p>
+                        </div>
+
+                        <div class="m-t-10"></div>
+                        <div class="m-t-10"></div>
+
+                    </div>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+
+

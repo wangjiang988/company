@@ -1,0 +1,319 @@
+##2017-5-8
+-----------------------
+#####
+car_user_bank表 新增一个银行卡户主名字段    字段名叫bank_register_name
+#####
+car_hc_user_withdraw_line表
+	1.新增remark字段  字段名叫bank_register_name
+	2.修改的线路状态字段 
+		`status`  线路状态(四个状态  1.可使用，有充值记录  2.已验证可使用 ( 有充值 有提现记录) 3.已绑定账户 0. 已失效不可用
+##2017-5-9
+---------------------
+#####
+新增后台操作日志管理表（工单管理表）
+CREATE TABLE `car_hc_admin_operation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL COMMENT '修改人id',
+  `type` tinyint(3) NOT NULL DEFAULT '10' COMMENT '类型（1* 客户财务 - 11提现线路操作日志related_id为car_hc_user_withdraw_line.uwl_id）',
+  `operation` varchar(255) NOT NULL DEFAULT '' COMMENT '具体操作',
+  `remark` varchar(255) NOT NULL COMMENT '备注',
+  `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='后台操作日志管理表（工单管理表）';
+
+
+新增操作明细表 --用来记录该操作修改了那条记录的哪个字段，并记录前后值
+CREATE TABLE `car_hc_admin_operation_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `op_id` int(11) NOT NULL DEFAULT '0' COMMENT '对应的操作id',
+  `table_name` varchar(100) NOT NULL COMMENT '操作的表名 不带prefix（即car_）',
+  `field_name` varchar(200) NOT NULL COMMENT '字段名',
+  `related_id` int(11) NOT NULL COMMENT '对应纪录的id',
+  `old_val` varchar(255) NOT NULL DEFAULT '' COMMENT '修改前的值',
+  `now_val` varchar(255) NOT NULL DEFAULT '' COMMENT '修改后的值',
+  `is_del` tinyint(1) DEFAULT '0' COMMENT '1 删除 0正常',
+  `status` tinyint(1) DEFAULT '1' COMMENT '1可用 0 不可用',
+  `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COMMENT='操作明细表 --用来记录该操作修改了那条记录的哪个字段，并记录前后值';
+
+
+新增操作记录表备注表（附件表） ---用来存放操作纪录的一些附件描述
+CREATE TABLE `car_hc_admin_operation_comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `op_id` int(11) NOT NULL COMMENT '对应的操作id',
+  `file_name` varchar(255) NOT NULL COMMENT '附件名',
+  `file_path` varchar(255) NOT NULL COMMENT '附件地址',
+  `file_description` varchar(255) NOT NULL COMMENT '文件描述',
+  `remark` varchar(255) NOT NULL COMMENT '备注',
+  `is_del` tinyint(2) NOT NULL DEFAULT '0' COMMENT '1已删除，0 正常',
+  `status` tinyint(2) DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='操作记录表备注表（附件表）';
+
+
+
+#####
+car_hc_user_withdraw_line表添加字段 is_del
+`is_del` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0  未删除，1 已删除',
+
+##2017-5-12
+-------------
+#####
+car_hc_user_recharge
+修改money字段的备注 改为:"提交金额"
+添加字段.
+`recharge_money` decimal(8,2) DEFAULT '0.00' COMMENT '真实入账金额',
+`recharge_confirm_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '确认到账日期',
+
+##2017-5-15
+-------------
+#####
+car_hc_admin_operation_comment
+添加字段.
+`related` varchar(255) DEFAULT '' COMMENT '关联字段和数据，对应数据的（id名|id值) 如: ur_id|32，用来在没有生成对应的op_id时,和其他数据进行临时绑定',
+`step` tinyint(2) DEFAULT '0' COMMENT '标记这是属于第几步骤上传的附件',
+
+`user_id` int(11) NOT NULL DEFAULT '0' COMMENT '操作人id',
+`user_name` varchar(100) DEFAULT NULL COMMENT '操作人名称',
+
+car_hc_user_recharge
+添加字段
+ `transfer_to_order` decimal(8,2) DEFAULT '0.00' COMMENT '订单入账金额',
+
+ ##2017-5-17
+car_hc_user_withdraw
+添加字段
+`operation_admin_id` int(11) DEFAULT '0' COMMENT '接单人id',
+`operation_admin_name` varchar(100) DEFAULT NULL COMMENT '接单人名字',
+`transfer_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' COMMENT '转账时间',
+
+ ##2017-5-18
+car_hc_user_withdraw
+添加字段
+`transfer_voucher` varchar(255) DEFAULT '' COMMENT '转账凭证附件地址',
+
+ ##2017-5-19
+ 新建表
+ car_hc_admin_dept
+CREATE TABLE `car_hc_admin_dept` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL DEFAULT '' COMMENT '部门名称',
+  `description` varchar(255) DEFAULT '' COMMENT '描述',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态',
+  `is_del` tinyint(2) NOT NULL DEFAULT '0' COMMENT '是否删除',
+  `created_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='管理员部门表';
+#######
+car_admin
+添加字段
+`dept_id` int(11) DEFAULT '0' COMMENT '部门id',
+####
+新建表
+
+CREATE TABLE `car_hc_user_special_application` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL COMMENT '申请项目',
+  `special_type` tinyint(2) NOT NULL DEFAULT '0' COMMENT '（1.冻结，2.解冻，3.转出, 4.转入,5,返还已得，6获得返还）',
+  `user_id` varchar(200) NOT NULL COMMENT '客户id',
+  `type` tinyint(2) NOT NULL COMMENT '（10客户申请(user_id 对应users表)，20售方申请（user_id 对应member表））',
+  `money` decimal(8,2) NOT NULL COMMENT '涉及金额',
+  `money_type` tinyint(2) NOT NULL DEFAULT '1' COMMENT '客户账户是增还是减 1增',
+  `apply_admin_id` int(11) NOT NULL COMMENT '申请人id',
+  `apply_admin_name` varchar(200) NOT NULL COMMENT '申请人名称',
+  `from_where` varchar(500) NOT NULL COMMENT '资金来源(从哪里减)',
+  `to_where` varchar(500) NOT NULL COMMENT '资金去向( 加哪里去）',
+  `reason` varchar(255) NOT NULL COMMENT '申请原因',
+  `remark` text NOT NULL COMMENT '申请备注',
+  `judge_remark` text NOT NULL COMMENT '审批备注',
+  `judge_admin_id` int(11) NOT NULL DEFAULT '0',
+  `judge_admin_name` varchar(200) NOT NULL DEFAULT '' COMMENT '审批人名称',
+  `judge_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '审批时间',
+  `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '(0待批准，1通过，2未通过)',
+  `is_del` tinyint(2) DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='特别事项申请表';
+
+#####
+新建表(已删除)
+CREATE TABLE `car_hc_user_special_moneyflow` (
+  `id` int(11) NOT NULL,
+  `special_id` int(11) NOT NULL COMMENT '特别事项申请表id',
+  `from` varchar(200) NOT NULL COMMENT '资金来向',
+  `to` varchar(200) NOT NULL COMMENT '资金去向',
+  `money` decimal(8,2) NOT NULL COMMENT '流向金额',
+  `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
+  `status` tinyint(2) NOT NULL DEFAULT '0' COMMENT '状态',
+  `is_del` tinyint(2) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='"特别事项申请表附属资金流向表"';
+两个表是一对多的关系
+
+##2017-5-31
+
+#####  
+新建表
+CREATE TABLE `car_hc_dealer_delivery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) NOT NULL COMMENT '寄件人id(对应member表主键）',
+  `file_number` int(11) NOT NULL DEFAULT '0',
+  `delivery_company_name` varchar(200) NOT NULL DEFAULT '' COMMENT '快递公司名称',
+  `delivery_number` varchar(200) NOT NULL DEFAULT '' COMMENT '快递单号',
+  `is_del` tinyint(2) NOT NULL COMMENT '是否被删除',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='dealer寄件表';
+
+##2017-6-1
+
+#####
+新建表
+CREATE TABLE `car_hc_settlement` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) NOT NULL COMMENT '代理商的登录id',
+  `year_month` varchar(10) NOT NULL COMMENT '结算年月',
+  `predict_money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '预计结算金额',
+  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '结算总金额',
+  `order_num` int(11) NOT NULL DEFAULT '0' COMMENT '结算的总订单数量',
+  `file_number` tinyint(3) NOT NULL DEFAULT '1' COMMENT '使用文件数',
+  `service_income` decimal(8,2) NOT NULL COMMENT '服务费收入',
+  `service_income_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '服务费收入时间',
+  `is_del` tinyint(2) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='结算表';
+
+
+CREATE TABLE `car_hc_settlement_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) NOT NULL COMMENT '代理商的member_id',
+  `settlement_id` int(11) NOT NULL DEFAULT '0' COMMENT '结算表id',
+  `order_id` int(11) NOT NULL COMMENT '订单id',
+  `money` decimal(8,2) NOT NULL COMMENT '结算金额',
+  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '项目明细及金额',
+  `is_del` tinyint(2) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '结算时间',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='结算明细表';
+
+
+CREATE TABLE `car_hc_settlement_filecount` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` int(11) NOT NULL COMMENT 'member表member_id',
+  `file_number` tinyint(5) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='代理商结算文件统计表';
+
+
+##20170605
+新建表
+CREATE TABLE `car_hc_filter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` tinyint(3) NOT NULL DEFAULT '10' COMMENT '''>=10（客户 10 线上支付退款周期， 11客户提现银行手续费设定 12提现申请拦截 ）  >=20( 售方 21提现银行手续费 22 提现申请拦截 )',
+  `name` varchar(255) NOT NULL COMMENT '拦截名称',
+  `template_id` varchar(200) NOT NULL COMMENT '模板id  多个用，隔开',
+  `setor_id` int(11) NOT NULL,
+  `setor_name` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='拦截表';
+
+CREATE TABLE `car_hc_filter_template` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order` int(8) NOT NULL DEFAULT '0' COMMENT '排序',
+  `type` tinyint(3) NOT NULL COMMENT '>=10（客户 10 线上支付退款周期， 11客户提现银行手续费设定 12提现申请拦截 ）  >=20( 售方 21提现银行手续费 22 提现申请拦截 )',
+  `name` varchar(255) NOT NULL COMMENT '模板名称',
+  `content` text NOT NULL COMMENT '拦截规则',
+  `description` varchar(255) NOT NULL DEFAULT '' COMMENT '描述',
+  `is_del` tinyint(2) NOT NULL DEFAULT '0',
+  `admin_id` int(11) NOT NULL COMMENT '创建人id',
+  `admin_name` varchar(255) NOT NULL COMMENT '创建人',
+  `setor_id` int(11) NOT NULL DEFAULT '0' COMMENT '设置人id',
+  `setor_name` varchar(255) NOT NULL DEFAULT '' COMMENT '设置人',
+  `set_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态1 可用，0 不可用',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='拦截设置表';
+
+##20170607
+新建表
+平台资金日志总表
+CREATE TABLE `car_hc_account_log` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `from_user_id` int(11) NOT NULL DEFAULT '0' COMMENT '支出方用户id  结合对应where使用',
+  `from_where` tinyint(3) NOT NULL DEFAULT '1' COMMENT '1,客户 2,售方 3,平台',
+  `from_remark` varchar(255) NOT NULL DEFAULT '' COMMENT '支出方说明',
+  `to_user_id` int(11) DEFAULT '0' COMMENT '收入方id',
+  `to_where` tinyint(3) NOT NULL DEFAULT '1' COMMENT '1.客户，2. 售方 3.平台',
+  `to_remark` varchar(255) NOT NULL DEFAULT '' COMMENT '收入方说明',
+  `trade_no` varchar(255) NOT NULL DEFAULT '' COMMENT '流水号',
+  `remark` varchar(255) NOT NULL COMMENT '说明',
+  `money` decimal(8,2) NOT NULL DEFAULT '0.00' COMMENT '金额',
+  `type` tinyint(1) NOT NULL DEFAULT '0' COMMENT '流水类型、10转入客户 11转入售方、20客户转出，21售方转出、30客户解冻，31售方解冻、40客户冻结，41售方冻结',
+  `order_id` int(11) NOT NULL DEFAULT '0' COMMENT '购车订单号',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '状态',
+  `money_type` enum('-','+') CHARACTER SET armscii8 NOT NULL DEFAULT '+' COMMENT '资金状态（增加、减少）',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `IuserId` (`from_user_id`),
+  KEY `IorderId` (`order_id`),
+  KEY `Itype` (`type`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='资金变动日志总表（交易流水表）';
+
+平台申报表
+CREATE TABLE `car_hc_admin_declare` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` tinyint(3) NOT NULL DEFAULT '10' COMMENT '类型（10 订单收入,20提现手续费，30 转入收入,40 转出支出）',
+  `description` varchar(255) NOT NULL COMMENT '说明',
+  `money` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '收入金额',
+  `first_cost` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '业务成本',
+  `gross_profit` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `year_month` varchar(20) NOT NULL DEFAULT '' COMMENT '业务申报年月',
+  `status` tinyint(3) NOT NULL DEFAULT '10' COMMENT '10待申报 20已申报 30 免申报',
+  `is_invoice` tinyint(3) NOT NULL DEFAULT '0' COMMENT '0  未开票 1 已开票',
+  `to_seller_account` tinyint(3) NOT NULL DEFAULT '0' COMMENT '1 售方入账，0 否',
+  `maintenance_status` tinyint(3) NOT NULL DEFAULT '0' COMMENT '维护状态(0 未添加，1已添加)',
+  `income_series_number` varchar(100) NOT NULL DEFAULT '' COMMENT '收入序列号',
+  `income_voucher_number` varchar(100) NOT NULL DEFAULT '' COMMENT '收入凭证号',
+  `firstcost_series_number` varchar(100) NOT NULL COMMENT '成本序列号',
+  `firstcost_voucher_number` varchar(100) NOT NULL DEFAULT '' COMMENT '成本凭证号',
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='平台申报表';
+
+## 20170612
+
+#####
+订单加信宝明细表
+CREATE TABLE `car_hc_order_jiaxinbao_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_id` int(11) NOT NULL,
+  `type` tinyint(2) NOT NULL DEFAULT '10' COMMENT '10 冻结，20 解冻',
+  `money` decimal(10,2) NOT NULL COMMENT '金额',
+  `description` varchar(255) NOT NULL COMMENT '描述',
+  `is_del` tinyint(2) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='订单加信宝明细表';
+

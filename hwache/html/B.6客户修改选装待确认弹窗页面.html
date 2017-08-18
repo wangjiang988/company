@@ -1,0 +1,1907 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>B.6客户修改选装待确认弹窗页面 - 用户管理 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="customheader"></div>
+
+    <div style="overflow: visible;" class="container content m-t-86 pos-rlt " ms-controller="custom">
+       <div class="cus-step">
+           <div class="line stp-2"></div>
+           <ul>
+               <li class="first"><span class="hide">1</span><i class="cur-step">1</i></li>
+               <li class="second"><span>2</span><i class="cur-step cur-step-2">2</i></li>
+               <li class="third"><span>3</span><i>3</i></li>
+               <li class="fourth"><span>4</span><i>4</i></li>
+               <li class="last"><span>5</span><i>5</i></li>
+           </ul> 
+       </div>
+       <div class="step">
+           <div class="min-step">
+                <div class="m-content m-content-2">
+                    <small>等待响应</small>
+                    <i></i>
+                    <small class="juhuang">响应完成</small>
+                </div>
+            </div>
+       </div>
+   
+
+        <div class="wapper has-min-step">
+                      
+            <div class="box">
+               
+                <div class="box-inner  box-inner-def">
+                   
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" class="tal juhuang"><label class=" fs16">订单信息</label></th>
+                               
+                            </tr>
+                            <tr>
+                                <td width="660">
+                                    <table class="tbl2" width="100%">
+                                        <tr>
+                                            <td  width="50%"><p><b>订单号：</b></p></td>
+                                            <td  width="50%">
+                                                <div class="psr">
+                                                  <b>订单时间：</b>2015年10月20日
+                                                  <span class="sj"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                                                     <b>更多</b>
+                                                  </span>
+                                                  <p class="tm tm-long">
+                                                    <label>客户诚意金确认进入加信宝时间  2015-10-20   10：57：57</label>
+                                                    <label>根据订单走过的路径显示</label>
+                                                    <!--//类似这样的 <label>反馈订单时间  2015-10-20   10：57：57  </label>-->
+                                                    <label>客户买车担保金确认进入加信宝时间    2015-10-20   10：57：57</label>
+                                                    <label>响应订单时间   2015-10-20   10：57：57</label>
+                                                  </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>订单类别：</b>现车订单</p><hr class="dashed"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>品牌：</b></p></td>
+                                            <td><p><b>车系：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>车型规格：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>座位数：</b></p></td>
+                                            <td><p><b>厂商指导价：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>车辆类别：</b></p></td>
+                                            <td><p><b>数量：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><hr class="dashed nomargin"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>经销商名称：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>营业地点：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>交车地点：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>归属地区：</b></p></td>
+                                            <td>
+                                                <div class="psr">
+                                                  <b>销售区域：</b>
+                                                  <span class="">苏州</span>
+                                                  <span class="sj" ms-click="hideTm"  ms-mouseout="hideTm()"  ms-mouseover="displayTm()" >
+                                                     <span class="fs12">更多</span>
+                                                  </span>
+                                                  <div class="tm loca-c page-loca" >
+                                                    <input type="hidden" name="page-loca">
+                                                    <a href="javascript:;">南京</a>
+                                                    <a href="javascript:;">苏州</a>
+                                                    <a href="javascript:;">无锡</a>
+                                                    <a href="javascript:;">常州</a>
+                                                  </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><hr class="dashed nomargin"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>经销商裸车开票价格：</b></p></td>
+                                            <td><p><b>付款方式：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>客户买车定金：</b></p></td>
+                                            <td><p><b>我的服务费：</b></p></td>
+                                        </tr>
+                                         
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="psr">
+                                                  <b>加信宝已冻结浮动保证金：</b>xxxxx
+                                                  <span class="sj"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                                                     <b>详细</b>
+                                                  </span>
+                                                  <p class="tm detail" style="width:470px">
+                                                    <label>歉意金：499,00元（2015-10-26   10：57 ：57）</label>
+                                                    <label>歉意金（赔偿客户）：— 499.00元（2015-10-25   10：57：57）</label>
+                                                    <label>歉意金2：499.00元（2015-10-25  10：57：57）</label>
+                                                    <label>客户买车担保金利息金额：723.00元（2015-10-25 ~ 2015-11-03）</label>
+                                                  </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        
+                                    </table>                                  
+                                </td>
+                                <td>
+                                    <div class="times times2" style="height:450px">
+                                        <p class="status tac status2"><b class="fs14">订单状态：已响应订单，等待预约交车    </b></p>
+                                        
+                                        <p class="tac fs14">离交车通知发出时限还剩<span class="juhuang">X天X时X分X秒</span></p>
+                                        <p class="tac fs14">离交车时限还剩<span class="juhuang">XX天</span></p>
+                                        <p class="tac m-t-10"><a href="#" class="juhuang tdu">查看订单总详情</a></p>
+                                        <hr class="dashed mt20">
+                                        <p class="pl20 lh25"><b>客户会员号： </b>HC13809643 </p>
+                                        <p class="pl20 lh25"><b>客户姓名：   </b>王** </p>
+                                        <p class="pl20 lh25"><b>客户称呼：   </b>先生/女士/小姐 </p>
+                                        <p class="pl20 lh25"><b>客户电话：   </b>134****2598 </p>
+                                        <p class="pl20 lh25"><b>客户承诺上牌地区：   </b></p>
+                                        <p class="pl20 lh25"><b>客户车辆用途：   </b>非营业个人客车 </p>
+                                        <p class="pl20 pt">
+                                          <b>上牌客户身份类别： </b>
+                                          <span class="fr" style="width: 165px;color:#8e8d8d;text-align: left;">国内其他限牌城市户籍居民（北京）</span> 
+                                          <span class="clear"></span>
+                                        </p>
+                                        <p class="clear"></p>
+                                        <p class="pl20 lh25"><b>客户买车担保金（已存加信宝）：   </b> </p>
+                                       
+                                    </div>
+                                </td>
+                               
+                            </tr> 
+                          
+                        </tbody>
+                    </table>
+
+
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" class="tal juhuang"><label class=" fs16">商品内容</label></th>
+                            </tr>
+                            <tr>
+                                <td width="660">
+                                    <table class="tbl2" width="100%">
+                                        <tr>
+                                            <td width="33%"><p><b>基本配置：</b></p></td>
+                                            <td width="33%"><p><b>生产国别：</b></p></td>
+                                            <td width="33%"><p><b>排放标准：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="33%"><p><b>车身颜色：</b></p></td>
+                                            <td width="33%"><p><b>内饰颜色：</b></p></td>
+                                            <td width="33%"><p><b>出厂年月：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="33%"><p><b>行驶里程：</b></p></td>
+                                            <td width="33%"><p><b>交车时限：  </b>年    月    日</p></td>
+                                            <td width="33%"><p><b>交车通知发出时限：</b>年   月    日</p></td>
+                                        </tr>
+                                       
+                                        <tr>
+                                            <td colspan="3"><hr class="dashed nomargin"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <p>已装原厂选装精品：</p>
+                                                <table class="tbl tbl3">
+                                                    <tr>
+                                                       <th><p class="fs15">名称</p></th>
+                                                       <th><p class="fs15">型号/说明</p></th>
+                                                       <th><p class="fs15">厂家指导价</p></th>
+                                                       <th><p class="fs15">数量</p></th>
+                                                       <th><p class="fs15">附加价值</p></th>
+                                                   </tr>
+                                                   <tr>
+                                                       <td>&nbsp;</td>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <td></td>
+                                                   </tr>
+                                                   <tr>
+                                                       <td>&nbsp;</td>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <td></td>
+                                                       <td></td>
+                                                   </tr>   
+                                                </table>
+                                                <h2 class="text-right pr150 fs15"><b>合计价值：</b><span class="juhuang"></span></h2>
+                                                
+
+                                            </td>
+                                        </tr>
+                                    </table>                                      
+                                </td>
+                            </tr> 
+                          
+                        </tbody>
+                    </table>
+
+                    
+                    
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" class="tal juhuang"><label class=" fs16">商品内容</label></th>
+                            </tr>
+                            <tr>
+                                <td width="660">
+                                    <table class="tbl2" width="100%">
+                                        <tr>
+                                            <td width="33%"><p><b>基本配置：</b></p></td>
+                                            <td width="33%"><p><b>生产国别：</b></p></td>
+                                            <td width="33%"><p><b>排放标准：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="33%"><p><b>车身颜色：</b></p></td>
+                                            <td width="33%"><p><b>内饰颜色：</b></p></td>
+                                            <td width="33%"><p><b>交车周期：    </b>6个月 </p></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="33%"><p><b>交车时限：  </b>年    月    日</p></td>
+                                            <td width="33%"><p><b>交车通知发出时限：</b>年   月    日</p></td>
+                                            <td width="33%"><p><b></b></p></td>
+                                        </tr>
+                                      
+
+                                    </table>                                    
+                                </td>
+                            </tr> 
+                          
+                        </tbody>
+                    </table>
+
+                    <h2 class="title">选装精品  </h2>
+                    <p class="fs14"><b>原厂选装精品折扣率：</b></p>
+                    <p class="fs14"><b>原厂选装精品的已定价标准和客户已选精品：(<span class="bl">10</span>)<span class="sj sj2" ms-on-click="toggleList"></span></b></p>
+                    <table class="tbl bltbl">
+                        <tr>
+                           <th><p class="fs15">名称</p></th>
+                           <th><p class="fs15">型号/说明</p></th>
+                           <th><p class="fs15">含安装费折后总单价</p></th>
+                           <th><p class="fs15">单车可装件数</p></th>
+                           <th><p class="fs15">可供件数</p></th>
+                           <th><p class="fs15 bl">客户已选件数</p></th>
+                           <th><p class="fs15 ">客户选定时间</p></th>
+                       </tr>
+                       <tr>
+                           <td>&nbsp;</td>
+                           <td>&nbsp;</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                       </tr>
+                       <tr>
+                           <td>&nbsp;</td>
+                           <td>&nbsp;</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                       </tr>   
+                    </table>
+
+                    <p class="fs14"><b>非原厂选装精品的已定价标准和客户已选精品：(<span class="bl">10</span>)<span class="sj sj2" ms-on-click="toggleList"></span></b></p>
+                    <table class="tbl bltbl">
+                        <tr>
+                           <th><p class="fs15">品牌</p></th>
+                           <th><p class="fs15">名称</p></th>
+                           <th><p class="fs15">型号/说明</p></th> 
+                           <th><p class="fs15">含安装费折后总单价</p></th>
+                           <th><p class="fs15">单车可装件数</p></th>
+                           <th><p class="fs15">可供件数</p></th>
+                           <th><p class="fs15 bl">客户已选件数</p></th>
+                           <th><p class="fs15 ">客户选定时间</p></th>
+                       </tr>
+                       <tr>
+                           <td>&nbsp;</td>
+                           <td>&nbsp;</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                       </tr>
+                       <tr>
+                           <td>&nbsp;</td>
+                           <td>&nbsp;</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                       </tr>   
+                    </table>
+
+                    <h2 class="title">车辆首年商业保险</h2>
+                    <p class="fs14"><b>客户是否经销商处购买商业保险：</b>确定购买</p>
+                    <p class="fs14"><b>客户是否经销商处购买商业保险：</b>待定</p>
+                    <p class="fs14"><b>客户是否经销商处购买商业保险：</b>不购买</p>
+                    <p class="fs14"><b>提供商业保险的保险公司：</b></p>
+                    <p class="fs14">商业保险的首年保费基准：<span class="sj sj2" ms-on-click="toggleList"></span></p>
+
+
+                    <table class="tbl">
+                       
+                        <tbody><tr>
+                            <td width="50" valign="top">
+                                <table width="175%" height="100%" style="margin-left: -10px">
+                                    <tbody><tr>
+                                        <td style="border:0;height: 30px;border-bottom: 1px solid #dcdddd;padding: 0;margin:0;text-align: center;" valign="middle"><b>类别</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:0;">
+                                            <p class="fs14 tac"><b>主</b></p>
+                                            <p class="fs14"><b>&nbsp;</b></p>
+                                            <p class="fs14"><b>&nbsp;</b></p>
+                                            <p class="fs14"><b>&nbsp;</b></p>
+                                            <p class="fs14 tac"><b>险</b></p>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                                
+                            </td>
+                            <td class="nopadding">
+                                <table width="100%">
+                                    <tbody><tr>
+                                        <th width="180" class="">险种</th>
+                                        <th class="" width="400">赔付选项</th>
+                                        <th class="" width="140">保费原价</th>
+                                        <th class="norightborder">折后价</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><label class="fs14">机动车损失险</label></td>
+                                        <td class="">按保险公司规定执行</td>
+                                        <td class="tac">元</td>
+                                        <td class="norightborder tac">元</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><label class="fs14">机动车盗抢险</label></td>
+                                        <td class="">按保险公司规定执行</td>
+                                        <td class=""></td>
+                                        <td class="norightborder"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><label class="fs14">第三者责任保险</label></td>
+                                        <td class="cell nopadding" width="320" >
+                                             
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">赔付额度5万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">赔付额度10万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">赔付额度15万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">赔付额度20万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">赔付额度50万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">赔付额度100万元</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    
+                                        </td>
+                                        <td class="nopadding">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="norightborder nopadding">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell nobottomborder"><label class="fs14">车上人员责任险</label></td>
+                                        <td class="cell nopadding nobottomborder" width="320">
+                                             <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额1万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额2万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额3万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额4万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额5万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额6万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额7万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额8万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额9万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">驾驶人每次事故责任限额5万元</p>
+                                                    </td>
+                                                </tr>
+                                               
+                                            </table>
+                                        </td>
+                                        <td class="nobottomborder nopadding" width="130" align="center">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="norightborder nobottomborder nopadding">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" class="">
+                                <p class="fs14"><b>附</b></p>
+                                <p class="fs14"><b>加</b></p>
+                                <p class="fs14"><b>险</b></p>
+                            </td>
+                            <td class="nopadding ">
+                                <table width="100%">
+                                    <tbody><tr>
+                                        <td class="cell " width="180"><label class="fs14">玻璃单独破碎险</label></td>
+                                        <td class="cell nopadding" width="400">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">进口玻璃</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">国产玻璃</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="nopadding" width="140">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="norightborder nopadding">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><label class="fs14">自燃损失险</label></td>
+                                        <td class="cell" width="320">按保险公司规定执行</td>
+                                        <td class="">&nbsp;</td>
+                                        <td class="norightborder">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><label class="fs14">车身划痕损失险</label></td>
+                                        <td class="cell nopadding" width="320">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">赔付额度0.2万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">赔付额度1万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">赔付额度2万元</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">赔付额度0.5万元</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="nopadding">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="norightborder nopadding">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><label class="fs14">不计免赔特约险</label></td>
+                                        <td class="cell nopadding" width="320">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">机动车损失险不计免赔</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">机动车盗抢险不计免赔</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">第三者责任险不计免赔，按赔付额度保费x费率</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">车上人员责任险不计免赔，按赔付额度保费x费率</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">车身划痕损失险不计免赔，按赔付额度保费x费率</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="nopadding">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">费率    %计保费</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">费率    %计保费</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">费率    %计保费</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td class="norightborder nopadding">
+                                            <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">&nbsp;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">左侧保费 x 98%</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="bottomtborder norightborder">
+                                                        <p class="tal fs14">左侧保费 x 98%</p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="nobottomborder">
+                                                        <p class="tal fs14">左侧保费 x 98%</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                     
+                                    
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p>说明：具体投保险种与保额，由客户在交车通知反馈中选择。 </p>
+
+                    <h2 class="title">上牌（车辆注册登记）</h2>
+                    <p class="fs14"><b>是否由经销商代办上牌： </b>确定代办上牌</p>
+                    <p class="fs14"><b>是否由经销商代办上牌：</b>待定</p>
+                    <p class="fs14"><b>是否由经销商代办上牌：</b>不代办</p>
+                    <p class="fs14"><b>代办上牌服务费金额：</b></p>
+                    <p class="fs14"><b>客户本人上牌违约金约定：</b></p>
+                    <p class="fs14"><b>限牌城市（北京）客户取得牌照指标的安排： </b>已取得牌照指标  或  订车后自行取得牌照指标</p>
+                    
+                    <h2 class="title">上临时牌照（车辆临时移动牌照）</h2>
+                    <p class="fs14"><b>是否由经销商代办车辆临时牌照：</b>确认代办</p>
+                    <p class="fs14"><b>是否由经销商代办车辆临时牌照：</b>待定</p>
+                    <p class="fs14"><b>是否由经销商代办车辆临时牌照：</b>不代办</p>
+                    <p class="fs14"><b>代办车辆临时牌照（每次）服务费金额：</b></p>
+                    
+                    <h2 class="title">其他收费</h2>
+                    <div style="width: 70%;margin:0 auto">
+                        <table class="tbl">
+                            <tbody><tr>
+                                <th><label class="fs14 weight">费用名称</label></th>
+                                <th><label class="fs14 weight">金额</label></th>
+                            </tr>
+                            <tr>
+                                <td><p class="tac fs14">XX证明</p></td>
+                                <td><p class="tac fs14">1000元</p></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+
+                    <h2 class="title">交车有关事宜</h2>
+                    <p class="fs14"><b>交车当场移交客户的文件资料：</b><span>发票、<span class="bl">XX证明</span>（客户电话：134779921356）</span></p>
+                    <p class="fs14"><b>交车当场移交客户的随车工具：</b></p>
+                    <p class="fs14"><b>在经销商处单车付款刷卡收费标准：</b></p>
+
+                    <p class="fs14">信用卡免费<input type="text" class="baoxianinput juhuang shot" name="money" value="">次；超出次数收费：刷卡金额的<input type="text" class="baoxianinput juhuang shot" name="money" value="">%（百分之），每次<input type="text" class="baoxianinput juhuang shot" name="money" value="">元（封顶）。</p>
+                    <p class="fs14">借记卡免费<input type="text" class="baoxianinput juhuang shot" name="money" value="">次；超出次数收费：刷卡金额的<input type="text" class="baoxianinput juhuang shot" name="money" value="">%（百分之），每次<input type="text" class="baoxianinput juhuang shot" name="money" value="">元（封顶）。</p>
+
+
+                    <h2 class="title">补贴</h2>
+                    <p class="ifl fs14"><i class="yuan"></i></p>
+                    <div class="ifl">
+                        <p class="fs14"><b>国家节能补贴</b></p>
+                        <p class="fs14"><b>补贴金额： </b></p>
+                        <p class="fs14"><b> 办理流程和时限：</b></p>
+                    </div>
+                    <div class="clear"></div>
+                    <p class="fs14"><i class="yuan"></i><b>地方政府置换补贴：</b>经销商可提供必要协助  </p>
+                    <p class="fs14"><i class="yuan"></i><b>厂家或经销商置换补贴：</b>有 </p>
+                    <div class="clear"></div>
+
+                    <table class="tbl">
+                      <tr>
+                        <th class="tal juhuang">订单信息</th>
+                      </tr>
+                      <tr>
+                        <td>
+                            <div style="width: 55%;margin:0 auto">
+                               <table class="tbl">
+                                  <tbody>
+                          
+                                      <tr>
+                                          <td><p class="tal fs14 weight">车辆识别代号（VIN码）</p></td>
+                                          <td width="300">
+                                              <span>LDC1234567890UYTR</span>
+                                              <textarea style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                              <span class="edit show" ms-on-click="edit"></span>
+                                          </td>
+                                      </tr> 
+                                      <tr>
+                                          <td><p class="tal fs14 weight">发动机号</p></td>
+                                          <td width="300">
+                                              <span>8605787</span>
+                                              <textarea  style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                              <span class="edit show" ms-on-click="edit"></span>
+                                          </td>
+                                      </tr> 
+                                      <tr>
+                                          <td><p class="tal fs14 weight">实车出厂年月</p></td>
+                                          <td width="300">
+                                              <span>2015年9月</span>
+                                              <input onfocus="WdatePicker({startDate:'2015-12-19 00:00:00',dateFmt:'yyyy-MM-dd' });" style="width:240px;display: none;text-align: left;" name="" id="" />
+                                              <span class="edit show" ms-on-click="edit"></span>
+                                          </td>
+                                      </tr> 
+                                      <tr>
+                                          <td><p class="tal fs14 weight">实车行驶里程（公里）</p></td>
+                                          <td width="300">
+                                              <span>19</span>
+                                              <textarea style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                              <span class="edit show" ms-on-click="edit"></span>
+                                          </td>
+                                      </tr> 
+                                  </tbody>
+                               </table>
+                            </div>
+
+                            <hr class="dashed">
+                            <p class="m-t-10 " style="width: 96%;margin:0 auto;"><b>可交车时间</b>（请选择至少1个可交车日期，建议多提供几个供客户挑选）</p>
+                            <ul class="pdi-time">
+                            
+                               <input type="hidden" name="pdi_date_dealer" id="pdi_date_dealer">
+                               <li ms-repeat-item="timelist" ms-class="<!--$index==15 ? 'last' : $index== 0 || $index==1 ? 'disabled' : ''-->" >
+                                 <span ms-on-click="showSJD" class="txt-w">10-<!--item--></span>
+                                 <div class="split-white"></div>
+                                 <dl class="sjd">
+                                   <dd class="first" ms-on-click="hideSJD($index,'2016-10-11')">
+                                     <label>
+                                        <input type="radio" ms-attr-name="pditime_<!--$index-->">
+                                        <span class="txt-span">上午</span>
+                                        <div class="clear"></div>
+                                     </label>
+                                   </dd>
+                                   <dd ms-on-click="hideSJD($index,'2017-10-11')">
+                                     <label>
+                                        <input type="radio" ms-attr-name="pditime_<!--$index-->">
+                                        <span class="txt-span">下午</span>
+                                        <div class="clear"></div>
+                                     </label>
+                                   </dd>
+                                   <dd ms-on-click="hideSJD($index,'2015-10-11')" class="last">
+                                     <label>
+                                        <input type="radio" ms-attr-name="pditime_<!--$index-->">
+                                        <span class="txt-span">上午/下午</span>
+                                        <div class="clear"></div>
+                                     </label>
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+                               </li>
+                               <div class="clear"></div>
+                            </ul>
+
+                            <dl class="hasselect">
+                              <dt><span>已选日期：</span></dt>
+                            </dl>
+                            <div class="clear"></div>
+                            <hr class="dashed">
+                            <p class="ml20 m-t-10"><b>免费礼品或服务</b>  </p>
+                            <div style="width: 75%;margin:0 auto">
+                               <table class="tbl">
+                                  <tbody>
+                          
+                                      <tr>
+                                          <td><p class="tac fs14 weight">名称</p></td>
+                                          <td><p class="tac fs14 weight">数量</p></td>
+                                          <td><p class="tac fs14 weight">状态</p></td>
+                                          <td><p class="tac fs14 weight">说明（选填）</p></td>
+                                      </tr> 
+                                      <tr>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td width="300">
+                                              <span></span>
+                                              <textarea  style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                              <span class="edit show" ms-on-click="edit"></span>
+                                          </td>
+                                      </tr> 
+                                      <tr>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td width="300">
+                                              <span></span>
+                                              <textarea  style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                              <span class="edit show" ms-on-click="edit"></span>
+                                          </td>
+                                      </tr> 
+                                      <tr>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td><p class="tac fs14 weight"></p></td>
+                                          <td width="300">
+                                              <span></span>
+                                              <textarea  style="width:240px;" name="" id="" cols="30" rows="1"></textarea>
+                                              <span class="edit show" ms-on-click="edit"></span>
+                                          </td>
+                                      </tr> 
+                                     
+                                  </tbody>
+                               </table>
+                            </div>
+
+                            <hr class="dashed">
+                            <p class="ml20 m-t-10"><b>需要客户配合提供的文件资料   </b>  </p>
+
+                            <div style="width: 75%;margin:0 auto">
+                               <table class="tbl">
+                                    <tr>
+                                        <td width="160"><p class="tac fs14 weight">文件资料使用场合</p></td>
+                                        <td width="200"><p class="tac fs14 weight">文件资料名称</p></td>
+                                        <td width="150"><p class="tac fs14 weight">数量</p></td>
+                                        <td><p class="tac fs14 weight">选择</p></td>
+                                    </tr> 
+                                    <tr>
+                                        <td width="160"><p class="tac fs14 ">投保</p></td>
+                                        <td colspan="3" class="nopadding ">
+                                           <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td width="199" class="bottomtborder ">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td width="150" class="bottomtborder ">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td class="cell tac norightborder ">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="199" class="">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td width="150">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td class="cell tac norightborder">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="199" class="nobottomborder">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td width="150" class="nobottomborder">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td class="cell tac norightborder nobottomborder">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td width="160"><p class="tac fs14 ">上牌</p></td>
+                                        <td colspan="3" class="nopadding">
+                                           <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td width="199" class="bottomtborder ">
+                                                        <p class="tac fs14">身份证正本</p>
+                                                    </td>
+                                                    <td width="150" class="bottomtborder ">
+                                                        <p class="tac fs14">1</p>
+                                                    </td>
+                                                    <td class="cell tac norightborder">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="199" class="nobottomborder">
+                                                        <p class="tac fs14">身份证复印件</p>
+                                                    </td>
+                                                    <td width="150" class="nobottomborder">
+                                                        <p class="tac fs14">1</p>
+                                                    </td>
+                                                    <td class="cell tac norightborder nobottomborder">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </table>
+                                        </td>
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td width="160"><p class="tac fs14 ">上临时牌照</p></td>
+                                        <td colspan="3" class="nopadding">
+                                           <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td width="199" class="bottomtborder ">
+                                                        <p class="tac fs14">身份证正本</p>
+                                                    </td>
+                                                    <td width="150" class="bottomtborder ">
+                                                        <p class="tac fs14">1</p>
+                                                    </td>
+                                                    <td class="cell tac norightborder">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="199" class="nobottomborder">
+                                                        <p class="tac fs14">身份证复印件</p>
+                                                    </td>
+                                                    <td width="150" class="nobottomborder">
+                                                        <p class="tac fs14">1</p>
+                                                    </td>
+                                                    <td class="cell tac norightborder nobottomborder">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </table>
+                                        </td>
+                                        
+                                    </tr> 
+                                    <tr>
+                                        <td width="160"><p class="tac fs14 ">国家节能补贴</p></td>
+                                        <td colspan="3" class="nopadding">
+                                           <table class="tbl2" width="100%">
+                                                <tr>
+                                                    <td width="199" class="bottomtborder ">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td width="150" class="bottomtborder ">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td class="cell tac norightborder">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="199" class="">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td width="150" class="">
+                                                        <p class="tac fs14"></p>
+                                                    </td>
+                                                    <td class="cell tac norightborder ">
+                                                       <label><input type="radio" style="width: auto"><span class="fn">需要</span></label>
+                                                       <label><input type="radio" style="width: auto"><span class="fn">不需要</span></label>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </table>
+                                        </td>
+                                        
+                                    </tr> 
+                                      
+                                     
+                               </table>
+                               <p class="fs14">注：文件数量标记“√”表示文件为正本或原件，不同环节可通用。</p>
+                            </div>
+
+
+                        </td>
+                      </tr>
+                    </table>
+                    
+                     <table class="tbl2" width="73%" style="margin:0 auto">
+                       <tr>
+                         <td width="50%" class="tac">
+                            <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger fs16">发出交车邀请</a>
+                            <p class="fs14 center "><span><input type="checkbox" name="" id=""></span><small class="fn">预备移交的车辆和文件已检查完毕，确认符合上述约定内容。</small></p>
+                         </td>
+                         
+                         <td width="50%" class="tac">
+                            <a href="javascript:;"  ms-on-click="modify" class="btn btn-s-md btn-danger fs16">修改交车车辆</a>
+                            <p class="fs14 center "><span class="xing">*</span><small>点此按钮将导致客户获得歉意金等补偿！</small></p>
+
+                         </td>
+                       </tr>
+                     </table>
+
+                     <div class="modifydiv hide">
+
+                        <p class="fs14 m-t-10"><b>请选择：</b></p>
+                        <table class="tbl2">
+                          <tr>
+                            <td valign="top" width="20" class="nopadding">
+                                <input type="radio" class="jiaocheinput" name="jiaoche" id="">
+                            </td>
+                            <td class="nopadding"><p class="fs14">无法交车，终止订单。</p></td>
+                          </tr>
+                          <tr>
+                            <td valign="top" width="20" class="nopadding">
+                                <input class="jiaocheinput" checked type="radio" name="jiaoche" id="">
+                            </td>
+                            <td class="nopadding">
+
+                                <div >
+                                    <p class="fs14 ">部分内容修改后（如客户同意）可继续订单。</p>
+                                    <p class="fs14">
+                                      <span>如与客户沟通协商修改事宜，需客户联系方式：</span>
+                                      <a ms-on-click="showPhone" href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger sure bt">点击查看</a>
+                                      <span class="juhuang hide">13477990215 <i class="wanner"></i></span>
+                                    </p>
+                                    <p class="fs14">请提交修改内容：</p>
+                                    <span class="fl spantitle">车身颜色：</span>
+                                    <div class="btn-group m-r fl pdi-drop">
+                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                          <span class="dropdown-label"><span>月光石白色（个性金属漆）</span></span>
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul data-def-value="月光石白色（个性金属漆）" class="dropdown-menu dropdown-select2">
+                                          <input type="hidden" name="" />
+                                          <li ms-on-click="selectTimeWithVal(3)" class="active"><a><span>月光石白色（个性金属漆）</span></a></li>
+                                          <li ms-on-click="selectTimeWithVal(4)"><a><span>月光石白色（个性金属漆）2</span></a></li>
+                                          <li ms-on-click="selectTimeWithVal(5)"><a><span>月光石白色（个性金属漆）3</span></a></li>
+                                      </ul>
+                                    </div>
+                                    <div class="clear m-t-10"></div>
+                                   
+                                    <span class="fl spantitle">内饰颜色：</span>
+                                    <div class="btn-group m-r fl pdi-drop">
+                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                          <span class="dropdown-label"><span>雪茄棕色Cohiba</span></span>
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul data-def-value="雪茄棕色Cohiba" class="dropdown-menu dropdown-select2">
+                                          <input type="hidden" name="" />
+                                          <li ms-on-click="selectTimeWithVal(6)" class="active"><a><span>雪茄棕色Cohiba</span></a></li>
+                                          <li ms-on-click="selectTimeWithVal(7)"><a><span>雪茄棕色Cohiba2</span></a></li>
+                                          <li ms-on-click="selectTimeWithVal(8)"><a><span>雪茄棕色Cohiba3</span></a></li>
+                                      </ul>
+                                    </div>
+                                    <div class="clear m-t-10"></div>
+
+                                    <span class="fl spantitle">出厂年月：</span>
+                                    <div class="btn-group m-r fl ">
+                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                          <span class="dropdown-label"><span>2015年</span></span>
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul data-def-value="雪茄棕色Cohiba" class="dropdown-menu dropdown-select2">
+                                          <input type="hidden" name="" />
+                                          <li ms-on-click="selectTime" class="active"><a><span>2015年</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>2015年2</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>2015年3</span></a></li>
+                                      </ul>
+                                    </div>
+                                    <div class="btn-group m-r fl ml10">
+                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                          <span class="dropdown-label"><span>10月</span></span>
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul data-def-value="雪茄棕色Cohiba" class="dropdown-menu dropdown-select2">
+                                          <input type="hidden" name="" />
+                                          <li ms-on-click="selectTime" class="active"><a><span>10月</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>11月</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>12月</span></a></li>
+                                      </ul>
+                                    </div>
+                                    <div class="clear m-t-10"></div>
+
+                                    <span class="fl spantitle">行驶里程：</span>
+                                    <div class="btn-group m-r fl ">
+                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                          <span class="dropdown-label"><span>16</span></span>
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul data-def-value="16" class="dropdown-menu dropdown-select2">
+                                          <input type="hidden" name="" />
+                                          <li ms-on-click="selectTime" class="active"><a><span>16</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>17</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>18</span></a></li>
+                                      </ul>
+                                    </div>
+                                    <span class="fl spantitle ml10">公里</span>
+                                    <div class="clear m-t-10"></div>
+
+                                    <span class="fl spantitle">交车周期：</span>
+                                    <div class="btn-group m-r fl ">
+                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                          <span class="dropdown-label"><span>3</span></span>
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul data-def-value="3" class="dropdown-menu dropdown-select2">
+                                          <input type="hidden" name="" />
+                                          <li ms-on-click="selectTime" class="active"><a><span>3</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>4</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>5</span></a></li>
+                                      </ul>
+                                    </div>
+                                    <span class="fl spantitle ml10">个月</span>
+                                    <div class="clear m-t-10"></div>
+
+                                    <span class="fl spantitle">排放标准： </span>
+                                    <div class="btn-group m-r fl ">
+                                      <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">
+                                          <span class="dropdown-label"><span>国四</span></span>
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul data-def-value="国四" class="dropdown-menu dropdown-select2">
+                                          <input type="hidden" name="" />
+                                          <li ms-on-click="selectTime" class="active"><a><span>国四</span></a></li>
+                                          <li ms-on-click="selectTime"><a><span>国五</span></a></li>
+                                      </ul>
+                                    </div> 
+                                    <div class="clear m-t-10"></div>
+
+                                </div> 
+
+                            </td>
+                          </tr>
+                        </table>
+
+                        <p class="fs14 ml20">已装原厂选装精品：</p>
+
+                        <table class="tbl bgtbl ml20">
+                            <tr>
+                                <th>名称</th>
+                                <th>型号/说明</th>
+                                <th>厂商指导价</th>  
+                                <th width="108">数量</th>
+                                <th>附加价值</th>
+                            </tr>
+                            <tr data-id="3">
+                                <td>仪表台装饰板</td>
+                                <td class="tac"></td>
+                                <td class="tac">3,800</td>
+                                <td>
+                                    <div class="xuan">
+                                        <div class="x-w"> 
+                                            <a ms-click="prev" class="prev">-</a>
+                                            <input type="text" readonly value="0" class="input">
+                                            <a ms-click="next(2)" class="next">+</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="tac"></td>
+                            </tr>
+                            <tr data-id="4">
+                                <td>&nbsp;</td>
+                                <td class="tac"></td>
+                                <td class="tac"></td>
+                                <td>
+                                    <div class="xuan">
+                                        <div class="x-w"> 
+                                            <a ms-click="prev" class="prev">-</a>
+                                            <input readonly  type="text" value="0" class="input">
+                                            <a ms-click="next(2)" class="next">+</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="tac"></td>
+                            </tr>
+                        </table>
+                        <p class="ml20">
+                            <small class="wp45 fr tar di mr150"><span>合计价值：<label></label></span></small>
+                            <input type="hidden" name="price">
+                        </p>
+
+                        <p class="fs14 ml20">免费礼品和服务：</p>
+                        <table class="tbl bgtbl ml20 bgtbl-mini">
+                            <tr>
+                                <th>名称</th>
+                                <th>数量</th>
+                                <th>状态</th>
+                            </tr>
+                            <tr data-id="3">
+                                <td>仪表台装饰板</td>
+                                <td align="center">
+                                    <div class="xuan">
+                                        <div class="x-w"> 
+                                            <a ms-click="prev2" class="prev">-</a>
+                                            <input type="text" readonly value="0" class="input">
+                                            <a ms-click="next2(2)" class="next">+</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="tac">
+                                  <p class="fs14">已安装</p>
+                                </td>
+                            </tr>
+                            <tr data-id="3">
+                                <td>仪表台装饰板</td>
+                                <td align="center">
+                                    <div class="xuan">
+                                        <div class="x-w"> 
+                                            <a ms-click="prev2" class="prev">-</a>
+                                            <input type="text" readonly value="0" class="input">
+                                            <a ms-click="next2(2)" class="next">+</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--//计算技术-->
+                                <td class="tac">
+                                  <p class="fs14">已安装</p>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                        <p class="tac">
+                          <a href="javascript:;" class="btn btn-s-md btn-danger fs16">提交修改</a>
+                        </p>
+                        <p class="tac">
+                          <input type="checkbox" name="" id=""><span class="fn fs14">同意支付歉意金和客户买车担保金利息赔偿。</span>
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="dinggou-tip" class="popupbox" for="xuanfu-tip" >
+            <div class="popup-title">确认修改选装精品</div>
+            <div class="popup-wrapper">
+                <div class="popup-content popup-content-large">
+                    <p class="fs14 ">       
+                      <b>客户对本订单的选装精品提议修改</b>
+                    </p>
+                    <p class="fs14 ">     
+                      原厂选装精品:  
+                    </p>
+                    <p class="fs14 ">     
+                      原厂选装精品折扣率:  
+                    </p>
+                    <table class="tbl tblue">
+                        <tbody>
+                            <tr>
+                                <th><label class="fs14">名称</label></th>
+                                <th><label class="fs14">型号/说明</label></th>
+                                <th><label class="fs14">含安装费折<br>后总单价</label></th>
+                                <th style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">单车可装件数</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14">可供件数</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">客户原选件数</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14">修改的新件数</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th><label class="fs14">操作</label></th>
+                            </tr>  
+                            <tr>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td  style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">4</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14 ">
+                                                         <span class="juhuang">3</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                               
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="jingp1" class="radio" type="radio"><span>同意</span>
+                                        <input name="jingp1" class="radio" type="radio"><span>不同意</span>
+                                    </p>
+                                </td>
+                            </tr> 
+
+                            <tr>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td  style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">1</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14 ">
+                                                         <span class="juhuang">0</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                               
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="jingp2" class="radio" type="radio"><span>同意</span>
+                                        <input name="jingp2" class="radio" type="radio"><span>不同意</span>
+                                    </p>
+                                </td>
+                            </tr> 
+
+                            <tr>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td  style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">2</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14 ">
+                                                         3
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                               
+                                <td class="cell">
+                                    <p class="tac fs12">
+                                        2016-05-09 <br>
+                                        12:10:11 已选
+                                    </p>
+                                </td>
+                            </tr> 
+                            
+
+                           
+                        </tbody>
+                    </table>
+                    <p class="fs14 ">     
+                      原厂选装精品折扣率:  
+                    </p>
+                    <table class="tbl tblue">
+                        <tbody>
+                            <tr>
+                                <th><label class="fs14">品牌</label></th>
+                                <th><label class="fs14">名称</label></th>
+                                <th><label class="fs14">型号/说明</label></th>
+                                <th><label class="fs14">含安装费折<br>后总单价</label></th>
+                                <th style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">单车可装件数</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14">可供件数</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">客户原选件数</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14">修改的新件数</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th><label class="fs14">操作</label></th>
+                            </tr>  
+                            <tr>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td  style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">4</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14 ">
+                                                        &nbsp;
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                               
+                                <td class="cell">
+                                    <p class="tac fs12">
+                                        2016-05-09 <br>
+                                        12:10:11 已选
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td><p class="tac fs14"></p></td>
+                                <td style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tal fs14">&nbsp;</p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                                <td  style="padding:0;">
+                                    <table class="tbl2" width="100%">
+                                        <tbody>
+                                            <tr>
+                                                <td class="bottomtborder">
+                                                    <p class="tac fs14">1</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p class="tac fs14 ">
+                                                         <span class="juhuang">0</span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                </td>
+                               
+                                <td class="cell">
+                                    <p class="tac fs14">
+                                        <input name="jingp3" class="radio" type="radio"><span>同意</span>
+                                        <input name="jingp3" class="radio" type="radio"><span>不同意</span>
+                                    </p>
+                                </td>
+                            </tr>  
+                           
+                        </tbody>
+                    </table>
+                    <div class="times times2 tal">
+                        回复倒计时：
+                        <p class="tac fs18 mt10" style="display:inline-block;">
+                            <span class="juhuang countdown"><span>X</span>天<span>X</span>小时<span>X</span>分<span>X</span>秒</span>
+                        </p>
+                    </div>
+                    <p class="fs12">
+                      温馨提示：如不同意，请与客户电话沟通后确定提交。如超时未提交，平台默认同意修改。
+                    </p>
+
+                </div>
+                <div class="popup-control">
+                    <a ms-on-click="agreeOrder" href="javascript:;" class="btn btn-s-md btn-danger fs14 w100">提交</a>
+                    <a href="javascript:;" class="btn btn-s-md btn-danger fs14  w100 sure">知道了</a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dinggou-fix xuanfu-tip">
+            <span>确认修改选装精品</span>
+            <a href="javascript:;" class="btn btn-danger fs14 btn-recover">恢复</a>
+        </div>
+
+
+    </div>
+    <div ms-controller="uitest" ms-ui-$opts="testui" data-id="ddd"></div>
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_order", "module/common/common", "bt"],function(a,b,c){
+            
+            //这个是选装件修改后的弹窗
+            a.checkxuanzhuangjian()
+            //
+            
+            $(".countdown").CountDown({
+              startTime:'2016-3-14 16:14:35',
+              endTime :'2016-3-17 13:29:25',
+              timekeeping:'countdown'
+            })
+        });
+    </script>
+
+</body>
+</html>

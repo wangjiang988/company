@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7"
+   name=""
+   committed-date="2010-09-22T16:45:37.167509Z"
+   url="https://helleworldjava.googlecode.com/svn/trunk/hl/WebRoot/js/DatePicker/lang"
+   last-author="nick2311@gmail.com"
+   kind="dir"
+   repos="https://helleworldjava.googlecode.com/svn"
+   revision="44"/>
+<entry
+   committed-rev="7"
+   name="zh-tw.js"
+   text-time="2010-08-15T14:22:12.906000Z"
+   committed-date="2010-09-22T16:45:37.167509Z"
+   checksum="f0779698d1593a7f44482100a44111a6"
+   last-author="nick2311@gmail.com"
+   kind="file"/>
+<entry
+   committed-rev="7"
+   name="zh-cn.js"
+   text-time="2010-08-15T14:22:12.906000Z"
+   committed-date="2010-09-22T16:45:37.167509Z"
+   checksum="c14ae02929ab9667830c5ed7068d39af"
+   last-author="nick2311@gmail.com"
+   kind="file"/>
+<entry
+   committed-rev="7"
+   name="en.js"
+   text-time="2010-08-15T14:22:12.890000Z"
+   committed-date="2010-09-22T16:45:37.167509Z"
+   checksum="71ed96d7a61bf1f078eadeaae518ab9c"
+   last-author="nick2311@gmail.com"
+   kind="file"/>
+</wc-entries>

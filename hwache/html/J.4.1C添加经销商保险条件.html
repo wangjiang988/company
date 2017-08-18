@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.4.1C添加经销商保险条件 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a href="#" class="menu-select">增加经销商</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">报价管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-tool" data-toggle="collapse" data-parent="#accordion1" href="#collapse_6"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_6" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">便捷工具</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content">
+ 
+                     <div class="custom-set-flow-step-wrapper">
+                         <ul class="custom-set-flow-step">
+                             <li><span>基本资料</span></li>
+                             <li class="prev"><span>服务专员</span></li>
+                             <li class="cur cur-step"><span>保险条件</span></li>
+                             <li><span>上牌条件</span></li>
+                             <li><span>临牌条件</span></li>
+                             <li><span>免费提供</span></li>
+                             <li><span>杂费标准</span></li>
+                             <li><span>刷卡标准</span></li>
+                             <li><span>补贴情况</span></li>
+                             <li class="last"><span>竞争分析</span></li>
+                             <div class="clear"></div>
+                         </ul>
+                     </div>
+                    <div class="content-wapper ">
+                       <h2 class="title weighttitle">保险条件</h2>
+                       <div class="m-t-10"></div>
+                       <div class="tbl-list-tool-panle">
+                            <p><b>车辆首年商业保险</b></p>
+                            <label class="radio-label"><input type="radio" name="baoxian" id=""><span>客户必须在经销商处投保（客户上牌地必须在保险公司理赔范围内）</span></label>
+                            <label class="radio-label"><input type="radio" name="baoxian" id=""><span>客户自由投保</span></label>
+                       </div>
+                       <p><b>保险公司</b><a ms-on-click="addInsuranceCompany" href="javascript:;" class="juhuang tdu ml10">新增保险公司</a></p>
+                       <table id="insuranceCompanyList" class="tbl custom-info-tbl">
+                         <tbody>
+                           <tr>
+                               <th class="tac">保险公司名称</th>
+                               <th class="tac">理赔范围</th>
+                               <th class="last"> 
+                                  操作
+                               </th>
+                           </tr> 
+ 
+                           <!--//循环输出-->
+                           <tr class="def-temp">
+                             <td class="tac" width="352" valign="middle">
+                                <div class="btn-group none btn-group-auto">
+                                    <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle dropdown-company">
+                                        <span class="dropdown-label"><span>--请选择--</span></span>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-company">
+                                        <input type="hidden" name="insuranceCompany" />
+                                        <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1001,[1,0])"><a><span>平安财产保险股份有限公司</span></a></li>
+                                        <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1003,[1,1])"><a><span>大地财产保险股份有限公司</span></a></li>
+                                        <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1005,[0,1])"><a><span>太平洋财产保险股份有限公司</span></a></li>
+                                    </ul>
+                                    
+                                </div> 
+                                <label class="save-label ">大地财产保险股份有限公司</label>
+                             </td>
+                             <td class="tac" width="193" valign="middle">
+                                <div class="checkbox-wrapper inline none">
+                                    <label class="mt"><input disabled type="checkbox" name="scope-1" id=""><span>本地</span><span class="span-select-tip"><span class="tip-head"></span><span class="tip-contents">该保险公司不支持全国通赔，不可选</span></span></label>
+                                    <label class="ml mt"><input disabled type="checkbox" name="scope-1" id=""><span>异地</span></label>
+                                    <input type="hidden" name="insuranceCompany" />
+                                </div>
+                                <label class="save-label ">本地、异地</label>
+                                &nbsp;
+                             </td>
+                             <td class="tac" width="190">
+                                 <div class="inline  ">
+                                   <a href="javascript:;" ms-on-click="saveInsuranceCompany" class="btn btn-danger save hide">保存</a>
+                                   <a href="javascript:;" ms-on-click="modifyInsuranceCompany(1)" class="ml10 ">修改</a>
+                                   <a href="javascript:;" ms-on-click="delInsuranceCompany(0)" class="ml10 none">取消</a>
+                                   <a href="javascript:;" ms-on-click="delInsuranceCompany(0)" class="ml10 ">删除</a>
+                                 </div>
+                                 &nbsp;
+                             </td>
+                           </tr>
+ 
+                         </tbody>
+                       </table>
+                       <div class="m-t-10"></div>
+                       <div class="m-t-10"></div>
+                       <p class="tac">
+                          <a href="javascript:;" class="btn btn-danger fs18">下一步</a>
+                          <a href="javascript:;" onclick="javascript:history.go(-1)" class="juhuang tdu ml5"><span>返回上一步</span></a>
+                       </p>
+
+ 
+
+                      <div id="delInsuranceCompany" class="popupbox">
+                          <div class="popup-title">温馨提示</div>
+                          <div class="popup-wrapper">
+                              <div class="popup-content">
+                                   <div class="m-t-10"></div>
+                                   <p class="fs14 pd  tac">确定要删除此保险公司吗？</p>
+                                   <div class="m-t-10"></div>
+                              </div>
+                              <div class="popup-control">
+                                  <a ms-on-click="doDelInsuranceCompany" href="javascript:;" class="btn btn-s-md btn-danger fs14 w100">确认</a>
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                                  <div class="clear"></div>
+                              </div>
+                          </div>
+                      </div>
+
+                    
+
+                    </div>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/template" id="insurance-company-tmpl">  
+        <tr class="def-temp">
+           <td class="tac" width="352" valign="middle">
+              <div class="btn-group btn-group-auto">
+                  <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle dropdown-company">
+                      <span class="dropdown-label"><span>--请选择--</span></span>
+                      <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-company">
+                      <input type="hidden" name="insuranceCompany" />
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1001,[1,0])"><a><span>平安财产保险股份有限公司平安财产保险</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1003,[1,1])"><a><span>大地财产保险股份有限公司</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1005,[0,1])"><a><span>太平洋财产保险股份有限公司</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1001,[1,0])"><a><span>平安财产保险股份有限公司平安财产保险</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1003,[1,1])"><a><span>大地财产保险股份有限公司</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1005,[0,1])"><a><span>太平洋财产保险股份有限公司</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1001,[1,0])"><a><span>平安财产保险股份有限公司平安财产保险平安财产保险股份有限公司平安财产保险</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1003,[1,1])"><a><span>大地财产保险股份有限公司</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1005,[0,1])"><a><span>太平洋财产保险股份有限公司</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1001,[1,0])"><a><span>平安财产保险股份有限公司平安财产保险</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1003,[1,1])"><a><span>大地财产保险股份有限公司</span></a></li>
+                      <li ms-on-click-1="selectEvent" ms-on-click-2="initClaimsScope(1005,[0,1])"><a><span>太平洋财产保险股份有限公司</span></a></li>
+                  </ul>
+
+              </div> 
+              <label class="save-label hide"></label>
+           </td>
+           <td class="tac" width="193" valign="middle">
+              <div class="checkbox-wrapper inline hide">
+                  <label class="mt"><input disabled type="checkbox" name="scope-1" id=""><span>本地</span><span class="span-select-tip"><span class="tip-head"></span><span class="tip-contents">该保险公司不支持全国通赔，不可选</span></span></label>
+                  <label class="ml mt"><input disabled type="checkbox" name="scope-1" id=""><span>异地</span></label>
+                  <input type="hidden" name="insuranceCompany" />
+              </div>
+              <label class="save-label hide"></label>
+              &nbsp;
+           </td>
+           <td class="tac" width="190">
+               <div class="inline hide ">
+                 <a href="javascript:;" ms-on-click="saveInsuranceCompany" class="btn btn-danger save ">保存</a>
+                 <a href="javascript:;" ms-on-click="modifyInsuranceCompany(1)" class="ml10 none">修改</a>
+                 <a href="javascript:;" ms-on-click="delInsuranceCompany(0)" class="ml10 ">取消</a>
+                 <a href="javascript:;" ms-on-click="delInsuranceCompany(0)" class="ml10 none">删除</a>
+               </div>
+               &nbsp;
+           </td>
+       </tr>
+    </script>
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin", "module/common/common", "bt"],function(a,b,c){
+           a.initInsuranceCompany()
+        });
+    </script>
+
+</body>
+</html>
+
+

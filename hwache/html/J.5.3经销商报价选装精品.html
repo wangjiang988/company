@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.5.3经销商报价选装精品 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div> 
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a style="background: url(themes/images/custom/custom-dealer-brand.png) 25px 50%  no-repeat" data-toggle="collapse" data-parent="#collapse_2" href="#collapse_x1" class="psr">冀东物贸<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x1" class="panel-collapse in">
+                                            <a href="#">基本信息</a>
+                                            <a href="#">常用车型</a>
+                                            <a href="#">保险设定</a>
+                                            <a href="#">客户文件</a>
+                                            <a href="#" class="cur-select-step">工作时段</a>
+                                            <a href="#" class="">增加经销商</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a  data-toggle="collapse" data-parent="#collapse_3" href="#collapse_x2" class="psr">新建报价(15)<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x2" class="panel-collapse in">
+                                            <a href="#" class="cur-select-step">开始新建</a>
+                                            <a href="#">新建未完(6)</a>
+                                            <a href="#">等待生效(9)</a>
+                                            <a href="#">正在报价(6)</a>
+                                            <a href="#">暂时下架(6)</a>
+                                            <a href="#">失效报价(6)</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-tool" data-toggle="collapse" data-parent="#accordion1" href="#collapse_6"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_6" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">便捷工具</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content psr">
+                    <div class="custom-offer-step-wrapper">
+                        <ul>
+                          <li>车型价格</li>
+                          <li class="prev">车况说明</li>
+                          <li class="cur">选装精品</li>
+                          <li>首年保险</li>
+                          <li>收费标准</li>
+                          <li class="last">其他事项</li>
+                          <div class="clear"></div>
+                        </ul>
+                    </div> 
+                    
+                    
+                    <form action="newOfferings">
+                        <div class="content-wapper ">
+                           
+                            <p><b>选装精品</b></p>
+                            <p>
+                             <span>原厂选装精品折扣率：</span>     
+                             <input value="98" placeholder="" type="text" name="" class="form-control custom-control custom-control-min tac">   
+                             <span>%</span>
+                            </p>
+                            <table class="tbl tbl-blue wp100">
+                              <tbody>
+                                <tr>
+                                  <th class="tac"><span>选择</span></th>
+                                  <th class="tac"><span>名称</span></th>
+                                  <th class="tac"><span>型号/说明</span></th>
+                                  <th class="tac"><span>厂商编号</span></th>
+                                  <th class="tac"><span>厂商指导价</span></th>
+                                  <th class="tac"><span>安装费</span></th>
+                                  <th class="tac">
+                                     <div class="psr">
+                                        <span>含安装费折</span><br><span>后总单价</span>
+                                        <div class="th-tip">
+                                            <i></i>
+                                            计算方式：厂商指导价x折扣率+安装费
+                                        </div>
+                                     </div>
+                                  </th>
+                                  <th class="tac"><span>可供件数</span></th>
+                                </tr>
+                                <tr>
+                                  <td class="tac select-checked"><input checked="" type="checkbox" name="" id=""></td>
+                                  <td class="tac"><span>铝合金轮圈2</span></td>
+                                  <td class="tac"><span>双辐式样601M型，20英寸</span></td>
+                                  <td class="tac"><span>LH3784395</span></td>
+                                  <td class="tac">￥<span>3,500.00</span></td>
+                                  <td class="tac">￥<span>3,500.00</span></td>
+                                  <td class="tac">￥<span>3,500.00</span></td>
+                                  <td class="tac"><span>2</span></td>
+                                </tr>
+                               
+                              </tbody>
+                            </table>
+                            <!--//区分现车和非现车\\-->
+                            <hr class="dashed" />
+                            
+                            <p><b>选装精品</b></p>
+                            <p>
+                             <span>原厂选装精品折扣率：</span>     
+                             <input value="98" placeholder="" type="text" name="" class="form-control custom-control custom-control-min tac">   
+                             <span>%</span>
+                            </p>
+                            <table class="tbl tbl-blue wp100">
+                              <tbody>
+                                <tr>
+                                  <th class="tac"><span>选择</span></th>
+                                  <th class="tac"><span>名称</span></th>
+                                  <th class="tac"><span>型号/说明</span></th>
+                                  <th class="tac"><span>厂商编号</span></th>
+                                  <th class="tac"><span>厂商指导价</span></th>
+                                  <th class="tac"><span>折后价</span></th>
+                                </tr>
+                                <tr>
+                                  <td class="tac select-checked"><input checked="" type="checkbox" name="" id=""></td>
+                                  <td class="tac"><span>铝合金轮圈2</span></td>
+                                  <td class="tac"><span>双辐式样601M型，20英寸</span></td>
+                                  <td class="tac"><span>LH3784395</span></td>
+                                  <td class="tac">￥<span>3,500.00</span></td>
+                                  <td class="tac">￥<span>3,500.00</span></td>
+                                </tr>
+                               
+                              </tbody>
+                            </table>
+
+                            
+                            <div class="m-t-10"></div>
+                            <div class="m-t-10"></div>
+                            <p class="tac">
+                                <a href="javascript:;" class="btn btn-danger bt sure mt10 fs18">重置</a>
+                                <a href="javascript:;" class="btn btn-danger fs18 ml20">下一步</a>
+                                <a href="javascript:;" class="btn btn-danger sure fs18 ml20">返回上一步</a>
+                            </p> 
+
+
+
+ 
+
+
+                            
+                        </div>
+                        
+                    </form>
+                    <div class="m-t-200"></div> 
+
+
+
+                
+                  <div id="SolutionAddWin" class="popupbox" >
+                      <div class="popup-title">
+                        <span class="">新增项目</span>
+                      </div>
+                      <div class="popup-wrapper ">
+                          <form action="solutionAdd">
+                              <div class="popup-content "> 
+                                  <table class="noborder ml20">
+                                    <tr>
+                                      <td class="tar nopadding"><span><b>名称：</b></span></td>
+                                      <td class="nopadding">
+                                          <div class="btn-group btn-jquery-event">
+                                              <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle dropdown-company">
+                                                  <span class="dropdown-label"><span>--请选择免费礼品和服务--</span></span>
+                                                  <span class="caret"></span>
+                                              </button>
+                                              <ul class="dropdown-menu dropdown-company">
+                                                  <input type="hidden" name="">
+                                                  <li><a><span>全车脚垫</span></a></li>
+                                                  <li><a><span>导航仪</span></a></li>
+                                              </ul>
+                                          </div>
+                                          <div class="clear error-div"><label class="red">请选择免费礼品和服务</label class="red"></div>
+                                      </td>
+                                      <td class="nopadding">
+                                        <label>
+                                            <input type="checkbox" name="" id="" class="fl mt10">
+                                            <span class="fl mt5 ml5 noweight">已安装</span>
+                                            <span class="clear"></span>
+                                        </label>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="3 nopadding">
+                                         <span>（如不在列表中，请先向华车平台提交审核，去<a href="javascript:;" class="juhuang tdu new">提交</a>）</span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tar nopadding"><span><b>数量：</b></span></td>
+                                      <td class="nopadding" colspan="2">
+                                          <div class="checkbox-wrapper inline counter-wrapper">
+                                              <span class="prev tac">-</span>
+                                              <input class="" type="text" name="" id="" value="1" max="9999">
+                                              <span class="next tac">+</span>
+                                          </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <div class="m-t-10"></div>
+                                  <div class="m-t-10"></div>
+                              </div>
+                              <div class="popup-control">
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 do">保存</a>
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 sure ml20">返回</a>
+                                  <div class="clear mt10"></div> 
+                              </div>
+                          </form>
+                      </div>
+                  </div> 
+
+                  <div id="SolutionEditWin" class="popupbox" >
+                      <div class="popup-title">
+                        <span class="">修改项目</span>
+                      </div>
+                      <div class="popup-wrapper ">
+                          <form action="solutionEdit">
+                              <div class="popup-content "> 
+                                  <table class="noborder ml20">
+                                    <tr>
+                                      <td class="tar nopadding"><span><b>名称：</b></span></td>
+                                      <td class="nopadding">
+                                          <div class="btn-group btn-jquery-event">
+                                              <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle dropdown-company">
+                                                  <span class="dropdown-label"><span>--请选择免费礼品和服务--</span></span>
+                                                  <span class="caret"></span>
+                                              </button>
+                                              <ul class="dropdown-menu dropdown-company">
+                                                  <input type="hidden" name="">
+                                                  <li><a><span>全车脚垫</span></a></li>
+                                                  <li><a><span>导航仪</span></a></li>
+                                              </ul>
+                                          </div>
+                                          <div class="clear error-div"><label class="red">请选择免费礼品和服务</label class="red"></div>
+                                      </td>
+                                      <td class="nopadding">
+                                        <label>
+                                            <input type="checkbox" name="" id="" class="fl mt10">
+                                            <span class="fl mt5 ml5 noweight">已安装</span>
+                                            <span class="clear"></span>
+                                        </label>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td colspan="3 nopadding">
+                                         <span>（如不在列表中，请先向华车平台提交审核，去<a href="javascript:;" class="juhuang tdu new">提交</a>）</span>
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td class="tar nopadding"><span><b>数量：</b></span></td>
+                                      <td class="nopadding" colspan="2">
+                                          <div class="checkbox-wrapper inline counter-wrapper">
+                                              <span class="prev tac">-</span>
+                                              <input class="" type="text" name="" id="" value="1" max="9999">
+                                              <span class="next tac">+</span>
+                                          </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <div class="m-t-10"></div>
+                                  <div class="m-t-10"></div>
+                              </div>
+                              <div class="popup-control">
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 do">保存</a>
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 sure ml20">返回</a>
+                                  <div class="clear mt10"></div> 
+                              </div>
+                          </form>
+                      </div>
+                  </div> 
+
+                  <div id="SolutionDelWin" class="popupbox">
+                      <div class="popup-title">温馨提示</div>
+                      <div class="popup-wrapper">
+                          <form action="SolutionDel">
+                              <div class="popup-content">
+                                   <div class="m-t-10"></div>
+                                   <p class="fs14 pd  tac">确定要删除该免费产品或服务吗？</p>
+                                   <div class="m-t-10"></div>
+                              </div>
+                              <div class="popup-control">
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 do">确认</a>
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                                  <div class="clear"></div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+
+                  <div id="SolutionNewWin" class="popupbox">
+                      <div class="popup-title">新的免费礼品和服务提交</div>
+                      <div class="popup-wrapper">
+                          <form action="SolutionDel">
+                              <div class="popup-content">
+                                   <div class="m-t-10"></div>
+                                   <p class="fs14 tac new-tip"> 新的免费礼品和服务名称：</p>
+                                   <p class="tac">
+                                     <input placeholder="请输入新的免费礼品和服务名称" type="text" name="" class="form-control custom-control-2">
+                                   </p>
+                                   <div class="clear error-div tac"><label class="red">请输入新的免费礼品和服务名称</label class="red"></div>
+                                   <div class="m-t-10"></div>
+                              </div>
+                              <div class="popup-control">
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 do">确认</a>
+                                  <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                                  <div class="clear"></div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+ 
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/template" id="good-tpl">
+        <tr class="def" data-ref-id="{id}">
+          <td class="tac none">
+              <input type="checkbox" name="" id="">
+          </td>
+          <td class="tac"><span>{0}</span></td>
+          <td class="tac"><span>{1}</span></td>
+          <td class="tac"><span>{2}</span></td>
+          <td class="tac"><span>{3}</span></td>
+          <td class="tac count"><span>{4}</span></td>
+          <td class="tac"><span>{5}</span></td>
+        </tr>
+    </script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin","module/custom/custom.admin.common.jquery","module/custom/custom.admin.goods.jquery", "module/common/common", "bt"],function(a,b,c){
+         
+        });
+    </script>
+
+
+
+</body>
+</html>
+
+

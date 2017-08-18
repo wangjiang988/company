@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>尽情点评 - 完成评价 - 华车平台</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车平台" />
+    <meta name="keywords" content="华车平台" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt" >
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li class="step-cur">完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content complete">
+                    <small class="juhuang">敬请点评</small>
+                    <i></i>
+                    <small>感谢评价</small> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi"  ms-controller="item">
+
+        <div class="wapper has-min-step" style="overflow: visible;">
+                              
+                     
+            <div class="box">
+               
+                <div class="box-inner  box-inner-def">
+                   
+                    <table>
+                        <tr>
+                            <td width="100" class="tac"><b>订单号</b></td>
+                            <td width="400" class="tac"><b>订单内容</b></td>
+                            <td width="200" class="tac"><b>生效时间</b></td>
+                            <td width="200" class="tac"><b>完成时间</b></td>
+                        </tr>
+                    </table>
+                    <table class="tbl">
+                        <tbody>
+                           
+                            <tr>
+                                <td width="100"><p class="tac fs14 ">订单号</p></td>
+                                <td width="400"><p class="tac fs14 ">订单内容包括品牌+车系+型号</p></td>
+                                <td width="200"><p class="tac fs14 ">生效时间</p></td>
+                                <td width=""><p class="tac fs14 ">完成时间</p></td>
+                            </tr> 
+                            
+                        </tbody>
+                    </table>
+                    <table>
+                        <tr>
+                            <td valign="middle">
+                                <p class="m0"><b>华车平台的服务：</b></p>
+                            </td>
+                            <td>
+                                <div class="form-item">
+                                  <div class="formItemDiff formItemDiffFirst sele"><div class="cot st1 cot-first"><p class="wps">1分 很不满意<span class="ttip"></span></p></div></div>
+                                  <div class="formItemDiff sele"><div class="cot "><p class="wps">2分 不满意<span class="ttip"></span></p></div></div>
+                                  <div class="formItemDiff sele"><div class="cot "><p class="wps">3分 一般<span class="ttip"></span></p></div></div>
+                                  <div class="formItemDiff"><div class="cot "><p class="wps">4分 满意<span class="ttip"></span></p></div></div>
+                                  <div class="formItemDiff"><div class="cot "><p class="wps">5分 很满意<span class="ttip"></span></p></div></div>
+                                  <input type="hidden" name="" value="">
+                                </div>
+                            </td>
+                        </tr>
+                         
+                    </table>
+                  
+                    <table>
+                        <tr>
+                            <td valign="middle">
+                                <p class="m0"><b>经销商的服务：</b></p>
+                            </td>
+                            <td>
+
+                                <div class="form-item" style="padding-left: 14px;">
+                                  <div class="formItemDiff sele formItemDiffFirst psr"><div class="cot st1 cot-first"><p class="wps">1分 很不满意<span class="ttip"></span></p></div></div>
+                                  <div class="formItemDiff sele"><div class="cot "><p class="wps">2分 不满意<span class="ttip"></span></p></div></div>
+                                  <div class="formItemDiff sele"><div class="cot "><p class="wps">3分 一般<span class="ttip"></span></p></div></div>
+                                  <div class="formItemDiff"><div class="cot "><p class="wps">4分 满意<span class="ttip"></span></p></div></div>
+                                  <div class="formItemDiff"><div class="cot "><p class="wps">5分 很满意<span class="ttip"></span></p></div></div>
+                                  <input type="hidden" name="" value="">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <p><b>您的感受：</b></p>
+                    <textarea class="cont" placeholder="华车平台将有独立客服倾听您的心声，您的个人隐私、您的评论身份不会向经销商公开。"></textarea>
+                    <p class="tal">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger fs16">提交</a>
+                    </p>
+                </div>
+               
+            </div>
+        
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/item/item-back-guarantees", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,452 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.4.1A常用管理添加经销商 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a href="#" class="menu-select">增加经销商</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">报价管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content">
+ 
+                     <div class="custom-set-flow-step-wrapper">
+                         <ul class="custom-set-flow-step">
+                             <li class="cur"><span>基本资料</span></li>
+                             <li><span>服务专员</span></li>
+                             <li><span>保险条件</span></li>
+                             <li><span>上牌条件</span></li>
+                             <li><span>临牌条件</span></li>
+                             <li><span>免费提供</span></li>
+                             <li><span>杂费标准</span></li>
+                             <li><span>刷卡标准</span></li>
+                             <li><span>补贴情况</span></li>
+                             <li class="last"><span>竞争分析</span></li>
+                             <div class="clear"></div>
+                         </ul>
+                     </div>
+                    <div class="content-wapper ">
+                      <form action="" name="add-dealers-form">
+                          <table class="custom-form-tbl ml-30">
+                              <tr>
+                                  <td align="right" width="150">
+                                      <label><span>*</span>销售品牌：</label>
+                                  </td>
+                                  <td width="200">
+                                      <div class="btn-group ">
+                                            <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle">
+                                                <span class="dropdown-label"><span>路虎</span></span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-select">
+                                                <input type="hidden" name="hfbrand" />
+                                                <li ms-on-click="selectEvent" class="active"><a><span>路虎</span></a></li>
+                                                <li ms-on-click="selectEvent"><a><span>奥迪</span></a></li>
+                                                <li ms-on-click="selectEvent"><a><span>宝马</span></a></li>
+                                            </ul>
+                                        </div> 
+                                        <div class="error-div"><label>请选择销售品牌</label></div>
+                                   </td>
+                                   <td>
+                                      <label><span>*</span>归属地区：</label>
+                                      <div class="form-txt psr inlineblock">
+                                         <div class="btn-group m-r pdi-drop pdi-drop-warp">
+                                              <div ms-on-click="initProvince" class="btn btn-sm btn-default dropdown-toggle area-drop-btn">
+                                                  <span class="dropdown-label"><span>江苏省苏州市</span></span>
+                                                  <span class="caret"></span>
+                                              </div>
+                                              <div class="dropdown-menu dropdown-select area-tab-div">
+                                                  <input type="hidden" name="province" />
+                                                  <input type="hidden" name="city" />
+                                                  <p class="area-tab"><span class="cur-tab">省份</span><span>城市</span></p>
+                                                  <dl class="dl">
+                                                      <dd ms-on-click="selectProvince(20)">江苏省</dd>
+                                                      <dd ms-on-click="selectProvince(25)">上海市</dd>
+                                                      <dd ms-on-click="selectProvince(26)">北京市</dd>
+                                                      <dd ms-on-click="selectProvince(21)">广东省</dd>
+                                                      <dd ms-on-click="selectProvince(24)">江苏省</dd>
+                                                      <dd ms-on-click="selectProvince(28)">上海市</dd>
+                                                      <dd ms-on-click="selectProvince(22)">北京市</dd>
+                                                      <dd ms-on-click="selectProvince(29)">广东省</dd>
+                                                    <div class="clear"></div>
+                                                  </dl>
+                                                  <dl class="dl" style="display: none;">
+                                                    <dd ms-repeat-city="citylist" ms-on-click="selectCity"><!--city.name--></dd>
+                                                    <div class="clear"></div>
+                                                  </dl>
+                                              </div>
+
+                                         </div>
+                                         <div class="error-div"><label>请选择省份</label></div>
+                                         <div class="error-div"><label>请选择城市</label></div>
+                                         <div class="clear"></div>
+                                      </div>
+                                      <div class="error-div"><label>请选择销售品牌</label></div>
+                                   </td>
+                              </tr>
+                              <tr>
+                                  <td align="right">
+                                      <label><span>*</span>经销商：</label>
+                                  </td>
+                                  <td colspan="2">
+                                       <div class="btn-group ">
+                                            <button data-toggle="dropdown" class="btn btn-select btn-select-long btn-default dropdown-toggle">
+                                                <span class="dropdown-label"><span>请选择经销商</span></span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-select dropdown-long">
+                                                <input type="hidden" name="hfdealers" />
+                                                <li ms-on-click="selectEvent" class="active"><a><span>路虎</span></a></li>
+                                                <li ms-on-click="selectEvent"><a><span>奥迪</span></a></li>
+                                                <li ms-on-click="selectEvent"><a><span>宝马</span></a></li>
+                                            </ul>
+                                            <span class="nofand" ms-on-click="noFandDelears">未找到，点此</span>
+                                        </div> 
+                                        <div class="error-div"><label>请选择经销商</label></div>
+                                   </td>
+                               </tr>
+                               <tr>
+                                  <td align="right">
+                                      <label>营业地点：</label>
+                                  </td>
+                                  <td colspan="2">
+                                      &nbsp;
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td align="right">
+                                      <label>交车地点：</label>
+                                  </td>
+                                  <td colspan="2">
+                                      &nbsp;
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td align="right">
+                                      <label><span>*</span>经销商简称：</label>
+                                  </td>
+                                  <td>
+                                      <input placeholder="可输入不超过6个汉字" maxlength="6" type="text" name="txt-dealers-shot-name" placeholder="" class="form-control custom-control">
+                                      <div class="error-div"><label>请输入经销商简称</label></div>
+                                      <div class="error-div"><label>请输入不超过6个汉字</label></div>
+                                  </td>
+                                  <td>
+                                      <label>经销商编号：</label>
+                                      &nbsp;
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td align="right">
+                                      <label>类别：</label>
+                                  </td>
+                                  <td colspan="2">
+                                      <span>授权4s</span>
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td align="right">
+                                      <label>统一社会信用代码：</label>
+                                  </td>
+                                  <td colspan="2">
+                                      <input maxlength="18" placeholder="选填 统一社会信用代码由18位数字+字母组成" type="text" name="txtcode" placeholder="" class="form-control custom-control custom-control-long">
+                                      <div class="error-div"><label>输入不正确，请重新输入 "统一社会信用代码由18位数字+字母组成"</label></div>
+                                  </td>
+                               </tr>
+                               <tr>
+                                  <td align="right">
+                                      <label>开户行：</label>
+                                  </td>
+                                  <td colspan="2">
+                                      <input placeholder="选填" type="text" name="email" placeholder="" class="form-control  ">
+                                  </td>
+                                   
+                               </tr>
+                               <tr>
+                                  <td align="right">
+                                      <label>账号：</label>
+                                  </td>
+                                  <td colspan="2">
+                                      <input placeholder="选填"  type="text" name="email" placeholder="" class="form-control ">
+                                  </td>
+                               </tr>
+                               <tr>
+
+                                  <td colspan="3" align="center" valign="middle">
+                                      <div class="m-t-10"></div>
+                                      <div class="m-t-10"></div>
+                                      <label class="add-info-tip"><span>*</span>为必填项</label>
+                                      <div class="clear"></div>
+									  <div class="row">
+									  	  <div class="col-xs-6 col-sm-6 tar">
+									  	  	  <a href="javascript:;" class="juhuang tdu inlineblock mt20 delseller">删除经销商</a>
+									  	  </div>
+									  	  <div class="col-xs-6 col-sm-6 tal">
+									  	  	  <a ms-on-click="SubAddDealersForm" href="javascript:;" class="ml20 btn btn-s-md btn-danger fs18">下一步</a>
+									  	  </div>
+									  	  <div class="clear"></div>
+									  </div> 
+
+
+                                  </td>
+                               </tr>
+                          </table>
+                      </form>
+
+                    <div id="noFandDelearsWin" class="popupbox">
+                        <div class="popup-title">未找到经销商</div>
+                        <div class="popup-wrapper">
+                            <div class="popup-content">
+                                <p class="fs14">       
+                                    <table class="custom-form-tbl">
+                                        <tr>
+                                            <td width="70" valign="top" class="nopadding"><b>温馨提示：</b></td>
+                                            <td class="nopadding">请核对授权经销商归属地区是否正确，如仍有问题，请提交给华车平台审核，通过后可进行添加。</td>
+                                        </tr>
+                                    </table>
+                                </p>
+                                <form action="" name="no-dealers-form">
+                                  <table class="custom-form-tbl ml-15">
+                                      <tr>
+                                          <td align="right" width="">
+                                              <label>销售品牌：</label>
+                                          </td>
+                                          <td>
+                                              <input placeholder="" type="text" name="txtbrand" class="form-control custom-control custom-txtbrand">
+                                              <div class="error-div"><label>*请输入销售品牌~</label></div>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td align="right" width="150"><label>归属地区：</label></td>
+                                          <td>
+                                              <div class="form-txt psr inlineblock">
+                                                 <div class="btn-group m-r pdi-drop pdi-drop-warp">
+                                                      <div ms-on-click="initProvince" class="btn btn-sm btn-default dropdown-toggle area-drop-btn">
+                                                          <span class="dropdown-label"><span>江苏省苏州市</span></span>
+                                                          <span class="caret"></span>
+                                                      </div>
+                                                      <div class="dropdown-menu dropdown-select area-tab-div">
+                                                          <input type="hidden" name="province" />
+                                                          <input type="hidden" name="city" />
+                                                          <p class="area-tab"><span class="cur-tab">省份</span><span>城市</span></p>
+                                                          <dl class="dl">
+                                                              <dd ms-on-click="selectProvince(20)">江苏省</dd>
+                                                              <dd ms-on-click="selectProvince(25)">上海市</dd>
+                                                              <dd ms-on-click="selectProvince(26)">北京市</dd>
+                                                              <dd ms-on-click="selectProvince(21)">广东省</dd>
+                                                              <dd ms-on-click="selectProvince(24)">江苏省</dd>
+                                                              <dd ms-on-click="selectProvince(28)">上海市</dd>
+                                                              <dd ms-on-click="selectProvince(22)">北京市</dd>
+                                                              <dd ms-on-click="selectProvince(29)">广东省</dd>
+                                                            <div class="clear"></div>
+                                                          </dl>
+                                                          <dl class="dl" style="display: none;">
+                                                            <dd ms-repeat-city="citylist" ms-on-click="selectCity"><!--city.name--></dd>
+                                                            <div class="clear"></div>
+                                                          </dl>
+                                                      </div>
+
+                                                 </div>
+                                                 <div class="error-div"><label>请选择省份</label></div>
+                                                 <div class="error-div"><label>请选择城市</label></div>
+                                                 <div class="clear"></div>
+                                              </div>
+                                              <div class="error-div"><label>请选择销售品牌</label></div>
+                                           </td>
+                                      </tr>
+                                      <tr>
+                                          <td align="right" width="">
+                                              <label>经销商：</label>
+                                          </td>
+                                          <td>
+                                              <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+                                              <div class="error-div"><label>*请输入经销商名称~</label></div>
+                                          </td>
+                                      </tr>
+                                  </table>
+                                </form>
+                            </div>
+                            <div class="popup-control">
+                                <a ms-on-click="tellme" href="javascript:;" class="btn btn-s-md btn-danger fs14 w100">告诉华车</a>
+                                <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="delSeller" class="popupbox">
+                      <div class="popup-title">温馨提示</div>
+                      <div class="popup-wrapper">
+                          <div class="popup-content">
+                              <div class="m-t-10"></div>
+                              <p class="fs14 pd tac succeed error constraint">
+                                 <span class="tip-tag" style="background-position: 0px 0px;"></span>
+                                 <span class="tip-text">确定要删除此经销商相关的所有信息吗？</span>
+                                 <div class="clear"></div>
+                              </p>
+                              <div class="m-t-10"></div>
+                         </div> 
+                          <div class="popup-control">
+                              <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 do">确认</a>
+                              <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                              <div class="clear"></div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div id="tip-error" class="popupbox">
+                      <div class="popup-title">温馨提示</div>
+                      <div class="popup-wrapper">
+                          <div class="popup-content">
+                               <div class="m-t-10"></div>
+                               <div class="fs14 pd tac error auto">
+                                 <center>
+                                   <span class="tip-tag"></span>
+                                   <span class="tip-text">温馨提示</span>
+                                 </center>
+                              </div>
+                          </div>
+                          <div class="popup-control">
+                              <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 sure skillsure">确认</a>
+                              <div class="clear"></div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div id="tip-succeed" class="popupbox">
+                      <div class="popup-title">温馨提示</div>
+                      <div class="popup-wrapper">
+                          <div class="popup-content">
+                               <div class="m-t-10"></div>
+                               <div class="fs14 pd tac succeed auto">
+                                 <center>
+                                   <span class="tip-tag"></span>
+                                   <span class="tip-text">温馨提示</span>
+                                 </center>
+                              </div>
+                          </div>
+                          <div class="popup-control">
+                              <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 sure skillsure">确认</a>
+                              <div class="clear"></div>
+                          </div>
+                      </div>
+                    </div>
+
+
+
+                    
+
+                    </div>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin", "module/common/common", "bt","module/custom/custom.admin.fix.jquery"],function(){
+        	
+        });
+    </script>
+
+</body>
+</html>
+
+

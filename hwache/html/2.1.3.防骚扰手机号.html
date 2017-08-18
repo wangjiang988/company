@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>2.2.手机号冻结中 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+  
+    <link href="themes/pwd.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+    
+    <div class="box" ms-include-src="regheader"></div>
+
+    <div class="container m-t-86 pos-rlt" id="vue">
+        <div class="wapper">
+            <div class="hd reg-box">
+                <div class="title">找回密码</div> 
+                <ul>
+                    <li class="cur">1.填写账号</li>
+                    <li>2.验证身份</li>
+                    <li>3.重置密码</li>
+                    <li>4.完成</li>
+                    <div class="clear"></div>
+                </ul> 
+                <div class="form">
+                    <br><br><br>
+                    <div class="tip-large tip-large-info">
+                        <p>对不起，手机号138****3698找回密码功能可能异常，</p>
+                        <p>请联系客服解决～</p>
+                    </div>
+                    <br><br><br>
+                    <p class="text-center">
+                        <a href="#" class="btn btn-s-md btn-danger w120 inline-block">确 定</a>
+                    </p>  
+                </div>
+                
+            </div>
+        </div>
+        <br><br><br>  
+    </div>
+
+    <div class="box" ms-include-src="footer"></div>
+ 
+    <script src="./js/sea.js" ></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["vendor/vue","module/pwd/password-step-1", "module/common/common","bt"],function(a,b,c){
+            
+        })
+    </script>
+
+</body>
+</html>

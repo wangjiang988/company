@@ -1,0 +1,801 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.5.9H经销商报价修改车型价格（正在报价） - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a style="background: url(themes/images/custom/custom-dealer-brand.png) 25px 50%  no-repeat" data-toggle="collapse" data-parent="#collapse_2" href="#collapse_x1" class="psr">冀东物贸<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x1" class="panel-collapse in">
+                                            <a href="#">基本信息</a>
+                                            <a href="#">常用车型</a>
+                                            <a href="#">保险设定</a>
+                                            <a href="#">客户文件</a>
+                                            <a href="#" class="cur-select-step">工作时段</a>
+                                            <a href="#" class="">增加经销商</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a  data-toggle="collapse" data-parent="#collapse_3" href="#collapse_x2" class="psr">新建报价(15)<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x2" class="panel-collapse in">
+                                            <a href="#">开始新建</a>
+                                            <a href="#">新建未完(6)</a>
+                                            <a href="#">等待生效(9)</a>
+                                            <a href="#" class="cur-select-step">正在报价(6)</a>
+                                            <a href="#">暂时下架(6)</a>
+                                            <a href="#">失效报价(6)</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-tool" data-toggle="collapse" data-parent="#accordion1" href="#collapse_6"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_6" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">便捷工具</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content psr">
+
+                	<h2 class="title weighttitle">正在报价</h2>
+                	<div class="content-wapper lh30">
+	                	<div class="row">
+	                		<div class="col-sm-6 col-xs-6"><span>报价编号：Hc8715678785</span></div>
+	                		<div class="col-sm-6 col-xs-6">
+		                		<span>操作：</span>   
+		                		<a href="javascript:;" class="juhuang tdu">返回</a> 
+		                		<a href="javascript:;" class="juhuang tdu ml10">暂停</a> 
+                        <a href="javascript:;" class="juhuang tdu ml10">终止</a> 
+	                		</div>
+	                		<div class="col-sm-6 col-xs-6"><span>报价时间：2016-03-20 16：35：48 </span></div>
+	                		<div class="col-sm-6 col-xs-6"><span>设置生效时间：2016-04-01  09：00</span></div>
+	                		<div class="col-sm-6 col-xs-6"><span>报价人：用户001</span></div>
+	                		<div class="col-sm-6 col-xs-6"><span>生效倒计时：20天 15小时07分08秒</span></div>
+	                		<div class="clear"></div>
+	                	</div>
+                	</div>
+ 
+
+                    <div class="custom-offer-step-next">
+                        <ul>
+                          <li class="first"><a href="#">车型价格</a></li>
+                          <li><a href="#">车况说明</a></li>
+                          <li><a href="#">选装精品</a></li>
+                          <li><a href="#">首年保险</a></li>
+                          <li><a href="#">收费标准</a></li>
+                          <li class="last"><a href="#">其他事项</a></li>
+                          <div class="clear"></div>
+                        </ul>
+                    </div>  
+                    
+                    <form action="newOfferings">
+                        <div class="content-wapper border">
+                           
+                           <table class=" custom-info-tbl noborder">
+                             <tbody>
+                               <tr>
+                                   <td class="tal" width="135" valign="middle"><span class="blue weight">一、选择经销商：</span></td>
+                                   <td class="tac">
+                                      <div class="btn-group btn-jquery-event">
+                                          <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle dropdown-company">
+                                              <span class="dropdown-label"><span>--请选择经销商--</span></span>
+                                              <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu dropdown-company">
+                                              <input type="hidden" name="">
+                                              <li><a><span>苏州中捷汽车销售有限公司</span></a></li>
+                                              <li><a><span>苏州中捷汽车销售有限公司2</span></a></li>
+                                              <li><a><span>苏州中捷汽车销售有限公司3</span></a></li>
+                                          </ul>
+                                      </div>
+                                      <div class="error-div text-left"><label>*请选择经销商</label></div>
+                                   </td>
+                                   <td><span>归属地区：</span></td>
+                                   <td><span class="">&nbsp;</span></td>
+                               </tr>
+                             </tbody>
+                           </table> 
+                           
+
+                           <table class=" custom-info-tbl noborder">
+                             <tbody>
+                               <tr>
+                                   <td class="tal" width="135"><span class="blue weight">二、选择车型：</span></td>
+                                   <td class="tal"></td>
+                                   <td><span></span></td>
+                                   <td></td>
+                                   <td></td>
+                               </tr>
+                               <tr>
+                                   <td class="tar" width="135"><span class="">品牌：</span></td>
+                                   <td class="tal" width="150">
+                                       <span class="">&nbsp;</span>
+                                   </td>
+                                   <td class="tar"><span>车系：</span></td>
+                                   <td class="tal">
+                                      <div class="btn-group btn-jquery-event">
+                                            <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle">
+                                                <span class="dropdown-label"><span>请选择车系</span></span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-select">
+                                                <input type="hidden" name="hfbrand">
+                                                <li class="active"><a><span>新一代揽胜</span></a></li>
+                                                <li><a><span>新一代揽胜1</span></a></li>
+                                                <li><a><span>新一代揽胜2</span></a></li>
+                                            </ul>
+                                        </div>
+                                        <span class="error-div "><label>*请选择车系</label></span>
+                                        
+                                   </td>
+                                   <td>
+                                      
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tar" width="135"><span class="">车型规格：</span></td>
+                                   <td class="tal" colspan="4">
+                                       <div class="btn-group btn-jquery-event">
+                                            <button data-toggle="dropdown" class="btn btn-select btn-select-long btn-default dropdown-toggle">
+                                                <span class="dropdown-label"><span>2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版1</span></span>
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-select dropdown-long">
+                                                <input type="hidden" name="">
+                                                <li><a><span>2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版1</span></a></li>
+                                                <li><a><span>2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版2</span></a></li>
+                                                <li><a><span>2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版3</span></a></li>
+                                            </ul> 
+                                        </div>
+                                        <span class="error-div "><label>*请选择车型规格</label></span>
+                                   </td>
+                                  
+                                   
+                               </tr>
+                               <tr>
+                                   <td class="tar" width="135"><span class="">座位数：</span></td>
+                                   <td class="tal">
+                                        <span class="">&nbsp;</span>
+                                   </td>
+                                   <td class="tar"><span>基本配置：</span></td>
+                                   <td class="tal">
+                                      <a href="#" class="juhuang tdu hide">查看</a>
+                                   </td>
+                                   <td></td>
+                               </tr>
+                             </tbody>
+                           </table> 
+
+                           <table class=" custom-info-tbl noborder">
+                             <tbody>
+                               <tr>
+                                   <td class="tal" width="135"><span class="blue weight">三、是否现车：</span></td>
+                                   <td class="tal" colspan="3">
+                                       <label><input type="radio" checked="" name="xc" id="xianche"><span class="noweight ml5">现车</span></label>
+                                       <span class="ml20">经销商内部车辆编号（选填）</span>
+                                       <input placeholder="填写不超过20位数字或字母" type="text" name="" class="form-control custom-control-2 autocomplete ac_input" autocomplete="off">
+                                       <div class="error-div text-right"><label>输入有误，请重新输入不超过20位的数字或字母~</label></div>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tal" width="135"></td>
+                                   <td class="tal notopbottompadding" colspan="3">
+                                       <label class=""><input type="radio" name="xc" id="notxianche"><span class="noweight ml5">非现车</span></label>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tal" valign="top" width="135"><span class="blue weight">四、销售区域：</span></td>
+                                   <td class="tal" colspan="3">
+                                       <div class="area-readonly-wrapper psr">
+                                           <textarea class="textarea area-textarea"></textarea>
+                                           <i class="location-area"></i>
+                                       </div>
+                                       <span class="error-div "><label>*请选择销售区域</label></span>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tal" valign="top" width="135"><span class="blue weight">五、排放标准：</span></td>
+                                   <td class="tal" colspan="3">
+                                       <label><input type="radio" name="" id=""><span class="noweight ml5">国四</span></label>
+                                       <label class="ml20"><input type="radio" checked="" name="" id=""><span class="noweight ml5">国五</span></label>
+                                   </td>
+                               </tr>
+                               <tr>
+                                   <td class="tal" valign="top" width="135"><span class="blue weight">六、价格设置：</span></td>
+                                   <td class="tal" colspan="3">
+                                   </td>
+                               </tr>
+                             </tbody>
+                           </table> 
+
+                           <table class=" custom-info-tbl noborder wp100">
+                             <tbody>
+                               <tr>
+                                   <td class="tar" width="115">厂商指导价：</td>
+                                   <td class="tal" width="220">￥<span class="format-money">1.00</span></td>
+                                   <td>人民币 <span>壹元整</span></td>
+                               </tr>
+                               <tr>
+                                   <td class="tar" width="115">裸车开票价格： </td>
+                                   <td class="tal">
+                                       <div class="psr">
+                                         <span>￥</span>
+                                         
+                                         <input placeholder="" type="text" data-bind="1178000" value="1108000.05" name="" class="form-control custom-control ml5 format-money invoice-price">
+                                         <div class="error-div text-center psa"><label>温馨提示：高于厂商指导价</label></div>
+                                         <div class="error-div text-center psa" style="width: 251px"><label>温馨提示：低于厂商指导价的70%</label></div>
+                                         <div class="error-div text-center psa" style="width: 251px"><label>温馨提示：低于厂商指导价的50%</label></div>
+                                       </div>
+
+                                   </td>
+                                   <td>人民币 <span>壹元整</span></td>
+                               </tr>
+                               <tr>
+                                   <td class="tar" width="115">我的服务费： </td>
+                                   <td class="tal">
+                                       <div class="psr">
+                                         <span>￥</span>
+                                         <input placeholder="" type="text" value="10001" name="" class="form-control custom-control ml5 format-money service-fee">
+                                         <div class="error-div text-center psa" style="width: 321px"><label>温馨提示：不在平台规定范围内，请重新输入</label></div>
+                                       </div>
+                                   </td>
+                                   <td>人民币 <span>壹拾元整</span><div class="error-div text-center inline-block ml10"><label>服务费范围:</label> <label></label></div></td>
+                               </tr>
+                               <tr>
+                                   <td class="tar" width="115">客户买车定金： </td>
+                                   <td class="tal"><span>￥</span><input placeholder="" type="text" value="30000" name="" class="form-control custom-control ml5 format-money"></td>
+                                   <td>人民币 <span>叁拾元整</span></td>
+                               </tr>
+
+                             </tbody>
+                           </table> 
+                           <div class="m-t-10"></div>
+                           <div class="m-t-10"></div>
+                           <p class="tac">
+                              <a href="javascript:;" class="btn btn-danger fs16 next">下一步</a>
+                           </p> 
+                           <div class="error-div text-center" id="error-div"><label>温馨提示：设置车辆开票价格过低（不到厂商指导价的50%），修改后方可进入下一步</label></div>
+                            
+                        </div>
+                        
+                    </form>
+                    <div class="m-t-200"></div>
+                
+                  <div id="SelectTimeWin" class="popupbox" >
+                      <div class="popup-title popup-title-white psr">
+                        <span class="fl fs16"><b>选择城市</b></span>
+                        <span class="ml20 fl">|</span>
+                        <div class="ml20 fl  inline">
+                          <label class="">
+                            <input class="fl mt13 check-all" type="checkbox" name="" id="">
+                            <span class="fl ml5 ">全国</span>
+                            <div class="clear inline"></div>
+                          </label>
+                        </div>
+                        <dl class="letter-nav fl">
+                            <dd>
+                              <a href="#NAV-A"><span class="cur">A</span></a>
+                              <a href="#NAV-B"><span>B</span></a>
+                              <a href="#NAV-C"><span>C</span></a>
+                              <a href="#NAV-F"><span>F</span></a>
+                              <a href="#NAV-G"><span>G</span></a>
+                              <a href="#NAV-H"><span>H</span></a>
+                              <a href="#NAV-J"><span>J</span></a>
+                              <a href="#NAV-L"><span>L</span></a>
+                              <a href="#NAV-Q"><span>Q</span></a>
+                              <a href="#NAV-S"><span>S</span></a>
+                              <a href="#NAV-T"><span>T</span></a>
+                              <a href="#NAV-X"><span>X</span></a>
+                              <a href="#NAV-Y"><span>Y</span></a>
+                              <a href="#NAV-Z"><span>Z</span></a>
+                            </dd>
+                          </dl>
+                        <i></i>
+                        <div class="clear inline"></div>
+                      </div>
+                      <div class="popup-wrapper notopbottompadding">
+                          <div class="popup-content nopadding">
+                               <div class="clear"></div>
+                               <div id="province-city-select">
+                                 <dl class="province-city-select-wrapper">
+                                   <dt>
+                                     <span class="fl juhuang" id="NAV-A">A</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">安徽省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">合肥市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黄山市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">安庆市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">芜湖市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">池州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">宣城市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">六安市</span></li>
+
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">滁州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">蚌埠市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">巢湖市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">马鞍山市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">亳州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">宿州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">阜阳市</span></li>
+
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">淮北市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">淮南市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">铜陵市</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+                                 <dl class="province-city-select-wrapper">
+                                   <dt>
+                                     <span class="fl juhuang" id="NAV-B">B</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">北京市</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+                                
+                                 <dl class="province-city-select-wrapper">
+                                   <dt>
+                                     <span class="fl juhuang" id="NAV-C">C</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">重庆市</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                      <ul class="notype nopadding persent area-city-list">
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+                                 
+                                 <dl class="province-city-select-wrapper">
+                                   <dt>
+                                     <span class="fl juhuang" id="NAV-F">F</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">福建省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">福州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">厦门市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">莆田市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">三明市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">泉州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">漳州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">南平市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">龙岩市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">宁德市</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+                                 <dl class="province-city-select-wrapper">
+                                   <dt>
+                                     <span class="fl juhuang province" id="NAV-G">G</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">广西省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">福州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">厦门市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">莆田市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">三明市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">泉州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">漳州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">南平市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">龙岩市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">宁德市</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <dt>
+                                     <span class="fl juhuang">&nbsp;&nbsp;</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">广东省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">广州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">韶关市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">深圳市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">珠海市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">汕头市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">佛山市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">江门市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">湛江市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">茂名市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">肇庆市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">惠州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">梅州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">汕尾市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">河源市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">阳江市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">清远市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">东莞市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">中山市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">潮州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">揭阳市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">云浮市</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <dt>
+                                     <span class="fl juhuang">&nbsp;&nbsp;</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">贵州省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">贵阳市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">六盘水市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">遵义市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">安顺市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">铜仁市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔西南</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">毕节市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔东南</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔南</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+
+                                 <dl class="province-city-select-wrapper">
+                                   <dt>
+                                     <span class="fl juhuang" id="NAV-H">H</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">河南省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">福州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">厦门市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">莆田市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">龙岩市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">宁德市</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <dt>
+                                     <span class="fl juhuang">&nbsp;&nbsp;</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">河北省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">广州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">韶关市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">深圳市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">珠海市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">潮州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">揭阳市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">云浮市</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <dt>
+                                     <span class="fl juhuang">&nbsp;&nbsp;</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">湖南省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">贵阳市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">六盘水市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">遵义市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">安顺市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">毕节市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔东南</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔南</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <dt>
+                                     <span class="fl juhuang">&nbsp;&nbsp;</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">湖北省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">贵阳市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">六盘水市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">遵义市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">安顺市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">毕节市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔东南</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔南</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <dt>
+                                     <span class="fl juhuang">&nbsp;&nbsp;</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">海南省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">贵阳市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">六盘水市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">遵义市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">安顺市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">毕节市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔东南</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔南</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <dt>
+                                     <span class="fl juhuang">&nbsp;&nbsp;</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">黑龙江省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">哈尔滨市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">六盘水市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">遵义市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">安顺市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">毕节市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔东南</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">黔南</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+                                 <dl class="province-city-select-wrapper">
+                                   <dt>
+                                     <span class="fl juhuang" id="NAV-J">J</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">吉林省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">长春市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">吉林市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">四平市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">辽源市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">白山市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">松原市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">白城市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">榆树市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">德惠市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">蛟河市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">桦甸市</span></li>
+                                     </ul>
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+                                 <dl class="province-city-select-wrapper">
+                                   <dt>
+                                     <span class="fl juhuang" id="NAV-Q">Q</span>
+                                     <label class="fl ml10">
+                                        <input class="fl  check-all-province" type="checkbox" name="" id="">
+                                        <span class="fl ml5 c72 province">青海省</span>
+                                        <div class="clear inline"></div>
+                                     </label>
+                                     <span class="clear"></span>
+                                   </dt>
+                                   <dd>
+                                     <ul class="notype nopadding persent area-city-list">
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">福州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">厦门市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">莆田市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">三明市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">泉州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">漳州市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">南平市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">龙岩市</span></li>
+                                       <li class="city" data-id="9582"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">宁德市</span></li>
+                                     </ul>
+                                     <!--//介个没忘了 在最后一个的地方 也就是"Z" 的城市最后放个<div class="h400"></div>这个标签 别问我干吗的 用了就知道\\-->
+                                     <div class="h400"></div>
+                                   </dd>
+                                   <div class="clear"></div>
+                                 </dl>
+
+
+
+                               </div>
+                          </div>
+                          <div class="popup-control">
+                              <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 do">保存</a>
+                              <div class="clear mt10"></div>
+                          </div>
+                      </div>
+                  </div>
+ 
+ 
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/template" id="city-list-wrapper-tpl">
+       <li class="clear city-list">
+          <ul class="notype nopadding persent back-gray ml-20">
+             {0}
+             <div class="clear"></div> 
+           </ul>
+       </li>
+    </script>
+    <script type="text/template" id="city-list-item-tpl">
+       <li data-id="{1}"><input type="checkbox" name="" id="" class="fl"><span class="fl ml5">{0}</span></li>
+    </script>
+
+    
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin","module/custom/custom.admin.common.jquery","module/custom/custom.admin.car.prices.jquery", "module/common/common", "bt"],function(a,b,c){
+         
+        });
+    </script>
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>找回密码 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+  
+    <link href="themes/pwd.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+    
+    <div class="box" ms-include-src="regheader"></div>
+
+    <div class="container m-t-86 pos-rlt" id="vue">
+        <div class="wapper">
+            <div class="hd reg-box">
+                <div class="title">找回密码</div> 
+                <ul>
+                    <li class="cur">1.填写账号</li>
+                    <li>2.验证身份</li>
+                    <li>3.重置密码</li>
+                    <li>4.完成</li>
+                    <div class="clear"></div>
+                </ul>
+                <form action="/user/password" id="password-step-1">
+                    <div class="form">
+                        <br>
+                        <table class="reg-form-tbl">
+                            <tr>
+                                <td width="100" align="right">账号</td>
+                                <td>
+                                    <input @focus="setPhone" @blur="changPhone" id="txtPhone" maxlength="30" v-model="form.phone" :value="form.phone" name="phone" type="text" placeholder="手机号 / 邮箱名" :class="{'form-input':true,'form-input-def':true,'error-bg':phoneStatus==2}" />
+                                    <span v-cloak class="red" v-show="phoneStatus==2">请输入账号~</span>
+                                    <span v-cloak class="red" v-show="phoneStatus==3">格式有误，请重新输入～</span>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td align="right">验证码</td>
+                                <td> 
+                                    <div class="input-wrapper">
+                                        <input @focus="setCode" @blur="changCode"  v-model="form.code" :value="form.code" maxlength="4" placeholder="请输入左侧验证码" name="code" type="text" :class="{'form-input':true,'form-input-def':true,'error-bg':codeStatus == 2}" />
+                                        <img id="codeimg" height="38" onclick="this.src='http://user.hwache.cn/index.php?act=seccode&amp;op=makecode&amp;nchash=521e168c&amp;r='+Math.random()"  src="http://user.hwache.cn/index.php?act=seccode&op=makecode&nchash=521e168c" />
+                                        <img class="refresh-code" @click="refreshCode" src="http://www.hwache.cn/themes/images/common/code-refresh.png" />
+                                    </div>  
+                                    <span v-cloak class="red" v-show="codeStatus==2">请输入验证码~</span>
+                                    <span v-cloak class="red" v-show="codeStatus==3">输入有误，请重新输入～</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right"></td>
+                                <td align="left"> 
+                                     <!-- <input type='hidden' name='_token' value="{{csrf_token()}}"> -->
+                                     <button :disabled="isLoading" @click="send" type="button" class="btn btn-s-md btn-danger fl btn-pwd">下一步</button>
+                                </td>
+                            </tr>
+                            
+                        </table>  
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br><br><br>
+
+     
+       
+
+
+    </div>
+
+    <div class="box" ms-include-src="footer"></div>
+ 
+    <script src="./js/sea.js" ></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["vendor/vue","module/pwd/password-step-1", "module/common/common","bt"],function(a,b,c){
+            
+        })
+    </script>
+
+</body>
+</html>

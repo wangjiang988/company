@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.3.2修改账户基本信息 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse in">
+                                    <div class="panel-body">
+                                        <a href="#" class="menu-select">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">常用管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">报价管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content">
+                    <!--//账户信息-->
+                    <h4 class="title"><span>账户信息</span></h4>
+                    <form action="" name="user-info-edit">
+                        <table class="tbl-2 custom-info-tbl custom-info-edit-tbl">
+                             <tr>
+                                 <td width="135" align="right">性 别：</td>
+                                 <td width="660" class="nobottomborder" style="text-align: left;">
+                                     <label class="sexlable"><input type="radio" name="rdb-sex" id="">男</label>
+                                     <label class="sexlable"><input type="radio" name="rdb-sex" id="">女</label>
+                                     <div class="error-div"><label>请选择性别</label></div>
+                                     <div class="pic-wrapper">
+                                         <div class="pic">
+                                             <img ms-on-click="upload" onerror="this.src='themes/images/custom/custom-info-head.gif'"  width="84" height="89" class="block" src="themes/images/custom/custom-info-head.gif" alt="">
+                                             <input type="file" name="" ms-on-change="changeAndPreview(this)" id="hfUpload" class="hide" value="">
+                                             <input type="hidden" name="hfFile" >
+                                             <p class="info-txt">上传头像</p>
+                                         </div>
+                                         <div class="txt-info">
+                                             <p>大小不超过5M，支持</p>
+                                             <p>jpg/png/bmp格式</p>
+                                         </div>
+                                     </div>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td width="135" align="right">固定电话：</td>
+                                 <td width="660" class="notopborder nobottomborder">
+                                     <input placeholder="请输入带区号的固话号码" type="text" name="email" placeholder="" class="form-control custom-control pull-left email-input">
+                                     <div class="error-div"><label>请填写固定电话</label></div>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td width="135" align="right" valign="top">常用地址：</td>
+                                 <td width="660" class="notopborder" style="text-align: left;">
+                                    <div class="form-txt psr ">
+                                         <div class="btn-group m-r pdi-drop pdi-drop-warp">
+                                              <div ms-on-click="initProvince" class="btn btn-sm btn-default dropdown-toggle area-drop-btn">
+                                                  <span class="dropdown-label"><span>江苏省苏州市</span></span>
+                                                  <span class="caret"></span>
+                                              </div>
+                                              <div class="dropdown-menu dropdown-select area-tab-div">
+                                                  <input type="hidden" name="province" />
+                                                  <input type="hidden" name="city" />
+                                                  <p class="area-tab"><span class="cur-tab">省份</span><span>城市</span></p>
+                                                  <dl class="dl">
+                                                      <dd ms-on-click="selectProvince(20)">江苏省</dd>
+                                                      <dd ms-on-click="selectProvince(25)">上海市</dd>
+                                                      <dd ms-on-click="selectProvince(26)">北京市</dd>
+                                                      <dd ms-on-click="selectProvince(21)">广东省</dd>
+                                                      <dd ms-on-click="selectProvince(24)">江苏省</dd>
+                                                      <dd ms-on-click="selectProvince(28)">上海市</dd>
+                                                      <dd ms-on-click="selectProvince(22)">北京市</dd>
+                                                      <dd ms-on-click="selectProvince(29)">广东省</dd>
+                                                    <div class="clear"></div>
+                                                  </dl>
+                                                  <dl class="dl" style="display: none;">
+                                                    <dd ms-repeat-city="citylist" ms-on-click="selectCity"><!--city.name--></dd>
+                                                    <div class="clear"></div>
+                                                  </dl>
+                                              </div>
+                                              <div class="clear "><br>
+                                                  <textarea name="" placeholder="请输入余下地址信息" id="" cols="30" rows="10"></textarea>       
+                                              </div>
+                                              <div class="error-div"><label>请选择常用地址省份、城市</label></div>
+                                              <div class="error-div"><label>请填写常用地址详细地址</label></div>
+                                         </div>
+                                         <div class="clear"></div>
+                                    </div>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td width="135" align="right">邮 编：</td>
+                                 <td width="660" class="notopborder nobottomborder">
+                                     <input placeholder="请输入邮编" type="text" name="email" placeholder="" class="form-control custom-control pull-left email-input">
+                                     <div class="error-div"><label>请填写邮编</label></div>
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td width="135" align="right">微 信：</td>
+                                 <td width="660" class="notopborder nobottomborder">
+                                     <input placeholder="请输入微信" type="text" name="email" placeholder="" class="form-control custom-control pull-left email-input">
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td width="135" align="right" valign="top">其他联系方式：</td>
+                                 <td width="660" style="text-align: left;" class="notopborder nobottomborder">
+                                     <div class="clear">
+                                         <a href="javascript:;" ms-on-click="addlinkmethod" class="">添加</a>
+                                         <table class="tbl custom-info-tbl custom-info-tbl-user">
+                                             <tr>
+                                                 <th>名称</th>
+                                                 <th>号码</th>
+                                                 <th class="last"> 
+                                                    操作
+                                                 </th>
+                                             </tr>
+                                             <tr>
+                                                 <td>王德军</td>
+                                                 <td>13813838438</td>
+                                                 <td class="tac">
+                                                     <a href="javascript:;" ms-on-click="dellink(1)" class="ml10 weight">删除</a>
+                                                 </td>
+                                             </tr>
+                                           
+                                        </table>
+                                     </div>
+                                 </td>
+                             </tr>
+                            
+                        </table>
+                    </form>
+
+                    <br><br>
+                    <p class="tac">
+                        <input ms-on-click="edituserinfosub" type="button" value="提交" class="btn btn-s-md btn-danger ml20 ">
+                        <a href="javascript:;" class="btn btn-s-md btn-danger  sure ml20 ">返回</a>
+                    </p>
+                    
+  
+                    
+
+
+                    <div class="content-wapper">
+                         <div id="account-add" class="popupbox">
+                            <div class="popup-title">添加其他联系方式</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <form action="" name="addlink">
+                                        <table>
+                                            
+                                            <tr>
+                                                <td align="right">名  称：</td>
+                                                <td>
+                                                    <input type="text" name="link-name" placeholder="" class="form-control custom-control">
+                                                    <div class="error-div"><label>请填写名称</label></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right">号  码：</td>
+                                                <td>
+                                                    <input type="text" name="link-phone" placeholder="" class="form-control custom-control">
+                                                    <div class="error-div"><label>请填写号码</label></div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+
+                                </div>
+                                <div class="popup-control">
+                                    <a ms-on-click="doaddlink" href="javascript:;" class="btn btn-s-md btn-danger fs14 w100">提交</a>
+                                    <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>   
+                        </div>
+ 
+                        <div id="account-del" class="popupbox">
+                            <div class="popup-title">温馨提示</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <p class="fs14 pd ti">       
+                                        确定要删除该联系方式吗？
+                                    </p>
+                                </div>
+                                <div class="popup-control">
+                                    <a ms-on-click="dodellink" href="javascript:;" class="btn btn-s-md btn-danger fs14 w100">提交</a>
+                                    <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>   
+                        </div>
+
+                    </div>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+
+

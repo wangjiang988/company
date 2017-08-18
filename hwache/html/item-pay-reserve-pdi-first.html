@@ -1,0 +1,687 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>预约交车 - 等待页面 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li class="step-cur">预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content pdi">
+                    <small class="juhuang">等待预约</small>
+                    <i></i>
+                    <small>反馈确认</small>
+                    <i></i>
+                    <small class="">预约完毕</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content"  ms-controller="item">
+        <form action="" name="item-form">
+            <div class="wapper has-min-step">
+                <h1>尊敬的客户：</h1>
+                <h1>您的订单正在精心备货中，距交车邀请发出时限还有XX天XX小时XX分XX秒，请您静候佳音！</h1>
+                <br>
+                <table class="nobordertbl" width="100%">
+                    <tr>
+                        <td width="50%" class=" fs14">订单号：</td>
+                        <td width="50%">
+                            <div class="psr fs14">
+                              订单时间：2015年10月28日
+                              <span class="sj"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                                 <b>更多</b>
+                              </span>
+                              <p class="tm tm-long" style="display: none;z-index: 999">
+                                <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                              </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--产品-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-click="toggleContent">一、产品<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner  box-inner-def">
+                        <h2>您选择的汽车产品为：</h2>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">品牌</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">车系</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">车型规格</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">类别</td>
+                                <td>全新中规车整车（已加装部分
+                                <span class="juhuang cp" ms-on-click="srollTopShow(1)">原厂</span>和
+                                <span class="juhuang cp" ms-on-click="srollTopShow(2)">非原厂</span>选装精品，见下方详细说明）
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">数量</td>
+                                <td>一台</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">基本配置</td>
+                                <td>
+                                    <span class="juhuang cp">详见附件一</span>（注：本配置说明引自该品牌厂商权威官方网站资料    <a href="#" class="juhuang">查看</a>）
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">生产国别</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">座位数</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">车身颜色</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">内饰颜色</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">行驶里程</td>
+                                <td>(不高于）<span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">出厂年月</td>
+                                <td>(不早于）<span></span></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">排放标准</td>
+                                <td>符合国五标准</td>
+                            </tr>
+                        </table>
+                        <h2>已装原厂选装精品：</h2>
+                        <table class="tbl">
+                            <tr>
+                                <th width="250">名称</th>
+                                <th width="250">型号</th>
+                                <th width="150">厂商指导价</th>
+                                <th width="100">数量</th>
+                                <th>附加价值</th>
+                            </tr>
+                            <tr>
+                                <td width="250"></td>
+                                <td width="250"></td>
+                                <td width="150"></td>
+                                <td width="100"></td>
+                                <td></td>
+                            </tr>
+                            
+                        </table>
+                        <h2 class="text-right pr150"><b>合计价值：</b><span class="juhuang"></span></h2>
+                        
+                    </div>
+                </div>
+
+                <!--车价与买车担保金-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">二、车价与买车担保金<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">厂商指导价</td>
+                                <td>人民币520,000.00 元</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">您尊享的车价</td>
+                                <td>
+                                    <p>人民币520,000.00 元(伍拾贰万元整）</p>
+                                    <p>（您所见的车价为包含经销商裸车开票金额和华车网平台强力保障购车服务费金额的一口价。在交车前</p>
+                                    <p>华车网平台将发给您正式交车通知，告知您提车时在经销商处支付的裸车开票金额，以及华车网服务费的金额。</p>
+                                    <p>华车网承诺您实际支付的这两项金额之和不高于本约定购车价。）</p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">支付方式</td>
+                                <td>
+                                    <p>全款</p>
+                                    <p>（在授权经销商处当场直接支付<span class="juhuang">裸车开票价格之全部金额</span>。华车网服务费是在本次购车之旅完成后才与您</p>
+                                    <p>结算，从买车担保金中扣除。）</p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">买车担保金</td>
+                                <td>
+                                    <p>人民币12,000.00元</p>
+                                    <p>（该金额将冻结在华车网平台直到订单执行完毕，扣除华车网服务费和其他违约赔偿（如产生）后，多余金</p>
+                                    <p>额将原路返还给您。）</p>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                        
+                        
+                    </div>
+                </div>
+
+                <!--交车-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">三、交车<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">交车时限</td>
+                                <td>2015年10月30日(XX年X月X日您与经销商重新约定之时间）</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">交车时限</td>
+                                <td>
+                                    <p>
+                                        2015年10月30日（2015年10月15日买车担保金全额确认进入华车网加信宝后的15日内）
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">交车时限</td>
+                                <td>
+                                    <p>
+                                        2016年4月15日（2015年10月15日买车担保金全额确认进入华车网加信宝后的X个月内）
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">交车地点范围</td>
+                                <td>
+                                    <p>该车将在<input name="month2" value="" class="input" />内的该品牌厂商授权经销商的合法正规营业场所内交付，具体地点在</p>
+                                    <p>后续交车通知中另行告知。</p>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <h6 class="fs14"><span>*</span>  请注意：您须作好另付裸车开票价格全款购车，并自行前往上述范围内指定地点提车的各项准备。   </h6>
+                        <div class="control-wapper">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="map">
+                                            <h5>交车地点范围图示</h5>
+                                            <img src="themes/images/item/map.gif" />
+                                        </div>
+                                    </td>
+                                    <td valign="bottom">
+                                         
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <!--您的计划-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">四、您的计划<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">所购车辆上牌地区</td>
+                                <td>XX省XX市 <span class="juhuang">（限牌城市）</span></td>
+                            </tr>
+                        </table>
+                        <h6 class="lh22 fs14"><span>*</span>请注意：您所选择的上牌地区作为您所作的承诺，亦将正式称为订单约定内容的一部分。因各地上牌政策差异，您提车后如临时决定改变该车上牌地区，车辆及其配套上牌文件可能存在与新上牌地区之上牌政策不相符合的风险。并且，因某些厂家区域销售政策所限，上牌地区的擅自改变将可能给经销商带来某些损失，您必须由此作出违约赔偿，违约赔偿金有无及其金额详见下方第六条《上牌服务》。此外，擅自改变上牌地区还可能造成后续其他约定事项前提条件的改变，造成约定订单内容无法执行的后果。  </h6>
+                        <table class="tbl"> 
+                            <tr>
+                                <td class="prev-title">车辆用途</td>
+                                <td>
+                                    <p>非营业个人客车 （通俗称谓：私家车） ；  非营业个人客车 （通俗称谓：单位或公司自用车）。</p>
+                                </td>
+                            </tr>
+                        </table>
+                       
+                        
+                    </div>
+                </div>
+
+                <!--车辆商业保险-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">五、车辆商业保险<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <p>
+                            购买车辆商业保险限定条件：<b>自由购买</b> <small>（您可以在其他渠道自主购买）</small>
+                        </p>
+                        <p>
+                            购买车辆商业保险限定条件：<b>自由购买</b> <small>（您可以在其他渠道自主购买，也可以在经销商处购买，参考投保项目和保费如下）</small> 
+                        </p>
+                        <p>
+                            购买车辆商业保险限定条件：<b>指定购买</b> <small>（您必须在经销商处购买，参考投保项目和保费如下）</small>
+                        </p>
+                        <p class="fs14 lh22 nomargin ti">首年商业保险参考保费（非营业个人客车）（非营业企业客车）：<span class="juhuang">（不高于）人民币9920.00元 </span>  ，包括了下列商业保险项目组合（这些项目的组合再加上交强
+                       险，可理解为某种常规概念上的全险）：机动车损失保险；机动车盗抢险；第三者责任保险：赔付额度 50万元；车上人员责任险（驾驶人1万元限额+乘客4座各1万元限额）；玻璃单独破碎险 进口玻璃、自燃损失险、车身划痕损失险 赔付额度2万元、不计免赔特约险（包含机动车损失保险、机动车盗抢险、第三者责任保险、车上人员责任险、车身划痕损失险）。</p>
+                        <p class="fs14 lh22 nomargin ti">指定购买这种情况下，我们已核实提供上述保险的保险公司在您计划的上牌地区<input type="text" class="baoxianinput juhuang" name="diqu" value="" />可以提供理赔服务。如果您确认投保项目内容与上述项目内容完全一致，我们承诺您提车时在经销商处支付的保费不高于上述金额。您也可以在收到交车通知后根据需要选择投保项目和内容，我们亦承诺定价标准不变。</small></p>
+                        <p><small><b>支付方式</b>：<small>在经销商处购买的，在经销商处支付。</small></p>
+
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!--上牌服务-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">六、上牌服务<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <p><b>说明：</b>指经销商为购车方代办机动车注册登记手续的服务，仅按车管所相关规则办理，不对牌号结果负责，也不含在某些限牌地区通过摇号、拍卖、转让等方式取得牌照资源指标的服务和费用。</p>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">上牌服务限定</td>
+                                <td>
+                                    <p class="fs14">指定上牌</p>
+                                    <p><small>（您须委托经销商代办上牌手续，且向经销商支付下方标准的服务费。）</small></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">上牌服务限定</td>
+                                <td>
+                                    <p class="fs14">自助上牌</p>
+                                    <p><small>（您在提车时可选择：不委托经销商而是亲自办理上牌手续；或者委托经销商代办，其服务费用按下方标准收取）</small></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">上牌服务限定</td>
+                                <td>
+                                    <p class="fs14">接受安排</p>
+                                    <p><small>（因可能涉及异地上牌，我们将在交车通知中告知您是由经销商还是由您亲自办理上牌手续，您须完全接受我们所作的安排。如告知经销商代办的，其服务费用则按下方标准。为避免您异地提车后回本地无法上牌，请提前向本地车管所咨询上牌手续流程和必备文件资料。） </small></p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">服务费金额</td>
+                                <td>（不高于）人民币1,000.00元</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">支付方式</td>
+                                <td>
+                                    <p class="fs14">在经销商处办理的，在经销商处支付。</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="tbl">
+                            <tr>
+                                <td width="180"><p class="fs16"><b>上牌人身份类别</b></p> </td>
+                                <td><p class="fs14">国内其他限牌城市户籍居民（北京）</p></td>
+                            </tr>
+                           
+                        </table>
+                        
+                        <p class="fs14">温馨提示：</p>
+                        <p class="fs14 ti">根据政府的相关政策，成功上牌的前提需要您的户籍等条件达到上牌地区规定的资格。非当地户籍人士上牌的门槛可能包括（但不限于）：暂住证（且上网信息满一定时间）、非国内人士相关证件（原件与翻译文件）和临时住宿登记表（满一定时间），国内其他限牌城市户籍人士审批表... ...如有疑问请向当地车辆管理部门咨询。</p>
+                        <p class="fs14 ti">如您委托经销商代办上牌手续，须向经销商提供符合上牌地区上牌政策的所有必需文件（包括身份证明、牌照指标等)、否则您将单独承担无法上牌的所有后果。</p>
+                        <p class="fs14"><b>特别提醒：您的计划上牌地区<input type="text" class="baoxianinput juhuang shot" name="money" value="">为限牌城市，需要您自行取得牌照指标方可上牌，您确认已取得牌照指标</b></p>
+                        <p class="fs14"><b>特别提醒：您的计划上牌地区<input type="text" class="baoxianinput juhuang shot" name="money" value="">为限牌城市，需要您自行取得牌照指标方可上牌，您确认将在订车或提车后自行办理牌照指标，上路风险您愿自行承担。</b></p>
+                       
+                      
+                        <table class="tbl">
+                            <tr>
+                                <td width="180"><p class="fs16"><b>上牌违约赔偿金额</b></p> </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><p class="fs16"><b>支付方式</b></p></td>
+                                <td><p class="fs14">从冻结的买车担保金中扣除。</p></td>
+                            </tr>
+                        </table>
+
+                        
+                    </div>
+                </div>
+
+                <!--上临时牌照-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">七、上临时牌照<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <p><b>说明：</b>仅指办理车辆临时移动牌照，而不是机动车注册登记。根据《中华人民共和国交通安全法》，在没有取得正式牌照之前，必须按规定申领车辆临时移动牌照方能上路行驶。      </p>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">上临时牌照限定</td>
+                                <td>
+                                    <p class="fs14">指定上牌</p>
+                                    <p><small>（您须委托经销商代办上临时牌照手续，且向经销商支付下面金额的服务费。）</small></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">上临时牌照限定</td>
+                                <td>
+                                    <p class="fs14">自助上牌</p>
+                                    <p><small>（您在提车时可选择：不委托经销商而是亲自办理上临时牌照手续；或者委托经销商代办，其服务费用按下方标准收取。）</small></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">服务费金额（每次）</td>
+                                <td>
+                                    <p class="fs14">（不高于）人民币1,000.00元</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">支付方式</td>
+                                <td>
+                                    <p class="fs14">在经销商处办理的，在经销商处支付。</p>
+                                </td>
+                            </tr>
+                        </table>
+
+                        
+                    </div>
+                </div>
+                <!--卖方其他收费-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">八、卖方其他收费<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <p>
+                            <b>说明：</b>交车时您须向经销商支付的其它费用。
+                        </p>
+                        <table class="tbl">
+                            <tr>
+                                <th>费用名称</th>
+                                <th>费用</th>
+                            </tr>
+                            <tr>
+                                <td><p class="fs14 tac">出库费</p></td>
+                                <td><p class="fs14 tac">（不高于）人民币1,000.00元</p></td>
+                            </tr>
+                            <tr class="trbg">
+                                <td  colspan="2">
+                                    <p class="fs14 zhifu"><b>支付方式</b>在经销商处支付。</p>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </div> 
+
+                <!--免费礼品或服务-->
+                <div class="box">
+                    <div class="title">
+                        <label id="liping" ms-on-click="toggleContent">九、免费礼品或服务<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        
+                        <table class="tbl">
+                            <tr>
+                                <th>名称</th>
+                                <th>数量</th>
+                                <th>状态</th>
+                            </tr>
+                            <tr>
+                                <td><p class="fs14 tac"></p></td>
+                                <td><p class="fs14 tac"></p></td>
+                                <td><p class="fs14 tac">已安装</p></td>
+                            </tr>
+                           
+                        </table>
+                        
+                    </div>
+                </div>
+
+                <!--原厂选装精品折扣率和报价-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">十、原厂选装精品折扣率和报价<i  class="hidec"></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <p>经销商为您提供的原厂选装精品折扣率：98%</p>
+                        <p><b>已选购的原厂选装精品：</b></p>
+                        <table class="tbl">
+                            <tr>
+                                <th><p class="fs14">名称</p></th>
+                                <th><p class="fs14">型号</p></th>
+                                <th><p class="fs14">数量</p></th>
+                                <th><p class="fs14">含安装费折后单价</p></th>
+                                <th><p class="fs14">小计金额</p></th>
+                            </tr>
+                            <tr>
+                                <td><p class="fs14 tac normal">&nbsp;</p></td>
+                                <td><p class="fs14 tac normal"></p></td>
+                                <td><p class="fs14 tac normal"></p></td>
+                                <td><p class="fs14 tac normal"></p></td>
+                                <td><p class="fs14 tac normal"></p></td>
+                            </tr>
+                        </table>
+                        <p><b>已选购的非原厂选装精品：</b></p>
+                        <table class="tbl">
+                            <tr>
+                                <th><p class="fs14">品牌</p></th>
+                                <th><p class="fs14">名称</p></th>
+                                <th><p class="fs14">型号</p></th>
+                                <th><p class="fs14">数量</p></th>
+                                <th><p class="fs14">含安装费折后单价</p></th>
+                                <th><p class="fs14">小计金额</p></th>
+                            </tr>
+                            <tr>
+                                <td><p class="fs14 tac normal">&nbsp;</p></td>
+                                <td><p class="fs14 tac normal">&nbsp;</p></td>
+                                <td><p class="fs14 tac normal"></p></td>
+                                <td><p class="fs14 tac normal"></p></td>
+                                <td><p class="fs14 tac normal"></p></td>
+                                <td><p class="fs14 tac normal"></p></td>
+                            </tr>
+                        </table>
+                        <p class="tar pr150 fs14"><b>合计价值：</b>xxx</p>
+                        <p>好马配好鞍，好车+好装备才叫如虎添翼，<a href="#" class="juhuang tdu">精品装备</a>不要错过哦！</p>
+                        
+                    </div>
+                </div>
+
+                <!--交车有关事宜-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">十一、交车有关事宜<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def">
+                        <p> 经销商将在交车时当场向您移交下列文件资料和随车工具。</p>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">文件资料</td>
+                                <td><p></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">随车工具</td>
+                                <td>
+                                    <p></p>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="">
+                            <tr>
+                                <td valign="top" ><b>在经销商处单车刷卡付款收费标准：</b></td>
+                                <td>
+                                    <p>信用卡免费<input type="text"  name="counts" class="baoxianinput shot juhuang" /> 次，超出次数另收刷卡金的<input type="text" name="pers" class="baoxianinput shot juhuang" />%或者每次<input type="text" name="shuaka" class="baoxianinput shot juhuang" />元；</p>
+                                    <p>借记卡免费<input type="text" name="jjcounts" class="baoxianinput shot juhuang" />次，超出次数另收刷卡金的<input type="text" name="jjpers" class="baoxianinput shot juhuang" />%或者每次<input type="text" name="jjshuaka" class="baoxianinput shot juhuang" />元；</p>
+                                </td>
+                            </tr>
+                          
+                        </table>
+                        
+                         
+                    </div>
+                </div>
+
+              
+
+                <!--补贴-->
+                <div class="box">
+                    <div class="title">
+                        <label ms-on-click="toggleContent">十二、补贴<i></i></label>
+                        <em></em>
+                        
+                    </div>
+                    <div class="box-inner box-inner-def"> 
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">补贴名称</td>
+                                <td><p><b>国家节能补贴</b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">补贴说明</td>
+                                <td>
+                                    <p class="fs14">在政策有效期内，国家对符合“节能产品惠民工程”节能汽车标准条件车型给予的一次性定额补贴。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">金额</td>
+                                <td>
+                                    <p class="fs14"></p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="prev-title">
+                                    <p>该经销商办理国家</p>
+                                    <p>节能补贴流程与时限</p>
+                                </td>
+                                <td>
+                                    <p class="fs14">
+                                        1.交车时当场兑现，由经销商垫付，消费者上牌后补充所缺资料给经销商
+                                    </p>
+                                    <p class="fs14">
+                                        2.上牌资料齐全后，由经销商立即垫付给消费者<input type="text" name="counts" class="baoxianinput shot juhuang">个工作日内
+                                    </p>
+                                    <p class="fs14">3.交车后，经销商将所有资料交给汽车厂商，厂商直接付给消费者，或者厂商付经销商再由经销商付消费者<input type="text" name="counts" class="baoxianinput shot juhuang">个月内</p>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">补贴名称</td>
+                                <td><p><b>地方政府置换补贴  </b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">补贴说明</td>
+                                <td>
+                                    <p class="fs14">该上牌地区的政府对旧车置换新车提供的补贴。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">经销商是否提供协助</td>
+                                <td>
+                                    <p class="fs14">是</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            温馨提示：经销商并不负责办理该补贴，仅对您向有关部门申请该补贴提供力所能及的协助。如经销商属异地，所提供的协助可能存在不被上牌
+                            地区当地政府所认可的风险，具体申请政策和手续请向当地政府相关部门咨询。
+                        </p>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">补贴名称</td>
+                                <td><p><b>厂家或经销商置换补贴</b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">补贴说明</td>
+                                <td>
+                                    <p class="fs14">该品牌的厂家或经销商为消费者旧车置换新车提供的补贴。</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>
+                            温馨提示：由于可能涉及旧车估价等不确定因素，您需要在提车之前与经销商另行商定补贴金额。此处仅提供有无补贴的信息，并不具有合同强
+                            制效力。
+                        </p>
+                        
+                    </div>
+                </div>
+
+                
+                
+            </div>
+        </form>
+    </div> 
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-pdi", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+

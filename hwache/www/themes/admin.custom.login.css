@@ -1,0 +1,33 @@
+﻿.custom-login{background: url(images/custom/custom-login-bg_02.gif) 50% 50% no-repeat #f9f9f9;height: 500px;}
+.login-panel{float:right;margin:62px 120px 0 0;width:330px;}
+.login-panel h2{text-align: center;color:#555555;font-family: "黑体";font-size: 24px!important;margin-bottom: 30px!important;}
+.login-input-panel{width: 325px;height: 50px;border:1px solid #dcdddd;margin-bottom: 10px;border-radius: 3px;-webkit-border-radius:3px;-moz-border-radius:3px;}
+.login-input-panel label,.login-input-panel input{float: left;display: inline-block;}
+.login-input-panel label{height: 50px;width: 38px;margin-left: 5px;}
+.login-input-panel input{margin-top: 14px;margin-left: 5px;width: 265px;border: 0;outline: none;background: transparent;color:#717171;}
+.login-input-panel label.name{background: url(images/custom/custom_login-pre_user.gif) 50% 50% no-repeat ;}
+.login-input-panel label.pwd{background: url(images/custom/custom_login-pre_pwd.gif) 50% 50% no-repeat ;}
+.login-input-panel label.codetag{background: url(images/custom/custom_login-pre_code.gif) 50% 50% no-repeat ;}
+.login-input-panel input.txtcode{width:80px;}
+.login-input-panel input.txtphonevalite{width:176px;}
+.panel-small{width: 188px;float: left;}
+.codeimg{border-radius: 3px;-webkit-border-radius:3px;-moz-border-radius:3px;float: left;margin-left: 10px ;height: 50px;border:1px solid #dcdddd;width: 127px;}
+.content .btn-custom-login{height: 50px;width: 100%;outline: none;}
+.content .btn-custom-phone-valite{height: 50px;width: 132px;outline: none;float: left;margin-top: 0;margin-left: 10px;font-size: 14px;}
+.error-tip{background: url(images/custom/custom-tip-error.gif) 10px 50%  no-repeat #ffe4e4;border:1px solid #ff4444;margin-top: 10px;padding:10px;font-size: 12px;color:#ff4444;display: none;}
+.error-txt{margin-left: 40px;}
+.loginstatus{background: url(images/common/loading.gif) 30% 50% no-repeat;}
+.loginstatus[disabled]{background-color:  rgba(0,0,0,0.7)!important;content:'';}
+.custom-phone-valite-wrapper{display: none;}
+.content .btn-custom-phone-valite[disabled]{background-color: #c9c9c9!important;border-color: #c9c9c9!important;color:#8d8a89!important;}
+.ruzhu-panel{float: left;margin: 62px  0 0 152px;width: 265px;height: 365px;cursor: pointer;}
+.popup-title-large{background: url(images/custom/cutom-login-tip-title-bg.gif) 50% 50% no-repeat;width: 100%;height: 140px;border:1px solid #ff8931;}
+.popup-content-ruzhu{color:#8d8a89;}
+.popup-content-ruzhu .ulli{margin-left: 38px;margin-bottom: 0;}
+.popup-content-ruzhu .ulli span{margin-left: 80px;}
+.popupbox .popup-wrapper{border-color:#d7d7d7;
+ -webkit-box-shadow: 1px 1px 1px 1px #d7d7d7;  
+  -moz-box-shadow: 1px 1px 1px 1px #d7d7d7;  
+  box-shadow:  1px 1px 1px 1px #d7d7d7;  
+}
+.popup-close{float: right;display: block;width: 15px;height: 15px;background:  url(images/custom/cutom-login-tip-title-close.gif) 50% 50% no-repeat;margin:10px 10px 0 0;cursor: pointer;}

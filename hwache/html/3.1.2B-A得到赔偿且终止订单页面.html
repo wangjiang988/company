@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>3.1.2B-A得到赔偿且终止订单页面 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li class="step-cur">预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content pdi">
+                    <small class="juhuang">开始预约</small>
+                    <i></i>
+                    <small>反馈确认</small>
+                    <i></i>
+                    <small class="">预约完毕</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="item">
+        <div class="wapper has-min-step">
+            <p>尊敬的客户：</p>
+            <p class="ti">因经销商方面提出修改订单，且您未同意上述修改要求，很抱歉本订单已终止。</p>
+
+           
+            <p class="fs14">经销商提议修改订单如下内容：</p>
+            <table class="tbl fl" style="width: 60%;">
+                <tr>
+                    <td>
+                        <p class="tal fs14">买车担保金人民币12,345.00元（已退还至您的可用账户）</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="tal fs14">获得的歉意金补偿人民币499.00元（已进入您的可用账户）</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="tal fs14">获得的买车担保金利息补偿人民币123.00元（已进入您的可用账户）</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p class="tal fs14">获得的歉意金2补偿人民币499.00元（已进入您的可用账户）</p>
+                    </td>
+                </tr>  
+            </table>
+            <div class="clear"></div>
+            <p class="fs14"><b>可用账户余额：</b>人民币19,268.00元<a href="#" class="juhuang">（查看）</a></p>
+            <p class="fs14">您可在华车平台继续购车时使用上述余额，如不买车，可在《我的华车》中申请退款或提现（按银行规定办理）。</p>
+
+
+            <p class="tal">
+                <a href="javascript:;" class="btn btn-s-md btn-danger sure">再选辆车</a>
+            </p>
+
+
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-wait", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+
+

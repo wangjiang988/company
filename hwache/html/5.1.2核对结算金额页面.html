@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>5.1.2核对结算金额页面 - 退担保金 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt" >
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li class="step-cur">退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content back">
+                    <small class="juhuang">核对金额</small>
+                    <i></i>
+                    <small>办理退款</small> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi"  ms-controller="item">
+
+        <div class="wapper has-min-step">
+                              
+            <h1>尊敬的客户：</h1>
+            <h1 class="ti">感谢您的耐心等待！您提交的尊驾信息已通过平台审核，请核对本次服务结算明细。</h1>
+            <ul class="pdi-order-ul">
+                <li class="pdi-sn">
+                    <p class="fs14"><b>订单号：</b></p>
+                </li>
+                <li class="pdi-time"><p class="fs14"><b>订单时间：</b></p></li>
+                <li class="pdi-more">
+                    <div class="psr fs14">
+                      <span class="sj"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                         <b>更多</b>
+                      </span>
+                      <p class="tm tm-long" style="display: none;">
+                        <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                        <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                        <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                        <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                        <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                        <span>反馈交车通知时间： 2015-10-28  10：45：04</span>
+                        <span>经销商再确认回复时间： 2015-10-28  10：45：04</span>
+                        <span>交车预约达成时间  2015-10-22    17：55：59</span>
+                        <span>经销商提交开始交车时间：  2015-10-22    17：55：59</span>
+                        <span>客户提交交车信息时间：2015-10-22    17：55：59</span>
+                        <span>经销商提交交车信息时间：  2015-10-22    17：55：59</span>
+                        <span>交车信息通过审核时间：  2015-10-22    17：55：59</span>
+                      </p>
+                    </div>
+
+
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+            <ul class="pdi-order-ul border">
+                <li class="pdi-name">
+                    <p class="fs14">路虎</p>
+                </li>
+                <li class="pdi-type"><p class="fs14">新一代揽胜</p></li>
+                <li class="pdi-title"><p class="fs14">2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版</p></li>
+                <li class="pdi-color"><p class="fs14">月光石白色（个性金属漆）</p></li>
+                <div class="clear"></div>
+            </ul>     
+
+            <p class="fs14 tac">
+                <a href="#" class="juhuang tdu">查看订单总详情</a>
+            </p>
+            <hr class="dashed">     
+            <div class="box">
+               
+                <div class="box-inner  box-inner-def">
+                   
+
+                    <div style="width: 55%;" class="psr">
+
+                        <table class="tbl">
+                            <tbody>
+                                <tr>
+                                    <td><p class="tal fs14 weight">车辆识别代号（VIN码）</p></td>
+                                    <td width="300">
+                                        <span>LDC1234567890UYTR</span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">发动机号</p></td>
+                                    <td width="300">
+                                        <span>8605787</span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <th class="tal"><label class="fs14 tal">上牌地区</label></th>
+                                    <th><p class="tal fs14 "><span class="nomarl">江苏省苏州市</span></p></th>
+                                </tr>
+                                <tr>
+                                    <td><p class="tal fs14 weight">车辆用途</p></td>
+                                    <td width="300">
+                                        <span>非营业个人客车</span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">上牌（注册登记）车主名称</p></td>
+                                    <td width="300">
+                                        <span>贵州省XXXXX有限公司</span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">牌照号码</p></td>
+                                    <td width="300">
+                                        <span>苏E78648</span>
+                                    </td>
+                                </tr> 
+                            </tbody>
+                        </table>
+
+                        <p class="fs14">您的此次购车之旅已完成，各项费用结算明细如下：</p>
+                        
+                        <table class="tbl">
+                            <tbody>
+                                <tr>
+                                    <th class="tal"><label class="fs14 tal">买车担保金</label></th>
+                                    <th><p class="tal fs14 "><span class="nomarl fs14">人民币 10,000.00 元</span></p></th>
+                                </tr>
+                                <tr>
+                                    <td><p class="tal fs14 weight">华车服务费</p></td>
+                                    <td width="300">
+                                        <span class="fs14">— 人民币 3,000.00 元</span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">客户本人上牌违约金赔偿</p></td>
+                                    <td width="300">
+                                        <span>— 人民币 5,000.00 元</span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">获得歉意金补偿</p></td>
+                                    <td width="300">
+                                        <span>+ 人民币 499.00 元</span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">获得买车担保金利息补偿</p></td>
+                                    <td width="300">
+                                        <span>+ 人民币 101.00 元</span>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td><p class="tal fs14 weight">应退还您的金额</p></td>
+                                    <td width="300">
+                                        <span><b>人民币 2,600.00 元</b></span>
+                                    </td>
+                                </tr> 
+                                
+                            </tbody>
+                        </table>
+
+                        <a href="#" class="juhuang tdu back-error">报错</a>
+
+                    </div>
+                    <div class="fs14">
+                        <span class="fl"><b>温馨提示：</b>请在右侧时限内确认或报错，超时平台将自动提交确认。</span>
+                        <div class="time fl">
+                            <div class="jishi jishi2 jishi3">
+                                <span>0</span>
+                                <span>0</span>
+                                <span class="fuhao">:</span>
+                                <span>0</span>
+                                <span>0</span>
+                                <span class="fuhao">:</span>
+                                <span>0</span>
+                                <span>0</span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div> 
+                    
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger fs16">确认</a>
+                    </p>
+                    <p class="fs14"><b>国家节能补贴发放约定时间：</b>X年X月X日</p>
+                    <p class="fs14">
+                        <span class="fl">如您已收到国家节能补贴，请点击 </span>
+                        <a href="javascript:;" class="btn btn-s-md btn-danger sure fl bt" >收到补贴</a>
+                        <span class="fl">（尚未收到不必点击）。</span>
+                        <a href="javascript:;" class="btn btn-s-md btn-danger oksure bt" >已收到补贴</a>
+                        <div class="clear"></div>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" ms-include-src="footer"></div>
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-back-guarantees", "module/common/common", "bt"]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>F.Y.4余额线下充值提交凭证 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="userheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="user">
+        <div class="wapper has-min-step">
+            <div class="box box-border box-content">
+               
+                    <div class="yue-content psr">
+                        <p>可用余额：￥100.00</p>
+                        <p class="gray">账户余额是您在华车平台上可用于支付诚意金/买车担保金的金额。</p>
+                        <div class="control-yue">
+                            <a href="#" class="btn btn-s-md btn-danger sure bt">提现</a>
+                            <a href="#" class="btn btn-s-md btn-danger sure bt">查看明细</a>
+                        </div>
+                        <hr class="dashed">  
+                    </div> 
+                    <div class="viewimg">
+                         <div class="psr view-wapper">
+                             <img src="http://pic3.nipic.com/20090710/2243888_210415008_2.jpg" width="350">
+                             <a ms-on-click="closeImg" href="javascript:;" class="closeimg"></a>
+                         </div>
+                    </div>
+                    <div class="content-wapper">
+                         <span href="#" class="tab ml50 tab-empty">线上支付</span>
+                         <span href="#" class="tab ml50">银行转账</span>
+                         <div class="box-border pay-box">
+                            <div class="clear m-t-10"></div>
+                            <h3 class="ul-prev-big">您可以使用网上银行、手机银行、银行柜面等途径直接转账给华车平台，<span class="juhuang">金额不限</span>，请认准平台法人公司账户：</h3>  
+                            <p class="fs14 ml30">开户行：浙江泰隆商业银行苏州木渎支行</p>
+                            <p class="fs14 ml30">帐 号：3202060120100011863</p>
+                            <p class="fs14 ml30"><span>户 名：苏州华车网络科技有限公司</span><a href="#" class="ml30 juhuang tdu">发送到手机</a></p>
+                            <h3 class="ul-prev-big">温馨提示：</h3>
+                            <div class="ml30 ul-prev-small">
+                              为保障您的账户安全，只能使用您的本人银行账户向平台转账汇款，银行柜面汇款的底单汇款人姓名须与您的姓名一致，否则
+                              将视为您未提交进行处理
+                            </div>
+                            <div class="ml30 ul-prev-small">
+                              请在汇款附言中注明：华车会员（HC1589565）充值，以便我们快速确认您的资金入账，入账金额、入账时间均以实际到帐
+                            </div>
+                            <div class="ml30 ul-prev-small">
+                              网上银行、手机银行等自助汇款方式，您可通过（江苏省苏州市）城市商业银行——>浙江泰隆商业银行——>浙江泰隆商业
+                              银行苏州木渎支行的参考路线查找开户行
+                            </div> 
+
+                            <div class="m-t-10"></div>
+                            
+                            <div class="clear"></div> 
+
+                            <form action="" name="pzform" method="post">
+                                <h3 class="ul-prev-big">提交凭证（最多上传5张，且每个图片尺寸须小于5M，如凭证数量过多，请合并制成图片上传）</h3>  
+                                <div class="clear"></div> 
+                                <div class="uploadlist mt20 ml50">
+                                    <span class="file-prev">
+                                        <span>123.jpg（￥5,000.00）</span>
+                                        <a ms-on-click="viewImg('http://img.taopic.com/uploads/allimg/120620/201981-12062013594895.jpg')" href="javascript:;" class="juhuang tdu ml10">查看</a>
+                                        <a ms-on-click="delImg(1125)" href="javascript:;" class="juhuang tdu ml10">删除</a>
+                                    </span>
+                                    <span class="file-prev">
+                                        <span>789.jpg（￥4,000.00）</span>
+                                        <a ms-on-click="viewImg('http://www.wallcoo.com/animal/Cats_Anytime_and_Everywhere/wallpapers/1600x900/CatsB5_Choco.jpg')" href="javascript:;" class="juhuang tdu ml10">查看</a>
+                                        <a ms-on-click="delImg(1125)" href="javascript:;" class="juhuang tdu ml10">删除</a>
+                                    </span>
+                                </div>
+
+                                <div class="upload-pz mt20 psr">
+                                    <p class="fs14 ml50">输入新上传文件中所有凭证总金额：</p>
+                                    <div class="form-group psr pdi-control fs14  m-t-10 ml50">
+                                        <span>￥</span>
+                                        <input type="text" name="payprice" placeholder="" class="form-control w125">
+                                        <span class="edit pz-edit"></span>
+                                        <p class="hide inputerror juhuang m-t-10 ml20">请输入金额</p>
+                                        <p class="hide inputerror juhuang m-t-10 ml20">请正确输入金额</p>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="upload-pz-wapper">
+                                        <img src="themes/images/user/upload.gif" ms-on-click="uploadForMuliteFileInput"/>
+                                        <div class="fileinputlist"></div>
+                                        <p id="fileerror" class="inputerror juhuang fs14 mt5 hide">您尚未上传任何文件，请先上传！</p>
+                                    </div>
+                                    <div class="loading loading6 l6">
+                                        <span class="loadings"></span>
+                                        <p class="fs14">上传中，请耐心等待......</p>
+                                    </div>
+                                    <div class="clear"></div>
+
+                                </div>
+                                <div class="clear"></div>
+                            </form>
+
+                             
+                            <div class="m-t-10"></div>
+                            <div class="m-t-10"></div>
+                            <div class="m-t-10"></div>
+                            <p class="tac">
+                              <a ms-on-click="postpz" href="javascript:;" class="btn btn-s-md btn-danger fs14">提交</a>
+                              <a href="javascript:;" class="btn btn-s-md btn-danger sure fs14 ml20">返回</a>
+                            </p>
+               
+
+                            <div class="m-t-10"></div>
+                            <div class="m-t-10"></div>
+                            <div class="m-t-10"></div>
+                        </div>
+                    </div> 
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+    <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/user/user", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+
+

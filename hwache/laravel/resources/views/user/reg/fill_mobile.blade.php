@@ -1,0 +1,49 @@
+@extends('_layout.base')
+@section('css')
+<link href="{{asset('themes/reg.css')}}" rel="stylesheet" />
+@endsection
+
+@section('nav')@include('_layout.nav')@endsection
+
+@section('content')
+<div class="container m-t-86 pos-rlt" ms-controller="reg">
+  <div class="wapper">
+    <div class="hd">
+      <ul>
+        <li class="cur"><span>1</span><label>设置用户名</label></li>
+        <li><span>2</span><label>设置密码</label></li>
+        <li><span>3</span><label>注册成功</label></li>
+        <div class="clear"></div>
+      </ul>
+      <div class="form">
+        <div class="input-group">
+          <span class="input-group-addon">手机号:</span>
+          <input data-toggle="tooltip" data-placement="bottom" name="phone" type="text" required class="form-control" placeholder="请输入手机号码" title="请输入手机号码" aria-describedby="basic-addon1">
+          <span class="input-group-addon hide error">请正确输入手机号</span>
+        </div>
+        <br>
+        <div class="input-group pos-rlt">
+          <span class="input-group-addon">验证码:</span>
+          <input data-toggle="tooltip" data-placement="top" name="code" type="text" required class="form-control" placeholder="验证码" title="验证码" aria-describedby="basic-addon1">
+          <span class="input-group-addon hide error">请正确输入验证码</span>
+          <a ms-on-click="SendCode" data-s="发送验证码" data-send="重新获取($1)" class="input-group-addon btn btn-default sendcode" >发送验证码</a>
+          <div class="form-loading"></div>
+        </div>
+        <button ms-on-click="SendAndSetPwd" type="submit" class="btn btn-s-md btn-danger">下一步</button>
+        <p><a href="{{ route('user.reg.fill_email') }}" >使用邮箱注册&gt;&gt;</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
+
+@section('js')
+<script type="text/javascript">
+  var config = {
+    sendCodeUrl: '{{ route('user.reg.send_code') }}/',
+    codeUrl: '{{ route('user.reg.get_code') }}/',
+    nextUrl: '{{ route('user.reg.set_pwd') }}/'
+  };
+  seajs.use(["module/reg/reg", "module/common/common","bt"]);
+</script>
+@endsection

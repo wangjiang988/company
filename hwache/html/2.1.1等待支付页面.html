@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>2.1.1等待支付页面 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li class="step-cur">付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content" style=" left: 187px;">
+                    <small class="juhuang">正在支付</small>
+                    <i></i>
+                    <small>查收确认</small>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="item">
+        <div class="wapper has-min-step">
+            <p>尊敬的客户：</p>
+            <p class="ti">很高兴有好消息告诉您：经销商已完成车源的核对确认。您的心仪座驾即将揭开神秘的面纱，早点把Ta迎回家吧！</p>
+            <table class="nobordertbl" width="100%">
+                <tr>
+                    <td width="50%" class=" fs14"><b>订单号：</b></td>
+                    <td width="50%">
+                        <div class="psr fs14">
+                          <b>订单时间：</b>2015年10月28日
+                          <span class="sj ml20"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                             <b>更多</b>
+                          </span>
+                          <p class="tm tm-long" style="display: none;">
+                            <span style="color:#c40001" data-title="做页面的时候把这个span删除掉">用户未选择特殊文件时，显示此段对应的订单时间内容</span>
+                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                            <span style="color:#c40001" data-title="做页面的时候把这个span删除掉">此种订单时间的显示，是在用户选择了特殊文件时，对应显示此段内容，否则显示上面一种情况</span>
+                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                            <span>经销商反馈特需要求时间：2015-10-28  10：45：04</span>
+                            <span>接受经销商反馈特需要求时间：2015-10-28  10：45：04</span>
+                          </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="clear mt10"></div>
+            <ul class="pdi-order-ul border ">
+                <li class="pdi-name">
+                    <p class="fs14">路虎</p>
+                </li>
+                <li class="pdi-type"><p class="fs14">新一代揽胜</p></li>
+                <li class="pdi-title"><p class="fs14">2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版</p></li>
+                <li class="pdi-color"><p class="fs14">月光石白色（个性金属漆）进口</p></li>
+                <div class="clear"></div>
+            </ul>
+
+            <p class="tac m-t-10"><a href="#" class="juhuang tdu ">查看订单总详情</a></p>
+            <!--//注：1.可用余额>=买车担保金余款-->
+            <hr class="dashed">
+            <table class="tbl fl" style="width: 80%;"> 
+                <tr>
+                    <td>
+                        <p class="tal fs14"><b>买车担保金余款</b></p>
+                    </td>
+                    <td>
+                        <p class="tal fs14">人民币12,523.00元（买车担保金￥13,022.00 — 已付诚意金￥499.00元）</p>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <p class="tal fs14"><b>您账户的可用余额</b></p>
+                    </td>
+                    <td>
+                        <p class="tal fs14">人民币13,000.00元<a href="#" class="juhuang">（查看）</a></p>
+                    </td>
+                </tr>
+            </table>
+            <div class="clear"></div>
+            <div class="fs14">
+                <span class="fl">您的可用余额足够支付买车担保金余额，请在本日（2016年6月14日24点前）及时确认支付。</span>
+                <div class="time fl">
+                    <div class="jishi jishi2 jishi3 countdown">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="time fl">
+                    <div class="jishi jishi2 jishi3 outtime">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <span class="fl outtime-span">（已超时）</span>
+                <div class="clear"></div>
+            </div>
+
+            <p class="center">
+                <a href="F.D.1买车担保金线上支付.html" class="btn btn-s-md btn-danger fs16">确认</a>
+            </p>
+            <!--//注：2.可用余额=0-->
+            <hr class="dashed">
+            <table class="tbl fl" style="width: 80%;"> 
+                <tr>
+                    <td>
+                        <p class="tal fs14"><b>买车担保金余款</b></p>
+                    </td>
+                    <td>
+                        <p class="tal fs14">人民币12,523.00元（买车担保金￥13,022.00 — 已付诚意金￥499.00元）</p>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <p class="tal fs14"><b>待付金额</b></p>
+                    </td>
+                    <td>
+                        <p class="tal fs14"><b>人民币9,265.00元</b>（已扣除可用账户余额）</p>
+                    </td>
+                </tr>
+            </table>
+            <div class="clear"></div>
+            <div class="fs14">
+                <div class="lh22">
+                    <span class="fl ti">一步到位<b>全额支付</b>，您可采用<b class="tdu">银行转账</b>方式，包括通过网上银行、手机银行或银行柜面向华车平台直接转账，您须在24小时内</span>
+                    <span class="fl">（2016年6月18日16:24:16前）提交有效的银行汇款凭证。</span>
+                    <div class="time fl">
+                        <div class="jishi jishi2 jishi3 countdown">
+                            <span>0</span>
+                            <span>0</span>
+                            <span class="fuhao">:</span>
+                            <span>0</span>
+                            <span>0</span>
+                            <span class="fuhao">:</span>
+                            <span>0</span>
+                            <span>0</span>
+                        </div>
+                    </div> 
+                    <div class="time fl">
+                    <div class="jishi jishi2 jishi3 outtime">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <span class="fl outtime-span">（已超时）</span>
+
+                
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="fs14">
+                <p class="lh22 ti"><span class=""><b class="tdu">线上支付</b>方式，因第三方支付的支付限额可能受限影响支付成功，可分多笔支付。您在当日付完第一笔后，支付时限自动延长到第三个自然日</span></p>
+                <span class="fl">的24点，您可从容完成买车担保金余额支付。线上支付第一笔的付款时限：2016年6月17日24点。</span>
+                <div class="time fl">
+                    <div class="jishi jishi2 jishi3 countdown ">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="time fl">
+                    <div class="jishi jishi2 jishi3 outtime">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <span class="fl outtime-span">（已超时）</span>
+
+                
+                <div class="clear"></div>
+            </div>
+            <p class="fs14 lh22 ti mt10">请选择您的支付方式，并在上方时限内完成支付。超时未足额支付，根据华车平台规则将被判定违约：<b>订单终止，且诚意金赔偿售方</b>（已付</p>
+            <p class="fs14 lh22">其他买车担保金可按规则退还）。</p>
+            <p class="tac">
+                <a href="F.D.3买车担保金线下支付.html" class="btn btn-s-md btn-danger sure fs16">银行转账</a>
+                <a href="javascript:;" class="btn btn-s-md btn-danger sure ml20 fs16">线上支付</a>
+            </p>
+
+            <!--//注：3.0<可用余额<待付金额-->
+            <hr class="dashed">
+            <table class="tbl fl" style="width: 80%;"> 
+                <tr>
+                    <td>
+                        <p class="tal fs14"><b>买车担保金余款</b></p>
+                    </td>
+                    <td>
+                        <p class="tal fs14">人民币12,523.00元（买车担保金￥13,022.00 — 已付诚意金￥499.00元）</p>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <p class="tal fs14"><b>您账户的可用余额</b></p>
+                    </td>
+                    <td>
+                        <p class="tal fs14">人民币365.00元<a href="#" class="juhuang">（查看）</a></p>
+                    </td>
+                </tr>
+            </table>
+            <div class="clear"></div>
+            <div class="fs14">
+                <span class="fl">您可使用您的可用余额支付第一笔买车担保金余款，请于本日（2016年6月14日24点前）及时确认支付。</span>
+                <div class="time fl">
+                    <div class="jishi jishi2 jishi3 countdown">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <div class="time fl">
+                    <div class="jishi jishi2 jishi3 outtime">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+                <span class="fl outtime-span">（已超时）</span>
+
+                
+                <div class="clear"></div>
+            </div>
+            <p class="tac"><a href="javascript:;" class="btn btn-s-md btn-danger wauto fs18">先用可用余额支付</a></p>
+
+            <!--//注：第2种、第3种情况支付完第一笔后，显示如下-->
+            <hr class="dashed">
+            <div class="rows">
+                <div class="col-md-6 col-xs-6"><p class="fs14">买车担保金：人民币12,500.00元</p></div>
+                <div class="col-md-6 col-xs-6"><p class="fs14">您账户的可用余额：人民币1,000.00元（查看）</p></div>
+            </div>
+            <div class="rows">
+                <div class="col-md-6 col-xs-6"><p class="fs14">已提交支付金额：人民币3,626.00元</p></div>
+                <div class="col-md-6 col-xs-6"><p class="fs14">已入账金额：人民币2,700.00元</p></div>
+            </div>
+            <div class="rows">
+                <div class="col-md-6 col-xs-6"><p class="fs14">待付金额：人民币8,874.00元</p></div>
+                <div class="col-md-6 col-xs-6"><p class="fs14">未入账金额：人民币9,800.00元</p></div>
+            </div>
+            <p class="tac m-t-10 clear">支付时限：2016-06-16  24:00:00</p>
+            <div class="tac">
+                <span>剩余时间：</span>
+                <div class="time inline">
+                    <div class="jishi inline countdown">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="tac m-t-10">
+                <span class="outtime-span">已超时：</span>
+                <div class="time inline">
+                    <div class="jishi inline outtime">
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                        <span class="fuhao">:</span>
+                        <span>0</span>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+            <p class="fs14">温馨提示：超时未足额支付，根据华车平台规则将被判定违约 —— 订单终止，且诚意金赔偿售方（已付的其他买车担保金可按规则退还）！</p>
+            <div class="tac m-t-10">
+                <a href="W.H.16我的充值.html" class="juhuang tdu">查看已上传凭证</a>
+                <a href="F.D.3买车担保金线下支付.html" class="btn btn-s-md btn-danger sure fs16 ml20 mt0">银行转账</a>
+                <a href="javascript:;" class="btn btn-s-md btn-danger sure ml20 fs16 mt0">线上支付</a>
+            </div>
+
+
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-wait", "module/common/common", "bt"],function(a,b,c){
+            $(".countdown").CountDown({startTime:'2016-3-16 16:14:35',endTime :'2016-3-17 13:29:25',timekeeping:'countdown'})
+            $(".outtime").CountDown({startTime:'2016-3-19 16:14:35',endTime :'2016-3-17 13:29:25',timekeeping:'timeout'})
+        });
+    </script>
+
+</body>
+</html>
+

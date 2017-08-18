@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>F.C.1诚意金支付余额不足充值提示 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="step-cur">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content">
+                    <small>选择产品</small>
+                    <i></i>
+                    <small class="juhuang">付诚意金</small>
+                    <i></i>
+                    <small>售方确认</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="pay">
+        <div class="wapper has-min-step">
+             <ul class="price-ul">
+                 <li><span>>>应付诚意金：￥499</span></li>
+                 <li>可用余额：￥100<span class="juhuang">（查看）</span></li>
+                 <li class="last">可用余额：<span class="juhuang">￥100</span><label>（余额不足，请充值到可用余额）</label></li>
+                 <div class="clear"></div>
+             </ul>
+             <span href="#" class="tab ml50">线上支付</span>
+             <div class="box-border pay-box">
+                 <form action="" method="post" name="payform">
+                     <ul class="price-ul average">
+                         <li ms-on-click="selectPayMethod"><span></span><img src="themes/images/pay/F.C_03.gif"/></li>
+                         <li ms-on-click="selectPayMethod"><span></span><img src="themes/images/pay/F.C_05.gif"/></li>
+                         <li ms-on-click="selectPayMethod"><span></span><img src="themes/images/pay/F.C_07.gif"/></li>
+                         <input type="hidden" name="paymethod">
+                         <div class="clear"></div>
+                     </ul>
+                     <div class="m-t-10"></div>
+
+                     <div class="box">
+                         <p class="fs14 pwenxin">温馨提醒：单次购车，线上预充值额度￥1,000.00，您的剩余额度<span class="juhuang">￥1,000.00</span>。</p>
+                         <p class="fs14 pnobuy">如未购车，线上预充值款可申请退款提现，且免手续费。</p>
+                         <div class="form-group psr pdi-control fs14 tac m-t-10">
+                            <span>充值金额：￥</span>
+                            <input type="text" data-price-max="1000" name="payprice" placeholder="" class="form-control pay-control">
+                            <span class="edit pay-edit"></span>
+                            <a href="#" class="juhuang tdu">支付帮助</a>
+                            <p class="hide inputerror juhuang m-t-10">您输入的不是数字，不合规则，请重新输入！</p>
+                            <p class="hide inputerror juhuang m-t-10">您输入的金额已超过限额，请重新输入！</p>
+                          </div>
+                          <div class="m-t-10 tac">
+                              <p class="hide error showerror">请选择支付方式</p>
+                              <a ms-on-click="subPayForm" href="javascript:;" class="btn fs16 btn-s-md btn-danger  ">确认充值</a>
+                          </div>
+                      </div>
+
+                      <div class="box">
+                         <h2>1.若是线上预充值剩余额度<应付诚意金-可用余额，第一次显示：此时剩余的额度替换为：￥499.00</h2>
+                         <p class="fs14 pwenxin">温馨提示：单次购车，线上预充值额度￥1,000.00，您的剩余额度<span class="juhuang">￥50.00</span>。</p>
+                         <p class="fs14 pnobuy">平台为您开通诚意金专用线上充值额度￥499.00，该额度不可提现，若三个自然日未购车将</p>
+                         <p class="fs14 pnobuy">自动原路退回。</p>
+                         <div class="form-group psr pdi-control fs14 tac m-t-10">
+                            <span>充值金额：￥</span>
+                            <input type="text" data-price-max="1000" name="payprice" placeholder="" class="form-control pay-control">
+                            <span class="edit pay-edit"></span>
+                            <a href="#" class="juhuang tdu">支付帮助</a>
+                            <p class="hide inputerror juhuang m-t-10">您输入的不是数字，不合规则，请重新输入！</p>
+                            <p class="hide inputerror juhuang m-t-10">您输入的金额已超过限额，请重新输入！</p>
+                          </div>
+                          <div class="m-t-10 tac">
+                              <p class="hide error showerror">请选择支付方式</p>
+                              <a ms-on-click="subPayForm" href="javascript:;" class="btn fs16 btn-s-md btn-danger  ">确认充值</a>
+                          </div>
+                      </div>
+
+                      <div class="box">
+                         <h2>1.1当开通过线上充值额度，但未使用完</h2>
+                         <p class="fs14 pwenxin">温馨提示：单次购车，诚意金专用线上充值额度：￥499.00，您的剩余额度<span class="juhuang">￥100.00</span>。</p>
+                         <p class="fs14 pnobuy">若三个自然日未购车将自动原路退回。</p>
+                         <div class="form-group psr pdi-control fs14 tac m-t-10">
+                            <span>充值金额：￥</span>
+                            <input type="text" data-price-max="1000" name="payprice" placeholder="" class="form-control pay-control">
+                            <span class="edit pay-edit"></span>
+                            <a href="#" class="juhuang tdu">支付帮助</a>
+                            <p class="hide inputerror juhuang m-t-10">您输入的不是数字，不合规则，请重新输入！</p>
+                            <p class="hide inputerror juhuang m-t-10">您输入的金额已超过限额，请重新输入！</p>
+                          </div>
+                          <div class="m-t-10 tac">
+                              <p class="hide error showerror">请选择支付方式</p>
+                              <a ms-on-click="subPayForm" href="javascript:;" class="btn fs16 btn-s-md btn-danger  ">确认充值</a>
+                          </div>
+                      </div>
+
+                      <div class="box">
+                         <h2>2.若是线上预充值剩余额度<应付诚意金-可用余额，不是第一次显示：</h2>
+                         <p class="fs14 pwenxin">温馨提示：单次购车，线上预充值额度￥1000.00，您的剩余额度<span class="juhuang">￥50.00</span>。</p>
+                         <p class="fs14 pnobuy">请使用银行转账方式充值到您的可用余额。</p>
+                          
+                          <div class="m-t-10 tac">
+                              <a ms-on-click="subPayForm" href="javascript:;" class="btn fs16 btn-s-md btn-danger  ">去充值</a>
+                          </div>
+                      </div>
+
+
+
+
+                  </form>
+             </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/pay/zhifu", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+

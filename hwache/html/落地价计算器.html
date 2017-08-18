@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>落地价计算器 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/search.css" rel="stylesheet" />
+    <link href="themes/calc.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+    
+    <div class="box" ms-include-src="searchheader"></div>
+    
+    <div class="search-panel-box">
+        <div class="container m-t-86 pos-rlt" >
+
+            <div class="search-def-option">
+                <ul>
+
+                    <li>
+                        <label>品牌：</label>
+                        <dl>
+                            <dt class="s-area">
+                                
+                                <p>宝马</p>
+                            </dt>
+                             
+                        </dl>
+                    </li>
+
+                    <li class="ml">
+                        <label>车系：</label>
+                        <dl>
+                            <dt class="s-area">
+                                
+                                <p>X6</p>
+                            </dt> 
+                        </dl>
+                    </li>
+
+                    <li class="ml">
+                        <label>车型规格：</label>
+                        <dl>
+                            <dt class="s-chexing"> 
+                                <p>2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版</p>
+                            </dt>
+                             
+                        </dl>
+                    </li>
+
+                    <li class="clear"></li> 
+
+                    <li>
+                        <label>上牌城市：</label>
+                        <dl>
+                            <dt class="s-chexing">
+                                <p>浙江省杭州市 <span>（限牌城市的牌照指标须自备）</span></p>
+                            </dt>
+                        </dl>
+                    </li>
+
+                    <li class="ml">
+                        <label>车辆用途：</label>
+                        <dl>
+                            <dt class="s-chexing">
+                                <p> 非营业个人客车</p>
+                            </dt>
+                        </dl>
+                    </li>
+                    
+                    <li class="clear"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <form class="CalcForm" ms-controller="calc" name="CalcForm">   
+        <div class="container calc-wrapper">
+            <div class="info pos-rlt tac">
+                <p class="fs18"><b>落地价计算器</b></p>
+                <p>车辆落地估算花费总金额： <span class="fs20">￥<span class="calc-total mr77"></span></span>总预备资金：<span class="fs18">￥<span class="calc-prev-total"></span></span></p>
+                <small>(此结果仅供参考，部分项目各地有差异，实际花费以发生项目实际缴费为准)</small>
+            </div>
+
+            <table cellspacing="0" cellpadding="0" class="tbl">
+                <tbody>
+                    <tr>
+                        
+                        <th width="188" rowspan="2">项目名称</th>
+                        <th width="435" colspan="3">花费金额</th>
+                        <th width="276" rowspan="2">备注</th>
+                    </tr>
+                    <tr>
+                        <th width="140">增</th>
+                        <th width="140">减</th>
+                        <th width="140">平</th>
+                    </tr>
+                    <tr>
+                        <td>华车车价</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <span class="fixed-value">233,000.00</span>
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>车辆开票金额+服务费</td>
+                    </tr>
+                    <tr>
+                        <td>车辆购置税</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <span class="fixed-value">19,914.53</span>
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>购车款/(1+17%)×购置税率(10%) </td>
+                    </tr>
+                    <tr>
+                        <td>车船使用税</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <span class="fixed-value">480.00</span>
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>排量：2.0L</td>
+                    </tr>
+                    <tr>
+                        <td>上牌费</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <span class="fixed-value">2,000.00</span>
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>指定上牌、接受安排</td>
+                    </tr>
+                    <tr>
+                        <td>上牌费</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <input type="text" class="dym-value" value="2,000.00" />
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>自选上牌</td>
+                    </tr>
+                    <tr>
+                        <td>上牌费</td>
+                        <td>
+                            <p>
+                                <span class="">+￥</span>
+                                <input type="text" class="dym-value" value="0" />
+                                &nbsp;
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>本人上牌，请填写您估算的金额</td>
+                    </tr>
+                    <tr>
+                        <td>上临时牌照费</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <span class="fixed-value">1,000.00</span>
+                                &nbsp;
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>指定服务</td>
+                    </tr>
+                    <tr>
+                        <td>上临时牌照费</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <input type="text" class="dym-value " value="1,000.00" />
+                                &nbsp;
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>自选服务、指定服务</td>
+                    </tr>
+                    <tr>
+                        <td>交强险</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <span class="fixed-value">1,000.00</span>
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>座位数：5 </td>
+                    </tr>
+                    <tr>
+                        <td>车辆首年商业保险</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <span class="fixed-value">1,000.00</span>
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>指定投保，参考项目与保费见详情 </td>
+                    </tr>
+                    <tr>
+                        <td>车辆首年商业保险</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <input type="text" class="dym-value " value="1,000.00" />
+                                &nbsp;
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>自由投保，参考项目与保费见详情</td>
+                    </tr>
+                    <tr>
+                        <td>售方其他杂费</td>
+                        <td>
+                            <p>
+                                <span>+￥</span>
+                                <span class="fixed-value">1,000.00</span>
+                                
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>其他费用</td>
+                        <td>
+                            <p>
+                                <span class="">+￥</span>
+                                <input type="text" class="dym-value " value="0" />
+                                &nbsp;
+                            </p>
+                        </td>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>可填写您估算的其他花费金额</td>
+                    </tr>
+                     
+                    <tr>
+                        <td>其他补贴</td>
+                        <td>
+                            
+                            &nbsp;
+                        </td>
+                        <td>
+                            <p>
+                                <span class="">-￥</span>
+                                <input type="text" class="dym-subsidy " value="0" />
+                               
+                            </p>
+                           
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>可填写您可能获得的其他补贴金额</td>
+                    </tr>
+                    <tr>
+                        <td>买车担保金</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>
+                            <p>
+                                <span>/￥</span>
+                                <span class="flat-value">20,000.00</span>
+                            </p>
+                        </td>
+                        <td>若无违约，此金额最终分文不少</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td><b>各小项总计</b></td>
+                        <td>
+                            <p>
+                                <span>/￥</span>
+                                <span class="add-total"></span>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <span>-￥</span>
+                                <span class="minus-total"></span>
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                <span>/￥</span>
+                                <span class="fixed-total"></span>
+                            </p>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="info pos-rlt ">
+                 
+                <p>车辆落地估算花费总金额：<span class="fs20">￥<span class="calc-total"></span></span>（增项合计—减项合计，平项无违约全部返还故未计入 ）</p>
+                <p>总预备资金：<span class="fs18">￥<span class="calc-prev-total"></span></span>（增项合计+平项合计，减项可能延后故未扣除）</p>
+                <small>(此结果仅供参考，部分项目各地有差异，实际花费以发生项目实际缴费为准)</small>
+                <a href="落地价计算器.html" class="reset">重置</a>
+            </div>
+        </div>
+    </form>
+
+    <div class="box" ms-include-src="footer"></div>
+ 
+    <script src="./js/sea.js" ></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/common/calc", "module/common/common", "bt"])
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>查收邮件 - 邮箱找回 - 密码找回 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/reg.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+    
+    <div class="box" ms-include-src="pwdheader"></div>
+
+    <div class="container m-t-86 pos-rlt" ms-controller="reg">
+        <div class="wapper">
+            <div class="hd">
+                <ul>
+                    <li class="cur"><span>1</span><label>查收邮件</label></li>
+                    <li><span>2</span><label>重置密码</label></li>
+                    <li><span>3</span><label>修改成功</label></li>
+                    <div class="clear"></div>
+                </ul>
+                <div class="form  login-form-div pwd-form-div">
+                    <div class="input-group">
+                        <span class="input-group-addon">邮箱地址:</span>
+                        <input style="border-right:0" data-toggle="tooltip" data-placement="bottom" name="email" type="text" required="" class="form-control" placeholder="请输入邮箱地址" title="请输入邮箱地址" aria-describedby="basic-addon1">
+                        <span class="input-group-addon error hide">请正确输入邮箱地址</span>
+                        <a ms-click="SendCode" data-s="发送邮件" data-send="重新获取($1)" class="input-group-addon btn btn-default sendcode email-code">发送邮件</a>
+                        <div class="form-loading"></div>
+                    </div>
+                    <p class="email-tip"><span>*</span><label for="">请进入邮箱查收邮件，若无法收到邮件，请点击重新发送邮件。</label></p>
+                    <p><a href="pwd-phone-step1.html" class="use">使用手机修改密码&gt;&gt;</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" ms-include-src="footer"></div>
+ 
+    <script src="./js/sea.js" ></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/pwd/pwd-email-step1", "module/common/common","bt"]);
+    </script>
+
+</body>
+</html>

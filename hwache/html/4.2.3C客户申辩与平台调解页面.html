@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>4.2.3C客户申辩与平台调解页面 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li class="step-cur">付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content payment">
+                    <small class="juhuang">正在交车</small>
+                    <i></i>
+                    <small>核实信息</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="item">
+        <div class="wapper has-min-step">
+            <div class="step-n step-n-2-1"></div>
+            <div class="step-n step-n-2-2"></div>
+            <ul class="pdi-order-ul">
+                <li class="pdi-sn">
+                    <p class="fs14"><b>订单号：</b></p>
+                </li>
+                <li class="pdi-time"><p class="fs14"><b>订单时间：</b>2015年10月28日</p></li>
+                <li class="pdi-more">
+                    <div class="psr fs14">
+                      <span class="sj"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                         <b>更多</b>
+                      </span>
+                      <p class="tm tm-long" style="display: none;width: 400px;">
+                        <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                        <span>...</span>
+                        <span>经销商交车争议提交时间：2015-10-28  10：45：04</span>
+                        <span>申辩提交时间：2015-10-28  10：45：04</span>
+                        <span>华车平台要求补充材料时间：2015-10-28  10：45：04</span>
+                        <span>补充材料提交时间：2015-10-28  10：45：04</span>
+                        <span>华车平台调解建议时间：2015-10-28  10：45：04</span>
+                      </p>
+                    </div>
+
+
+                </li>
+                <div class="clear"></div>
+            </ul>
+            <div class="clear"></div>
+            <ul class="pdi-order-ul border">
+                <li class="pdi-name">
+                    <p class="fs14">路虎</p>
+                </li>
+                <li class="pdi-type"><p class="fs14">新一代揽胜</p></li>
+                <li class="pdi-title"><p class="fs14">2015款 SDV6 Hybrid Vogue SE 混合动力创世加长版</p></li>
+                <li class="pdi-color"><p class="fs14">月光石白色（个性金属漆）</p></li>
+                <div class="clear"></div>
+            </ul>
+    
+            <p class="tac m-t-10"><a href="#" class="juhuang tdu">查看订单总详情</a></p>
+            <hr class="dashed">
+            <p class="fs14"><b>经销商已向华车平台提请争议处理的内容如下：</b></p>
+            <div class="tbl">
+                <ul class="bxlist">
+                    <li style="width: 30%">
+                        <p><input checked type="checkbox" class="radio"></p>
+                        <dl>
+                            <dt>客户拖延付款</dt>
+                            <div class="clear"></div>
+                        </dl>
+                        <div class="clear"></div>
+                    </li>
+                    <li style="width: 30%">
+                        <p><input checked type="checkbox" class="radio"></p>
+                        <dl>
+                            <dt>客户未在约定时间前往提车</dt>
+                            <div class="clear"></div>
+                        </dl>
+                        <div class="clear"></div>
+                    </li>
+                    <li style="width: 30%">
+                        <p><input checked type="checkbox" class="radio"></p>
+                        <dl>
+                            <dt>其他</dt>
+                            <div class="clear"></div>
+                        </dl>
+                        <div class="clear"></div>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+            <textarea class="txtarea" placeholder="">xxxxx</textarea>
+            <p class="fs14"><b>按平台规则，您拥有进行申辩的权利，请向华车平台作出申辩：</b></p>
+            <textarea class="txtarea" placeholder="请输入申辩内容"></textarea>
+
+            <p class="fs14"><b>请上传证据材料：</b></p>
+            <div>
+                <span class="blue fl "><span class="file-prev ml10">bootbox.min.js</span><span class="file-prev ml10">bootbox.min.js</span><span class="file-prev ml10">bootbox.min.js</span></span>
+                <span class="juhuang tdu cp fl ml10" ms-on-click="upload">上传</span>
+                
+                <input type="file" name="" ms-on-change="change" id="hfUpload" class="hide" value="">
+                <input type="hidden" name="" id="hfFile">
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="m-t-10"></div>
+            <div class="time tac m-t-10">
+                <div class="jishi jishi2">
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="fuhao">:</span>
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="fuhao">:</span>
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="m-t-10 tac">
+               <a href="javascript:;" class="btn btn-s-md btn-danger  ">提交</a>
+               <a href="javascript:;" class="btn btn-s-md btn-danger    oksure ml20">已提交</a>
+            </div>
+            <p class="fs14 clear m-t-10 fn tac">
+                <input type="checkbox"><span class="fn">本人愿对申辩材料的真实性承担一切责任！</span>
+            </p>
+
+            
+            <div class="m-t-10"></div>
+            <form action="/postzhengju/" method="get" name="zhengjuform">
+                <h2 class="title">平台核实   </h2>
+                <p class="fs14 bl5"><b class="ml10">请提交补充材料进一步清楚说明“<span class="juhuang">车辆状况不符，轮毂尺寸存在问题</span>”</b></p>
+                <div class="psr">
+                    <input type="hidden" name="order_num" value="">
+                    <input type="hidden" name="dispute_id" value="">
+                    <input type="hidden" name="defend_id" value="">
+                    <input type="hidden" name="member_id" value="">
+                    <span class="blue fl "></span>
+                    <span class="juhuang tdu cp fl ml10" ms-on-click="uploadForMuliteFileInput">上传</span>
+                    <div class="fileinputlist">
+                        
+                    </div>
+                    <div class="clear"></div>
+                    <div class="fs14 time-wapper-p"><i class="icon-time fl"></i><span class="fl ml5">20小时12分52秒</span><div class="clear"></div></div>
+                    <div class="clear"></div>
+                    <p id="fileerror" class="inputerror juhuang fs14 mt5 ml10 hide">您尚未上传任何文件，请先上传！</p>
+                    <div class="loading loading6">
+                        <span class="loadings"></span>
+                        <p class="fs14">上传中，请耐心等待......</p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <p class="m-t-10">
+                   <a ms-on-click="postzhengju" href="javascript:;" class="btn btn-s-md btn-danger fl bt">提交</a>
+                   <a href="javascript:;" class="btn btn-s-md btn-danger fl  bt oksure ml20 hide">已提交</a>
+                </p>
+                <p class="fs14 clear m-t-10 fn">
+                    <input type="checkbox" id="ck-agree" name="ck-agree"><span class="fn">本人愿对补充材料的真实性承担一切责任！</span>
+                </p>
+                <p class="inputerror juhuang hide fs14 mt5" id="agree-error">点击提交时，需先承诺“本人愿对补充材料的真实性承担一切责任！”</p>
+            </form>
+
+            <hr class="dashed">
+            <form action="/postmediate/" method="post" name="mediateform">
+                <div class="fs14 bl5">
+                    <b class="ml10">如与经销商达成和解，请告知华车平台：</b>
+                </div>
+                <div class="psr">
+                    <input type="hidden" name="order_num" value="">
+                    <input type="hidden" name="dispute_id" value="">
+                    <input type="hidden" name="defend_id" value="">
+                    <input type="hidden" name="member_id" value="">
+                    <textarea name="mediate" class="form-control pdi-control m-t-10 w70" placeholder="请输入您和经销商达成协议的结果" cols="66" rows="3"></textarea>
+                    <p id="mediateerror" class="inputerror juhuang fs14 mt5 ml10 hide">请输入您和经销商达成协议的结果！</p>
+                    <p class="m-t-10">
+                       <a ms-on-click="postmediate" href="javascript:;" class="btn btn-s-md btn-danger fl bt">提交</a>
+                       <a href="javascript:;" class="hide btn btn-s-md btn-danger fl bt oksure ml20">已提交</a>
+                    </p>
+                    <div class="clear"></div>
+                    <div class="loading loading6">
+                        <span class="loadings"></span>
+                        <p class="fs14">正在提交，请稍后......</p>
+                    </div>
+                </div>
+            </form>
+
+            <hr class="dashed">
+            <div class="fs14 bl5" style="height: 19px;">
+                <b class="ml10 fl">华车平台调解建议：</b>
+                <input placeholder="经销商更换车辆" style="width: 200px;margin-top: -3px;" type="text" placeholder="" class="form-control pdi-control fl">
+                <div class="clear"></div>
+            </div>
+           
+
+            <div class="clear"></div>
+            <p class="m-t-10">
+               <a ms-on-click="access" href="javascript:;" class="btn btn-s-md btn-danger fl sure">接受建议，继续订单</a>
+               <a ms-on-click="noaccess" href="javascript:;" class="btn btn-s-md btn-danger fl sure ml20 wauto">不接受，按平台规则判定执行</a>
+               <a href="javascript:;" class="btn btn-s-md btn-danger fl oksure ml20 wauto hide">不接受调解建议，等待平台按规则判定执行</a>
+               <div class="clear"></div>
+            </p>
+
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+        </div>
+
+        <div class="zm-all">
+            <div class="dialog dialog-access">
+                <div class="dialog-title"><span>提示</span><i ms-on-click="closeDialog" class="dialog-close"></i></div>
+                <div class="dialog-c">
+                    <p class="fs16">您接受上述调解建议，同意继续执行订单，确定吗？</p>
+                    <a href="javascript:;" ms-on-click="accessandredirect" class="btn btn-s-md btn-danger bt sure">确定</a>
+                </div>
+            </div>
+
+            <div class="dialog dialog-no-access">
+                <div class="dialog-title"><span>提示</span><i ms-on-click="closeDialog" class="dialog-close"></i></div>
+                <div class="dialog-c">
+                    <p class="fs16">您不接受上述调解建议，同意按平台规则判定执行，确定吗？</p>
+                    <a href="javascript:;" ms-on-click="noaccessanddosame" class="btn btn-s-md btn-danger bt sure">确定</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-payment-while", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+
+

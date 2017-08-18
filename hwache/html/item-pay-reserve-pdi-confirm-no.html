@@ -1,0 +1,890 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>反馈不OK - 预约交车 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item.css" rel="stylesheet" />
+    
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li class="step-cur">预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content pdi">
+                    <small>等待预约</small>
+                    <i></i>
+                    <small class="juhuang">反馈确认</small>
+                    <i></i>
+                    <small class="">预约完毕</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi" ms-controller="item">
+
+        <div class="wapper has-min-step" style="overflow: visible;">
+            <h1>尊敬的客户：</h1>
+            <h1 class="ti">我们怀着急切的心情告诉您，提车事项得到经销商进一步回复，请您尽快选择最合适的方案。</h1>
+            <br>
+            <p class="fs14"><b>1.您座驾的回程方式，经销商已提供了以下方案，请选择最合适的一种：</b></p>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                    <b>自己开回</b>（无送车服务费）
+                </label>
+            </div>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                    <b>代驾送车</b>  服务费：人民币1,000.00元  
+                </label>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                             <p class="pl20 fs14">送车大致地址：</p>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control address" placeholder="填写送车大致地址">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <p class="fs14">支付方式：在经销商处支付   （提车时先支付后送车；车送到目的地后当场支付 ）</p>
+            <p class="fs14">说明：仅指代驾服务的费用，油费、过路费等实报实销。为保障您的权益，请在经销商处另行签订书面委托协议。</p>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="b" value="option2" >
+                    <i></i>
+                    <b>板车运输送车  </b>  运费：人民币2,000.00元  ；运输险保费：人民币1,000.00元  
+                </label>
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                             <p class="pl20 fs14">送车大致地址：</p>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control address" placeholder="填写送车大致地址">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <p class="fs14">支付方式：在经销商处支付（提车时先支付后送车；车送到目的地后当场支付）</p>
+            <p class="fs14">说明：运费中已含送车产生的油费、过路费。为保障您的权益，请在经销商处另行签订书面委托协议。如您的送车地点属于卡车、外地车</p>
+            <p class="fs14">限行区域，则只能将车送到最接近的可交车地点，由您与经销商直接协商确定。</p>
+
+            <p class="fs14"><b>2.您感兴趣的其他车辆商业保险，经销商报价如下，请选择您需要的保险项目（可多选或不选）：</b></p>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                    <b>涉水险 </b> 保额： 首年保费报价：人民币1,000.00元
+                </label>
+            </div>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                    <b>BBBB险</b>   保额： 首年保费报价：人民币1,000.00元
+                </label>
+            </div>
+            <p class="psr fs14">
+                <i class="no"></i>
+                <b>CCCC险</b>   恕该保险公司无法提供
+                <em class="no psa">不可选哦</em>
+            </p>
+
+            <br>
+            <table width="100%">
+                <tbody>
+                    <tr>
+                        <td width="120">
+                             <p class=" fs14"><b>3.您的特别要求：</b></p>
+                        </td>
+                        <td>
+                            <input style="width:100%" type="text" class="form-control address" placeholder="此处显示客户先前手动输入的特别要求">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+ 
+
+            <p class="fs14"><b>经销商回复如下，请选择您需要办理的项目（可多选或不选）：</b></p>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                    办XX证明： 可以办理 办理费用：人民币1,000.00元 需要时间5天 交车时间无影响
+                </label>
+            </div>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                   办YY证明： 可以办理 办理费用：人民币1,000.00元 需要时间15天  交车时间延后到2015年11月9日
+                </label>
+            </div>
+            <p class="psr fs14">
+                <i class="no"></i>
+                办ZZ证明： 恕无法办理  ， 华车网补充建议：请向当地车管部门咨询。
+                <em class="no psa">不可选哦</em>
+            </p>
+            <br>
+            <p class="psr fs14">
+                <i class="no"></i>
+                要某礼品：  恕无法提供  ， 华车网补充建议：特别喜欢的话就买一个吧。
+                <em class="no psa">不可选哦</em>
+            </p>
+            <br>    
+            <p class="fs14"><b>4.您提议的提车日期 :</b><span class="border">2015年10月5日 上午/下午</span></p>
+            <p class="fs14"><span class="xing">*</span><b>经销商已同意上述交车日期</b></p>
+            <p class="fs14"><span class="xing">*</span><b>经销商已与您协商，达成的交车日期：</b>2015年10月5日 上午/下午（达成的超期提车补偿金额：人民币1，000.00元在经销商处支付）</p>
+            
+            <p class="fs14"><b>5.您确认的即将注册登记名称（上牌人）的身份类别：</b></p>
+            <p class="fs14 ti1">您需要准备的文件资料详见下方内容说明。</p>
+            <p class="tar">
+                <a href="javascript:;" class="btn btn-s-md btn-danger">确认并保存</a>
+                <a href="javascript:;" class="btn btn-s-md btn-danger">保留再协商</a>
+                <a href="javascript:;" class="btn btn-s-md btn-danger sure">已保存,请到下方提交</a>
+            </p>
+            <hr class="dashed">
+
+            <table class="nobordertbl" width="100%">
+                <tr>
+                    <td width="50%">订单号：</td>
+                    <td width="50%">生效时间：</td>
+                </tr>
+            </table>
+           
+            <table class="tbl c-tbl">
+                <tr>
+                    <td class="">品牌：<span class="fn"></span></td>
+                    <td>车系：<span class="fn"></span></td>
+                </tr>
+                <tr>
+                    <td class="">车型规格:<label></label></td>
+                    <td>类别:<span class="fn">全新中规车整车（已加装精品）</span></td>
+                </tr>
+                <tr>
+                    <td class="">数量：<span class="fn"></span></td>
+                    <td>生产国别：<span class="fn"></span></td>
+                </tr>
+                <tr>
+                    <td class="">座位数：<span class="fn"></span></td>
+                    <td class="">排放标准：<span class="fn"></span></td>
+                    
+                </tr>
+                <tr>
+                    <td class="">车身颜色：<span class="fn"></span></td>
+                    <td>
+                        内饰颜色：<span class="fn"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="">行驶里程：<span class="fn"></span></td>
+                    <td>出厂年月：<span class="fn"></span></td>
+                </tr>
+                <tr>
+                    <td>车辆用途：<span class="fn"></span></td>
+                    <td>上牌地区：<span class="fn"></span></td>
+                </tr>
+                <tr>
+                    <td class="" colspan="2">基本配置：<span class="fn"></span></td>
+                </tr> 
+            </table>
+            
+            <p class="fs14">已装原厂选装精品：</p>
+            <table class="tbl">
+                <tr>
+                    <th><p class="fs14">名称</p></th>
+                    <th><p class="fs14">型号</p></th>
+                    <th><p class="fs14">厂家指导价</p></th>
+                    <th><p class="fs14">数量</p></th>
+                    <th><p class="fs14">附加价值</p></th>
+                </tr>
+                <tr>
+                    <td><p class="fs14 tac normal">&nbsp;</p></td>
+                    <td><p class="fs14 tac normal"></p></td>
+                    <td><p class="fs14 tac normal"></p></td>
+                    <td><p class="fs14 tac normal"></p></td>
+                    <td><p class="fs14 tac normal"></p></td>
+                </tr>
+            </table>
+            <p class="tar pr150 fs14"><b>合计价值：</b>xxx</p>
+            <p class="fs14">免费礼品和服务：</p>
+            <table class="tbl">
+                <tr>
+                    <th><p class="fs14">名称</p></th>
+                    <th><p class="fs14">数量</p></th>
+                    <th><p class="fs14">状态</p></th>
+                    <th><p class="fs14">说明</p></th>
+                </tr>
+                <tr>
+                    <td><p class="fs14 tac normal">&nbsp;</p></td>
+                    <td><p class="fs14 tac normal"></p></td>
+                    <td><p class="fs14 tac normal"></p></td>
+                    <td><p class="fs14 tac normal"></p></td>
+                </tr>
+            </table>
+
+            <!--车价与买车担保金-->
+            <div class="box">
+                <div class="title">
+                    <label ms-click="toggleContent">一、车价与买车担保金<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <h2><b>厂商指导价：</b></h2>
+                    <p><b>您尊享的车价：</b>人民币<span class="juhuang">520,000.00</span>元 （伍拾贰万元整）</p>
+                    <table>
+                        <tr>
+
+                            <td valign="top">其中包括：</td>
+                            <td>
+                                <p>1.裸车开票价格（您须在经销商处全额支付）：人民币<span class="juhuang">500,000.00</span>元（伍拾万元整）</p>
+                                <p>2.华车网服务费（您在经销商处完成交车后从买车担保金中扣除）：人民币<span class="juhuang">20,000.00</span>元（贰万元整）</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p><b>买车担保金</b>（已冻结在华车网加信宝）：人民币<span class="juhuang">30,000.00</span>元（叁万元整）</p>
+                </div>
+            </div>
+
+            <!--交车-->
+            <div class="box">
+                <div class="title">
+                    <label >二、交车<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner  box-inner-def">
+                    <table width="100%">
+                        <tr>
+                            <td valign="top"> 
+                                <p><b>订单约定的交车区域范围：  XXX、XXX</b></p>
+                                <p><b>实际交车地点：</b></p>
+                                <p><b>经销商名称：</b></p>
+                                <input type="hidden" name="tiCheMethod" id="tiCheMethod">
+                                <table>
+                                    <tr>
+                                        <td valign="top"><b>您前去提车的方式：</b></td>
+                                        <td align="left">
+                                            <ol>
+                                                <li ms-click="tiCheMethod" class="select-prev"><span>自己安排直接到店</span><i ></i></li>
+                                                <li ms-click="tiCheMethod" class="cur-select"><span>经销商安排接机</span><i></i></li>
+                                            </ol>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                 <p class="fs14"><i class="yuan"></i><b>您座驾即将注册登记（上牌）的详细名称：</b>  </p>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control address" placeholder="">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                 <p class="fs14 pl20">温馨提示：该名称将用于进一步核对订单信息，填写以后请不要再更改以免造成误会。</p>
+                                            </td>
+                                           
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="4">
+                                                 <p class="fs14"><i class="yuan"></i><b>您的提车人</b>  </p>
+                                            </td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <table>
+                                                    <tr>
+                                                        <td><label for="" class="fs14 pl20">姓名：</label></td>
+                                                        <td><input type="text" class="form-control " placeholder=""></td>
+                                                        <td><label for="" class="fs14 pl20">电话：</label></td>
+                                                        <td><input type="text" class="form-control " placeholder=""></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">
+                                                 <p class="fs14 pl20">温馨提示：因提车人姓名与上牌名称不一致，需请提车人携带<a href="#" class="juhuang">委托书</a>。</p>
+                                            </td>
+                                           
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </td>
+                            <td align="center" width="270">
+                                <p class="tal"><b class="tal">交车地点图示</b></p>
+                                <img  width="270" src="themes/images/item/map.gif" />
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+
+            <!--选装精品-->
+            <div class="box">
+                <div class="title">
+                    <label >三、选装精品<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <p><b>经销商为您提供的原厂选装精品折扣率：98%</b></p>
+                    <p><b>已选购的原厂选装精品：</b></p>
+
+                    <table class="" width="100%">
+                        <tbody>
+                            <tr>
+                                <td width="80%" valign="bottom">
+                                    <table class="tbl">
+                                        <tbody>
+                                            <tr>
+                                                <th>名称</th>
+                                                <th>型号</th>
+                                                <th>数量</th>
+                                                <th>含安装费折后单价</th>
+                                                <th>小计金额</th>
+                                            </tr>
+                                            <tr>
+                                                <td><p class="tac">名称</p></td>
+                                                <td><p class="tac">型号</p></td>
+                                                <td><p class="tac">数量</p></td>
+                                                <td><p class="tac">含安装费折后单价</p></td>
+                                                <td><p class="tac">小计金额</p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="tar pr150"><b>合计：</b>xxx</p>
+                    <p><b>已选购的非原厂选装精品：</b></p>
+                    <table class="" width="100%">
+                        <tbody>
+                            <tr>
+                                <td width="80%" valign="bottom">
+                                    <table class="tbl">
+                                        <tbody>
+                                            <tr>
+                                                <th>品牌</th>
+                                                <th>名称</th>
+                                                <th>型号</th>
+                                                <th>数量</th>
+                                                <th>含安装费折后单价</th>
+                                                <th>小计金额</th>
+                                            </tr>
+                                            <tr>
+                                                <td><p class="tac">品牌</p></td>
+                                                <td><p class="tac">名称</p></td>
+                                                <td><p class="tac">型号</p></td>
+                                                <td><p class="tac">数量</p></td>
+                                                <td><p class="tac">含安装费折后单价</p></td>
+                                                <td><p class="tac">小计金额</p></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="tar pr150"><b>合计：</b>xxx</p>
+                    <p><b>支付方式：</b>在经销商处支付。</p>
+                </div>
+            </div>
+
+            <!--车辆商业保险-->
+            <div class="box">
+                <div class="title">
+                    <label >四、车辆商业保险<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <p>您已同意车辆首年商业保险在经销商处的XX保险股份有限公司办理，投保险种保费约定如下：</p>
+                    <p>请您联系当地保险公司直接投保。</p>
+                 
+                    
+                    <table class="tbl">
+                       
+                        <tr>
+                            <td width="50" valign="top" >
+                                <table width="175%" height="100%" style="margin-left: -10px">
+                                    <tr>
+                                        <td style="border:0;height: 30px;border-bottom: 1px solid #dcdddd;padding: 0;margin:0;text-align: center;"><b>类别</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:0;">
+                                            <p class="fs14 tac"><b>主</b></p>
+                                            <p class="fs14"><b>&nbsp;</b></p>
+                                            <p class="fs14"><b>&nbsp;</b></p>
+                                            <p class="fs14"><b>&nbsp;</b></p>
+                                            <p class="fs14 tac"><b>险</b></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                            </td>
+                            <td class="nopadding">
+                                <table width="100%">
+                                    <tr>
+                                        <th width="180" class="">险种</th>
+                                        <th class="" width="400">赔付选项</th>
+                                        <th class=""  width="140">报价基准</th>
+                                        <th class="norightborder">我的投保</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><input type="checkbox" checked="" class="radio" /> <label class="fn">机动车损失险</label></td>
+                                        <td class="">按保险公司规定执行</td>
+                                        <td class="">1325.08  元</td>
+                                        <td class="norightborder">1325.08</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><input type="checkbox"checked="" class="radio" /> <label class="fn">机动车盗抢险</label></td>
+                                        <td class="">按保险公司规定执行</td>
+                                        <td class="">2098.99  元</td>
+                                        <td class="norightborder">2098.99</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><input type="checkbox"checked="" class="radio" /> <label class="fn">第三者责任保险</label></td>
+                                        <td class="cell" width="320">
+                                            <p>赔付额度：</p>
+                                            <input class="radio" type="radio" checked=""/><span>5万</span>
+                                            <input class="radio" type="radio" /><span>10万</span>
+                                            <input class="radio" type="radio" /><span>15万</span>
+                                            <input class="radio" type="radio" /><span>20万</span>
+                                            <p></p>
+                                            <input class="radio" type="radio" /><span>30万</span>
+                                            <input class="radio" type="radio" /><span>50万</span>
+                                            <input class="radio" type="radio" /><span>100万</span>
+                                        </td>
+                                        <td class="">选择左侧赔付额度</td>
+                                        <td class="norightborder">567.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell nobottomborder"><input checked="" type="checkbox" class="radio" /> <label class="fn">车上人员责任险</label></td>
+                                        <td class="cell nopadding nobottomborder" width="320">
+                                            <div>
+                                                <p class="first-p">驾驶人每次事故责任限额：</p>
+                                                <div class="r-box">
+                                                    <input name="jsxiee" checked="" class="radio" type="radio" /><span>1万</span>
+                                                    <input name="jsxiee" class="radio" type="radio" /><span>2万</span>
+                                                    <input name="jsxiee" class="radio" type="radio" /><span>3万</span>
+                                                    <input name="jsxiee" class="radio" type="radio" /><span>4万</span>
+                                                    <input name="jsxiee" class="radio" type="radio" /><span>5万</span>
+                                                </div>
+                                                <h5 class="fenge">乘客每次事故每人责任限额：</h5>
+                                                <div class="r-box">
+                                                    <input name="ckxiee" checked="" class="radio" type="radio" /><span>1万</span>
+                                                    <input name="ckxiee" class="radio" type="radio" /><span>2万</span>
+                                                    <input name="ckxiee" class="radio" type="radio" /><span>3万</span>
+                                                    <input name="ckxiee" class="radio" type="radio" /><span>4万</span>
+                                                    <input name="ckxiee" class="radio" type="radio" /><span>5万</span>
+                                                </div>
+                                                <h5 class="fenge" style="border-top:0">乘客座位数：</h5>
+                                                <div class="r-box">
+                                                    <input name="zuowei" checked="" class="radio" type="radio" /><span>1座</span>
+                                                    <input name="zuowei" class="radio" type="radio" /><span>2座</span>
+                                                    <input name="zuowei" class="radio" type="radio" /><span>3座</span>
+                                                    <input name="zuowei" class="radio" type="radio" /><span>4座</span>
+                                                    <input name="zuowei" class="radio" type="radio" /><span>5座</span>
+                                                    <input name="zuowei" class="radio" type="radio" /><span>6座</span>
+                                                    <input name="zuowei" class="radio" type="radio" /><span>7座</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="nobottomborder" width="130" align="center">选择左侧限额和座位数</td>
+                                        <td class="norightborder nobottomborder">567.00</td>
+                                    </tr>
+                                    
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30" class="">
+                                <p class="fs14"><b>附</b></p>
+                                <p class="fs14"><b>加</b></p>
+                                <p class="fs14"><b>险</b></p>
+                            </td>
+                            <td class="nopadding " >
+                                <table width="100%">
+                                    <tr>
+                                        <td class="cell "  width="180"><input checked="" type="checkbox" class="radio" /> <label  class="fn">玻璃单独破碎险</label></td>
+                                        <td class="cell" width="400">
+                                            
+                                            <input checked="" class="radio" type="radio" /><span>进口玻璃</span>
+                                            <input class="radio" type="radio" /><span>国产玻璃</span>
+                                        </td>
+                                        <td class="" width="140">选择左侧玻璃类型</td>
+                                        <td class="norightborder">567.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><input  checked=""type="checkbox" class="radio" /> <label class="fn">自燃损失险</label></td>
+                                        <td class="cell" width="320">赔付额度同裸车开票价格</td>
+                                        <td class="">359.00元</td>
+                                        <td class="norightborder">359.00元</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><input checked="" type="checkbox" class="radio" /> <label class="fn">车身划痕损失险</label></td>
+                                        <td class="cell" width="320">
+                                            <p>赔付额度：</p>
+                                            <input checked="" class="radio" type="radio" /><span>0.2万</span>
+                                            <input class="radio" type="radio" /><span>0.5万</span>
+                                            <input class="radio" type="radio" /><span>1万</span>
+                                            <input class="radio" type="radio" /><span>2万</span>
+                                        </td>
+                                        <td class="">选择左侧赔付额度</td>
+                                        <td class="norightborder">0.2万</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell"><input checked="" type="checkbox" class="radio" /> <label class="fn">不计免赔特约险</label></td>
+                                        <td class="cell" width="320">
+                                            <input checked="" class="radio" type="radio" /><span>机动车损失险，按保险公司规定执行。</span>
+                                        </td>
+                                        <td class="">120.00 元</td>
+                                        <td class="norightborder">120.00 元</td>
+                                    </tr>
+                                     <tr>
+                                        <td class="cell"><input checked="" type="checkbox" class="radio" /> <label class="fn">不计免赔特约险</label></td>
+                                        <td class="cell" width="320">
+                                            <input checked="" class="radio" type="radio" /><span>机动车盗抢险，按保险公司规定执行。</span>
+                                        </td>
+                                        <td class="">120.00 元</td>
+                                        <td class="norightborder">120.00 元</td>
+                                    </tr>
+                                     <tr>
+                                        <td class="cell"><input checked="" type="checkbox" class="radio" /> <label class="fn">不计免赔特约险</label></td>
+                                        <td class="cell" width="320">
+                                            <input checked="" class="radio" type="radio" /><span>机动车盗抢险，按保险公司规定执行。</span>
+                                        </td>
+                                        <td class="">120.00 元</td>
+                                        <td class="norightborder">120.00 元</td>
+                                    </tr>
+                                     <tr>
+                                        <td class="cell"><input checked="" type="checkbox" class="radio" /> <label class="fn">不计免赔特约险</label></td>
+                                        <td class="cell" width="320">
+                                            <input checked="" class="radio" type="radio" /><span>机动车盗抢险，按保险公司规定执行。</span>
+                                        </td>
+                                        <td class="">120.00 元</td>
+                                        <td class="norightborder">120.00 元</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cell nobottomborder"><input checked="" type="checkbox" class="radio" /> <label class="fn">不计免赔特约险</label></td>
+                                        <td class="cell nobottomborder" width="320">
+                                            <input checked="" class="radio" type="radio" /><span>车身划痕损失险，按保险公司规定执行。</span>
+                                        </td>
+                                        <td class=" nobottomborder">120.00 元</td>
+                                        <td class="norightborder nobottomborder">120.00 元</td>
+                                    </tr>
+                                    
+                                </table>
+                            </td>
+                        </tr>
+                        <tfoot>
+                            <tr>
+                                <td class="" colspan="2" align="center" valign="middle">
+                                    <h4>
+                                        已选投保组合总价：人民币<span class="juhuang">10，255.00</span>元 
+                                    </h4>
+                                   
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                   
+                    <p><b>支付方式:</b>在经销商处支付</p>
+                    <p><b>投保时您需要提交的文件资料:</b></p>
+                </div>
+            </div>
+
+            <!--上牌服务-->
+            <div class="box">
+                <div class="title">
+                    <label >五、上牌服务<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <p>
+                        说明：指经销商为购车方代办机动车注册登记手续的服务，仅按车管所相关规则办理，不对牌号结果负责，也不含在某些限牌地区通过摇号、
+                    </p>
+                    <p>
+                        拍卖、转让等方式取得牌照资源指标的服务和费用。
+                    </p>
+
+                    <p><b>机动车注册登记手续：</b>经销商代办</p>
+                    <p><b>实际要收服务费金额：</b>人民币2,000.00元</p>
+                    <p><b>支付方式：</b>在经销商处支付</p>
+                    <p><b>即将注册登记名称（上牌人）的身份类别</b></p>
+                    <p><b>您需要提供的文件资料：</b></p>
+                    
+                    <p><b>机动车注册登记手续：</b>亲自办理</p>
+                    <p><b>机动车注册登记手续：</b>委托经销商代办</p>
+                    <p><b>实际要收服务费金额：</b>人民币2,000.00元</p>
+                    <p><b>支付方式：</b>在经销商处支付</p>
+                    <p><b>即将注册登记名称（上牌人）的身份类别：</b></p>
+                    <p><b>您需要提供的文件资料：</b></p>
+                    
+                    <p><b>1、经销商不办理您须自己在当地车辆管理部门办理机动车注册登记手续。</b></p>
+                    <p><b>2、经销商办理</b></p>
+                    <p><b>机动车注册登记手续：</b>经销商代办</p>
+                    <p><b>实际要收服务费金额：</b>人民币2,000.00元</p>
+                    <p><b>支付方式：</b>在经销商处支付</p>
+                    <p><b>即将注册登记名称（上牌人）的身份类别：</b></p>
+                    <p><b>您需要提供的文件资料：</b></p>
+                   
+                    <p><b>上牌违约赔偿金额：</b></p>
+                    <p><b>支付方式：</b>从冻结的买车担保金中扣除</p>
+                    <p><b>再次温馨提示：</b>因各地政策差异，请务必咨询当地车辆管理部门上牌所需的资料。在下方有经销商交车时将移交给您的详细文件资料，</p>
+                    <p><b></b>请仔细核对，如有不明请提出，避免出现提车后无法上牌的困境。</p>
+                    
+
+
+
+
+
+                </div>
+            </div>
+
+            <!--上临时牌-->
+            <div class="box">
+                <div class="title">
+                    <label >六、上临时牌<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <p>说明：仅指办理车辆临时移动牌照，而非机动车注册登记。根据《中华人民共和国交通安全法》，在没有取得正式牌照之前，必须按规</p>
+                    <p>定申领车辆临时移动牌照方能上路行驶。</p>
+                     <p><b>车辆临时移动牌照办理：</b>经销商代办</p>
+                     <p><b>实际要收服务费金额（每次）：</b>人民币2,000.00元</p>
+                     <p><b>支付方式：</b>在经销商处支付</p>
+                     <p><b>您需要提供的文件资料：</b>亲自办理</p> 
+                     <p><b>车辆临时移动牌照办理：</b>委托经销商代办</p>
+                  
+                    <p><b>实际要收服务费金额（每次）：</b>人民币2,000.00元</p>
+                    <p><b>支付方式：</b>在经销商处支付</p>
+                    <p><b>您需要提供的文件资料：</b></p>
+
+                </div>
+            </div>
+
+            <!--卖方其他收费-->
+            <div class="box">
+                <div class="title">
+                    <label >七、卖方其他收费<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <p>交车时您须向经销商支付的其他费用如下：</p>
+                    <table class="" width="100%">
+                        <tbody>
+                            <tr>
+                                <td width="80%" valign="bottom">
+                                    <table class="tbl">
+                                        <tbody>
+                                            <tr>
+                                                <th><p class="fs14">费用名称</p></th>
+                                                <th><p class="fs14">订单约定金额</p></th>
+                                                <th><p class="fs14">实际要收取金额</p></th>
+                                            </tr>
+                                            <tr>
+                                                <td><p class="tac"></p></td>
+                                                <td><p class="tac"></p></td>
+                                                <td><p class="tac"></p></td>
+                                            </tr>
+                                            <tr class="trbg">
+                                                <td colspan="3">
+                                                    <p class="tac"><b>支付方式</b><span class="pl20">在经销商处支付。</span></p>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!--交车有关事宜-->
+            <div class="box">
+                <div class="title">
+                    <label >八、交车有关事宜<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    <p><b>经销商交车当场向您移交的文件资料：</b></p>
+                    <p><b> 经销商交车当场向您移交的随车工具：</b></p>
+                    <p><b> 在经销商处单车付款刷卡收费标准：</b></p>
+                    <p>信用卡免费<input type="text" class="baoxianinput juhuang shot" name="money" value="">次，超出次数另收刷卡金的<input type="text" class="baoxianinput juhuang shot" name="money" value="">%或者每次<input type="text" class="baoxianinput juhuang shot" name="money" value="">元；</p>
+                    <p>借记卡免费<input type="text" class="baoxianinput juhuang shot" name="money" value="">次，超出次数另收刷卡金的<input type="text" class="baoxianinput juhuang shot" name="money" value="">%或者每次<input type="text" class="baoxianinput juhuang shot" name="money" value="">元；</p>
+                </div>
+            </div>
+
+            <!--补贴-->
+            <div class="box">
+                <div class="title">
+                    <label >九、补贴<i></i></label>
+                    <em></em>
+                    <code class="besure"></code>
+                </div>
+                <div class="box-inner box-inner-def">
+                    
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <td class="prev-title">补贴名称</td>
+                                <td><p class="fs14"><b>国家节能补贴</b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">补贴说明</td>
+                                <td>
+                                    <p class="fs14">在政策有效期内，国家对符合“节能产品惠民工程”节能汽车标准条件车型给予的一次性定额补贴。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">  办理所需文件</td>
+                                <td>
+                                    <p class="fs14">消费者身份证复印件 车辆行驶证复印件 机动车统一销售发票复印件 填写《节能汽车财政补助确认书》其它  。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title"><p>该经销商办理国家</p><p>节能补贴流程与时限</p></td>
+                                <td>
+                                    <p class="fs14">1.交车时当场兑现，由经销商垫付，消费者上牌后补充所缺资料给经销商。</p>
+                                    <p class="fs14">2.上牌资料齐全后，由经销商立即垫付给消费者<input type="text" name="counts" class="baoxianinput shot juhuang">个工作日内。</p>
+                                    <p class="fs14">3.交车后，经销商将所有资料交给汽车厂商，厂商直接付给消费者，或者厂商付经销商再由经销商付消费者<input type="text" name="counts" class="baoxianinput shot juhuang">个月内	</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <td class="prev-title">补贴名称</td>
+                                <td><p class="fs14"><b>地方政府置换补贴  </b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">补贴说明</td>
+                                <td>
+                                    <p class="fs14">该上牌地区的政府对旧车置换新车提供的补贴。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">经销商是否提供协助</td>
+                                <td>
+                                    <p class="fs14">是</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>温馨提示：经销商并不负责办理该补贴，仅对您向有关部门申请该补贴提供力所能及的协助。如经销商属异地，所提供的协助可能存在不被上牌</p>
+                    <p>地区当地政府所认可的风险，具体申请政策和手续请向当地政府相关部门咨询。</p>
+                    
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <td class="prev-title">补贴名称</td>
+                                <td><p class="fs14"><b>厂家或经销商置换补贴    </b></p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">补贴说明</td>
+                                <td>
+                                    <p class="fs14">该品牌的厂家或经销商为消费者旧车置换新车提供的补贴。。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>温馨提示：由于可能涉及旧车估价等不确定因素，您需要在提车之前与经销商另行商定补贴金额。此处仅提供有无补贴的信息，并不具有合同强</p>
+                    <p>制效力。</p>
+                   
+                </div>
+            </div>
+
+      
+
+            <!--您的特别要求-->
+            <div class="box">
+                
+                <div class="box-inner box-inner-def tbl">
+                   
+                    <p class="center">
+                        <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger">提交</a>
+                    </p>
+                    <p class="cell center m-t-10"><input type="checkbox" class="radio"><label>我已阅读并同意上述通知内容</label></p>
+                 
+                </div>
+            </div>
+
+        
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/item/item-pdi-confirm", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>

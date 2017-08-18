@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>3.2.2B再反馈OK页面 - 预约交车 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li class="step-cur">预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content pdi">
+                    <small>等待预约</small>
+                    <i></i>
+                    <small class="juhuang">反馈确认</small>
+                    <i></i>
+                    <small class="">预约完毕</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi" ms-controller="item">
+
+        <div class="wapper has-min-step" style="overflow: visible;">
+            <h1>尊敬的客户：</h1>
+            <h1 class="ti">您与经销商已就交车事宜全面达成共识，感谢您的大力支持！正在为您安排服务专员，敬请期待令人神往的尊驾一露尊容！</h1>
+            <p class="tac m-t-10"><a href="#" class="juhuang tdu ">查看订单总详情</a></p>
+            <br>
+            <table class="nobordertbl" width="100%">
+                <tr>
+                    <td width="50%" class=" fs14">订单号：</td>
+                    <td width="50%">
+                        <div class="psr fs14">
+                          订单时间：2015年10月28日
+                          <span class="sj"  ms-mouseover="displayTm()" ms-mouseout="hideTm()">
+                             <b>更多</b>
+                          </span>
+                          <p class="tm tm-long" style="display: none;">
+                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                            <span>反馈交车通知时间： 2015-10-28  10：45：04</span>
+                            <span>经销商再确认回复时间： 2015-10-28  10：45：04</span>
+                          </p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="m-t-10 clear"></div>
+            <p class="fs14 tdu"><b>1.您座驾的回程方式，经销商已提供了以下方案，请选择最合适的一种：</b></p>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input ms-on-click="songche(0)" checked="" type="radio" name="songche" value="">
+                    <i></i>
+                    自己开回（无送车服务费）
+                </label>
+            </div>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input ms-on-click="songche(1)" type="radio" name="songche" value="" >
+                    <i></i>
+                    代驾送车  
+                </label>
+            </div>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input ms-on-click="songche(2)" type="radio" name="songche" value="" >
+                    <i></i>
+                    板车运输送车
+                </label>
+            </div>
+            <table class="tbl songche" style="display: none">
+                <tr>
+                    <td width="50%">
+                        <p class="fs14"><b>服务费：</b>人民币1,000.00元</p>
+                    </td>
+                    <td width="50%"><p class="fs14"><b>支付方式：</b>在经销商处支付   （提车时先支付后送车；车送到目的地后当场支付 ）</p></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="fs14"><b>送车大致地址：</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="fs14"><b>说明：</b>仅指代驾服务的费用，油费、过路费等实报实销。为保障您的权益，请在经销商处另行签订书面委托协议。</p>
+                    </td>
+                </tr>
+            </table>
+            <table class="tbl songche" style="display: none">
+                <tr>
+                    <td width="50%">
+                        <p class="fs14"><b>运费：</b>人民币1,000.00元</p>
+                    </td>
+                    <td width="50%"><p class="fs14"><b>运输险保费：</b>人民币1,000.00元   </p></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="fs14"><b>送车大致地址：</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="fs14"><b>支付方式：</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="fs14"><b>说明：</b>运费中已含送车产生的油费、过路费。为保障您的权益，请在经销商处另行签订书面委托协议。如您的送车地点属于卡车、外地车限行区域，则只能将车送到最接近的可交车地点，由您与经销商直接协商确定。</p>
+                    </td>
+                </tr>
+            </table>
+    
+            
+            <p class="fs14 tdu"><b>2.您感兴趣的其他车辆商业保险，经销商报价如下，请选择您需要的保险项目（可多选或不选）：</b></p>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                    <b>涉水险</b><span class="ml20">(首年保费报价：人民币1,000.00元     说明：)</span>
+                </label>
+            </div>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                    <b>BBBB险</b><span class="ml20">(保额：首年保费报价：人民币1,000.00元)</span>
+                </label>
+            </div>
+            <p class="psr fs14">
+                <i class="no"></i>
+                <b>CCCC险</b><span class="ml20">(恕该保险公司无法提供)</span>
+                <em class="no psa">不可选哦</em>
+            </p>
+
+            <br>
+            <p class="fs14 tdu"><b>3.您的特别要求：</b></p>
+            <p><input style="width:100%" type="text" class="form-control address" placeholder="特别要求内容："></p>
+           
+ 
+
+            <p class="fs14"><b>经销商回复如下，请选择您需要办理的项目（可多选或不选）：</b></p>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                    办XX证明： 可以办理 办理费用：人民币1,000.00元 需要时间5个自然日 交车时间无影响
+                </label>
+            </div>
+            <div class="radio i-checks">
+                <label class="fs14">
+                    <input type="radio" name="a" value="option2" checked="">
+                    <i></i>
+                   办YY证明： 可以办理 办理费用：人民币1,000.00元 需要时间15个自然日  交车时间延后到2015年11月9日
+                </label>
+            </div>
+            <p class="psr fs14">
+                <i class="no"></i>
+                办ZZ证明： 恕无法办理  ， 华车网补充建议：请向当地车管部门咨询。
+                <em class="no psa">不可选哦</em>
+            </p>
+            <br>
+            <p class="psr fs14">
+                <i class="no"></i>
+                要某礼品：  恕无法提供  ， 华车网补充建议：特别喜欢的话就买一个吧。
+                <em class="no psa">不可选哦</em>
+            </p>
+            <br>    
+            <p class="fs14 tdu"><b>4.您提议的提车日期 :</b></p>
+            <p class="fs14"><b>提议的提车时间为 :</b>2015年10月5日 上午/下午</p>
+            <p class="fs14"><span class="xing">*</span>经销商已同意上述交车日期，且无超期费</p>
+            <p class="fs14"><span class="xing">*</span>经销商已与您协商，达成的交车日期：2015年10月5日 上午/下午（达成的超期提车补偿金额：人民币1，000.00元在经销商处支付）</p>
+            <p class="fs14"><span class="xing">*</span>如有异议请<a href="javascript:;" ms-on-click="showCommite" class="tdu juhuang">点此</a>告知华车平台，由平台进行调解和裁判。</p>
+            <textarea style="width:500px;height:80px;border:1px solid #dcdddd;display: none;" placeholder="请输入内容"></textarea>
+            <div class="m-t-10"></div>
+            <p class="fs14"><b>华车平台调解方案如下：</b></p>
+            <p class="fs14"><span class="xing">*</span><b>提车时间定为：2015年10月6日  上午/下午</b></p>
+            <p class="fs14"><span class="xing">*</span><b>超期费金额：人民币2,000.00元</b></p>
+
+            <hr class="dashed">
+            
+            <table class="tbl ">
+                <tr>
+                    <td width="50%">
+                        <p class="fs14"><b>计划上牌车主名称：</b></p>
+                    </td>
+                    <td width="50%"><p class="fs14"><b>提车人姓名：</b></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="fs14"><b>上牌车主名称与提车人姓名是否一致：</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p class="fs14"><b>提车人需要准备的文件资料：</b></p>
+                    </td>
+                </tr>
+              
+            </table> 
+        </div>
+    </div> 
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/item/item-pdi-confirm", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>

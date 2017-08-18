@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>预约等待 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/item.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="itemheader"></div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="step-cur">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content">
+                    <small>选择产品</small>
+                    <i></i>
+                    <small class="juhuang">付诚意金</small>
+                    <i></i>
+                    <small class="">卖方确认</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content" ms-controller="item">
+        <div class="wapper has-min-step">
+            <p>尊敬的客户：</p>
+            <p>华车网平台于<!--paytime-->收到您支付的诚意金人民币499.00元，您的购车之旅正式启航了！</p>
+            <p>根据平台规则，经销商将在20分钟内向您反馈再次确认车源的结果。</p>
+            
+            <div class="time">
+                <div class="jishi">
+                    <span>0</span>
+                    <span>0</span>
+                    <span class="fuhao">:</span>
+                    <span>0</span>
+                    <span>0</span>
+                </div>
+            </div>
+            <p>如果确认后发现信息不实，华车网<a href="#" class="juhuang tdu" >加信宝</a> 将向您赔偿歉意金人民币499.00元，已付诚意金亦全额退还。</p>
+            <p>如确认无误，下一步将进入“付担保金”环节，您须在24小时内支付买车担保金余款<input type="text" name="counts" class="baoxianinput shot juhuang">元</p>
+            <p>（买车担保金总金额扣除您已付诚意金后的余款）。</p>
+            <div class="split">
+                <a href="#myorder">查看我的订单</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="box" ms-include-src="footer"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/item/item-wait", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+

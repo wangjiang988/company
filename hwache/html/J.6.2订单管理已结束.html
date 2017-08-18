@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.6.2订单管理已结束 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">常用管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">报价管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a href="#">执行中(17)</a>
+                                        <a href="#" class="cur-select-step">已结束(1)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-tool" data-toggle="collapse" data-parent="#accordion1" href="#collapse_6"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_6" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">便捷工具</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content custom-index-wrapper">
+                    <form action="">
+                        <div class="search-panel-main mt10">
+                            <span class="fl mt5">订单号：</span>
+                            <input placeholder="" type="text" value="" name="" class="form-control custom-control ml5 fl">
+                            <span class="fl mt5 ml10">客户姓名：</span>
+                            <input placeholder="" type="text" value="" name="" class="txt-small form-control custom-control ml5 fl">
+                            <span class="fl mt5 ml10">客户手机号：</span>
+                            <input placeholder="" type="text" value="" name="" class="form-control custom-control ml5 fl">
+                            <span class="ml10 fl">&nbsp;</span>
+                            <a href="javascript:;" class="btn btn-danger fs16 fl btn-small nomargin">查找</a>
+                            <div class="clear"></div> 
+                        </div>
+                        <div class="search-panel-opt mt20">
+                            <table>
+                                <tr>
+                                    <td valign="top" width="45"><b class="blue">筛选：</b></td>
+                                    <td>
+                                        <div class="opt-wrapper">
+                                            <div class="btn-group btn-jquery-event fl">
+                                                  <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle dropdown-company">
+                                                      <span class="dropdown-label"><span>订单状态不限</span></span>
+                                                      <span class="caret"></span>
+                                                  </button>
+                                                  <ul class="dropdown-menu dropdown-company">
+                                                      <input type="hidden" name="">
+                                                      <li class="active"><a><span>结束原因不限</span></a></li>
+                                                      <li><a><span>订单完成</span></a></li>
+                                                      <li><a><span>订单终止（客户违约）</span></a></li>
+                                                      <li><a><span>订单终止（售方违约）</span></a></li>
+                                                  </ul>
+                                            </div>
+                                            <span class="fl ml20 mt5">结束时间范围：</span>
+                                            <div class="form-group psr fl">
+                                                <input style="" type="text" placeholder="2015年10月10号" class="form-control " onfocus="WdatePicker({minDate:'2015-12-2 00:00:00',startDate:'2015-12-19 00:00:00' });">
+                                                <i class="rili"></i>
+                                            </div>
+                                            <span class="fl ml10 mt5">~</span>
+                                            <div class="form-group psr fl ml10">
+                                                <input style="" type="text" placeholder="2015年10月10号" class="form-control " onfocus="WdatePicker({minDate:'2015-12-2 00:00:00',startDate:'2015-12-19 00:00:00' });">
+                                                <i class="rili"></i>
+                                            </div>
+
+
+                                            <div class="btn-group btn-jquery-event  fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle">
+                                                    <span class="dropdown-label"><span>品牌不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>品牌不限</span></a></li>
+                                                    <li><a><span>品牌不限1</span></a></li>
+                                                    <li><a><span>品牌不限2</span></a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group btn-jquery-event  ml20 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-normal btn-default dropdown-toggle">
+                                                    <span class="dropdown-label"><span>车系不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>车系不限</span></a></li>
+                                                    <li><a><span>车系不限1</span></a></li>
+                                                    <li><a><span>车系不限2</span></a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group btn-jquery-event  ml10 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-long btn-default btn-380">
+                                                    <span class="dropdown-label"><span>车型规格不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select dropdown-380">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>车型规格不限</span></a></li>
+                                                    <li><a><span>车型规格不限1</span></a></li>
+                                                    <li><a><span>车型规格不限2</span></a></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group btn-jquery-event mt20 fl">
+                                                <button data-toggle="dropdown" class="btn btn-select btn-select-long btn-default btn-long">
+                                                    <span class="dropdown-label"><span>经销商不限</span></span>
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-select dropdown-long">
+                                                    <input type="hidden" name="hfbrand">
+                                                    <li class="active"><a><span>经销商不限</span></a></li>
+                                                    <li><a><span>经销商不限1</span></a></li>
+                                                    <li><a><span>经销商不限2</span></a></li>
+                                                </ul>
+                                            </div>
+                                            <a href="javascript:;" class="btn btn-danger fs16 btn-small sure  ml10 mt20">重置</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <h4 class="title"><span>订单信息</span></h4>
+                        <table class="tbl custom-info-tbl">
+                             <tbody>
+                               <tr>
+                                   <th class="tac">订单号/时间/<br>经销商</th>
+                                   <th class="tac">品牌/车系/车型规格</th>
+                                   <th class="tac">裸车开票价格</th>
+                                   <th class="tac">结算收入</th>
+                                   <th class="tac">结束原因</th>
+                                   <th class="last">操作</th>
+                               </tr> 
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="">￥20,000.00</span></p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥20,000.00</span></p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p class="gray">订单完成</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="#" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="">￥20,000.00</span></p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">-￥499.000</span></p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p class="gray">订单终止</p>
+                                    <p class="gray">（客户违约）</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="#" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                               <tr class="font-12">
+                                 <td class="tac" width="110" valign="middle">
+                                    <p> HC3627281937</p>
+                                    <p class="psr">
+                                        <span class="sj">2015-04-10</span>
+                                        <span class="tm tm-long">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                        </span>
+
+                                    </p>
+                                    <p>苏州中捷汽贸</p>
+                                 </td>
+                                 <td class="tac" width="193" valign="middle">
+                                    <p>路虎</p>
+                                    <p>新一代揽胜</p>
+                                    <p>2015款SDV16 Hybrid  Vogue</p>
+                                    <p>SE 混合动力创世加长版</p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="">￥20,000.00</span></p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p><span class="juhuang">￥499.000</span></p>
+                                 </td>
+                                 <td class="tac" width="118">
+                                    <p class="gray">订单终止</p>
+                                    <p class="gray">（客户违约）</p>
+                                 </td>
+                                 <td class="tac" width="98">
+                                    <a href="#" class="btn btn-danger  btn-auto sure nomargintop ">查看</a>
+                                 </td>
+                               </tr>
+                              
+     
+                             </tbody>
+                       </table>
+
+                       <div class="pageinfo ml150">
+                            <a href="#">上一页</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <span class="empty">...</span>
+                            <a href="#">下一页</a>
+                            <label>共100页，到第</label>
+                            <input type="text" class="num" value="1">
+                            <label>页</label>
+                            <input type="button" class="go" value="Go">
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+    <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin","module/custom/custom.admin.common.jquery","module/custom/custom.admin.order.jquery", "module/common/common", "bt"],function(a,b,c){
+          
+        });
+    </script>
+ 
+
+</body>
+</html>
+
+

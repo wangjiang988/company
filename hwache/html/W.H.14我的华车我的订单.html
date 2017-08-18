@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>W.H.14我的华车我的订单 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="userheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="user">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a href="#" class="menu-select">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的财务</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的文件</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content">
+                    <div class="order-content">
+                        <span>全部订单</span>
+                    </div>
+                    <div class="order-wapper">
+                        <span>选择时间：</span>
+                        <div class="btn-group m-r pdi-drop pdi-drop-warp">
+                              <div ms-on-click="initOrderTime" class="btn btn-sm btn-default dropdown-toggle area-drop-btn order-select">
+                                  <span class="dropdown-label"><span>全部</span></span>
+                                  <span class="caret"></span>
+                                  <span class="split" style="position: absolute;"></span>
+                              </div>
+                              <div class="dropdown-menu dropdown-select area-tab-div w140" style="display: none;">
+                                  <input type="hidden" name="OrderTime" value="">
+                                  <p class="area-tab"></p>
+                                  <dl class="dl" style="display: none;">
+                                      <dd ms-on-click="selectOrderTime('全部')">全部</dd>
+                                      <dd ms-on-click="selectOrderTime('近三个月订单')" class="select-order-time">近三个月订单</dd>
+                                      <dd ms-on-click="selectOrderTime('三个月之前')">三个月之前</dd>
+                                    <div class="clear"></div>
+                                  </dl>
+                              </div>
+                              <input type="hidden" name="hfOrderTime">
+                        </div>
+                    </div>
+
+                    <div class="content-wapper">
+                        <div class="empty-car">你最近没有订单，这里都是空空的，快去挑选您中意的车吧！去看看</div>
+                        <table class="tbl">
+                            <tr>
+                                <th>订单号/时间</th>
+                                <th>车型规格</th>
+                                <th>华车车价<br>（含服务费）</th>
+                                <th>买车担保金</th>
+                                <th>订单状态</th>
+                                <th>操作</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="psr">
+                                        <p class="p">HC3627281937</p>
+                                        <p class="p psr">2015-04-10<span ms-mouseover="displayTm()" ms-mouseout="hideTm()" class="tag psa"></span></p>
+                                        <p class="tm psa" style="display: none;">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                            <span>反馈交车通知时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商再确认回复时间： 2015-10-28  10：45：04</span>
+                                            <span>交车预约达成时间  2015-10-22    17：55：59</span>
+                                            <span>经销商提交开始交车时间：  2015-10-22    17：55：59</span>
+                                            <span>客户提交交车信息时间：2015-10-22    17：55：59</span>
+                                          </p>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="p">路虎</p>
+                                    <p class="p">新一代揽胜</p>
+                                    <p class="p">2015款SDV16 Hybrid  Vogue</p>
+                                    <p class="p">SE 混合动力创世加长版 </p>
+                                </td>
+                                <td>
+                                    <p class="p">￥100,000.00</p>
+                                </td>
+                                <td>
+                                    <p class="p">￥2,000.00</p>
+                                    <p class="p">已付：<span class="juhuang">￥0</span></p>
+                                </td>
+                                <td>
+                                    <p class="p">诚意预约-售方确认-</p>
+                                    <p class="p">等待反馈特殊要求</p>
+                                </td>
+                                <td>
+                                    <a href="#"  class="btn btn-s-md btn-danger sure tbl-control">查看</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="psr">
+                                        <p class="p">HC3627281937</p>
+                                        <p class="p psr">2015-04-10<span ms-mouseover="displayTm()" ms-mouseout="hideTm()" class="tag psa"></span></p>
+                                        <p class="tm psa" style="display: none;">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                            <span>反馈交车通知时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商再确认回复时间： 2015-10-28  10：45：04</span>
+                                            <span>交车预约达成时间  2015-10-22    17：55：59</span>
+                                            <span>经销商提交开始交车时间：  2015-10-22    17：55：59</span>
+                                            <span>客户提交交车信息时间：2015-10-22    17：55：59</span>
+                                          </p>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="p">路虎</p>
+                                    <p class="p">新一代揽胜</p>
+                                    <p class="p">2015款SDV16 Hybrid  Vogue</p>
+                                    <p class="p">SE 混合动力创世加长版 </p>
+                                </td>
+                                <td>
+                                    <p class="p">￥100,000.00</p>
+                                </td>
+                                <td>
+                                    <p class="p">￥2,000.00</p>
+                                    <p class="p">已付：<span class="juhuang">￥2,000.00</span></p>
+                                </td>
+                                <td>
+                                    <p class="p">付担保金-正在支付-</p>
+                                    <p class="p">正在支付担保金</p>
+                                </td>
+                                <td>
+                                    <a href="#"  class="btn btn-s-md btn-danger sure tbl-control">我要付款</a>
+                                    <p class="p mt5"><b>倒计时：</b></p>
+                                    <p class="p">23：12：11</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="psr">
+                                        <p class="p">HC3627281937</p>
+                                        <p class="p psr">2015-04-10<span ms-mouseover="displayTm()" ms-mouseout="hideTm()" class="tag psa"></span></p>
+                                        <p class="tm psa" style="display: none;">
+                                            <span>诚意金确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商反馈订单时间：2015-10-28  10：45：04</span>
+                                            <span>买车担保金全额确认进入加信宝时间：2015-10-28  10：45：04</span>
+                                            <span>经销商开始执行订单时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商交车通知发出时间： 2015-10-28  10：45：04</span>
+                                            <span>反馈交车通知时间： 2015-10-28  10：45：04</span>
+                                            <span>经销商再确认回复时间： 2015-10-28  10：45：04</span>
+                                            <span>交车预约达成时间  2015-10-22    17：55：59</span>
+                                            <span>经销商提交开始交车时间：  2015-10-22    17：55：59</span>
+                                            <span>客户提交交车信息时间：2015-10-22    17：55：59</span>
+                                          </p>
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="p">路虎</p>
+                                    <p class="p">新一代揽胜</p>
+                                    <p class="p">2015款SDV16 Hybrid  Vogue</p>
+                                    <p class="p">SE 混合动力创世加长版 </p>
+                                </td>
+                                <td>
+                                    <p class="p">￥100,000.00</p>
+                                </td>
+                                <td>
+                                    <p class="p">￥2,000.00</p>
+                                    <p class="p">已付：<span class="juhuang">￥1,000.00</span></p>
+                                </td>
+                                <td>   
+                                    <p class="p">预约交车-开始预约-</p>
+                                    <p class="p">修改订单,待确认</p>
+                                </td>
+                                <td>
+                                    <a href="#"  class="btn btn-s-md btn-danger sure tbl-control">去确认</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="pageinfo ml150">
+                            <a href="#">上一页</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <span class="empty">...</span>
+                            <a href="#">下一页</a>
+                            <label>共100页，到第</label>
+                            <input type="text" class="num" value="1">
+                            <label>页</label>
+                            <input type="button" class="go" value="Go">
+                        </div>
+
+                    </div> 
+
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["module/user/user", "module/common/common", "bt"]);
+    </script>
+
+</body>
+</html>
+
+

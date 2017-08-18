@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>J.4.7工作时段 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="themes/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <link href="themes/admin.custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="box" ms-include-src="cutomadminheader"></div>
+
+
+    <div class="container m-t-86 pos-rlt content" ms-controller="custom">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion" id="accordion1">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-user" data-toggle="collapse" data-parent="#accordion1" href="#collapse_1"> 我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-set" data-toggle="collapse" data-parent="#accordion1" href="#collapse_2"> 常用管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div id="collapse_2" class="panel-collapse in">
+                                    <div class="panel-body" >
+                                        <a style="background: url(themes/images/custom/custom-dealer-brand.png) 25px 50%  no-repeat" data-toggle="collapse" data-parent="#collapse_2" href="#collapse_x1" class="psr">冀东物贸<i class="fa fa-sort-up"></i></a>
+                                        <div id="collapse_x1" class="panel-collapse in">
+                                            <a href="#">基本信息</a>
+                                            <a href="#">常用车型</a>
+                                            <a href="#">保险设定</a>
+                                            <a href="#">客户文件</a>
+                                            <a href="#" class="cur-select-step">工作时段</a>
+                                            <a href="#" class="">增加经销商</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-price" data-toggle="collapse" data-parent="#accordion1" href="#collapse_3"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_3" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">报价管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-order" data-toggle="collapse" data-parent="#accordion1" href="#collapse_4"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_4" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">订单管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-money" data-toggle="collapse" data-parent="#accordion1" href="#collapse_5"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_5" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">资金管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle icon-tool" data-toggle="collapse" data-parent="#accordion1" href="#collapse_6"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-down"></i>
+                                </div>
+                                <div id="collapse_6" class="panel-collapse collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">便捷工具</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-content custom-content psr">
+                     
+                    <form action="newOfferings">
+                        <div class="content-wapper ">
+                          
+                           <div class="m-t-10"></div>
+                           <div class="report-form">
+                               <dl class="work-list-wrapper">
+                                   <dt class="fl">可报价常规日期(可多选)：    </dt>
+                                   <dd class="fl day">
+                                       <lable><input type="checkbox" name="" id=""><span>周一</span></lable>
+                                       <lable><input type="checkbox" name="" id=""><span>周二</span></lable>
+                                       <lable><input type="checkbox" name="" id=""><span>周三</span></lable>
+                                       <lable><input type="checkbox" name="" id=""><span>周四</span></lable>
+                                       <div class="clear"></div>
+                                       <lable><input type="checkbox" name="" id=""><span>周五</span></lable>
+                                       <lable><input type="checkbox" name="" id=""><span>周六</span></lable>
+                                       <lable><input type="checkbox" name="" id=""><span>周日</span></lable>
+                                       <lable><input id="checkall" type="checkbox" name=""><span>全选</span></lable>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <div class="error-div tac m-t-10"><label class="red">*请选择可报价常规日期</label></div>
+                               </dl>
+
+                               <div class="m-t-10"></div>
+                               <dl class="work-list-wrapper">
+                                   <dt class="fl">报价日报价有效时段：</dt>
+                                   <dd class="fl ">
+                                       <span>上午开始时间</span>
+                                       <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input value="09:00" type="text" placeholder="09:00" class="form-control work-control am" >
+                                            <i class="icon-times"></i>
+                                          </div>
+                                       </div>
+                                       <span class="ml20">上午结束时间</span>
+                                       <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input value="12:00" type="text" placeholder="12:00" class="form-control work-control am end" >
+                                            <i class="icon-times"></i>
+                                          </div>
+                                       </div>
+                                       <div class="split-blue"></div>
+                                       <div class="clear"></div>
+                                       <span>下午开始时间</span>
+                                       <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input value="13:00" type="text" placeholder="13:00" class="form-control work-control pm" >
+                                            <i class="icon-times"></i>
+                                          </div>
+                                       </div>
+                                       <span class="ml20">下午结束时间</span>
+                                       <div class="btn-group m-r time-sl">
+                                          <div class="form-group psr pdi-control">
+                                            <input value="17:00" type="text" placeholder="17:00" class="form-control work-control pm end" >
+                                            <i class="icon-times"></i>
+                                          </div>
+                                       </div>
+                                   </dd>
+                                   <div class="clear"></div>
+                                   <div class="error-div tac m-t-10"><label class="red">*请选择报价日报价有效时段</label></div>
+                               </dl>
+
+                               <div class="m-t-10"></div>
+                               <dl class="work-list-wrapper">
+                                   <dt class="fl">不报价休息日程：</dt>
+                                   <dd class="fl ">
+                                       <div class="no-offer">
+                                           <span>1. 开始时间</span>
+                                           <div class="btn-group m-r time-sl">
+                                              <div class="form-group psr pdi-control">
+                                                <input readonly="" type="text" placeholder="1900-01-01" class="form-control select-time-control start" onfocus="WdatePicker({startDate:'1900-01-01',dateFmt:'yyyy-MM-dd' });">
+                                                <i class="rili"></i>
+                                              </div>
+                                           </div>
+                                           <span class="ml20">结束时间</span>
+                                           <div class="btn-group m-r time-sl">
+                                              <div class="form-group psr pdi-control">
+                                                <input readonly="" type="text" placeholder="1900-01-01" class="form-control select-time-control end" onfocus="WdatePicker({startDate:'1900-01-01',dateFmt:'yyyy-MM-dd' });">
+                                                <i class="rili"></i>
+                                              </div>
+                                           </div>
+                                           <a href="#" class="juhuang tdu reset">重置</a>
+                                       </div>
+                                       <div class="split-blue"></div>
+                                       <div class="clear"></div>
+                                       <div class="no-offer">
+                                           <span>2. 开始时间</span>
+                                           <div class="btn-group m-r time-sl">
+                                              <div class="form-group psr pdi-control">
+                                                <input readonly="" type="text" placeholder="1900-01-01" class="form-control select-time-control start" onfocus="WdatePicker({startDate:'1900-01-01',dateFmt:'yyyy-MM-dd' });">
+                                                <i class="rili"></i>
+                                              </div>
+                                           </div>
+                                           <span class="ml20">结束时间</span>
+                                           <div class="btn-group m-r time-sl">
+                                              <div class="form-group psr pdi-control">
+                                                <input readonly="" type="text" placeholder="1900-01-01" class="form-control select-time-control end" onfocus="WdatePicker({startDate:'1900-01-01',dateFmt:'yyyy-MM-dd' });">
+                                                <i class="rili"></i>
+                                              </div>
+                                           </div>
+                                           <a href="#" class="juhuang tdu reset">重置</a>
+                                       </div>
+                                       
+                                       <div class="error-div tac m-t-10"><label class="red">*设置的时间有误，请重新选择~</label></div>
+                                       <div class="error-div tac"><label class="red">*结束时间不得早于开始时间，请重新选择~</label></div>
+                                       <div class="error-div tac"><label class="red">*不报价休息日程的日期不能有交叉，请重新选择</label></div>
+
+                                   </dd>
+                                   <div class="clear"></div>
+
+                               </dl>
+                               <div class="m-t-10"></div>
+                               <div class="m-t-10"></div>
+                               <p class="tac mt10">
+                                   <a href="javascript:;" class="btn btn-danger fs16 btn-work">确认</a>
+                                   <a href="javascript:;" class="btn btn-danger fs16 sure ml50">返回</a>
+                                </p>
+                           </div>
+
+                            <div class="report-result none">
+                                <p><b><span class="blue">当前日期：</span><span id="time-span">2016-03-09 周四</span></b></p>
+                                <table class="tbl custom-info-tbl">
+                                    <tr>
+                                        <td width="180" class="tac"><label class="nomargin">可报价常规日期</label></td>
+                                        <td width="595">
+                                            <dl class="work-list-wrapper work-list-wrapper-split">
+                                               <dd class="fl day">
+                                                   <lable><input type="checkbox" name="" id=""><span>周一</span></lable>
+                                                   <lable><input type="checkbox" name="" id=""><span>周二</span></lable>
+                                                   <lable><input type="checkbox" name="" id=""><span>周三</span></lable>
+                                                   <lable><input type="checkbox" name="" id=""><span>周四</span></lable>
+                                                   <lable><input type="checkbox" name="" id=""><span>周五</span></lable>
+                                                   <lable><input type="checkbox" name="" id=""><span>周六</span></lable>
+                                                   <lable><input type="checkbox" name="" id=""><span>周日</span></lable>
+                                               </dd>
+                                               <div class="clear"></div>
+                                            </dl>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td width="180" class="tac"><label class="nomargin">报价日报价有效时段</label></td>
+                                        <td width="595">
+                                             <div class="row">
+                                                 <div class="col-md-3 col-xs-3  ml10">上午开始 <span class="time-dlp">9:00</span></div>
+                                                 <div class="col-md-3 col-xs-3">上午结束 <span class="time-dlp">12:00</span></div>
+                                             </div>
+                                             <div class="row mt10">
+                                                 <div class="col-md-3 col-xs-3  ml10">下午开始  <span class="time-dlp">13:00</span></div>
+                                                 <div class="col-md-3 col-xs-3">下午结束 <span class="time-dlp">17:00</span></div>
+                                             </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="180" class="tac"><label class="nomargin">不报价休息日程</label></td>
+                                        <td width="595">
+                                             <div class="row">
+                                                 <div class="col-md-4 col-xs-4  ml10">1. 开始日 <span class="time-dlp-long">2015-12-03</span> </div>
+                                                 <div class="col-md-4 col-xs-4">结束日  <span class="time-dlp-long">2015-12-03</span></div>
+                                             </div>
+                                             <div class="row mt10">
+                                                 <div class="col-md-4 col-xs-4  ml10">2. 开始日 <span class="time-dlp-long">2016-02-06</span> </div>
+                                                 <div class="col-md-4 col-xs-4">结束日 <span class="time-dlp-long">2016-02-14</span></div>
+                                             </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p class="text-right"><a href="javascript:;" class="juhuang tdu modify-work">修改</a></p>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </form>
+                    <div class="m-t-200"></div>
+                
+                  <div id="SelectTimeWin" class="popupbox" am-start="09:00" pm-start="13:00">
+                      <div class="popup-title">选择时间</div>
+                      <div class="popup-wrapper">
+                          <div class="popup-content">
+                               <div class="m-t-10"></div>
+                               <div class="time-fn-box">
+                                   <div class="time-show-wrapper time-hours fl">
+                                       <div class="minus">-</div>
+                                       <div class="center-c">
+                                           <div class="center-split"></div>
+                                           <span class="center-txt double">12</span>
+                                       </div>
+                                       <div class="add">+</div>
+                                   </div>
+                                   <div class="colon fl">:</div>
+                                   <div class="time-show-wrapper fl">
+                                       <div class="minus">-</div>
+                                       <div class="center-c">
+                                           <div class="center-split"></div>
+                                           <span class="center-txt" min="0" max="5">0</span>
+                                       </div>
+                                       <div class="add">+</div>
+                                   </div>
+                                   <div class="time-show-wrapper fl ml10">
+                                       <div class="minus">-</div>
+                                       <div class="center-c">
+                                           <div class="center-split"></div>
+                                           <span class="center-txt" min="0" max="9">0</span>
+                                       </div>
+                                       <div class="add">+</div>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                               <div class="m-t-10"></div>
+                               <div class="error-div tac" id="time-select-error">
+                                   <label class="red">*结束时间不得早于开始时间，请重新选择~</label>
+                               </div>
+                               
+                          </div>
+                          <div class="popup-control">
+                              <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 do">确定</a>
+                              <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure w100 ml20">返回</a>
+                              <div class="clear"></div>
+                          </div>
+                      </div>
+                  </div>
+
+                  
+ 
+ 
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="box" ms-include-src="footernew"></div>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+    
+    <script type="text/javascript">
+        seajs.use(["module/custom/custom_admin","module/custom/custom.admin.common.jquery","module/custom/custom.admin.work.jquery", "module/common/common", "bt"],function(a,b,c){
+         
+        });
+    </script>
+
+
+
+</body>
+</html>
+
+
