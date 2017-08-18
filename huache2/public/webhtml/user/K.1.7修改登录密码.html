@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>K.1.7修改登录密码 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的财务</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#">我的文件</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content">
+                    <h4 class="blue-title"><span class="fs14">修改密码</span><div class="mt5"></div></h4>
+                    <div class="content-wapper ">
+                        <div class="hd">
+                           <ul>
+                                <li><span>1</span><label>验证身份</label></li>
+                                <li class="cur"><span>2</span><label class="juhuang">修改登录密码</label></li>
+                                <li><span>3</span><label>完成</label></li>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>
+                        <div class="form" v-cloak>
+                            <br><br>
+                            <input type="hidden" name="token" value="">
+                            <table class="wp100 pwd-tbl ml50" >
+                                <tr>
+                                    <td align="right">原密码</td>
+                                    <td>
+                                        <div class="input-wrapper ml20">
+                                            <input v-cloak  @blur="checkPwdS" @focus="setPwd3Status" maxlength="20" v-model="form.pwdS" :value="form.pwd" placeholder="" name="pwd" type="text" :class="{'form-input':true,'form-input-def':true,'error-bg':pwd3InputStatus==2 || pwd3InputStatus==3}" />
+                                        </div>
+                                        <span v-cloak class="form-error" v-show="pwd3InputStatus==3">
+                                            <i class="error-icon error-icon-error fl"></i>
+                                            <span class="fl mt5">不足6位</span>
+                                            <span class="clear"></span>
+                                        </span>
+                                        <span v-cloak class="form-error" v-show="sourcePwd == 2">原密码输入错误，请重新尝试~</span>
+                                        <span v-cloak class="form-error" v-show="sourcePwd == 3">原密码输入错误，您还有{{count}}次机会~</span>
+                                        <span v-cloak class="error-error reg-icon-success" v-show="pwdInputStatus == 1"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">设置密码</td>
+                                    <td>
+                                        <div class="input-wrapper ml20">
+                                            <input v-cloak v-show="isOpenEye" @blur="checkPwd" @focus="setPwdStatus" maxlength="20" v-model="form.pwd" :value="form.pwd" placeholder="6-20位数字、符号或字母（区分大小写）组合" name="pwd" type="text" :class="{'form-input':true,'form-input-def':true,'error-bg':pwdInputStatus==2 || pwdInputStatus==3}" />
+                                            <div v-show="!isOpenEye" class="psr">
+                                                <input v-cloak v-model="form.pwd" @blur="checkPwd" @focus="setPwdStatus" maxlength="20" :value="form.pwd" name="pwd" type="password" :class="{'form-input':true,'form-input-def':true,'error-bg':pwdInputStatus==2 || pwdInputStatus==3}"/>
+                                                <span v-show="!isPwdInput" class="pwd-see" @click="pwdSee">6-20位数字、符号或字母（区分大小写）组合</span>
+                                            </div>
+                                            <div class="icon-wrapper">
+                                                <span v-cloak v-show="isOpenEye" @click="openEye" class="reg-icon reg-icon-eye-on pointer">>隐藏</span>
+                                                <span v-cloak v-show="!isOpenEye" @click="openEye" class="reg-icon reg-icon-eye-off pointer">>显示</span>
+                                            </div>
+                                        </div>
+                                        <div class="pwd-strong" v-show="seePwdStrong && pwdInputStatus != 1">
+                                            <label>安全程度：</label>
+                                            <span :class="{'p-s-less':true, pwdcur:pwdStrongStatus==1}">弱</span>
+                                            <span :class="{'p-s-normal':true, pwdcur:pwdStrongStatus==2}">中</span>
+                                            <span :class="{'p-s-max':true, pwdcur:pwdStrongStatus==3}">强</span>
+                                        </div>
+                                        <span v-cloak class="form-error" v-show="pwdInputStatus==3">
+                                            <i class="error-icon error-icon-error fl"></i>
+                                            <span class="fl mt5">不足6位</span>
+                                            <span class="clear"></span>
+                                        </span> 
+                                        <span v-cloak class="error-icon error-icon-success" v-show="pwdInputStatus == 1"></span>
+                                    </td>
+                                </tr>
+                                <tr v-cloak v-show="!isOpenEye">
+                                    <td align="right">重复密码</td>
+                                    <td>
+                                        <div class="psr inline-block ml20">
+                                            <input @blur="checkPwd2" @focus="setPwd2Status" v-model="form.pwd2" :value="form.pwd2" maxlength="20" name="pwd2" type="password" :class="{'form-input':true,'form-input-def':true,'error-bg':pwd2InputStatus==2 || pwd2InputStatus==3}"/>
+                                            <span v-show="!isPwd2Input" class="pwd-see" @click="pwdSee">再输入一遍密码</span>
+                                        </div>
+                                        <span v-cloak class="form-error" v-show="pwd2InputStatus==3">
+                                            <i class="error-icon error-icon-error fl"></i>
+                                            <span class="fl mt5">两次密码输入不一致</span>
+                                            <span class="clear"></span>
+                                        </span> 
+                                        <span v-cloak class="error-icon error-icon-success" v-show="pwd2InputStatus == 1"></span>
+                                    </td>
+                                </tr>
+                                
+                                
+                            </table>
+                            
+                            
+                            <p class="tac"><button @click="send" type="submit" class="btn btn-s-md btn-danger w120 mt20">下一步</button></p>
+                        </div>
+                        <div class="m-t-10"></div>
+                        <div class="m-t-10"></div>
+                        <div class="m-t-10"></div>
+
+                    </div>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-pwd-step2", "module/common/common"],function(v,u,c){
+             
+        })
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>k2.23代金券激活 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的余额</a>
+                                        <a href="#">我的转入</a>
+                                        <a href="#">我的转出</a>
+                                        <a href="#" class="menu-select">我的福利</a>
+                                        <a href="#">我的发票</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#">我的文件</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content">
+                     
+                    <div class="content-wapper ">
+                        <div class="m-t-10"></div>
+                        <div class="gray-title-bg">
+                            <p class="fs16 nomargin">我的代金卷  >   <span class="juhuang">代金卷激活</span></p>
+                        </div>
+                        <a href="#" class="fr juhuang mt10">华车代金券规则说明</a>
+                        <div class="clear"></div>
+                        <div class="ml10">
+                            <p><b class="juhuang">代金券激活</b></p>
+                            <p class="p-gray">赶快通过激活码来激活代金券吧~</p>
+                        </div>
+                        <div class="activation-wrapper">
+                            <span>激活码：</span>
+                            <input type="text" v-model="activationCode" :value="activationCode" class="activation-txt" placeholder="请您输入8位编码进行代金券激活" />
+                            <input type="button" @click="activation" value="激 活" class="btn-activation ml10" />
+                        </div>
+
+                        <div id="noneWin" class="popupbox">
+                            <div class="popup-title">&nbsp;</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <div class="m-t-10"></div>
+                                    <p class="fs14 pd tac">
+                                       <br> 
+                                       <span class="tip-text fs14 text-left inline-block">客官，您需要输入正确的激活码才能进行代金券的激活哦~</span>
+                                       <div class="clear"></div>
+                                       <br>
+                                    </p>
+                                    <div class="m-t-10"></div>
+                                </div> 
+                                <div class="popup-control">
+                                    <a href="javascript:;" @click="sure" class="btn btn-s-md btn-danger fs14 do w100 ">确认</a>
+                                    <div class="clear"></div>
+                                    <p class="mt10"><span class="red">{{countDownNum}}秒后自动跳转至代金券激活页</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="codeErrorWin" class="popupbox">
+                            <div class="popup-title">&nbsp;</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <div class="m-t-10"></div>
+                                    <p class="fs14 pd tac">
+                                       <br> 
+                                       <span class="tip-text fs14 text-left inline-block">客官，因激活码错误无法进行代金券激活，核对后再试下吧~</span>
+                                       <div class="clear"></div>
+                                       <br>
+                                    </p>
+                                    <div class="m-t-10"></div>
+                                </div> 
+                                <div class="popup-control">
+                                    <a href="javascript:;" @click="sure" class="btn btn-s-md btn-danger fs14 do w100 ">重新输入</a>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="countErrorWin" class="popupbox">
+                            <div class="popup-title">&nbsp;</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <div class="m-t-10"></div>
+                                    <p class="fs14 pd tac">
+                                       <br> 
+                                       <span class="tip-text fs14 tac inline-block">客官，激活码误输入次数太多啦，喝杯茶休息下半小时后再来激活吧~</span>
+                                       <div class="clear"></div>
+                                       <br>
+                                    </p>
+                                    <div class="m-t-10"></div>
+                                </div> 
+                                <div class="popup-control">
+                                    <a href="javascript:;" @click="sure" class="btn btn-s-md btn-danger fs14 do w100 ">确认</a>
+                                    <div class="clear"></div>
+                                    <p  class="mt10"><span class="red">{{countDownNum}}秒后自动跳转我的福利页</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="successWin" class="popupbox">
+                            <div class="popup-title">&nbsp;</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <div class="m-t-10"></div>
+                                    <p class="fs14 pd tac">
+                                       <br> 
+                                       <span class="tip-text fs14 tac inline-block">客官，代金券已成功激活，券编号为{{sn}}，赶快去使用吧~</span>
+                                       <div class="clear"></div>
+                                       <br>
+                                    </p>
+                                    <div class="m-t-10"></div>
+                                </div> 
+                                <div class="popup-control">
+                                    <a href="k.2.15我的福利.html"  class="btn btn-s-md btn-danger fs14 do w100 ">查看详情</a>
+                                    <a href="k2.23代金券激活.html"  class="btn btn-s-md btn-danger fs14 sure w100 ml20">继续激活</a>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="usedWin" class="popupbox">
+                            <div class="popup-title">&nbsp;</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <div class="m-t-10"></div>
+                                    <p class="fs14 pd tac">
+                                       <br> 
+                                       <span class="tip-text fs14 tac inline-block">客官，该激活码已经被激活过了哦~</span>
+                                       <div class="clear"></div>
+                                       <br>
+                                    </p>
+                                    <div class="m-t-10"></div>
+                                </div> 
+                                <div class="popup-control">
+                                    <a href="javascript:;" @click="sure" class="btn btn-s-md btn-danger fs14 do w100 ">确认</a>
+                                    <div class="clear"></div>
+                                    <p  class="mt10"><span class="red">{{countDownNum}}秒后自动跳转我的福利页</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="vouchers-list-end">
+                            <a href="#" class="juhuang list-link">华车代金券规则说明</a>
+                        </div>
+                        <div class="m-t-10" v-for="i in 15"></div> 
+
+                    </div>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-activation", "module/common/common"],function(v,u,c){
+            
+        })
+    </script>
+
+</body>
+</html>
+
+

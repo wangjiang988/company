@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>K.2.30可用余额充值线上支付 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content ">
+        <div class="wapper has-min-step content-wapper">
+            <p><b class="blue">充值</b></p>
+            <div class="box box-border top-border  fs14 p20">
+                <p>可用余额：￥100.00</p>
+                <a href="K.2.30可用余额充值线上支付.html"><span class="tab ml50">线上支付</span></a>
+                <a href="K.2.33可用余额充值银行转账.html"><span class="tab ml50 tab-empty">银行转账</span></a>
+                <div class="box-border pay-box">
+                 <form action="/order/payform/" method="post" name="payform">
+                     <div class="clear m-t-10"></div>
+
+                     <ul class="price-ul average">
+                         <li @click="selectPayMethod(0,$event)"><span class="selectpay"></span><img src="themes/images/OK.ZF_03.png"/></li>
+                         <li @click="selectPayMethod(1,$event)"><span></span><img src="themes/images/F.C_05.gif"/></li>
+                         <li @click="selectPayMethod(2,$event)"><span></span><img src="themes/images/F.C_07.gif"/></li>
+                         <input v-model="payMethod" type="hidden" name="paymethod" :value="payMethod">
+                         <div class="clear"></div>
+                     </ul>
+                     <div class="clear"></div>
+
+                     <table class="ml50 mt20">
+                         <tr>
+                             <td width="80">温馨提示：</td>
+                             <td>
+                                 单次购车，线上预充值额度￥1,000.00，您的剩余额度<span class="juhuang">￥50.00</span>。
+                             </td>
+                         </tr>
+                         <tr>
+                             <td></td>
+                             <td>
+                                  如未购车，线上预充值款可免费退款提现。
+                             </td>
+                         </tr>
+                         <tr>
+                             <td></td>
+                             <td>
+                                  如需充值更多，建议使用银行转账方式。
+                             </td>
+                         </tr>
+                     </table>
+                     <div class="m-t-10"></div>
+
+                     <div class="box">
+                         
+                         <div class="form-group psr pdi-control fs14 tac m-t-10 ml50 pl10">
+                            <span>充值金额：  ￥</span>
+                            <input @focus="initErrorStatus" v-model.number="price" :value="price" type="text" data-price-max="1000" name="payprice" placeholder="0~8000.00" class="form-control pay-control">
+                            <span class="edit pay-edit-left"></span>
+                            <a href="#" class="juhuang tdu">支付帮助</a>
+                            <p class="hide inputerror juhuang m-t-10 red fs14" :class="{show:errorStatus==2}">您输入的不全是数字，不合规则，请重输！</p>
+                            <p class="hide inputerror juhuang m-t-10 red fs14" :class="{show:errorStatus==3}">您输入的金额已超过订单所需金额，请重新输入！</p>
+                          </div>
+                          <div class="m-t-10"></div>
+                          
+                          <div class="m-t-10"></div>
+                          <div class="clear"></div>
+                           
+                            <div class="clear"></div>
+
+                          </div>
+                          
+ 
+                          
+                          <div class="m-t-10 tac">
+                              <p class="hide error red fs14 showerror" :class="{show:errorStatus==0}">充值金额不能为空哦～</p>
+                              <a @click="subPayForm" href="javascript:;" class="btn fs16 btn-s-md btn-danger  btn-auto mt10">确认向本账户13911345678充值</a>
+                              <a href="javascript:;" class="ml50 tdu juhuang fs14">返回</a>
+                          </div>
+
+
+                          <table class="ml50 mt20">
+                             <tr>
+                                 <td width="80">温馨提示：</td>
+                                 <td>
+                                     单次购车，线上预充值额度￥1,000.00，您的剩余额度<span class="juhuang">￥0.00</span>。
+                                 </td>
+                             </tr>
+                             <tr>
+                                 <td></td>
+                                 <td>
+                                      您可使用银行转账方式充值哦～
+                                 </td>
+                             </tr>
+                         </table>
+                         
+                          <div class="m-t-10 tac">
+                              <a href="k.2.33页面" class="btn fs16  btn-danger mt10">> > 去银行转账</a>
+                              <a href="javascript:;" class="ml50 tdu juhuang fs14">返回</a>
+                          </div>
+                          <div class="m-t-10"></div>
+                          <div class="m-t-10"></div>
+                          <div class="m-t-10"></div>
+
+
+                      </div> 
+
+
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+ 
+
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-available-balance-top-up-online-payment", "module/common/common"],function(v,u,c){
+            u.initMaxPrice(2500)
+        })
+    </script>
+
+</body>
+</html>
+
+

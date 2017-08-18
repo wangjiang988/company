@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>k.2.5维护提现开户行信息 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content ">
+        <div class="wapper has-min-step content-wapper">
+            <p class="blue">提现路线 > 维护开户行信息</p>
+            <div class="box box-border top-border p10">
+                    <form action="/user/brankinfo" method="post">
+                        <table class="noborder-tbl wp100">
+                            <tr>
+                                <td width="150" align="right" valign="middle">
+                                    <span class="ml5 fr mt5 fs14 weight">开户行：</span>
+                                    <span class="ml5 fr mt5 red">*</span>
+                                    <div class="clear"></div>
+                                </td>
+                                <td width="600" class="bank-area">
+                                    <province-city v-on:receive-params="getArea" def-value="请选择·开户地区" is-select-province="false"></province-city>
+                                    <div class="form-group psr pdi-control fs14  m-t-10 ml10">
+                                        <input @focus="initBankInfo" @blur="checkBankInfo" v-model="bankInfo" type="text" name="bank-info" placeholder="开户行请填完整，如：招商银行苏州分行干将路支行" class="form-control form-control-large" :class="{'w125':true,'error-bg':isBankInfo}">
+                                        <span class="edit es-edit"></span>
+                                        <p class="hide inputerror juhuang m-t-10 ml20">请正确输入金额</p>
+                                    </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <td align="right" class="fs14">
+                                    <p><b>账  号：</b></p>
+                                </td>
+                                <td>
+                                    <p class="fs14"><span v-cloak>{{splitBrank('6217002710000684874')}}</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" class="fs14">
+                                    <p><b>户  名：</b></p>
+                                </td>
+                                <td>
+                                    <p class="fs14">刘子墨</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+              
+               
+                    <p class="tac red hide" :class="{show:isError}">开户行信息务必完整哦！</p>
+                    <p class="mt20 tac">
+                        <a @click="send" href="javascript:;" class="btn btn-danger">确定</a>
+                        <a href="javascript:;" class="btn btn-danger sure ml50">返 回</a>
+                    </p>
+
+                    <div class="m-t-10"></div>
+                    <div class="m-t-10"></div>
+                    <div class="m-t-10"></div>
+ 
+
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-maintain-bank", "module/common/common"],function(v,u,c){
+             
+
+        })
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>k.2.3提现额度管理 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content ">
+        <div class="wapper has-min-step content-wapper">
+            <p class="blue">提现额度</p>
+            <div class="box box-border top-border p10">
+                <div class="ml20 fs14 mt10">
+                    <p v-cloak><b>待用提现额度合计：{{formatMoney(36025.87,2,"￥")}}</b></p>
+                    <p class="p-gray fs12">待用提现额度之和</p>
+                </div>
+                <p class="blue">提现收款方额度明细说明</p>
+                <div class="split-blue"></div>
+                <span class="pull-right">
+                    <label><input checked="" type="checkbox" name="" id=""><span class="noweight blue fs14 ml5">只看有排序</span></label>
+                </span>
+                <div class="clear"></div>
+
+                <!--没有记录就显示下面的话-->
+                <div class="box list-empty-wrapper">
+                    <p class="tac weight fs16 mt50">客官，您向华车转入资金后才有提现额度哦～</p>
+                    <div class="m-t-10" v-for="i in 5"></div>
+                </div>
+
+                
+                <table class="tbl mt20 tbl-gray-border">
+                    <tr>
+                        <th><span class="noweight">转入时间</span></th>
+                        <th><span class="noweight">转入方式</span></th>
+                        <th><span class="noweight">转入方<br>（提现收款方）</span></th>
+                        <th><span class="noweight">提现额度有效时限</span></th>
+                        <th><span class="noweight">转入金额<br>（提现总额度）</span></th>
+                        <th><span class="noweight">已提现额度</span></th>
+                        <th><span class="noweight">待用提现额度</span></th>
+                        <th><span class="noweight">提现排序</span></th>
+                    </tr>
+                    <tbody class="fs14" v-cloak>
+                        <tr>
+                            <td>2017-02-14 09:37:55</td>
+                            <td>线上支付</td>
+                            <td class="blue-bg">支付宝123***</td>
+                            <td>2017-05-14 24:00:00</td>
+                            <td>{{formatMoney(3126,2,"￥")}}</td>
+                            <td>{{formatMoney(0,2,"￥")}}</td>
+                            <td class="blue-bg">{{formatMoney(3126,2,"￥")}}</td>
+                            <td class="blue-bg">1</td>
+                        </tr>
+                        <tr>
+                            <td>2016-12-13 09:37:54</td>
+                            <td>银行转账</td>
+                            <td class="blue-bg">***8978王***</td>
+                            <td>2017-12-13 24:00:00</td>
+                            <td>{{formatMoney(499,2,"￥")}}</td>
+                            <td>{{formatMoney(0,2,"￥")}}</td>
+                            <td class="blue-bg">{{formatMoney(499,2,"￥")}}</td>
+                            <td class="blue-bg">2</td>
+                        </tr>
+                        <tr>
+                            <td>2016-12-12 09:37:55</td>
+                            <td>线上支付</td>
+                            <td class="blue-bg">支付宝123***</td>
+                            <td>2017-03-11 24:00:00</td>
+                            <td>{{formatMoney(3126,2,"￥")}}</td>
+                            <td>{{formatMoney(3126,2,"￥")}}</td>
+                            <td class="blue-bg">{{formatMoney(0,2,"￥")}}</td>
+                            <td class="blue-bg"></td>
+                        </tr>
+                        <tr>
+                            <td>2016-12-08 09:37:54</td>
+                            <td>银行转账</td>
+                            <td class="blue-bg">***8978王***</td>
+                            <td>2017-12-08 24:00:00</td>
+                            <td>{{formatMoney(499,2,"￥")}}</td>
+                            <td>{{formatMoney(499,2,"￥")}}</td>
+                            <td class="blue-bg">{{formatMoney(0,2,"￥")}}</td>
+                            <td class="blue-bg"></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                <div class="pageinfo ml200">
+                    <a href="#">上一页</a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <span class="empty">...</span>
+                    <a href="#">下一页</a>
+                    <label>共100页</label>
+                </div>
+                <div class="clear"></div>
+                
+
+                <table class="fs14 mt20">
+                    <tr>
+                        <td valign="top" width="70">温馨提示：</td>
+                        <td>
+                            <div class="tal">
+                                <p>1.根据银行和税务相关监管的要求，华车提现资金的收款方原则上应与转入方账户一致。</p>
+                                <p>2.提现额度的使用，按照转入时间从近到远的顺序进行，即新转入的先使用提现额度。</p>
+                                <p>3.线上支付的提现额度有效时限，视您所用的支付机构退款有效期而定；所有超过一年的转入款，待用提现额度自动归零。</p>
+                                <p>4.提现收款方的详细信息，参见提<a href="k.2.4提现路线管理.html" class="juhuang tdu">现路线管理</a>。</p>
+                                <p>5.在提现时如待用提现额度不足，可通过绑定实名认证华车账号主人的银行账户，从而完成剩余金额的提现。</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="mt20 tac">
+                    <a href="javascript:;" class="btn btn-danger sure ml50">关闭</a>
+                </p>
+
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+ 
+
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-base", "module/common/common"],function(v,u,c){
+             
+
+        })
+    </script>
+
+</body>
+</html>
+
+

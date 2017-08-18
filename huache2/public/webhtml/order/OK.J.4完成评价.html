@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OK.J.4完成评价 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="../common/css/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="container m-t-86 pos-rlt">
+        <div class="step psr">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li class="step-cur">完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+           
+        </div>
+    </div>
+
+    <div class="container pos-rlt content r-pdi">
+
+        <div class="wapper has-min-step">
+            <h1>尊敬的客户：</h1>
+            <h1 class="ti psr">
+                华车以靠谱电商为己任，以加信社会为愿景。我们深深知道：正是客户对华车的一份份厚爱，才给了我们成长的源源动力。我们将以行动不断提升客户购车体验，为客户也为社会创造更大的价值。感谢您以实际行动为信用社会作出的贡献，感恩有您的一路相伴！您的购车之旅，已成为我们长久珍藏美好记忆～
+            </h1>
+            <p class="tar mt20"><a href="#" class="tdu juhuang">查看订单总详情</a></p>
+            <div class="timeline-wrapper">
+                <div class="time-tpl-wapper">
+                    <div class="time-tpl-item time-tpl-right">
+                        <p>2017年3月7日</p>
+                        <p class="juhuang">诚意预约</p>
+                    </div>
+                    <div class="time-tpl-item time-tpl-left">
+                        <p>2017年3月9日</p>
+                        <p class="juhuang">付担保金</p>
+                    </div>
+                    <div class="time-tpl-item time-tpl-right">
+                        <p>2017年3月12日</p>
+                        <p class="juhuang">预约交车</p>
+                    </div>
+                    <div class="time-tpl-item time-tpl-left">
+                        <p>2017年3月15日</p>
+                        <p class="juhuang">付款提车</p>
+                    </div>
+                    <div class="time-tpl-item time-tpl-right">
+                        <p>2017年3月18日</p>
+                        <p class="juhuang">退担保金</p>
+                    </div>
+                    <div class="time-tpl-item time-tpl-left">
+                        <p>2017年3月20日</p>
+                        <p class="juhuang">完成评价</p>
+                    </div>
+                    <div class="time-over">
+                        <p class="juhuang weight">一路平安！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+
+  
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        
+        seajs.use(["../common/js/vendor/vue.min","module/order/order-wait", "module/common/common"],function(v,u,c){
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="7"
+   name=""
+   committed-date="2010-09-22T16:45:37.167509Z"
+   url="https://helleworldjava.googlecode.com/svn/trunk/hl/WebRoot/js/DatePicker/skin"
+   last-author="nick2311@gmail.com"
+   kind="dir"
+   repos="https://helleworldjava.googlecode.com/svn"
+   revision="44"/>
+<entry
+   committed-rev="7"
+   name="datePicker.gif"
+   text-time="2010-08-15T14:22:12.937000Z"
+   committed-date="2010-09-22T16:45:37.167509Z"
+   checksum="d6bfd22c5e8cdb08165658ea9cc40be7"
+   last-author="nick2311@gmail.com"
+   kind="file"
+   prop-time="2010-09-22T16:45:35.187500Z"/>
+<entry
+   name="default"
+   kind="dir"/>
+<entry
+   name="whyGreen"
+   kind="dir"/>
+<entry
+   committed-rev="7"
+   name="WdatePicker.css"
+   text-time="2010-08-15T14:22:12.968000Z"
+   committed-date="2010-09-22T16:45:37.167509Z"
+   checksum="53a188a6659467c66b46ded6f8e0484a"
+   last-author="nick2311@gmail.com"
+   kind="file"/>
+</wc-entries>

@@ -1,0 +1,354 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>S.Z.3加信宝 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="/webhtml/user/themes/bootstrap.css " rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border noborder nopadding">
+                <div class="slide slide-fix">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                        
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">欢迎页 </a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">常用管理 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">常用车型</a>
+                                        <a href="#" class="">保险设定</a>
+                                        <a href="#" class="">客户文件</a>
+                                        <a href="#" class="">工作时段</a>
+                                        <a href="#" class="">增加经销商</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">开始新建</a>
+                                        <a href="#">新建未完(6)</a>
+                                        <a href="#">等待生效(9)</a>
+                                        <a href="#">正在报价(6)</a>
+                                        <a href="#">暂时下架(6)</a>
+                                        <a href="#">失效报价(6)</a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">执行中(17)</a>
+                                        <a href="#">已结束(1)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">总 览</a>
+                                        <a class="menu-select" href="#">资 金 池</a>
+                                        <a href="#">加 信 宝</a>
+                                        <a href="#">充值</a>
+                                        <a href="#">提现</a>
+                                        <a href="#">结算</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#">交车预备管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-content custom-content-with-margin  psr">
+                        <p class="mt20">
+                            <img src="/webhtml/common/images/jxb.gif" class="fl" />
+                            <span class="ml10 fl mt-2">冻结中的浮动保证金：￥1,200.00</span>
+                        </p>
+                        <div class="clear"></div>
+                        <hr class="dashed" />
+                        <div class="mt20 psr">
+                            <span class="ml50 fl mt5">订单号：</span>
+                            <input v-model="sn" :value="sn" @focus="displaySnList" @blur="displaySnList" @keypress="getSnList" type="text" placeholder="" class="form-control w179 fl" >
+                            <div class="hide snlist box-border" :class="{show:isShowSnList}">
+                                <p class="nomargin" @click="setSn(sn)" v-for="sn in snList">{{sn}}</p>
+                            </div>
+                            <span class="ml20 fl mt5">冻结金额：</span>
+                            <drop-down name="priceStatus" id="priceStatus" @receive-params="getStatus" :list="priceStatusList" def-value="全部" class-name="btn-dropdown-normal"></drop-down>
+                            <a href="javascript:;" class="btn btn-s-md btn-danger bt ml50">查找</a>
+                            <a href="javascript:;" class="btn btn-s-md btn-danger sure bt ml20">重置</a>
+                        </div>
+
+                        <div class="clear"></div>
+                        <div class="mauto tac">
+                            <br><br> 
+                            
+                            <table class="tbl tbl-time tbl-gray wp70">
+                                <tr>
+                                    <th width="124" class="fs16">订单号</th>
+                                    <th width="185" class="fs16">订单时间</th>
+                                    <th width="110" class="fs16">冻结余额</th>
+                                    <th width="97" class="fs16">操作</th> 
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class="p fs14">123456789</p>
+                                    </td>
+                                    <td> 
+                                        <p class="p fs14">2017-04-27 14:27:55</p>
+                                    </td>
+                                    <td>
+                                        <p class="p fs14 tar">￥543.00</p>
+                                    </td>
+                                    <td>
+                                        <p class="p fs14"><a @click="view(110,543)" href="javascript:;" class="blue tdu">查看</a></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="mt20"></div>
+                                        <p class="p fs14 tac">   您还没有订单记录，加油！祝您早日开张！~</p>
+                                        <div class="mt20"></div>
+                                    </td>
+                                </tr> 
+                            </table>
+                            <br>
+
+                        </div>
+
+
+                        <div class="pageinfo ml200">
+                            <a href="#">上一页</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <span class="empty">...</span>
+                            <a href="#">下一页</a>
+                            <label>共100页</label>
+                        </div>
+                        <div class="clear "></div>
+                        <div class="mt20"></div>
+                        <div class="clear"></div>
+                          
+
+                        <div class="m-t-10" v-for="i in 5"></div>
+
+                        <div id="viewWin" class="popupbox">
+                            <div class="popup-title">查看冻结余额明细</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <p class="fs14 tac">
+                                       <br> 
+                                       <div class="tip-text fs14 text-left inline-block">
+                                            <p class="fs14">订单号：142520410</p>
+                                            <table class="tbl tac tbl-time tbl-gray ">
+                                                <tr>
+                                                    <th width="128" class="fs16">冻结/解冻</th>
+                                                    <th width="185" class="fs16">项目</th>
+                                                    <th width="240" class="fs16">说明</th>
+                                                    <th width="125" class="fs16">冻结增减金额 </th> 
+                                                </tr>
+                                                <tr v-for="view in viewList">
+                                                    <td>
+                                                        <p class="p fs14">{{view.status}}</p>
+                                                    </td>
+                                                    <td> 
+                                                        <p class="p fs14">{{view.project}}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="p fs14">{{view.info}}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="p fs14">
+                                                            <span class="fl" v-if="view.isNegative">-</span>
+                                                            <span class="fl" v-if="!view.isNegative">+</span>
+                                                            <span class="fr">{{formatMoney(view.price,2,"￥")}}</span>
+                                                        </p>
+                                                        <div class="clear"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="4">
+                                                        <div class="mt20"></div>
+                                                        <p class="p fs14 tac">   您还没有订单记录，加油！祝您早日开张！~</p>
+                                                        <div class="mt20"></div>
+                                                    </td>
+                                                </tr> 
+                                            </table>
+                                            <p class="tar fs14">
+                                                冻结余额：{{formatMoney(money,2,"￥")}}
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            </p>
+                                       </div>
+                                       <div class="clear"></div>
+                                       <br>
+                                    </p>
+                                    <div class="m-t-10"></div>
+                                </div> 
+                                <div class="popup-control">
+                                    <a href="javascript:;" @click="closeView" class="btn btn-s-md btn-danger fs14 do w100 ">确认</a>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="/webhtml/common/js/vendor/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/custom/custom-treasure", "module/common/common"],function(v,u,c){
+             
+        })
+    </script>
+
+</body>
+</html>
+
+

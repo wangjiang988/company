@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>K.1.30银行账户文件新增 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border noborder">
+                <div class="slide slide-fix">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的财务</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#" class="menu-select">我的提交</a>
+                                        <a href="#">我的下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content user-content-with-margin marign-top-tab psr">
+                    <ul class="tab-card">
+                        <li>
+                            <a href="javascript:;">实名认证</a>
+                        </li>
+                        <li class="cur">
+                            <a href="javascript:;">银行账户认证</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">上牌特殊文件</a>
+                        </li>
+                    </ul>
+                    <div class="mt10"></div>
+
+                    <div class="content-wapper">
+                        <div class="hd hd-card">
+                            <ul>
+                                <li class="cur"><span>1</span><label class="juhuang">提交资料</label></li>
+                                <li><span>2</span><label>核实信息</label></li>
+                                <li><span>3</span><label>完成认证</label></li>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>  
+                        <form action="/user/bank/" method="post" name="user-file-bank">
+                            <table class="noborder-tbl wp100">
+                                <tr>
+                                    <td width="150" align="right" valign="middle">
+                                        <span class="ml5 fr mt5">开户行：</span>
+                                        <span class="red fr mt5">*</span>
+                                        <div class="clear"></div>
+                                    </td>
+                                    <td width="600" class="bank-area">
+                                        <province-city v-on:receive-params="getArea" def-value="请选择·开户地区" is-select-province="false"></province-city>
+                                        <div class="form-group psr pdi-control fs14  m-t-10 ml10">
+                                            <input @focus="initBankInfo" @blur="checkBankInfo" v-model="bankInfo" type="text" name="bank-info" placeholder="开户行信息" :class="{'form-control':true,'w125':true,'error-bg':isBankInfo}">
+                                            <span class="edit pz-edit"></span>
+                                            <p class="hide inputerror juhuang m-t-10 ml20">请正确输入金额</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="150" align="right" valign="middle">
+                                        <span class="ml5 fr mt-10">账  号：</span>
+                                        <span class="red fr mt-10">*</span>
+                                        <div class="clear"></div>
+                                    </td>
+                                    <td width="600" class="bank-area">
+                                        <div class="mt-20">
+                                            <div class="form-group psr pdi-control fs14  m-t-10 ">
+                                                <input maxlength="19" @keydown="valiteBankNum" @focus="initBankNum" @blur="checkBankNum" v-model="bankNum" type="text" name="bank-num" placeholder="输入的数字之间不允许出现空格" :class="{'form-control':true,'w125':true,'error-bg':isBankNum}">
+                                                <div class="display-bank-num-view w315" v-cloak v-show="bankNum.length > 0 && isInput">
+                                                    {{bankNumView}}
+                                                </div>
+                                                <span class="edit pz-edit" v-show="!isInput"></span>
+                                                <span :class="{hide:!isBankError,inputerror:true,red:true,'m-t-10':true,ml10:true}">账号格式不正确，请重新输入</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="150" align="right" valign="middle">
+                                        <span>户  名：</span>
+                                    </td>
+                                    <td width="600" class="bank-area">
+                                        <span>许晴提</span><span class="p-gray ml10">（已实名认证的户名，不可再更改哦~）</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="150" align="right" valign="middle">
+                                        <div class="mt10 ">
+                                            <span class="red">*</span><span class="ml5">银行卡认证图片：</span>
+                                        </div>
+                                    </td>
+                                    <td width="600" class="bank-area">
+                                        <div class="mt10 ">
+                                            <span class="p-gray ">（仅支持JPG、GIF、PNG、JPEG、BMP格式，单张图片小于5M）</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        
+                                        <div class="bank-card-wrapper mauto tac mt20">
+                                            <div class="bank-card-item-wrapper">
+                                                <p class="text-left">银行卡正面</p>
+                                                <img id="upload-img-bank" src="./themes/images/bank.png" alt="" width="164" height="96">
+                                                <p class="tac mt10">
+                                                    <a @click="upload" href="javascript:;" class="btn btn-s-md btn-danger fs14 sure btn-auto">上传图片</a>
+                                                </p>
+                                                <input @change="previewFile($event,'upload-img-bank')" type="file" name="upload-file" id="upload-file" class="hide">
+                                            </div>
+
+                                            <div class="mt20">&nbsp;</div>
+                                            <p :class="{tac:true,red:true,hide:!isFile}">请上传符合要求的银行卡认证图片</p>
+                                            <p class="tac mt20">
+                                              <button @click="send" type="button" class="btn btn-s-md btn-danger fs14">提交</button>
+                                            </p>
+                                            <p class="tac mt20">
+                                                <b>温馨提示：</b>提现退款一般为原路退回。在无法原路退回情况下，可转账至经实名认证的账户主人银行账户。
+                                            </p>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div> 
+                    <div class="m-t-10" v-for="i in 5"></div>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-file-submit-bank", "module/common/common"],function(v,u,c){
+            
+
+        })
+    </script>
+
+</body>
+</html>
+
+

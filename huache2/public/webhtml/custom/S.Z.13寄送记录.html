@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>S.Z.13寄送记录 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="/webhtml/user/themes/bootstrap.css " rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border noborder nopadding">
+                <div class="slide slide-fix">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                        
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">欢迎页 </a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">常用管理 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">常用车型</a>
+                                        <a href="#" class="">保险设定</a>
+                                        <a href="#" class="">客户文件</a>
+                                        <a href="#" class="">工作时段</a>
+                                        <a href="#" class="">增加经销商</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">开始新建</a>
+                                        <a href="#">新建未完(6)</a>
+                                        <a href="#">等待生效(9)</a>
+                                        <a href="#">正在报价(6)</a>
+                                        <a href="#">暂时下架(6)</a>
+                                        <a href="#">失效报价(6)</a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">执行中(17)</a>
+                                        <a href="#">已结束(1)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">总 览</a>
+                                        <a href="#">资 金 池</a>
+                                        <a href="#">加 信 宝</a>
+                                        <a href="#">充值</a>
+                                        <a href="#">提现</a>
+                                        <a class="menu-select" href="#">结算</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#">交车预备管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-content custom-content-with-margin  psr">
+                    <div class="yue-content psr">
+                        <span class="blue weight">寄送记录</span>
+                        <hr class="dashed">
+                    </div>
+                    <table class="tbl tbl-time tbl-gray tac">
+                        <tr>
+                            <th width="160" class="fs16">提交时间</th>
+                            <th width="80" class="fs16">文件数量</th>
+                            <th width="90" class="fs16">快递名称</th>
+                            <th width="100" class="fs16">运单号</th>
+                            <th width="80" class="fs16">状态</th>
+                            <th width="90" class="fs16">收到文件数量</th>
+                            <th width="160" class="fs16">确认时间</th>
+                            <th width="100" class="fs16">操作</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2016-02-14 09:48:05</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">15</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">EMS</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">1287392010</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">待确认</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 "></p>
+                            </td>
+                            <td>
+                                <p class="p fs14 "></p>
+                            </td>
+                            <td>
+                                <p class="p fs14"><a @click="undo(1)" href="javascript:;" class="blue tdu">撤销</a></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2016-02-14 09:48:05</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">15</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">EMS</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">1287392010</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">已撤销</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">0</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">2016-02-14 15:37:06</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2016-02-14 09:48:05</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">15</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">EMS</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">1287392010</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">已收到</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">10</p>
+                            </td>
+                            <td>
+                                <p class="p fs14 ">2016-02-14 15:37:06</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="m-t-10"></div>
+                    <div class="pageinfo ml200">
+                        <a href="#">上一页</a>
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <span class="empty">...</span>
+                        <a href="#">下一页</a>
+                        <label>共100页</label>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="m-t-10"></div>
+                    <div class="m-t-10"></div>
+                    <p class="tac">
+                        <button class="ml5 btn btn-danger w100 ml20 sure">返回</button>
+                    </p>
+                    <div class="clear "></div>
+                    <div class="m-t-10" v-for="i in 5"></div>
+                </div>
+
+                <div id="tipWin" class="popupbox">
+                    <div class="popup-title"><span>寄件信息确认</span></div>
+                    <div class="popup-wrapper">
+                        <div class="popup-content">
+                            <div class="m-t-10"></div>
+                            <p class="fs14 pd tac" >
+                               <span class="tip-text mt10">确定撤销您提交的该条寄件记录吗？</span>
+                               <div class="clear"></div>
+                        </div> 
+                        <div class="popup-control">
+                            <a @click="doUndo" href="javascript:;" class="btn btn-s-md btn-danger fs14 do w100">确定</a>
+                            <a href="javascript:;" class="btn btn-s-md btn-danger fs14 w100 sure">取消</a>
+                            <div class="clear"></div>
+                            <div class="m-t-10"></div>
+                        </div> 
+                    </div>
+                </div>
+
+                <div id="successWin" class="popupbox">
+                    <div class="popup-title"><span>撤销确认</span></div>
+                    <div class="popup-wrapper">
+                        <div class="popup-content">
+                            <div class="m-t-10"></div>
+                            <p class="fs14 pd tac" >
+                               <span class="tip-text mt10 juhuang tac"><span class="juhuang">该条记录已撤销！</span></span>
+                               <div class="clear"></div>
+                               <br>
+                            <div class="m-t-10"></div>
+                        </div> 
+                        <div class="popup-control">
+                            <a  href="javascript:;" @click="reload" class="btn btn-s-md btn-danger fs14 do w100 sure">关 闭</a>
+                            <div class="clear"></div>
+                            <p class="p-gray mt10 fs14"><span class="red">{{countDownNum}}</span>秒后自动关闭本弹窗</p>
+                            <div class="m-t-10"></div>
+                        </div> 
+                    </div>
+                </div>
+
+                <div id="errorWin" class="popupbox">
+                    <div class="popup-title"><span>撤销未成功</span></div>
+                    <div class="popup-wrapper">
+                        <div class="popup-content">
+                            <div class="m-t-10"></div>
+                            <p class="fs14 pd tac ">
+                               <span class="tip-text mt10 juhuang"><span class="juhuang">因故撤销不成功，请重新尝试～</span></span>
+                               <div class="clear"></div>
+                               <br>
+                            <div class="m-t-10"></div>
+                        </div> 
+                        <div class="popup-control">
+                            <a href="javascript:;" @click="reload" class="btn btn-s-md btn-danger fs14 do w100 sure">确定</a>
+                            <div class="clear"></div>
+                            <p class="p-gray mt10 fs14"><span class="red">{{countDownNum}}</span>秒后自动关闭本弹窗</p>
+                            <div class="m-t-10"></div>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+
+
+
+    </div>
+    <div class="clear"></div>
+
+
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/custom/custom-send-record", "module/common/common"],function(v,u,c){
+            
+        })
+    </script>
+
+</body>
+</html>
+
+

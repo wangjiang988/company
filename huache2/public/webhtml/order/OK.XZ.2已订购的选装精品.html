@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OK.XZ.2已订购的选装精品 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="../common/css/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 psr">
+        <div class="step pos-rlt">
+             <p class="order-head-status">
+                 <span class="blue fs18">打造个性座驾</span>
+                 <span class="ml5 blue fs18">></span>
+                 <span class="ml5 blue fs18">已订购的精品</span>
+             </p>
+             <div class="xzj-status-wrapper">
+                 <a href="OK.XZ.5查看协商记录.html" class="xzj-status-item">
+                     <span class="xzj-icon xzj-negotiation"></span>
+                     <span class="xzj-txt">
+                         <span class="xzj-num">2</span>
+                         <span class="xzj-status">协商中</span>
+                     </span>
+                 </a> 
+                 <a href="OK.XZ.5查看协商记录.html" class="xzj-status-item ml20">
+                     <span class="xzj-icon xzj-record"></span>
+                     <span class="xzj-txt"> 
+                         <span class="xzj-status">协商<br>记录</span>
+                     </span>
+                 </a> 
+             </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content">
+        <p class="mt20 ml50"><span>您订购的精品，售方已为您备货，交车时付款移交。又有看中的？ 请<a href="OK.XZ.1订购选装精品.html" class="blue tdu">返回</a>继续订购。</span></p>
+        <div class="clear"></div>
+        <div class="wapper has-min-step">
+            <div class="clear m-t-10"></div>
+            <table  class="tbl tbl-blue tbl-xzj">
+                <tr>
+                    <th width="130"><b>品牌</b></th>
+                    <th width="130"><b>名称</b></th>
+                    <th width="250"><b>型号/说明</b></th>
+                    <th width="110"><b>含安装费<br>折后总单价</b></th>
+                    <th width="95"><b>已订件数</b></th>
+                    <th width="97"><b>金额</b></th>
+                    <th width="160"><b>订购时间</b></th>
+                </tr>
+                <tr>
+                    <td><p class="tac">原厂</p></td>
+                    <td><p class="tac">仪表台装饰板</p></td>
+                    <td><p class="tac">483123</p></td>
+                    <td><p class="tac">￥300.00</p></td>
+                    <td><p class="tac">2</p></td>
+                    <td><p class="tac">￥350.00</p></td>
+                    <td><p class="tac">2017-03-31 11:45:36</p></td>
+                </tr>
+                <tr>
+                    <td><p class="tac">铁将军</p></td>
+                    <td><p class="tac">电子防盗器</p></td>
+                    <td><p class="tac">YT：793231</p></td>
+                    <td><p class="tac">￥300.00</p></td>
+                    <td><p class="tac">2</p></td>
+                    <td><p class="tac">￥350.00</p></td>
+                    <td><p class="tac">2017-03-31 11:45:36</p></td>
+                </tr>
+                <tr>
+                    <td><p class="tac">PJ</p></td>
+                    <td><p class="tac">真皮座椅</p></td>
+                    <td><p class="tac">467942</p></td>
+                    <td><p class="tac">￥300.00</p></td>
+                    <td><p class="tac">2</p></td>
+                    <td><p class="tac">￥350.00</p></td>
+                    <td><p class="tac">2017-03-31 11:45:36</p></td>
+                </tr>
+                <tr class="p-gray">
+                    <td><p class="tac">PJ</p></td>
+                    <td><p class="tac">真皮座椅</p></td>
+                    <td><p class="tac">467942</p></td>
+                    <td><p class="tac">￥300.00</p></td>
+                    <td><p class="tac">2</p></td>
+                    <td><p class="tac">￥350.00</p></td>
+                    <td><p class="tac">2017-03-31 11:45:36</p></td>
+                </tr>
+             
+            </table>
+            <p class="mt20 text-right fs14">
+                合计：<b>￥2,500.00</b>
+                <span v-for="i in 20">&nbsp;</span>
+            </p>
+            <div class="mt50 tac psr">
+                <a href="javascript:;" @click="dontWant" class="psa dont-want p-gray">不想要了？</a>
+                <a href="javascript:;" class="mt50 btn btn-s-md btn-danger fs18 sure">返回</a>
+            </div>
+         
+           
+            
+  
+            <div id="errorWin" class="popupbox">
+                <div class="popup-title">温馨提示</div>
+                <div class="popup-wrapper">
+                    <div class="popup-content">
+                        <div class="m-t-10"></div>
+                        <p class="fs14 pd tac succeed constraint">
+                           <span class="tip-tag bp0"></span>
+                           <span class="tip-text mt10">非常抱歉，您还有正在协商中的事项，等售方回复后再提交新项目吧！</span>
+                           <div class="clear"></div>
+                           <br>
+                        </p>
+                        <div class="m-t-10"></div>
+                    </div> 
+                    <div class="popup-control">
+                        <a href="OK.XZ.1订购选装精品.html" class="btn btn-s-md btn-danger fs14 w100 ml20 inline-block ">确认</a>
+                        <div class="clear"></div>
+                        <p class="fs14"><span class="red">{{countDownNum}}</span>秒后自动返回</p>
+                        <div class="m-t-10"></div>
+                    </div> 
+                </div>
+            </div>
+
+
+
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/order/order-options-to-order-products",  "module/common/common"],function(v,u,c){
+             u.initNegotiation(true)
+        })
+    </script>
+
+</body>
+</html>
+
+

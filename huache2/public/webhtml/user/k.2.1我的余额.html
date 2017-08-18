@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>k.2.1我的余额 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border noborder">
+                <div class="slide slide-fix">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a class="menu-select" href="#">我的余额</a>
+                                        <a href="#">我的转入</a>
+                                        <a href="#">我的提现</a>
+                                        <a href="#">我的福利</a>
+                                        <a href="#">我的发票</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#">我的提交</a>
+                                        <a href="#">我的下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content user-content-with-margin  psr">
+                    
+                        <div class="yue-content psr">
+                            <p>可用余额：￥100.00</p>
+                            <p class="gray">可用于在华车支付诚意金/买车担保金，不用可全额提现。</p>
+                            <div class="jxb-wrapper">
+                                <p>加信宝：￥3,000.00 <a href="#" class="blue ml10">查看</a></p>
+                                <p class="gray">当前冻结中的买车担保金。</p>
+                            </div>
+                            <div class="control-yue">
+                                <a href="#" class="btn btn-s-md btn-danger sure bt btn-auto">充值</a>
+                                <a href="#" class="btn btn-s-md btn-danger sure bt btn-auto">提现</a>
+                                <!--提现余额为零 显示 btn-disabled按钮
+                                <a href="javascript:;" class="btn btn-s-md btn-danger btn-disabled bt btn-auto">提现</a>-->
+                            </div>
+                            <hr class="dashed">
+                            <p class="pre-fix"><span class="juhuang weight ml10">交易明细</span></p>
+                            <div class="m-t-10"></div>
+                            <div class="search-area" v-cloak>
+                                <span class="fl mt5">发生时间：</span>
+                                <div class="form-group psr fl ml5">
+                                    <input @focus="selectStartTime" v-model="startTime" :value="startTime" type="text" placeholder="" class="form-control " >
+                                    <i class="rili"></i>
+                                </div>
+                                <span class="ml10 fl mt5">~</span>
+                                <div class="form-group psr ml10 fl">
+                                    <input @focus="selectEndTime" v-model="endTime" :value="endTime" type="text" placeholder="" class="form-control">
+                                    <i class="rili"></i>
+                                </div>
+                                <button class="fl ml20 btn btn-s-md btn-danger detial bt">查找</button>
+                                <span v-cloak @click="setBaseMonth(time)" v-for="time in simpleTimeList" class="time-simple-select fl mt5" :class="{'gray-bg':time.select}">{{time.txt}}</span>
+                            </div>
+                            <div class="clear"></div>
+
+                        </div>
+                        <!--没有记录-->
+                        <table class="tbl tbl-time">
+                            <tr>
+                                <th width="248" class="fs16">发生时间</th>
+                                <th width="140" class="fs16">项目</th>
+                                <th width="281" class="fs16">说明</th>
+                                <th width="116" class="fs16">收支金额</th>
+                                <th width="110" class="fs16">可用余额</th>
+                            </tr>
+                            <tr>
+                                <td colspan="5">
+                                    <div class="mt20"></div>
+                                    <p class="p fs14">客官，上述时间段无交易记录哦~</p>
+                                    <div class="mt20"></div>
+                                </td>
+                            </tr> 
+                        </table>
+                        <br>
+                        <!--一年以上的交易记录，能查看到的记录只保留1年前该日的余额-->
+                        <table class="tbl tbl-time">
+                            <tr>
+                                <th width="248" class="fs16">发生时间</th>
+                                <th width="140" class="fs16">项目</th>
+                                <th width="281" class="fs16">说明</th>
+                                <th width="116" class="fs16">收支金额</th>
+                                <th width="110" class="fs16">可用余额</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">/</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">/</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">/</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥1,000.00</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+
+                        <table class="tbl tbl-time">
+                            <tr>
+                                <th width="248" class="fs16">发生时间</th>
+                                <th width="140" class="fs16">项目</th>
+                                <th width="281" class="fs16">说明</th>
+                                <th width="116" class="fs16">收支金额</th>
+                                <th width="110" class="fs16">可用余额</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="time-tag psr">
+                                        <span></span>
+                                        <p class="p fs14">2016-02-01 12：23：34</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="p fs14">转入</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">线上支付—支付宝123***</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">+￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">提现</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14"><span class="juhuang">正在办理</span></p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">-￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">提现</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">已完成</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">-￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">重新转入</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">提现不成功（231346456）</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">+￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">平台转入</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">补偿</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">+￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">支付诚意金</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">订单号：125678910198</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">-￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">支付买车担保金 </p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">订单号：125678910198 </p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">-￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">返还已得 </p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">订单号：125678910198 </p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">+￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">退还买车担保金 </p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">订单号：125678910198 </p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">+￥100.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">获得返还 </p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">订单号：125678910198 </p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">+￥397.00</p>
+                                </td>
+                                <td>
+                                    <p class="p fs14">￥100.00</p>
+                                </td>
+                            </tr>
+                           
+                           
+                        </table>
+
+                        <div class="pageinfo ml200">
+                            <a href="#">上一页</a>
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <span class="empty">...</span>
+                            <a href="#">下一页</a>
+                            <label>共100页</label>
+                        </div>
+                        <div class="clear "></div>
+                        <div class="mt20"></div>
+                        <div class="clear"></div>
+                        <table class="fs14 mt20">
+                            <tr>
+                                <td valign="top" width="70">温馨提示：</td>
+                                <td>
+                                    <div class="tal">
+                                        <p>1.您可查询最近一年的账务明细。</p>
+                                        <p>2.选择的时间不能超过当前时间，且结束时间不能早于开始时间。</p>
+                                        <p>3.申请提现后，提现金额从可用余额中立即扣减，如办理不成功将自动退回。</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table> 
+
+                        <div class="m-t-10" v-for="i in 5"></div>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="/webhtml/common/js/vendor/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-balance", "module/common/common"],function(v,u,c){
+            //*页面加载初始化当前时间
+            //不设置initEndTime的时间，会自动调用本地时间（当前时间）
+            //先设置结束时间后开始时间
+            //这样开始时间不给默认为空
+            u.initEndTime("2017-4-1","2017-3-15")
+            //只设置结束时间例：
+            //u.initEndTime("2017-4-1")
+        })
+    </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OK.XZ.1订购选装精品 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="../common/css/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 psr">
+        <div class="step pos-rlt">
+             <p class="order-head-status"><span class="blue fs18">打造个性座驾</span></p>
+             <div class="xzj-status-wrapper">
+                 <a href="OK.XZ.5查看协商记录.html" class="xzj-status-item">
+                     <span class="xzj-icon xzj-negotiation"></span>
+                     <span class="xzj-txt">
+                         <span class="xzj-num">2</span>
+                         <span class="xzj-status">协商中</span>
+                     </span>
+                 </a> 
+                 <a href="OK.XZ.2已订购的选装精品.html" class="xzj-status-item ml20">
+                     <span class="xzj-icon xzj-ordered"></span>
+                     <span class="xzj-txt">
+                         <span class="xzj-num">18</span>
+                         <span class="xzj-status">已订购</span>
+                     </span>
+                 </a> 
+             </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content">
+        <p class="juhuang mt10 ml50"><span>想打造只属于您的梦想座驾吗？正是时候！个性化精品已到，助您梦想成真</span><img class="ml5" src="./themes/images/v.gif" alt=""></p>
+        <div class="xzj-marquee-wrapper">
+            <a @click="marqueeImg('left')"  href="javascript:;" class="xzj-control xzj-m-prev fl"></a>
+            <a @click="marqueeImg('right')" href="javascript:;" class="xzj-control xzj-m-next fr"></a>
+            <div class="xzj-m-box fl ml10">
+                <div class="xzj-marquee" :style="{'margin-left':marginLeft+'px'}">
+                    <img v-for="i in 10" :src="'./themes/images/xzj-'+i+'.png'" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="wapper has-min-step">
+            <div class="clear m-t-10"></div>
+            <ul class="pdi-order-ul border ">
+               <p class="fs14 ml10">
+                   <span>路虎</span>
+                   <span class="ml5">></span>
+                   <span class="ml5">新一代揽胜</span>
+                   <span class="ml5">></span> 
+                   <span class="ml5">2015款SDV6 Hybrid Vogue SE 混合动力创世加长版</span>
+                   <span class="ml30">月光石白色（个性金属漆）</span> 
+               </p>
+            </ul>
+            <!--没有选装件的时候-->
+            <div class="box tac">
+                <p class="wp45 mauto mt20">
+                    <span class="icon-large icon-error-large fl"></span><span class="mt10 gray fl ml10">恭喜您已抢订成功！现在一件不剩啦～</span>
+                </p>
+                <div class="clear"></div>
+                <a href="javascript:;" class="mt50 btn btn-s-md btn-danger fs18 sure">关闭</a>
+            </div>
+            <!--有选装件的时候-->
+            <form action="/order/savexzj">
+                <div class="box">
+                    <p class="mt20 psr ml20">
+                        <i class="css-arrow psa" @click="toggle(0)" :class="{'css-arrow-rotating':!toggleArray[0].display}"></i>
+                        <b class="fs16 ml30 ">原厂</b> 
+                        <span class="fs14 ml5">选装精品</span>
+                        <span class="ml20 p-gray fs12">了解更多？  >  </span>
+                        <span class="blue ml10 fs12">上官网</span>
+                    </p>
+                    <table v-if="toggleArray[0].display" class="tbl tbl-blue tbl-xzj">
+                        <tr>
+                            <th width="148"><b>名称</b></th>
+                            <th width="246"><b>型号/说明</b></th>
+                            <th width="104"><b>厂商指导价</b></th>
+                            <th width="85"><b>安装费</b></th>
+                            <th width="112"><b>含安装费<br>折后总单价</b></th>
+                            <th width="120"><b class="red">选择订购件数</b></th>
+                            <th width="84"><b>金额</b></th>
+                        </tr>
+                        <tr>
+                            <td><p class="tac">仪表台装饰板</p></td>
+                            <td><p class="tac">483123134641312313213545</p></td>
+                            <td><p class="tac">￥300.00</p></td>
+                            <td><p class="tac">￥50.00</p></td>
+                            <td><p class="tac">￥350.00</p></td>
+                            <td>
+                                <!--当可选件数 == 0  启用xuan-error样式-->
+                                <div class="x-w xuan xuan-error"> 
+                                    <span class="red landscape mt-10">供应</span>
+                                    <a @click="prev" class="prev">-</a>
+                                    <input data-price="350" readonly  type="text" value="1" class="input" def-value="0" name="xzj[0][num]">
+                                    <a @click="next($event,2)" class="next">+</a>
+                                    <span class="red landscape mt-10 ml5">紧张</span>
+                                </div> 
+                            </td>
+                            <td><p class="tac">￥350.00</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="tac">后排智能空调 (THERMOTRONIC)</p></td>
+                            <td><p class="tac">搭配标准自动恒温控制系统的后排空调系统可确保对后排进行更有效的恒温控制，并使后排乘客自行控制相关设置。</p></td>
+                            <td><p class="tac">￥1,750.00</p></td>
+                            <td><p class="tac">￥0.00</p></td>
+                            <td><p class="tac">￥1,750.00</p></td>
+                            <td>
+                                <!--当可选件数 == 0  启用xuan-error样式-->
+                                <div class="x-w xuan"> 
+                                    <span class="red landscape mt-10">供应</span>
+                                    <a @click="prev" class="prev">-</a>
+                                    <input data-price="1750" readonly  type="text" value="1" class="input" def-value="0" name="xzj[0][num]">
+                                    <a @click="next($event,2)" class="next">+</a>
+                                    <span class="red landscape mt-10 ml5">紧张</span>
+                                </div> 
+                            </td>
+                            <td><p class="tac">￥1,750.00</p></td>
+                        </tr>
+                    </table>
+                    <p class="ml20" v-if="toggleArray[0].display">
+                        <small class="wp45 fr tar di mr150">
+                            <span>
+                            合计价值：<label></label>
+                            </span>
+                        </small> 
+                        <input type="hidden" name="price" value="">
+                    </p>
+                </div>
+                <div class="clear"></div>
+                <div class="box mt20">
+                    <p class="mt20 psr ml20">
+                        <i @click="toggle(1)" :class="{'css-arrow-rotating':!toggleArray[1].display}" class="css-arrow psa"></i>
+                        <b class="fs16 ml30 ">非原厂</b> 
+                        <span class="fs14 ml5">选装精品</span>
+                    </p>
+                    <table v-if="toggleArray[1].display" class="tbl tbl-blue tbl-xzj">
+                        <tr>
+                            <th width="148"><b>品牌</b></th>
+                            <th width="148"><b>名称</b></th>
+                            <th width="246"><b>型号/说明</b></th>
+                            <th width="112"><b>含安装费<br>折后总单价</b></th>
+                            <th width="120"><b class="red">选择订购件数</b></th>
+                            <th width="84"><b>金额</b></th>
+                        </tr>
+                        <tr>
+                            <td><p class="tac">铁将军</p></td>
+                            <td><p class="tac">电子防盗器</p></td>
+                            <td><p class="tac">YT：793231</p></td>
+                            <td><p class="tac">￥350.00</p></td>
+                            <td>
+                                <!--当可选件数 == 0  启用xuan-error样式-->
+                                <div class="x-w xuan xuan-error"> 
+                                    <span class="red landscape mt-10">供应</span>
+                                    <a @click="prev" class="prev">-</a>
+                                    <input data-price="350" readonly  type="text" value="1" class="input" def-value="0" name="xzj[0][num]">
+                                    <a @click="next($event,2)" class="next">+</a>
+                                    <span class="red landscape mt-10 ml5">紧张</span>
+                                </div> 
+                            </td>
+                            <td><p class="tac">￥350.00</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="tac">BOSCH</p></td>
+                            <td><p class="tac">滑雪板和滑雪单板架, 新型 Alustyle, 标准</p></td>
+                            <td><p class="tac">银色 / 黑色, 左舵驾驶/右舵驾驶, 铝 / 塑料，订购号：A0008900493</p></td>
+                            <td><p class="tac">￥500.00</p></td>
+                            <td>
+                                <!--当可选件数 == 0  启用xuan-error样式-->
+                                <div class="x-w xuan"> 
+                                    <span class="red landscape mt-10">供应</span>
+                                    <a @click="prev" class="prev">-</a>
+                                    <input data-price="500" readonly  type="text" value="1" class="input" def-value="0" name="xzj[0][num]">
+                                    <a @click="next($event,2)" class="next">+</a>
+                                    <span class="red landscape mt-10 ml5">紧张</span>
+                                </div> 
+                            </td>
+                            <td><p class="tac">￥500.00</p></td>
+                        </tr>
+                    </table>
+                    <p class="ml20" v-if="toggleArray[1].display">
+                        <small class="wp45 fr tar di mr150">
+                            <span>
+                            合计价值：<label></label>
+                            </span>
+                        </small> 
+                        <input type="hidden" name="price" value="">
+                    </p>
+                </div>
+                <div class="clear"></div>
+                <p class="mt20">温馨提示：订购的精品将在交车时付款移交。</p>
+                <p class="tac red hide" :class="{show:error}">没找到您要订购的精品，请选一下订购数量哦～</p>
+                <p class="tac">
+                    <a @click="send" href="javascript:;" class="btn btn-s-md btn-danger fs18">我要订购</a>
+                </p>
+            </form>
+            
+            <div id="sendWin" class="popupbox">
+                <div class="popup-title">温馨提示</div>
+                <div class="popup-wrapper">
+                    <div class="popup-content">
+                        <p class="fs14 tac">
+                           <br> 
+                           <div class="tip-text fs14 text-left inline-block xzj-send-icon xzj-list-wrapper">
+                               <p class="ti">若您确认订购精品，为保证交车时一同向您移交，售方将立即按您的要求完成备货。若此后您提出减少订购数量的变更要求，需取得售方同意方可完成数量修改。因此，一旦订购成功即存在<b>无法再减少</b>订购数量的风险，请慎重决定是否订购下列选装精品：</p>
+                               <table class="tbl tbl-blue tac">
+                                   <tr>
+                                       <th width="120"><b>品牌</b></th>
+                                       <th width="180"><b>名称</b></th>
+                                       <th width="122"><b>本次订购件数</b></th>
+                                       <th width="100"><b>金额</b></th>
+                                   </tr>
+                                   <tr v-for="order in orderList">
+                                       <td>
+                                           <p>{{order.brand}}</p>
+                                       </td>
+                                       <td>
+                                           <p>{{order.name}}</p>
+                                       </td>
+                                       <td>
+                                           <p>{{order.count}}</p>
+                                       </td>
+                                       <td>
+                                           <p>{{formatMoney(order.price,2,"￥")}}</p>
+                                       </td>
+                                   </tr>
+                               </table>
+                               <div class="clear"></div>
+                               <div class="xzj-code-send-wrapper mt20">
+                                   <span class="fl">手 机 号： 131****0980</span>
+                                   <span class="ml20 fl">验 证 码：</span>
+                                   <phone-code class="inline-block fl nopadding hasnomargin" phone="13843838438" @valite-code="getCode"></phone-code>
+                               </div>
+                               <div class="clear"></div>
+                               <p class="tac mt10">
+                                   <span v-if="codeStatus == 0" class="red">请输入验证码</span>
+                                   <span v-if="codeStatus == 2" class="red">验证码有误，请重新输入~</span>
+                                   <span v-if="codeStatus == 3" class="red">验证码已失效，请重新获取~</span>
+                               </p>
+                           </div>
+                           <div class="clear"></div>
+                           
+                           <br>
+                        </p>
+                        <div class="m-t-10"></div>
+                    </div> 
+                    <div class="popup-control">
+                        <a href="javascript:;" @click="doSend" class="btn btn-s-md btn-danger fs18 do  ">确认订购</a>
+                        <a href="javascript:;" @click="chance" class="btn btn-s-md btn-danger fs18 sure  ml50 inline-block ">取消订购</a>
+                        <div class="clear"></div>
+                        <div class="m-t-10"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="successWin" class="popupbox">
+                <div class="popup-title">订购成功</div>
+                <div class="popup-wrapper">
+                    <div class="popup-content">
+                        <div class="m-t-10"></div>
+                        <p class="fs14 pd tac succeed constraint">
+                           <span class="tip-tag bp0"></span>
+                           <span class="tip-text mt10">恭喜您离梦想座驾又近一步！如有新的idea，欢迎再来逛逛哦～</span>
+                           <div class="clear"></div>
+                           <br>
+                        </p>
+                        <div class="m-t-10"></div>
+                    </div> 
+                    <div class="popup-control">
+                        <a href="javascript:;" @click="reload" class="btn btn-s-md btn-danger fs14 do w100 sure">确认</a>
+                        <div class="clear"></div>
+                        <div class="m-t-10"></div>
+                    </div> 
+                </div>
+            </div>
+
+            <div id="errorWin" class="popupbox">
+                <div class="popup-title">订购未成功</div>
+                <div class="popup-wrapper">
+                    <div class="popup-content">
+                        <div class="m-t-10"></div>
+                        <p class="fs14 pd tac succeed constraint">
+                           <span class="tip-tag bp0"></span>
+                           <span class="tip-text mt10">很抱歉，您要订购的部分精品刚被别人抢订，有劳您重选一下。看准了出手一定要快哦～</span>
+                           <div class="clear"></div>
+                           <br>
+                        </p>
+                        <div class="m-t-10"></div>
+                    </div> 
+                    <div class="popup-control">
+                        <a href="javascript:;" @click="reload" class="btn btn-s-md btn-danger fs14 sure w100 ml20 inline-block ">确认</a>
+                        <div class="clear"></div>
+                        <div class="m-t-10"></div>
+                    </div> 
+                </div>
+            </div>
+
+
+
+            <div class="m-t-10"></div>
+            <div class="m-t-10"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/order/order-option-choice",  "module/common/common"],function(v,u,c){
+             
+        })
+    </script>
+
+</body>
+</html>
+
+

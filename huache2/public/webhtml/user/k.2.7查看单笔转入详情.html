@@ -1,0 +1,671 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>k.2.7查看单笔转入详情 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border noborder">
+                <div class="slide slide-fix">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的余额</a>
+                                        <a class="menu-select" href="#">我的转入</a>
+                                        <a href="#">我的提现</a>
+                                        <a href="#">我的福利</a>
+                                        <a href="#">我的发票</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#">我的提交</a>
+                                        <a href="#">我的下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content user-content-with-margin  psr">
+                    
+                        <div class="yue-content psr">
+                            <p class="pre-fix"><span class="ml10 juhuang weight">转入记录  >  转入详情</span></p>
+                            <div class="m-t-10"></div>
+                            <p class="gray-bg pl5">银行转账</p>
+                            <div class="clear"></div> 
+                        </div>
+                        
+                        <div class="box">
+                            <!--正常情况-->
+                            <div class="fl wp40 ml20">
+                                <table class="tbl">
+                                    <caption>
+                                       <img src="themes/images/into-sub-bg.png" />
+                                    </caption>
+                                    <tr>
+                                        <td width="100">
+                                            <b class="fs14">提交时间</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14" >2016-02-01 12:23:34</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">汇款银行</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">中国建设银行</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">汇款人账号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">4212 7894 7892 6237 209</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">汇款人户名</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">上海志和贸易有限公司</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">提交金额</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">￥1,000.00</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">提交用途</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">支付买车担保金<br>（订单号：233432343）</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">提交凭证</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"><img src="themes/images/upload-img.png" /><span class="ml5">xxxx图片.jpg</span></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">工单编号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">1468974465123</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="fl wp40 ml100">
+                                <table class="tbl">
+                                    <caption>
+                                       <img src="themes/images/into-into-bg.png" />
+                                    </caption>
+                                    <tr>
+                                        <td width="100">
+                                            <b class="fs14">确认入账时间</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14" >2016-02-01 12:23:34</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方银行</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">中国建设银行</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方账号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">4212 7894 7892 6237 236</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方户名</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">上海志和恒安国际贸易有限公司</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账金额</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">￥1,000.00</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入用途</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">支付买车担保金<br>（订单号：233432343）</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">银行凭证号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">12349748941651</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账状态</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">已入账</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="clear"></div>
+                            <!--入账状态“正在核实”-->
+                            <div class="fl wp40 ml100">
+                                <table class="tbl">
+                                    <caption>
+                                       <img src="themes/images/into-into-bg.png" />
+                                    </caption>
+                                    <tr>
+                                        <td width="100">
+                                            <b class="fs14">确认入账时间</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14" ></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方银行</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方账号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方户名</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账金额</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入用途</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">银行凭证号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账状态</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">正在核实</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--入账状态“无此款项”场景-->
+                            <div class="fl wp40 ml100">
+                                <table class="tbl">
+                                    <caption>
+                                       <img src="themes/images/into-into-bg.png" />
+                                    </caption>
+                                    <tr>
+                                        <td width="100">
+                                            <b class="fs14">确认入账时间</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14" >2016-02-02 12:23:34</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方银行</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方账号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方户名</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账金额</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">￥0.00</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入用途</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">银行凭证号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账状态</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">无此款项</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="clear"></div>
+                            <!--如果是平台将客户提交拆分而成的已入账转入记录-->
+                            <div class="fl wp40 ml20">
+                                <table class="tbl">
+                                    <caption>
+                                       <img src="themes/images/into-sub-bg.png" />
+                                    </caption>
+                                    <tr>
+                                        <td width="100">
+                                            <b class="fs14">提交时间</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14 p-gray" >2016-02-01 12:23:34</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">汇款银行</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14 p-gray">中国建设银行</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">汇款人账号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14 p-gray">4212 7894 7892 6237 209</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">汇款人户名</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14 p-gray">上海志和贸易有限公司</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">提交金额</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14 p-gray"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">提交用途</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14 p-gray">支付买车担保金<br>（订单号：233432343）</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">提交凭证</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14 p-gray"><img src="themes/images/upload-img.png" /><span class="ml5">xxxx图片.jpg</span></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">工单编号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14 p-gray">1468974465123</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <div class="clear"></div>
+                            <p class="gray-bg pl5">线上支付</p>
+                            <div class="fl wp40 ml20">
+                                <table class="tbl">
+                                    <caption>
+                                       <img src="themes/images/into-sub-bg.png" />
+                                    </caption>
+                                    <tr>
+                                        <td width="100">
+                                            <b class="fs14">提交时间</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14" >2016-02-01 12:23:34</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">支付方式</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">支付宝</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">账户</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">13467874@163.com<br>（订单号：233432343）</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">提交金额</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">￥1,000.00</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">提交用途</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">支付买车担保金<br>（订单号：233432343）</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="fl wp40 ml100">
+                                <table class="tbl">
+                                    <caption>
+                                       <img src="themes/images/into-into-bg.png" />
+                                    </caption>
+                                    <tr>
+                                        <td width="100">
+                                            <b class="fs14">确认入账时间</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14" >2016-02-01 12:23:34</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">支付方式</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">支付宝</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入方账号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">13467874@163.com</span>
+                                        </td>
+                                    </tr>
+                                     
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账金额</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">￥1,000.00</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">转入用途</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">支付买车担保金<br>（订单号：233432343）</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账流水号</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">12349748941651</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b class="fs14">入账状态</b>
+                                        </td>
+                                        <td>
+                                            <span class="fs14">已入账</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+
+                        </div> 
+                        <div class="clear "></div>
+                        
+                        <div class="m-t-10" v-for="i in 3"></div>
+                        <p class="tac">
+                            <a href="#" class="btn btn-danger sure">返回</a>
+                        </p>
+                        <div class="m-t-10" v-for="i in 5"></div>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-base", "module/common/common"],function(v,u,c){
+           
+        })
+    </script>
+
+</body>
+</html>
+
+

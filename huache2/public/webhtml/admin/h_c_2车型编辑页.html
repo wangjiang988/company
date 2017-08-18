@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>h_c_2车型编辑页.html</title>
+	<style>
+	.clear{clear: both;}
+	.mt20{margin-top: 20px;}
+	.add-wrapper input{height: 25px;float: left;width: 220px;padding-left: 5px;outline: none;}
+	.add-wrapper img{margin-left: 10px;margin-bottom: 10px;}
+	.add-wrapper p:after{clear: both;}
+	.list-wrapper{position: relative;}
+	.list-wrapper i{position: absolute;font-style: normal;left:203px;top:2px;color: #f00;display: none;width: 25px;height: 25px;cursor: pointer;text-align: center;}
+	</style>
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<body>
+	<div class="tool-add-wrapper">
+		<p class="wrapper-title">随车工具</p>
+		<div class="tool-add-item">
+			<p class="add-wrapper list-wrapper">
+				<input type="text" data-id="112" value="随车工具" readonly="" class="list-item">
+				<i>x</i>
+				<a href="javascript:;"><img src="images/add.png" /></a>
+			</p>
+	
+
+		</div>
+		<div class="clear"></div>
+	</div>
+
+	<div class="tool-add-wrapper">
+		<p class="wrapper-title">随车移交文件</p>
+		<div class="tool-add-item"></div>
+		<div class="clear"></div>
+		<p class="add-wrapper empty-add-wrapper">
+			<input type="text" name="" id="" class="add-item"> 
+			<a href="javascript:;"><img src="images/add.png" /></a>
+		</p>
+	</div>
+
+	<script type="text/template" id="add-new">
+		<p class="add-wrapper empty-add-wrapper">
+			<input type="text" name="" id="" class="add-item"> 
+			<a href="javascript:;"><img src="images/add.png" /></a>
+		</p>
+	</script>
+	
+	<script>
+		//添加列表 鼠标悬浮显示小红叉
+		$(".tool-add-wrapper")
+		.delegate('.list-item','mouseover', function(event) {
+			//判断是否是编辑状态
+			if ($(this).attr("readonly"))
+				$(this).next().show()
+		})
+		//添加列表 鼠标离开隐藏小红叉
+		.delegate('.list-item','mouseout', function(event) {
+			//判断是否是编辑状态
+			/*var _this = $(this)
+			setTimeout(function(){},1000)
+				if (_this.attr("readonly"))
+					_this.next().hide()*/
+
+		})
+		.delegate('i','mouseout', function(event) {
+			$(this).hide()
+		})
+		//添加列表 文本框双击进去编辑状态同时隐藏小红叉
+		.delegate('.list-item','dblclick', function(event) {
+			$(this).removeAttr('readonly').focus().next().hide()
+		})
+		//添加列表 文本框获取焦点事件
+		.delegate('.list-item','focus', function(event) {
+			$(this).attr('data-remark',$(this).val()) 
+		})
+		//添加列表 文本框失去焦点事件 解除可编辑状态
+		.delegate('.list-item','blur', function(event) {
+			//判断内容有没有改变
+			var _this = $(this).val()
+			if ($(this).val() != $(this).attr("data-remark")) {
+				$.ajax({
+					url: '/path/to/file',
+					type: 'default GET (Other values: POST)',
+					dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+					data: {id: _this.attr("data-id")},
+				})
+				.done(function() {
+					console.log("success");
+				})
+				.fail(function() {
+					console.log("error") 
+				})
+			}else
+			$(this).attr('readonly',"readonly") 
+		})
+		//添加列表 小红叉点击删除事件
+		.delegate('i','click', function(event) {
+			var _this   = $(this)
+			var _parent = _this.parent()
+			$.ajax({
+				url: '/path/to/file',
+				type: 'default GET (Other values: POST)',
+				dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+				data: {param1: 'value1'},
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error")
+				_parent.slideUp(300,function(){
+					if (_parent.next()[0]) 
+						_parent.next().find("img").show()
+					else
+						_parent.prev().find("img").removeAttr('style')
+					_parent.remove()
+
+				})
+			})
+			
+		})
+		.delegate('img','click', function(event) {
+			//判断是否是空列表新增
+			if ($(this).parent().prev()[0].tagName == "I") {
+				$(this).css("visibility","hidden").parents(".tool-add-item").next().after($("#add-new").html())
+			}
+			
+		})
+		.delegate('.add-item','blur', function(event) {
+
+		    if ($.trim($(this).val()) == "") return
+		    var _this = $(this)
+			$.ajax({
+				url: '/path/to/file',
+				type: 'default GET (Other values: POST)',
+				dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+				data: {param1: 'value1'},
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				var _html = `
+								<p class="add-wrapper list-wrapper">
+									<input data-id="{1}" type="text" value="{0}" readonly="" class="list-item">
+									<i>x</i>
+									<a href="javascript:;"><img src="images/add.png" /></a>
+								</p>
+				`
+				var _parent = _this.parent()
+				//console.log(_parent)
+				_this.parents('.tool-add-wrapper').find(".tool-add-item").append(_html.replace("{0}",_this.val()).replace("{1}","data.id"))
+				//console.log(_this.parents('.tool-add-wrapper').find(".tool-add-item")[0])
+				_parent.remove()
+			})
+			  
+		})
+		
+
+	</script>
+</body>
+</html>

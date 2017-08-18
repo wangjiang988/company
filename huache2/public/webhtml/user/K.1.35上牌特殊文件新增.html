@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>K.1.35上牌特殊文件新增 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border noborder">
+                <div class="slide slide-fix">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的财务</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#" class="menu-select">我的提交</a>
+                                        <a href="#">我的下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content user-content-with-margin marign-top-tab psr">
+                    <ul class="tab-card">
+                        <li>
+                            <a href="javascript:;">实名认证</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">银行账户认证</a>
+                        </li>
+                        <li class="cur">
+                            <a href="javascript:;">上牌特殊文件</a>
+                        </li>
+                    </ul>
+                    <div class="mt10"></div>
+                    <div class="content-wapper">
+                        <div class="hd hd-card">
+                            <ul>
+                                <li class="cur"><span>1</span><label class="juhuang">提交资料</label></li>
+                                <li><span>2</span><label>核实信息</label></li>
+                                <li><span>3</span><label>完成认证</label></li>
+                                <div class="clear"></div>
+                            </ul>
+                        </div>  
+                        <form action="/user/special/file" method="post" name="user-special-file">
+                            <table class="noborder-tbl wp100">
+                                <tr>
+                                   <td colspan="2">
+                                       <p class="juhuang ml67 fs14 mt20">客官，您当地如办理上牌需要某些特殊文件，不在所列的经销商向您移交文件中，请告诉华车哦~</p>
+                                   </td>
+                                </tr>
+                                <tr>
+                                   <td colspan="2">
+                                        <div class="ml67">
+                                            <span class="red  mt5">*</span>
+                                            <span class="ml5  mt5 weight"> 您心仪座驾的生产国别：</span>
+                                            <input type="radio" name="gb" id="" checked=""><span class="ml5">国产</span>
+                                            <input type="radio" name="gb" id="" class="ml20"><span class="ml5">进口</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="150" align="right" valign="middle">
+                                        <span class="ml5 fr mt5 weight">文件名称：</span>
+                                        <span class="red fr mt5">*</span>
+                                        <div class="clear"></div>
+                                    </td>
+                                    <td width="600" class="bank-area">
+                                        <div class="form-group psr pdi-control fs14  m-t-10">
+                                            <input @focus="initName" @blur="checkName" maxlength="20" v-model="name" type="text" name="bank-info" placeholder="" :class="{'form-control':true,'w125':true,'error-bg':isName}">
+                                            <span class="edit pz-edit"></span>
+                                            <span :class="{red:true,hide:!isSame,ml5:true}">特殊文件已被提交过，请重新输入</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="150" align="right" valign="middle">
+                                        <span class="ml5 fr mt5 weight">上牌地区：</span>
+                                        <span class="red fr mt5">*</span>
+                                        <div class="clear"></div>
+                                    </td>
+                                    <td width="600">
+                                        <div class="file-dropdown-wrapper">
+                                            <province-city v-on:receive-params="getArea" def-value="--请选择--" is-select-province="false"></province-city>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="150" align="right" valign="middle">
+                                        <div class="mt10">
+                                            <div class="m-t-10"></div>
+                                            <span class="ml5 fr mt-10 weight"> 车辆用途：</span>
+                                            <span class="red fr mt-10">*</span>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </td>
+                                    <td width="600">
+                                        <div class="mt5 file-dropdown-wrapper" v-cloak>
+                                            <div class="btn-group btn-jquery-event mt10 pdi-drop pdi-drop-warp">
+                                                <div @click="dropDown" class="btn btn-select btn-select-normal btn-default dropdown-toggle">
+                                                    <span class="dropdown-label" ><span>{{dropValue}}</span></span>
+                                                    <span class="caret"></span>
+                                                </div>
+                                                <ul :class="{'dropdown-menu':true,'dropdown-select':true,show:drop,'w315':true}">
+                                                    <input type="hidden" name="hfVehicleUse" :value="dropValue">
+                                                    <li class="block" @click="setValue(info)" v-for="info in vehicleUseList"><a><span>{{info.txt}}</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                   <td colspan="2">
+                                       <p class="ml67 fs14 mt10"><span class="red">*</span><span class="ml5 weight">上牌（注册登记）车主身份类别：</span></p>
+                                       <div class="ml67" v-cloak v-show="dropCate != 'company'">
+                                            <p><input v-model="isParentSelect" type="radio" name="shangpai" id="shangpai" value="2" @click="setDefIdentity"><label class="fn" for="shangpai">上牌地本市户籍居民</label></p> 
+                                            <p><input v-model="isParentSelect" type="radio" name="shangpai" id="qita" value="1"><label class="fn" for="qita">其他</label></p>
+                                            <p class="pl20"><input @click="selectParant(0)" type="radio" name="" value="1" v-model="childVal"><label class="fn" for="">{{child[0].txt}}</label></p>
+                                            <div class="pl20">
+                                                <input @click="selectParant(1)" type="radio" name="" value="2" v-model="childVal" class="fl" />
+                                                <!--国内其他限牌城市户籍居民-->
+                                                <label class="fn fl" for="">{{child[1].txt}}</label>
+                                                <ul class="files-city"> 
+                                                    <!--国内其他限牌城市户籍居民 北京上海广州天津杭州贵阳深圳苏州-->
+                                                    <li v-for="(item,index) in child[1].list" @click="selectHouseholdRegistration(index,item.id,item.txt)" :class="{'cur-select':item.isSelect}"><i></i>{{item.txt}}</li>
+                                                    <li class="red noborder" v-show="childVal == 2 && householdRegistration == '' && isSub">请选择户籍所在城市</li>
+                                                    <input type="hidden" name="huji" id="huji" :value="householdRegistration" v-model="householdRegistration">
+                                                    <div class="clear"></div>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </div>
+                                            <p class="pl20">
+                                                <!--中国军人-->
+                                                <input @click="selectParant(3)" type="radio" name="" value="3" v-model="childVal"><label class="fn" for="">{{child[2].txt}}</label>
+                                            </p>
+                                            <div class="pl20">
+                                                <!--非中国大陆人士-->
+                                                <input @click="selectParant(4)" type="radio" name="" value="4" v-model="childVal" class="fl" />
+                                                <label class="fn fl" for="">{{child[3].txt}}</label>
+                                                <ul class="files-city"> 
+                                                    <li v-for="(item,index) in child[3].list" @click="selectForeign(index,item.id,item.txt)" :class="{'cur-select':item.isSelect}"><i></i>{{item.txt}}</li>
+                                                    <li class="red noborder" v-show="childVal == 4  && foreign == '' && isSub ">请选择您的身份</li>
+                                                    <input type="hidden" name="waiji" id="waiji" v-model="foreign">
+                                                    <div class="clear"></div>
+                                                </ul>
+                                                <div class="clear"></div>
+                                            </div>
+                                                  
+                                       </div>
+                                       <div class="ml67" v-cloak v-show="dropCate == 'company'">
+                                            <p class="pl20" v-for="cate in companyCate">
+                                                <input @click="selectParant(2)" type="radio" name="cate" :value="cate.val" v-model="childVal"><label class="fn">{{cate.txt}}</label>
+                                            </p>
+                                       </div>
+                                       <div class="red ml67" v-show="isCate">
+                                           <p class="ml20">请选择上牌（注册登记）车主身份类别</p>
+                                       </div>
+
+                                       <div class="ml67">
+                                           <p class="mt10"><b>如有文件式样请拍照上传：</b><span class="p-gray">（仅支持JPG、GIF、PNG、JPEG、BMP格式，单张图片小于5M）</span></p>
+                                            <p class="ml200">
+                                                <input @change="loadFileName" type="file" name="upload-file" id="upload-file" class="hide">
+                                                <span class="blue">{{fileName}}</span>
+                                                <a v-show="fileName" @click="delFile" href="javascript:;" class="">删除</a>
+                                                <a v-show="!fileName" @click="upload" href="javascript:;" class="btn btn-danger fs14 btn-orange sure btn-white">上传</a>
+                                            </p>
+                                            <div class="tac mt20">
+                                                <div class="m-t-10"></div>      
+                                                <a href="javascript:;" @click="send" class="btn btn-s-md btn-danger">提交</a>
+                                                <a href="javascript:;" data-grounp="" class="btn btn-s-md btn-danger sure ml50">返回</a>
+                                            </div>      
+                                       </div>
+                                   </td>
+                                </tr>
+                                
+                            </table>
+                        </form>
+                    </div> 
+                    <div class="m-t-10" v-for="i in 5"></div>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-special-files-submit", "module/common/common"],function(v,u,c){
+            
+
+        })
+    </script>
+
+</body>
+</html>
+
+

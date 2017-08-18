@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>k.2.10查看加信宝 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content ">
+        <div class="wapper has-min-step content-wapper">
+            <p><img src="/webhtml/common/images/jxb.gif" /></p>
+            <div class="box box-border top-border p10">
+                <div class=" fs14 mt10">
+                    <span>订单号：</span>
+                    <drop-down @receive-params="getOrderSn" :list="dropList" def-value="全部" id="orderSn" name="orderSn" class="nofl" class-name="btn-auto dropdown-method"></drop-down>
+                    <span class="ml50">冻结中的买车担保金：￥100.00</span>
+                </div>
+                <div class="m-t-10"></div>
+                <p class="blue nomargin">冻结解冻详情</p>
+                <div class="split-blue"></div>
+                <div class="clear"></div>
+
+                <table class="tbl mt20 tbl-gray-border">
+                    <tr>
+                        <th><span class="noweight">发生时间</span></th>
+                        <th><span class="noweight">订单号</span></th>
+                        <th><span class="noweight">冻结/解冻</span></th>
+                        <th><span class="noweight">冻结来源</span></th>
+                        <th><span class="noweight">解冻去向</span></th>
+                        <th><span class="noweight">冻结增减金额</span></th>
+                        <th><span class="noweight">冻结余额</span></th>
+                    </tr>
+                    <tbody class="fs14" v-cloak>
+                         <tr>
+                            <td>
+                                <div class="time-tag psr">
+                                    <span></span>
+                                    <p class="p fs14">2016-02-01 12：23：34</p>
+                                </div>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456876</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">解冻</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">已退还可用余额</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">- {{formatMoney(499,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(100,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-05-16 09:23:18</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456876</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">冻结</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">可用余额（诚意金）</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">+ {{formatMoney(499,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(599,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-05-15 10:37:02</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456789</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">解冻</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">客户本人上牌违约赔偿</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">- {{formatMoney(1100,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(100,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-05-15 10:37:02</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456789</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">解冻</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">已退还可用余额</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">- {{formatMoney(1100,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(100,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-05-15 10:37:02</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456789</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">解冻</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">转付华车服务费</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">- {{formatMoney(1100,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(100,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-02-03 16:45:06</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456789</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">冻结</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">银行转账</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">+ {{formatMoney(1100,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(1500,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-02-03 16:45:06</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456789</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">冻结</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">线上支付（支付宝）</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">+ {{formatMoney(1100,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(1500,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-02-03 16:45:06</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456789</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">冻结</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">代金券（买车担保金余款）</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">+ {{formatMoney(1100,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(1500,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-02-03 16:45:06</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456789</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">冻结</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">可用余额（诚意金）</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">+ {{formatMoney(1100,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(1500,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="p fs14">2017-02-03 16:45:06</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">123456789</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">冻结</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">代金券（诚意金）</p>
+                            </td>
+                            <td>
+                                <p class="p fs14"></p>
+                            </td>
+                            <td>
+                                <p class="p fs14">+ {{formatMoney(1100,2,"￥")}}</p>
+                            </td>
+                            <td>
+                                <p class="p fs14">{{formatMoney(1500,2,"￥")}}</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">
+                                <p class="tac mt10 fs14">客官，加信宝中暂无记录～</p>
+                            </td>
+                        </tr>
+
+                       
+                    </tbody>
+                </table>
+                <div class="wp100 mauto tac">
+                    <div class="pageinfo  wauto inline-block">
+                        <a href="#">上一页</a>
+                        <a href="#">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <span class="empty">...</span>
+                        <a href="#">下一页</a>
+                        <label>共100页</label>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                
+                
+
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+                <p class="mt20 tac">
+                    <a href="javascript:;" class="btn btn-danger sure ml50">返回</a>
+                </p>
+
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+ 
+
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-view-jxb", "module/common/common"],function(v,u,c){
+            //初始化订单号列表
+            u.initDropList([{id:1,name:'全部'},{id:2,name:'9872322'},{id:3,name:'98723227824'}])
+
+        })
+    </script>
+
+</body>
+</html>
+
+

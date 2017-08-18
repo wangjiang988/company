@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>k.2.4提现路线管理 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content ">
+        <div class="wapper has-min-step content-wapper">
+            <p class="blue">提现路线</p>
+            <div class="box box-border top-border p10">
+                
+                <table class="tbl mt20 tbl-gray-border">
+                    <tr>
+                        <th><span class="noweight">提现方式</span></th>
+                        <th><span class="noweight">收款路线</span></th>
+                        <th><span class="noweight">收款方账号户名</span></th>
+                        <th><span class="noweight">状态</span></th>
+                    </tr>
+                    <tbody class="fs14" v-cloak>
+                        <tr>
+                            <td>银行转账</td>
+                            <td>（黑龙江省齐齐哈尔市）中国工商银行齐齐哈尔人民路分理处</td>
+                            <td>{{splitBrank('6217002710000684874')}} / 王子恒</td>
+                            <td><span class="blue">已绑定账户</span></td>
+                        </tr>
+                        <tr>
+                            <td>线上支付</td>
+                            <td>支付宝</td>
+                            <td>12379784131</td>
+                            <td><span>已验证可使用</span></td>
+                        </tr>
+                        <tr>
+                            <td>银行转账</td>
+                            <td>
+                                <div class="psr">
+                                    <input class="pl5" type="text" name="" id="" placeholder="开户地区">
+                                    <input class="pl5" type="text" name="" id="" placeholder="中国建设银行">
+                                </div>
+                            </td>
+                            <td>{{splitBrank('6217002710000684874')}} / 刘子墨</td>
+                            <td>可使用<a href="k.2.5维护提现开户行信息.html" class="juhuang tdu">完善</a></td>
+                        </tr>
+                        <tr>
+                            <td>银行转账</td>
+                            <td>（黑龙江省齐齐哈尔市）中国工商银行齐齐哈尔人民路分理处</td>
+                            <td>6226 0775 1239 6471 / 王子恒</td>
+                            <td><span>可使用<a href="javascript:;" class="juhuang tdu">修改</a></span></td>
+                        </tr>
+                        <tr class="p-gray">
+                            <td>银行转账</td>
+                            <td>（黑龙江省佳木斯市）中国农业银行中心大道分理处</td>
+                            <td>{{splitBrank('6217002710000684874')}} / 姜雅涵</td>
+                            <td><span>已失效不可用</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <p class="tac mt10 fs14">客官，尚未转入资金或绑定银行账户，所以暂无提现路线哦～</p>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+              
+                <div class="clear"></div>
+                <table class="fs14 mt20">
+                    <tr>
+                        <td valign="top" width="70">温馨提示：</td>
+                        <td>
+                            <div class="tal">
+                                <p>1.银行转账方式提现，如开户行信息不全只能使用银行“超级网银”向您转账，将产生由您承担的额外银行手续费，且“超级网银”并非所有银行都已接入，如因此导致退款，请恕已扣除手续费无法退还。建议您尽可能完善开户行信息后申请提现。</p>
+                                <p>2.各提现路线的详细额度，参见<a href="k.2.3提现额度管理.html" class="juhuang tdu">提现额度管理</a>。</p>
+                                <p>3.如上述收款方信息登记有误或发生账户注销，请向华车客服报错。</p>
+
+                                
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="mt20 tac">
+                    <a href="javascript:;" class="btn btn-danger sure ml50">关闭</a>
+                </p>
+
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+                <div class="m-t-10"></div>
+ 
+
+                
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-base", "module/common/common"],function(v,u,c){
+             
+
+        })
+    </script>
+
+</body>
+</html>
+
+

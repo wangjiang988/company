@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>K.1.34上牌特殊文件 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border noborder">
+                <div class="slide slide-fix">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的财务</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#" class="menu-select">我的提交</a>
+                                        <a href="#">我的下载</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content user-content-with-margin marign-top-tab psr">
+                    <ul class="tab-card">
+                        <li>
+                            <a href="javascript:;">实名认证</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">银行账户认证</a>
+                        </li>
+                        <li class="cur">
+                            <a href="javascript:;">上牌特殊文件</a>
+                        </li>
+                    </ul>
+                    <div class="mt10"></div>
+                    <div class="content-wapper">
+
+                        
+                        <table class="custom-info-tbl noborder wp100">
+                           <tbody><tr>
+                               <td class="tar" width="90">文件名称：</td>
+                               <td class="tal">
+                                    <input placeholder="请输入" type="text" value="" name="" class="form-control ml5 w300 inline-block">
+                                    <a href="javascript:;" class="btn btn-danger fs14 next ml20 btn-blue">查 询</a>
+                                    <a href="javascript:;" class="btn btn-danger fs14 next ml20 btn-orange">添 加</a>
+                               </td>
+                                
+                           </tr>
+                        </tbody></table>
+                        <br>
+                        <table class="tbl">
+                            <tr>
+                                <th>文件名称</th>
+                                <th>上牌地区</th>
+                                <th>提交时间</th>
+                                <th>文件状态</th>
+                                <th>操作</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="fs14 p">abc文件</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">江苏省苏州市</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">2016-04-10 12:12:11</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">待审核</p>
+                                </td>
+                                <td>
+                                    <a href="#" class="juhuang tdu">查看</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="fs14 p">abc文件</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">江苏省苏州市</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">2016-04-10 12:12:11</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">审核通过</p>
+                                </td>
+                                <td>
+                                    <a href="#" class="juhuang tdu">查看</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="fs14 p">abc文件</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">江苏省苏州市</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">2016-04-10 12:12:11</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">审核驳回</p>
+                                </td>
+                                <td>
+                                    <p class="fs14 p">
+                                        <a href="#" class="juhuang tdu">查看</a>
+                                        <a @click="delFile(110)" href="javascript:;" class="juhuang tdu ml10">删除</a>
+                                    </p>
+                                </td>
+
+                            </tr> 
+                        </table>
+
+                        <h1 class="success-title">
+                             <table class="mauto">
+                                 <tr>
+                                     <td><span class="icon-large icon-error-large"></span></td>
+                                     <td><span class="inline-block ml20">暂未提交特殊文件~</span></td>
+                                 </tr>
+                                 <tr>
+                                     <td colspan="2">
+                                         <br><br><br>
+                                         <a href="#" class="btn btn-s-md btn-danger fs16 sure ml50">去提交</a>
+                                     </td>
+                                 </tr>
+                             </table>
+                        </h1>
+
+                        <div class="m-t-10" v-for="i in 12"></div>
+
+                        <div id="delWin" class="popupbox">
+                            <div class="popup-title">温馨提示</div>
+                            <div class="popup-wrapper">
+                                <div class="popup-content">
+                                    <div class="m-t-10"></div>
+                                    <div class="set-authentication-wrapper">
+                                         <p class="gray">确定要删除此文件信息吗？</p>
+                                        <br>
+                                    </div>                   
+                                    <div class="m-t-10"></div>
+                                    <input type="hidden" name="token" value="">
+                                </div> 
+                                <div class="popup-control">
+                                    <a href="javascript:;" @click.stop="doDelFile" class="btn btn-s-md btn-danger fs14 do btn-auto ">确定</a>
+                                    <a href="javascript:;" class="btn btn-s-md btn-danger fs14 sure btn-auto ml20 inline-block ">取消</a>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-special-files", "module/common/common"],function(v,u,c){
+            
+
+        })
+    </script>
+
+</body>
+</html>
+
+

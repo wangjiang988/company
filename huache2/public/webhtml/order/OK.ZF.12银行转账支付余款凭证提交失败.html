@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OK.ZF.12银行转账支付余款凭证提交失败 - 华车网</title> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="../common/css/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body >
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block-noi">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <div class="container m-t-86 psr">
+        <div class="step pos-rlt">
+            <ul>
+                <li class="first">诚意预约<i></i></li>
+                <li class="step-cur">付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content" style=" left: 187px;top:64px">
+                    <small class="juhuang">正在支付</small>
+                    <i></i>
+                    <small>查收确认</small>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pos-rlt content">
+        <div class="wapper has-min-step">
+            
+        <div class="tac">
+
+             <div class="mt50">
+                 <h1 class="success-title">
+                 <table class="mauto">
+                     <tr>
+                         <td><span class="icon-large icon-error-large"></span></td>
+                         <td><span class="inline-block ml20 weight fs18 juhuang">抱歉，本次提交银行转账凭证未成功！</span></td>
+                     </tr>
+                 </table>
+                 </h1>
+                 <div class="m-t-10"></div><div class="m-t-10"></div>
+                
+            </div>
+
+             <div class="wauto inline-block mauto fs14">
+                <p>>>   请重新尝试，如仍有问题，请<a href="#" class="juhuang">联系我们</a></p>
+             </div>
+             <p class="tac mt50"><a href="OK.ZF.10银行转账支付余款提交凭证.html" class="btn btn-s-md btn-danger fs16 sure">重新提交</a></p>
+        </div>
+
+
+        </div>
+        <div class="m-t-10"></div>
+        <div class="m-t-10"></div>
+        <div class="m-t-10"></div>
+    </div>
+  
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        
+        seajs.use(["../common/js/vendor/vue.min","module/order/order-bank-transfer-error", "module/common/common"],function(v,u,c){
+            
+        })
+    </script>
+
+</body>
+</html>

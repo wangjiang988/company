@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>S.Z.1总览 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="/webhtml/user/themes/bootstrap.css " rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border noborder nopadding">
+                <div class="slide slide-fix">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                        
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">欢迎页 </a>
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的信息 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">修改密码</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">常用管理 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">基本信息</a>
+                                        <a href="#">常用车型</a>
+                                        <a href="#" class="">保险设定</a>
+                                        <a href="#" class="">客户文件</a>
+                                        <a href="#" class="">工作时段</a>
+                                        <a href="#" class="">增加经销商</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 报价管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#" class="cur-select-step">开始新建</a>
+                                        <a href="#">新建未完(6)</a>
+                                        <a href="#">等待生效(9)</a>
+                                        <a href="#">正在报价(6)</a>
+                                        <a href="#">暂时下架(6)</a>
+                                        <a href="#">失效报价(6)</a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 订单管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#" class="cur-select-step">执行中(17)</a>
+                                        <a href="#">已结束(1)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 资金管理  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a class="menu-select" href="#">总 览</a>
+                                        <a href="#">资 金 池</a>
+                                        <a href="#">加 信 宝</a>
+                                        <a href="#">充值</a>
+                                        <a href="#">提现</a>
+                                        <a href="#">结算</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 便捷工具  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#">交车预备管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-content custom-content-with-margin  psr">
+                        
+                        <div class="yue-content psr">
+                            <p class="pre-fix mt20"><span class="weight ml10">资金信息</span></p>
+                            <div class="m-t-10"></div>
+                            <p class="fs16">
+                                <span>总资产：<b>￥69,186.95</b></span>
+                                <!--0>资金池可提现余额>= —授信额度金额时
+                                <span>总资产：<b class="juhuang">￥69,186.95</b></span>-->
+                                <!--资金池可提现余额< —授信额度金额时
+                                <span>总资产：<b class="red">￥69,186.95</b></span>-->
+                                <span class="ml200">平台授信额度：<b>￥1,000.00</b></span>
+                            </p>
+                            <p class="fs14 ml10">
+                                固定保证金：￥10,000.00
+                            </p>
+                            <div class="box">
+                            <p class="fs14 ml10">
+                                <span class="w300">资金池可提现余额：￥32,176.95</span>
+                                <a href="S.Z.2资金池.html" class="btn btn-s-md btn-danger sure bt btn-auto ml20">余额明细</a>
+                                <a href="S.Z.4充值.html" class="btn btn-s-md btn-danger sure bt btn-auto ml20">充值明细</a>
+                                <a href="S.Z.8提现.html" class="btn btn-s-md btn-danger sure bt btn-auto ml20">提现明细</a>
+                            </p>
+                            <p style="margin-left: 425px;">
+                                <a href="S.Z.5提交充值凭证.html" class="btn btn-s-md btn-danger sure bt btn-auto ml20">> 去充值</a>
+                                <a href="S.Z.9申请提现.html" class="btn btn-s-md btn-danger sure bt btn-auto ml20">> 去提现</a>
+                            </p>
+                            </div>
+                            <p class="fs14 ml10">
+                                <span class="w300">加信宝浮动保证金：￥27,000.00</span>
+                                <a href="S.Z.3加信宝.html" class="btn btn-s-md btn-danger sure bt btn-auto ml20">查看</a>
+                            </p>
+                            <p class="fs14 ml10">
+                                <span class="w300">临时冻结可提现余额：￥10.00</span>
+                            </p>
+                            <div class="clear"></div>
+                            <p class="pre-fix mt20 psr">
+                                <span class="weight ml10">结算信息</span>
+                                <a href="S.Z.10结算.html" class="btn btn-s-md btn-danger sure bt btn-auto ml100 psa">查看</a>
+                            </p>
+                            <div class="clear"></div>
+                            <div class="m-t-10"></div>
+                            <p class="fs14">结算文件剩余数：10</p>
+                            <p class="fs14"><span>2017-04</span><span class="ml20">预计结算总金额：￥850.23</span></p>
+                            <p class="fs14"><span>2017-03</span><span class="ml20">服务费收入：￥550.23</span></p>
+                            
+                            <div class="clear"></div>
+                        </div>
+
+
+                        <div class="clear "></div>
+                        <div class="mt20"></div>
+                        <div class="clear"></div>
+                         
+
+                        <div class="m-t-10" v-for="i in 5"></div>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="/webhtml/common/js/vendor/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/custom/custom-overview", "module/common/common"],function(v,u,c){
+             u.init($(".countdown"),null,"2017-5-3 10:15:19","2017-5-3 19:35:29",function(){
+                console.log("countdown end")
+             })
+             u.init($(".timeout"),"timeout","2017-5-3 19:35:29","2017-5-3 10:15:19",function(){
+                console.log("timeout end")
+             })
+        })
+    </script>
+
+</body>
+</html>
+
+

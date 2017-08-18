@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>k.2.15我的福利 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="themes/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/user.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+   
+    <div class="container m-t-86 pos-rlt content">
+        <div class="wapper has-min-step">
+            <div class="box box-border">
+                <div class="slide">
+                     <div class="portlet-body">
+                        <div class="panel-group accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle"  href="javascript:;">我的华车 </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body">
+                                        <a href="#">个人资料</a>
+                                        <a href="#">安全设置</a>
+                                        <a href="#">银行账户管理</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的订单  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的订单</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default ">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的财务  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse">
+                                    <div class="panel-body" >
+                                        <a href="#">我的余额</a>
+                                        <a href="#">我的转入</a>
+                                        <a href="#">我的转出</a>
+                                        <a href="#" class="menu-select">我的福利</a>
+                                        <a href="#">我的发票</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default last">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a class="accordion-toggle" href="javascript:;"> 我的文件  </a>
+                                    </h4>
+                                    <i class="fa fa-sort-up"></i>
+                                </div>
+                                <div class="panel-collapse ">
+                                    <div class="panel-body" >
+                                        <a href="#">我的文件</a>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="user-content">
+                    <h4 class="blue-title"><span class="fs14">我的代金券<span class="fs12 p-gray ml10">未激活的代金券赶快通过激活码来激活使用吧~</span></span><div class="mt5"></div></h4>
+                    <div class="content-wapper ">
+                        <form action="/user/getVouchersList/" method="post" name="vouchers-list-form">
+                            <input type="hidden" name="token">
+                            <a href="javascript:;" class="btn btn-s-md btn-danger btn-auto fl">代金券激活</a>
+                            <a href="#" class="fr juhuang mt-10">华车代金券规则说明</a> 
+                            <div class="clear"></div>
+                            <div class="vouchers-option-wrapepr">
+                                <drop-down @receive-params="getVouchers" def-value="可用代金卷" class-name="btn-auto btn-dropdown-small" :list="vouchersStatusList"></drop-down>   
+                                <drop-down v-if="vouchersStatus == 1" class="ml20" @receive-params="getVolumeType" def-value="全部卷类型" class-name="btn-auto btn-dropdown-small" :list="volumeTypeList"></drop-down>   
+                                <a href="javascript:;" v-if="vouchersStatus == 1" class="fl ml50 mt5">新到账</a>
+                                <a href="javascript:;" v-if="vouchersStatus == 1" class="fl ml50 mt5">即将过期</a>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="vouchers-list-wrapper" v-cloak>
+                                <div class="vouchers-item-wrapper" :class="{ 'vouchers-disabled':vouchersStatus!=1, 'vouchers-disabled-overdue':vouchersStatus==3 ,'vouchers-disabled-used':vouchersStatus==2}" v-for="voucher in vouchersList">
+                                    <div class="vouchers-item">
+                                        <div class="vouchers-head">
+                                            <div class="circular"></div>
+                                            <h1>￥{{voucher.price}}</h1>
+                                            <p class="fs16">{{voucher.typeName}}</p>
+                                            <p class="fs16">{{voucher.time}}</p>
+                                        </div>
+                                        <div class="vouchers-foot">
+                                            <div class="vouchers-foot-content">
+                                                <p>品类：<span class="p-gray">{{voucher.category}}</span></p>
+                                                <p><b>编号</b>：<span class="p-gray">{{voucher.sn}}</span></p>
+                                                <p v-if="vouchersStatus == 1"><span class="red">使用须知：</span><span>该券用于支付买车担保金余款不可用于支付诚意金！</span></p>
+                                                <p v-if="vouchersStatus == 2">订单号：<span class="p-gray">{{voucher.ordersn}}</span></p>
+                                                <p v-if="vouchersStatus == 2">时间：<span class="p-gray">{{voucher.usetime}}</span></p>
+                                                <p class="tac">
+                                                    <a href="javascript:;" class="btn btn-danger btn-auto btn-round mt10">立即使用</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div> 
+                            </div>
+                            <div class="clear"></div>
+                            <div class="vouchers-list-end">
+                                <a href="#" class="juhuang list-link">华车代金券规则说明</a>
+                            </div>
+                            <div class="text-center">
+                                <pagination @receive-params="getPageIndex" :currents="pageinfo.current" :show-item="pageinfo.showItem" :all-page="pageinfo.allPage"></pagination>
+                            </div>
+                        </form>
+                        
+                        <div class="m-t-10"></div>
+                        <div class="m-t-10"></div>
+                        <div class="m-t-10"></div>
+
+                    </div>
+                   
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/user/user-vouchers", "module/common/common"],function(v,u,c){
+            
+            //如果代金券状态固定 
+            //可以在user-vouchers.js中直接设置vouchersStatusList
+            //删除下面u.initVouchersStatusList方法
+            u.initVouchersStatusList([
+                 {id:1,name:"\u53ef\u7528\u4ee3\u91d1\u5377"},
+                 {id:2,name:"\u5df2\u7528\u4ee3\u91d1\u5377"},
+                 {id:3,name:"\u8fc7\u671f\u4ee3\u91d1\u5377"}
+            ])
+            //如果卷类型固定 
+            //可以在user-vouchers.js中直接设置volumeTypeList
+            //删除下面u.initVolumeTypeList方法
+            u.initVolumeTypeList([
+                 {id:1,name:"\u901a\u7528\u5377"},
+                 {id:2,name:"\u54c1\u7c7b\u5377"}  
+            ])
+
+        })
+    </script>
+
+</body>
+</html>
+
+

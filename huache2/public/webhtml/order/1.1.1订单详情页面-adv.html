@@ -1,0 +1,817 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>1.1.1订单详情页面 - 华车平台</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="../common/css/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/item-fix.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ms-controller="web">
+
+    
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <ul class="head-nav-wrapper">
+                <li><a href="#baozhang">诚信保障</a></li>
+                <li><a href="#services">帮助中心</a></li>
+            </ul>
+            <ul class="head-login-wrapper">
+                <li class="loginout">
+                    <label>欢迎您，<a href="/user/" class="juhuang">客官8792</a><a href="/user/" class="hc-status inline-block-noi">我的华车</a> </label>
+                    <a @click="loginOutConfirm" href="javascript:;" class="hc-status-loginout">下车<em>(退出)</em></a>  
+                    <div v-cloak v-show="isShowLoginOut" class="login-out-comfirm">
+                        <p>退出登陆状态将重新回到<br>华车首页，是否继续？</p>
+                        <div class="confirm">
+                            <a @click="sureLoginOut" href="javascript:;">确认退出</a> 
+                            <a @click="canceLoginOut" href="javascript:;" class="cancel">取消</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="container m-t-86 psr">
+        <div class="step psr">
+            <ul>
+                <li class="step-cur">诚意预约<i></i></li>
+                <li>付担保金<i></i></li>
+                <li>预约交车<i></i></li>
+                <li>付款提车<i></i></li>
+                <li>退担保金<i></i></li>
+                <li>完成评价<i></i></li>
+                <div class="clear"></div>
+            </ul>
+            <div class="min-step">
+                <div class="m-content">
+                    <small class="juhuang">选择产品</small>
+                    <i></i>
+                    <small>付诚意金</small>
+                    <i></i>
+                    <small class="">卖方确认</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container psr content item">
+        <form action="" name="item-form" class="item-form">
+            <div class="wapper has-min-step">
+                <h1>客官大人：</h1>
+                <h1 class="ti">欢迎使用华车订购您的心仪座驾！以下内容全部确认同意并支付诚意金，即可轻松完成订购。</h1>
+                <!--产品-->
+                <div class="box">
+                    <div class="title">
+                        <label @click="toggleContent(0)">一、产品<i :class="{hidec:!item[0].isToggle}"></i></label>
+                        <em></em>
+                        <code v-cloak v-show="!item[0].isAgree" class="besure">待确定</code>
+                        <code v-cloak v-show="item[0].isAgree" class="ok-code"><img width="38" src="./themes/images/ok_03.png" alt=""></code>
+                    </div>
+                    <div v-cloak v-show="item[0].isToggle" class="box-inner box-inner-def">
+                        <h2 class="simp-title">车辆简况</h2>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">品牌</td>
+                                <td>吉利</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">车系</td>
+                                <td>帝豪GS</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">车型规格</td>
+                                <td>2016款 优雅版 1.8L DCT领尚型（整车型号：CS12332111111）</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">车辆类别</td>
+                                <td>全新中规车整车（已加装部分
+                                <span class="juhuang cp" @click="srollTopShow(1)">原厂</span>和
+                                <span class="juhuang cp" @click="srollTopShow(2)">非原厂</span>选装精品，见下方详细说明）
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">数量</td>
+                                <td>1台</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">基本配置</td>
+                                <td>
+                                    <a class="juhuang cp">查看基本配置</a>（注：本配置说明引自该品牌厂商权威官方网站资料 <a class="juhuang cp">去官网查看配置）</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">生产国别</td>
+                                <td>国产</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">座位数</td>
+                                <td>7座</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">车身颜色</td>
+                                <td>珍珠银</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">内饰颜色</td>
+                                <td>珍珠银</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">行驶里程</td>
+                                <td><span>（不高于）20公里</span></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">出厂年月</td>
+                                <td><span>（不早于）2017年05月</span></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">排放标准</td>
+                                <td>符合国五标准</td>
+                            </tr>
+                        </table>
+                        <h2 class="simp-title" id="yuanchang">已装原厂选装精品</h2>
+                        <table class="tbl tac">
+                            <tr>
+                                <th width="150" class="prev-title">名称</th>
+                                <th width="350" class="prev-title">型号/说明</th>
+                                <th width="150" class="prev-title">厂商指导价</th>
+                                <th width="100" class="prev-title">数量</th>
+                                <th class="prev-title">附加价值</th>
+                            </tr>
+                            <tr>
+                                <td>饰件</td>
+                                <td>designo 高光棕色旭日形纹理香桃木木饰</td>
+                                <td class="tar">￥0.00</td>
+                                <td>1</td>
+                                <td class="tar">￥0.00</td>
+                            </tr> 
+                            <tr class="td-bg">
+                                <td>冷藏箱</td>
+                                <td>凉爽餐饮随时唾手可得 – 后排冷藏箱让乘客能够随时享受美味。它完美集成于后排扶手中，容积约为 8.5</td>
+                                <td class="tar">￥0.00</td>
+                                <td>1</td>
+                                <td class="tar">￥0.00</td>
+                            </tr> 
+                            <tr>
+                                <td>饰件</td>
+                                <td>designo 高光棕色旭日形纹理香桃木木饰</td>
+                                <td class="tar">￥0.00</td>
+                                <td>1</td>
+                                <td class="tar">￥0.00</td>
+                            </tr> 
+                        </table>
+                        <h2 class="text-right "><b>合计价值：￥23,000.00</b></h2>
+                        <h2 class="simp-title" id="feiyuanchang">免费礼品或服务</h2>
+                        <table class="tbl tac">
+                            <tr>
+                                <th width="" class="prev-title">名称</th>
+                                <th width="" class="prev-title">数量</th>
+                                <th class="prev-title">状态</th>
+                            </tr>
+                            <tr>
+                                <td>导航仪</td>
+                                <td>1</td>
+                                <td>已安装</td>
+                            </tr> 
+                            <tr class="td-bg">
+                                <td>全车脚垫</td>
+                                <td>2</td>
+                                <td>/</td>
+                            </tr> 
+                            <tr>
+                                <td>灭火器</td>
+                                <td>1</td>
+                                <td>/</td>
+                            </tr>  
+                        </table>
+                        <div class="control-wapper mt20">
+                            <a href="javascript:;" @click="agree(0)" :disabled="item[0].isAgree" class="btn btn-s-md btn-danger fs16">我同意</a> 
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--车价-->
+                <div class="box">
+                    <div class="title">
+                        <label @click="toggleContent(1)">二、车价<i :class="{hidec:!item[1].isToggle}"></i></label>
+                        <em></em>
+                        <code v-cloak v-show="!item[1].isAgree" class="besure">待确定</code>
+                        <code v-cloak v-show="item[1].isAgree" class="ok-code"><img width="38" src="./themes/images/ok_03.png" alt=""></code>
+                    </div>
+                    <div v-cloak v-show="item[1].isToggle" class="box-inner box-inner-def">
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">厂商指导价</td>
+                                <td>人民币520,000.00 元</td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">您的华车车价</td>
+                                <td>
+                                    <p>人民币520,000.00 元(伍拾贰万元整）</p>
+                                    <p>（您所见的车价为包含经销商车辆开票价和华车服务费的一口价，且华车服务费在华车车价中所占比例低于5%。后续预约交车步骤前，将告知两项的具体金额。顺利完成的订单，华车服务费从买车担保金中扣减。已加装的所有原厂和非原厂选装精品，价值已包含在车辆开票价内，不另收费，但发票是否单独开具按经销商店内提示执行。）</p>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">支付方式</td>
+                                <td>
+                                    <p>全款</p>
+                                    <p>（在授权经销商处当场直接支付<span class="juhuang">车辆开票价格之全部金额</span>。华车服务费是在您如愿接收尊驾、本次订单完成后才与您结算，从买车担保金中扣除。</p>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">买车担保金</td>
+                                <td>
+                                    <p>人民币12,000.00元</p>
+                                    <p>（该金额将冻结在华车平台加信宝，订单执行完毕扣减华车服务费和其他违约赔偿<如产生>后，多余金额将解冻退还至您华车账户的可用余额，不用可申请提现。）</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="wp100">
+                            <tr>
+                                <td width="80" valign="top">温馨提示：</td>
+                                <td>
+                                    <p class="fs14">如您为他人或企业买车，买车担保金需先由您支付至加信宝进行担保，实际的买车上牌车主在提车时向授权经销商支付开票车款，获得发票抬头与付款车主一致的机动车销售统一发票。您实付的华车服务费，将可要求华车开具发票，发票抬头为上牌车主名称、或您实名认证后的真实姓名。</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="fs16 blue weight text-center mt50">客户资金流程</p>
+                        <p class="fs12 blue text-center weight">（示例）</p>
+                        <p class="text-center"><img class="wauto ml-15" src="./themes/images/liucheng.png" alt=""></p>
+
+                        <div class="control-wapper mt20">
+                            <a href="javascript:;" @click="agree(1)" :disabled="item[1].isAgree" class="btn btn-s-md btn-danger fs16">我同意</a> 
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--交车-->
+                <div class="box">
+                    <div class="title">
+                        <label @click="toggleContent(2)">三、交车<i :class="{hidec:!item[2].isToggle}"></i></label>
+                        <em></em>
+                        <code v-cloak v-show="!item[2].isAgree" class="besure">待确定</code>
+                        <code v-cloak v-show="item[2].isAgree" class="ok-code"><img width="38" src="./themes/images/ok_03.png" alt=""></code>
+                    </div>
+                    <div v-cloak v-show="item[2].isToggle" class="box-inner box-inner-def">
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">交车时限</td>
+                                <td class="ti">买车担保金全额确认进入华车平台加信宝后的6个月内</td>
+                            </tr> 
+                            <tr>
+                                <td class="prev-title">交车地点范围</td>
+                                <td>
+                                    <p class="fs14 ti">该车将在 <span class="fs16 weight">江苏省苏州市</span> <span class="fs16 weight">或</span><span class="fs16 weight"> 江苏省无锡市</span> 内的该品牌厂商授权经销商的合法正规营业场所内交付，
+                                    具体地点在后续交车通知中另行告知。<span class="tdu">本范围中所示地区为直辖市、地级市、自治州级别的行政区划，</span>
+                                    <span class="tdu">包含了下辖的所有区、县级市、县或自治县！</span></p>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <h6 class="fs14">温馨提示：您须作好自行前往上述范围内指定地点提车的各项准备，建议您按最不便的提车方案考虑，慎重决定。 </h6>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">文件资料</td>
+                                <td class="ti">机动车销售统一发票原件，机动车整车出厂合格证原件，海关货物进口证明书原件，进口机动车辆随车检验单原件,《车辆购置税征管系统专用进口车辆电子信息》表，机动车辆国家强制性认证一致性证书原件，维修保养手册，三包凭证，使用维护说明书，技术参数表，车辆基本信息表，发动机号拓印，车架号拓印，操作指南，快速入门手册</td>
+                            </tr> 
+                            <tr>
+                                <td class="prev-title">随车工具</td>
+                                <td>
+                                    <p class="fs14 ti">钥匙2把，千斤顶1个，灭火器1只，备用轮胎1只，三角警示牌1副，点烟器1个，烟灰盒1个，拖钩1个，工具包1套，天线1件，轮盖4个</p>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <h6 class="fs14">温馨提示：经销商将在交车时当场向您移交。 </h6>
+                        
+                        <div class="control-wapper mt20">
+                            <a href="javascript:;" @click="agree(2)" :disabled="item[2].isAgree" class="btn btn-s-md btn-danger fs16">我同意</a> 
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--收费-->
+                <div class="box">
+                    <div class="title">
+                        <label @click="toggleContent(3)">四、收费<i :class="{hidec:!item[3].isToggle}"></i></label>
+                        <em></em>
+                        <code v-cloak v-show="!item[3].isAgree" class="besure">待确定</code>
+                        <code v-cloak v-show="item[3].isAgree" class="ok-code"><img width="38" src="./themes/images/ok_03.png" alt=""></code>
+                    </div> 
+                   
+                    <div v-cloak v-show="item[3].isToggle" class="box-inner box-inner-def">
+
+                        <!--如果没有费用 则 整个‘price-wrapper’ 都不要-->
+                        <div class="price-wrapper">
+                            <p><b>说明：</b>交车时您须向经销商支付的其它费用（不含您与经销商后续达成的新项目）。 </p>
+                            <table class="tbl">
+                                <tr>
+                                    <th class="prev-title">费用名称</th>
+                                    <th class="prev-title">金额</th>
+                                </tr>
+                                <tr>
+                                    <td><p class="fs16 tac">出库费</p></td>
+                                    <td><p class="fs16 tac">（不高于）人民币1,000.00元</p></td>
+                                </tr>
+                                <tr class="td-bg">
+                                    <td><p class="fs16 tac">保险押金</p></td>
+                                    <td><p class="fs16 tac">（不高于）人民币100.00元</p></td>
+                                </tr>  
+                            </table>
+                            <p class="tac fs16">共计：（不高于）人民币100.00元</p>
+                        </div>
+
+                        <h2 class="simp-title">在经销商处单车刷卡付款收费标准</h2>
+                        <table class="tbl">
+                            
+                            <tr>
+                                <td class="prev-title">信用卡</td>
+                                <td><p class="fs16 tac">免费次数10次，超出次数收费：刷卡金额的0.1%（百分之）</p></td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">借记卡</td>
+                                <td><p class="fs16 tac">免费次数15次，超出次数收费：刷卡金额的0.1%（百分之）， 每次10元（封顶）</p></td>
+                            </tr>  
+                        </table>
+
+                        
+                        <div class="control-wapper mt20">
+                            <a href="javascript:;" @click="agree(3)" :disabled="item[3].isAgree" class="btn btn-s-md btn-danger fs16">我同意</a> 
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div> 
+
+                 <!--上牌-->
+                <div class="box">
+                    <div class="title">
+                        <label @click="toggleContent(4)">五、上牌<i :class="{hidec:!item[4].isToggle}"></i></label>
+                        <em></em>
+                        <code v-cloak v-show="!item[4].isAgree" class="besure">待确定</code>
+                        <code v-cloak v-show="item[4].isAgree" class="ok-code"><img width="38" src="./themes/images/ok_03.png" alt=""></code>
+                    </div>
+                     
+                    <div v-cloak v-show="item[4].isToggle" class="box-inner box-inner-def">
+                        <p class="tac">
+                            <img src="./themes/images/1.1_03.png" alt="">
+                            <img src="./themes/images/1.1_05.png" alt="" class="ml20">
+                            <img src="./themes/images/1.1_10.png" alt="" class="ml20">
+                            <img src="./themes/images/1.1_07.png" alt="" class="ml20">
+                        </p>
+                        <p class="fs16 weight">上牌，指机动车注册登记，取得机动车登记证书、号牌、行驶证、检验合格标志。</p>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">计划上牌地区</td>
+                                <td>
+                                    <p class="fs16">江苏省苏州市 <span class="juhuang">（限牌城市）</span></p>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="wp100">
+                            <tr>
+                                <td width="65" valign="top" class="fs16">温馨提示</td>
+                                <td>
+                                    <p class="fs16 m0">1.机动车所有人应当向住所地的车辆管理所申请注册登记。</p>
+                                    <p class="fs16 m0">2.因各地上牌政策差异，您提车后如临时决定改变尊驾的上牌地区，车辆及其配套上牌文件可能存在与新上牌地区之上牌政策不相符合的风险，故请慎重决定尊驾将来的上牌地区。</p>
+                                    <!--限牌地区显示-->
+                                    <p class="fs16 m0 juhuang">3.苏州2017年1月起对外地户籍居住证暂停办理新车上牌。</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--如果非限牌城市 整个'xp-wrapper' 不显示-->
+                        <div class="xp-wrapper">
+                            <p class="fs16 mt10"><b class="juhuang fs16">＊特别提醒：</b>当前计划上牌地区为限牌城市，需要您自行取得牌照指标方可上牌，请确认您取得牌照指标的安排：</p>
+                            <p class="fs16">
+                                <input :disabled="item[4].isAgree" type="radio" name="yy" v-model="step5.limitSelect" value="0"><span class="ml5">我已取得牌照指标</span>
+                            </p>
+                            <p class="fs16">
+                                <input :disabled="item[4].isAgree" type="radio" name="yy" v-model="step5.limitSelect" value="1"><span class="ml5">我将在订车或提车后自行办理牌照指标，上路风险本人愿自行承担。</span>
+                            </p>
+                            <table class="tbl">
+                                <tr>
+                                    <td class="prev-title">上牌服务约定</td>
+                                    <td>
+                                        <p class="fs16">本人上牌</p>
+                                        <p><small>（您须亲自办理上牌手续，经销商不代办。为避免出现您提车后无法上牌的情况，请在付诚意金预订前，先向上牌地车管所详询上牌流程和必备文件资料，并结合下方经销商将向您移交的文件资料，决定是否在华车平台订购您的心仪座驾。）</small></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="prev-title">上牌服务约定</td>
+                                    <td>
+                                        <p class="fs16">自选上牌</p>
+                                        <p><small>（您在收到交车通知后选择：由您亲自办理上牌手续，或者委托经销商代办，并向其支付下方标准的服务费。）</small></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="prev-title">上牌服务约定</td>
+                                    <td>
+                                        <p class="fs16">接受安排</p>
+                                        <p><small>（因可能涉及异地上牌，我们将在预约交车前告知您上牌是由经销商代办还是由您亲自办理，您须完全接受我们所作的安排。如告知由经销商代办，则您将向其支付下方标准的服务费。也有可能告知由您亲自办理上牌手续，为避免出现您提车后无法上牌的情况，请在付诚意金预订前，先向上牌地车管所详询上牌流程和必备文件资料，并结合下方经销商将向您移交的文件资料，决定是否在华车平台订购您的心仪座驾。）</small></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="prev-title">服务费金额</td>
+                                    <td><p class="fs16">（不高于）人民币1,000.00元</p></td>
+                                </tr>
+                                <tr>
+                                    <td class="prev-title">支付方式</td>
+                                    <td>
+                                        <p class="fs16">在经销商处办理的，在经销商处支付。</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                        <h2 class="simp-title">经销商代办上牌服务</h2>
+                        <p class="fs16 ti">指经销商为购车方代办机动车注册登记手续的服务，仅按车管所相关规则办理，不对牌号结果负责，也不含在某些限牌地区通过摇号、拍卖、转让等方式取得牌照资源指标的服务和费用。</p>
+                        <table class="wp100">
+                            <tr>
+                                <td width="65" valign="top" class="fs16">温馨提示</td>
+                                <td>
+                                    <p class="fs16 m0">1.根据政府的相关政策，成功上牌的前提需要您的户籍等条件达到上牌地区规定的资格。非当地户籍人士上牌的门槛可能包括（但不限于）：暂住证（且上网信息满一定时间）、非国内人士相关证件（原件与翻译文件）和临时住宿登记表（满一定时间），国内其他限牌城市户籍人士审批表... ...如有疑问请向当地车管所咨询。</p>
+                                    <p class="fs16 m0">2.如您委托经销商代办上牌手续，须向经销商提供符合上牌地区上牌政策的所有必需文件（包括身份证明、牌照指标等)，否则您将<span class="juhuang">单独承担</span>无法上牌的所有后果。</p>
+                                </td>
+                            </tr>
+                                                  
+                        </table>
+                        <div class="m-t-10"></div>
+                        <p class="fs16 m0"><span class="juhuang weight">＊特别提醒：</span>请确认您在当地上牌是否需要经销商配合提供其他特殊文件。如需要，请从下方选项中勾选，在支付诚意金后，由经销商在24小时内反馈（此种情况下，如您无法接受反馈内容而终止订单，将<span class="tdu">只能退还诚意金，而无法获得歉意金赔偿</span>。）</p>
+                        <div class="m-t-10"></div>
+                        <p class="fs16">
+                            <input :disabled="item[4].isAgree" type="radio" name="xx" v-model="step5.parent" value="0"><span class="ml5">无其他特殊文件要求</span>
+                        </p>
+                        <p class="fs16">
+                            <input :disabled="item[4].isAgree" type="radio" name="xx" v-model="step5.parent" value="1"><span class="ml5">有其他特殊文件要求</span>
+                        </p>
+                        <div class="fs16 ml20" >
+                            <input :disabled="item[4].isAgree" type="checkbox" class="fn" v-model="step5.child" value="XX证明"><span class="fn">XX证明</span>
+                            <input :disabled="item[4].isAgree" type="checkbox" class="fn" v-model="step5.child" value="XX证书"><span class="fn">XX证书</span>
+                            <a href="#" class="juhuang tdu pl20">告诉华车 </a>
+                            <span>（有未列出的其他新文件？先请告诉华车吧～）</span>
+                        </div>
+                        <br>
+                        
+                        <div class="control-wapper mt20">
+                            <a href="javascript:;" @click="relatedMatters" :disabled="item[4].isAgree" class="btn btn-s-md btn-danger fs16 fr ml10">我同意</a> 
+                            <span class="fs14 fr valite-error red mt5 " v-show="!step5.isAgree">特别提醒的内容没选好哦～</span>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+              
+
+                <!--可选-->
+                <div class="box">
+                    <div class="title">
+                        <label @click="toggleContent(5)">六、可选<i :class="{hidec:!item[5].isToggle}"></i></label>
+                        <em></em>
+                        <code v-cloak v-show="!item[5].isAgree" class="besure">待确定</code>
+                        <code v-cloak v-show="item[5].isAgree" class="ok-code"><img width="38" src="./themes/images/ok_03.png" alt=""></code>
+                    </div>
+
+                 
+                    <div v-cloak v-show="item[5].isToggle" class="box-inner box-inner-def">
+                        <h2 class="simp-title">商业车险</h2>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">商业车险投保约定</td>
+                                <td>
+                                    <p class="fs16">自由投保<br>（您可以在经销商处投保，当然也可以选择其他渠道投保。）</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr class="dashed">
+                        <h2 class="simp-title">代办临时牌照</h2>
+                        <p class="wp50 fs16 ti fl">
+                            仅指经销商为购车方代办车辆临时移动牌照，而不是机动车注册登记。根据《中华人民共和国交通安全法》，在没有取得正式牌照之前，必须按规定申领车辆临时移动牌照方能上路行驶。
+                        </p>
+                        <img src="./themes/images/1.1_07.gif" alt="" width="320" class="fr">
+                        <div class="clear"></div>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">代办临时牌照约定</td>
+                                <td>
+                                    <p class="fs16">自选服务<br>（您可以本人亲自办理车辆临时移动牌照，也可以在提车时委托经销商代办，向其支付下方标准的每次代办服务费。）</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">服务费金额（每次）</td>
+                                <td>
+                                    <p class="fs16">（不高于）人民币100.00元</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">支付方式</td>
+                                <td>
+                                    <p class="fs16">在经销商处办理的，在经销商处支付。</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr class="dashed">
+                        <h2 class="simp-title">原厂选装精品折扣</h2>
+                        <p class="fs16 ti">如您需要在现有配置上加装其它的原厂选装精品，经销商在厂商指导价定价基础上给您的折扣优惠。比如定价100元，折扣率95%，则您享受的折后价为95元。                        </p>
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">原厂选装精品折扣率</td>
+                                <td colspan="3">
+                                    <p class="fs16"> 85%</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">支付方式</td>
+                                <td colspan="3">
+                                    <p class="fs16">在经销商处支付</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="blue-bg">
+                                    <p class="fs18 weight tac">原厂选装精品</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">名称</td>
+                                <td class="prev-title">型号/说明</td>
+                                <td class="prev-title">厂商指导价</td>
+                                <td class="prev-title">折后价</td>
+                            </tr>
+                            <tr>
+                                <td class=""><p class="fs16">饰件</p></td>
+                                <td class=""><p class="fs16">designo 高光棕色旭日形纹理香桃木木饰</p></td>
+                                <td class=""><p class="fs16 tar">￥0.00</p></td>
+                                <td class=""><p class="fs16 tar">￥0.00</p></td>
+                            </tr>
+                            <tr class="td-bg">
+                                <td class=""><p class="fs16">冷藏箱</p></td>
+                                <td class=""><p class="fs16">凉爽餐饮随时唾手可得 – 后排冷藏箱让乘客能够随时享受美味。它完美集成于后排扶手中，容积约为 8.5</p></td>
+                                <td class=""><p class="fs16 tar">￥20,000.00</p></td>
+                                <td class=""><p class="fs16 tar">￥17000.00</p></td>
+                            </tr>
+                            <tr>
+                                <td class=""><p class="fs16">折叠桌，时尚旅行装备</p></td>
+                                <td class=""><p class="fs16">d黑色, 塑料，订购号：A0008160000</p></td>
+                                <td class=""><p class="fs16 tar">￥1,578.48</p></td>
+                                <td class=""><p class="fs16 tar">￥1341.70</p></td>
+                            </tr>
+                        </table>
+                        <!--我也不知道这鬼东西是啥玩意 貌似是后装-->
+                        <table class="tbl">
+                            <tr>
+                                <td class="prev-title">原厂选装精品折扣率</td>
+                                <td colspan="3">
+                                    <p class="fs16"> 85%</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">是否有安装费用</td>
+                                <td colspan="3">
+                                    <p class="fs16">有 （部分选装精品需要额外的安装费用，在您挑选时有权选择购买或不买。）</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="prev-title">支付方式</td>
+                                <td colspan="3">
+                                    <p class="fs16">在经销商处支付</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="blue-bg">
+                                    <p class="fs16 weight tac juhuang">查看原厂选装精品的品种和厂商指导价</p>
+                                </td>
+                            </tr>
+                        </table>    
+                        <p class="fs16">注：支付买车担保金后您可从容挑选选装精品。</p>
+
+                        <div class="control-wapper mt20">
+                            <a href="javascript:;" @click="agree(5)" :disabled="item[5].isAgree" class="btn btn-s-md btn-danger fs16">我同意</a> 
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--规则-->
+                <div class="box">
+                    <div class="title">
+                        <label @click="toggleContent(6)">七、规则<i :class="{hidec:!item[6].isToggle}"></i></label>
+                        <em></em>
+                        <code v-cloak v-show="!item[6].isAgree" class="besure">待确定</code>
+                        <code v-cloak v-show="item[6].isAgree" class="ok-code"><img width="38" src="./themes/images/ok_03.png" alt=""></code>
+                    </div>
+
+                    
+                    <div v-cloak v-show="item[6].isToggle" :style="{opacity: item[6].isToggle ? 1 : 0}" class="box-inner box-inner-def">
+                        <table>
+                            <tr>
+                                <td width="100" align="center" valign="top">
+                                <img src="./themes/images/1.1_17.png" alt="">
+                                <td>
+                                    <p class="fs16 ml10">是华车为购车客户和经销商共同打造的双向担保系统，用于独立、强力保障购车客户不打折扣地享受经销商承诺的各项服务。如有单方违约行为，通过加信宝赔偿解决，快速高效。</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <h2 class="simp-title">购车中各方违约行为及后果</h2>
+
+                        <table class="tbl tac">
+                            <tr>
+                                <td style="width: 104px" class="weight prev-title">订单阶段</td>
+                                <td style="width: 173px" class="weight prev-title">加信宝冻结您的资金</td>
+                                <td style="width: 145px" class="weight prev-title">您的违约行为</td>
+                                <td style="width: 153px" class="weight prev-title">您的后果</td>
+                                <td style="width: 148px" class="weight prev-title">售方违约行为</td>
+                                <td style="width: 156px" class="weight prev-title">售方后果</td>
+                            </tr>
+                            <tr>
+                                <td>诚意预约</td>
+                                <td>诚意金￥499.00</td>
+                                <td></td>
+                                <td></td>
+                                <td>修改、终止订单</td>
+                                <td><span class="juhuang">赔偿歉意金￥499.00给您</span></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">付担保金</td>
+                                <td class="red-bg">诚意金￥499.00</td>
+                                <td class="red-bg">未按时足额支付买车担保金</td>
+                                <td class="red-bg">赔偿诚意金￥499.00给售方</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>买车担保金</td>
+                                <td></td>
+                                <td></td>
+                                <td>修改、终止订单、未按时发给您交车邀请</td>
+                                <td><span class="juhuang">赔偿歉意金￥499.00、买车担保金利息给您</span></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">预约交车</td>
+                                <td class="red-bg">买车担保金</td>
+                                <td class="red-bg">非不可抗力原因拒绝预约</td>
+                                <td class="red-bg">赔偿买车担保金给售方</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>买车担保金</td>
+                                <td></td>
+                                <td></td>
+                                <td>非不可抗力原因拒绝预约</td>
+                                <td><span class="juhuang">赔偿歉意金￥499.00、买车担保金利息给您</span></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">付款提车</td>
+                                <td class="red-bg">买车担保金</td>
+                                <td class="red-bg">非不可抗力原因拒绝提车</td>
+                                <td class="red-bg">赔偿买车担保金给售方</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>买车担保金</td>
+                                <td></td>
+                                <td></td>
+                                <td>非不可抗力原因终止履约、履约内容与约定不符</td>
+                                <td><span class="juhuang">赔偿歉意金￥499.00、买车担保金利息、您的其他合理损失给您</span></td>
+                            </tr>
+
+                            
+                        </table>
+                        <p class="fs16">注：买车担保金利息按每日0.02%计算。不可抗力、您的其他合理损失的界定范围，详见服务协议。</p>
+                        <div class="control-wapper mt20">
+                            <a href="javascript:;" @click="agree(6)" :disabled="item[6].isAgree" class="btn btn-s-md btn-danger fs16">我同意</a> 
+                            <div class="clear"></div>
+                        </div>
+                        <hr class="dashed hide" :class="{show:allAgree}"> 
+                    </div>
+                </div> 
+
+                <div class="hide-info-wrapper hide" :class="{show:allAgree}">
+                    
+                    <h2 class="simp-title simp-title-large">落地价计算器</h2>
+                    <div class="ml20">
+                        <p class="fs16 ml5">想估算购车总花费？ <img src="./themes/images/jt_03.png" alt=""> <a href="#" class="juhuang">落地价计算器</a></p>
+                        <p class="fs16 ml5">温馨提示：全款购车，您需备好充裕资金，用途可能包括：您的华车车价、买车担保金（订单完成后返还余款）、车辆购置税、车船使用税、 上牌费、上临时牌照费、车辆商业保险保费、交强险保费、选装精品费用、售方其他杂费、提车回程费用等。</p>
+                    </div>
+                    <h2 class="simp-title simp-title-large">优惠说明</h2>
+                    <div class="ml20">
+                        <p class="fs16 ml5 ti">上述特别邀约，与经销商店内其他优惠不可兼得。您接受邀约，视为同意放弃厂商或经销商提供的其他额外优惠。但由国家或地方政府提供的补贴、税收优惠等，您可正常享受。</p>
+                    </div>
+
+                    <h2 class="simp-title simp-title-large">诚意金</h2>
+                    <div class="ml20">
+                        <p class="fs16 ml5">诚意金：<b class="tdu">人民币499.00元</b></p>
+                        <p class="fs16 ml5">（须使用您在华车账户的可用余额支付，余额不足按流程先充值，充值款不买车可退还。）</p>
+                        <p class="fs16 ml5 weight">特别提醒：诚意金成功付入加信宝，代表您已不可撤销地接受上述所有条件，订单即时生效。若非上牌特殊文件办理无法达成原因或售方违约原因造成订单终止，已付的诚意金是无法退还的！</p>
+                    </div>
+                    <h2 class="simp-title simp-title-large">买车担保金余款</h2>
+                    <div class="ml20">
+                        <p class="fs16 ml5 ti">根据华车规则，售方将在平台加信宝收到诚意金后的<span class="juhuang" v-if="step5.parent == '0' || step5.parent == ''">20分钟内</span><span class="juhuang" v-if="step5.parent == '1'">24小时</span>对订单内容再次进行确认，确认无误后您须立即开始支付买车担保金余款人民币5,101.00元（买车担保金总金额减去已付诚意金后的余款）。</p>
+                        <p class="fs16 ml5 ti">目前有<a href="#" class="juhuang">线上支付</a>和<a href="#" class="juhuang">银行转账</a>两大类支付方式供您选择。</p>
+                        <p class="fs16 ml5 ti">首笔余款须在24小时内提交支付，尾款最迟须在2017年5月25日24点前完成全部支付（采用银行转账方式的，以有效银行汇款凭证的提交时间为准）。</p>
+                    </div>
+                </div>
+
+                <div class="tac">
+                    <input type="hidden" value="buy/bj_serial" name="" id="txturl">
+                    <p><small><input v-model="isSelectAgree" value="agree" type="checkbox" /><span class="agree-txt fn">我同意华车平台<a href="#" class="juhuang">《服务协议》</a>. 并接受上述订单约定条款。</span></small></p>
+                    <a type="bottom" @click="pay" class="btn btn-s-md btn-danger btn-zhifu">我要支付诚意金</a>
+                    <p v-show="isClickPay && isSelectAgree.length == 0" class="fs14 text-center red m-t-10">接受服务协议我们才可为您服务哦～</p>
+                    <p class="fs14 juhuang">{{errorMsg}}</p>
+                    <!-- <p class="fs14 juhuang" v-for="(error,index) in errorList" @click="animateToTitle(index)"> 第{{error.index + 1}}项未同意！对不起，未全部同意请恕无法进入下个订购步骤～</p> -->
+                    <!-- <p v-show="isClickPay && isSelectAgree.length == 0" class="fs14 text-center red">*请勾选同意华车平台《服务协议》</p> -->
+                </div>
+                <!-- <p class="tac m-t-10"><b class="gray">感谢您选择我们订购心仪座驾！我们将竭诚为您购车之旅保驾护航！</b></p> -->
+                
+            </div>
+        
+
+            <div class="floattip">
+                <ul>
+                    <li @click="hitTop"><span class="top"></span><a><label>回到</label><label>顶部</label></a></li>
+                    <li><span class="ques"></span><a href="help.html"><label>问题</label><label>帮助</label></a></li>
+                    <li><span class="kf"></span><a href="#"><label>在线</label><label>客服</label></a></li>
+                </ul>
+            </div>
+
+        </form>
+
+
+    </div> 
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    
+
+   
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/order/order-detail", "module/common/common"],function(v,u,c){
+            //是否是限牌
+            u.initIsLimit(true)
+        })
+    </script>
+
+</body>
+</html>
+

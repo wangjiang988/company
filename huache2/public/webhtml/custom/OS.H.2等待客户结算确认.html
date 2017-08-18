@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OS.H.2等待客户结算确认  - 用户管理 - 华车网</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="华车网" />
+    <meta name="keywords" content="华车网" />
+    <meta name="author" content="llm" />
+    <link href="../common/css/bootstrap.css" rel="stylesheet" />
+    <link href="../common/css/common.css" rel="stylesheet" />
+    <link href="themes/custom.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="./js/vendor/DatePicker/WdatePicker.js"></script>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body >
+
+    <div class="head-wrapper">
+        <div class="head-container">
+            <div class="head-logo-wrapper">
+                <a class="logo" href="/">华车网</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="container content m-t-86 psr">
+       <div class="cus-step">
+           <div class="line stp-5"></div>
+           <ul>
+               <li class="first"><span class="hide">1</span><i class="cur-step">1</i></li>
+               <li class="second"><span>2</span><i class="cur-step cur-step-2">2</i></li>
+               <li class="third"><i class="cur-step cur-step-3">3</i></li>
+               <li class="fourth"><i class="cur-step cur-step-4">4</i></li>
+               <li class="last end"><i class="cur-step cur-step-5">5</i></li>
+           </ul>
+
+       </div>
+
+        <div class="wapper has-min-step">
+            <div class="box">
+                <div class="box-inner  box-inner-def">
+                    <table class="tbl">
+                        <tbody>
+                            <tr>
+                                <th colspan="2" class="tal juhuang"><label class=" fs16 weight">订单信息</label></th>
+                            </tr>
+                            <tr>
+                                <td width="660">
+                                    <table class="tbl2" width="100%">
+                                        <tr>
+                                            <td  width="50%"><p><b>订单号：</b></p></td>
+                                            <td  width="50%">
+                                                <b>订单时间：</b>2015年10月20日
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>订单类别：</b>现车订单</p><hr class="dashed"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                              <p>
+                                                 <b>车型：</b>
+                                                 <span>路虎</span>
+                                                 <span class="ml5">></span>
+                                                 <span class="ml5">新一代揽胜</span>
+                                                 <span class="ml5">></span>
+                                                 <span class="ml5">2015款SDV6 Hybrid Vogue SE 混合动力创世加长版</span>
+                                              </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>整车型号： </b>RV4649845666</p></td>
+                                            <td><p><b>厂商指导价：</b>￥120,000.00</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>车辆类别：</b>全新中规车整车</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>数量：</b>1台</p></td>
+                                            <td><p><b>内部车辆编号：</b>464898UYT</p></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2"><hr class="dashed nomargin"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>经销商：</b>苏州中捷汽车贸易有限公司</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>营业地点：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>交车地点：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p><b>归属地区：</b>江苏省苏州市</p></td>
+                                            <td>
+                                                 <p><b>约定交车时间：</b>2017年4月30日上午/下午</p>
+                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><hr class="dashed nomargin"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>车辆开票价格：</b></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2"><p><b>客户买车定金：</b></p></td>
+                                        </tr>
+
+                                         <tr>
+                                            <td><p><b>我的服务费：</b>￥500.00</p></td>
+                                            <td><p class="juhuang"><b>加信宝当前冻结：</b>￥499.00</p></td>
+                                        </tr>
+
+                                    </table>
+                                </td>
+                                <td>
+                                    <div class="times psr">
+                                        <p class="status tac  m-t-10"><b class="fs14">订单状态：等待客户结算确认</b></p>
+                                        <p class="tac m-t-10"><a href="#" class="juhuang tdu">查看订单总详情</a></p>
+
+                                        <hr class="dashed">
+                                        <p class="pl20 pt"><b>客户姓名： </b>王*** （先生） </p>
+                                        <p class="pl20 pt"><b>手机： </b>134****2598</p>
+                                        <p class="pl20 pt"><b>客户承诺上牌地区： </b>黑龙江省齐齐哈尔市 </p>
+                                        <p class="pl20 pt"><b>车主车辆用途： </b>非营业个人客车 </p>
+                                        <p class="pl20 pt">
+                                          <b>车主身份类别： </b>
+                                          <span class="fr w195">国内其他限牌城市户籍居民（北京）</span>
+                                          <label class="clear"></label>
+                                        </p>
+                                        <div class="clear"></div>
+                                        <p class="pl20 pt"><b>计划上牌车主名称： </b>苏州火地岛工具有限公司 </p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table class="tbl">
+                       <tr>
+                            <td colspan="4"><img src="/webhtml/common/images/jxb.gif" alt=""></td>
+                       </tr>
+                       <tr>
+                            <td><p class="tac fs14"><b>冻结状态</b></p></td>
+                            <td><p class="tac fs14"><b>进出金额</b></p></td>
+                            <td><p class="tac fs14"><b>说明</b></p></td>
+                            <td><p class="tac fs14"><b>时间</b></p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="tac fs14">冻结</p></td>
+                            <td><p class="tac fs14">+ ￥499.00</p></td>
+                            <td><p class="tac fs14">歉意金</p></td>
+                            <td><p class="tac fs14">2017-02-23 15：23：21</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="tac fs14">解冻</p></td>
+                            <td><p class="tac fs14">- ￥499.00</p></td>
+                            <td><p class="tac fs14">歉意金赔偿</p></td>
+                            <td><p class="tac fs14">2017-02-25 00:00:01</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="tac fs14">冻结</p></td>
+                            <td><p class="tac fs14">+ ￥499.00</p></td>
+                            <td><p class="tac fs14">歉意金2</p></td>
+                            <td><p class="tac fs14">2017-02-25 09:26:46</p></td>
+                        </tr>
+                        <tr>
+                            <td><p class="tac fs14">解冻</p></td>
+                            <td><p class="tac fs14">- ￥499.00</p></td>
+                            <td><p class="tac fs14">已退还可提现余额</p></td>
+                            <td><p class="tac fs14">2017-02-23 15：41：18</p></td>
+                        </tr>
+
+                    </table>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-menu container">
+            <ul>
+                <li>
+                    <h3>用户指南</h3>
+                    <a href="#">买车流程</a>
+                    <a href="#">诚信保障</a>
+                    <a href="#">注意事项</a>
+                </li>
+                <li>
+                    <h3>服务中心</h3>
+                    <a href="#">服务协议</a>
+                    <a href="#">平台规则</a>
+                    <a href="#">常见问题</a>
+                </li>
+                <li>
+                    <h3>关于我们</h3>
+                    <a href="#">平台简介</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">发现职位</a>
+                </li>
+                <li>
+                    <h3>商务合作</h3>
+                    <a href="#">加盟方入口</a>
+                    <a href="#">媒体合作</a>
+                    <a href="#">友情链接</a>
+                </li>
+                <li>
+                    <div class="qrcode"><p>加微信关注我们</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="sp"></div>
+        <div class="container pos-rlt foot-info">
+            <p>@CopyRight 2014- 2015, 苏州华车网络科技有限公司   版权所有</p>
+            <p> 工业信息化部信息备案：苏ICP备14017673号-1 </p>
+        </div>
+    </footer>
+
+    <script src="./js/sea.js"></script>
+    <script src="./js/config.js"></script>
+    <script src="/webhtml/common/js/vendor/My97DatePicker/WdatePicker.js"></script>
+
+    <script type="text/javascript">
+        seajs.use(["../common/js/vendor/vue.min","module/custom/custom-order-base", "module/common/common"],function(v,u,c){
+
+
+        })
+    </script>
+
+</body>
+</html>
